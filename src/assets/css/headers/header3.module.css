@@ -1,0 +1,146 @@
+.header3{
+    word-break: break-all;
+    box-sizing: border-box;
+    font-family: Calibri;
+}
+.headline {
+    height: 40px;
+    width: 100%;
+    background-color: rgb(131 126 126);
+    font-weight: bold;
+    color: white;
+    font-size: 20px !important;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.companyDetails {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 12rem;
+    padding-bottom: 4px;
+    padding-top: 4px;
+    border-bottom: 1px solid #e8e8e8;
+}
+
+.lines {
+    line-height: 100%;
+    padding: 2px;
+    font-size: 12px;
+}
+.linesmain {
+    line-height: 100%;
+    padding: 2px;
+    height: 22px;
+    font-size: 16px;
+}
+.headerImg {
+    width: 10% !important;
+}
+.einvoiceDetails{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    border-top: 1px solid #e8e8e8;
+    flex-wrap: wrap;
+    height: 100%;
+}
+.fshead3comp{
+    font-size: 12px;
+    padding-left: 2px;
+    padding-right: 2px;
+
+}
+.einvdetails{
+    height: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 3px;
+    font-size: 12px;
+    font-weight: bold;
+    color: black;
+}
+
+.qrcodeupperdivh3{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.qrcodeupperdivh3 > .qrcodegenh3{
+    height: 135px !important;
+    width: 100% !important;
+    margin-right: 10px;
+}
+.qrcodeupperdivh3 > canvas{
+    height: 130px !important;
+    width: 33% !important;
+    margin-right: 10px;
+}
+
+.tranDetails{
+    border: 0.5px solid #e8e8e8;
+    font-size: 12px;
+    padding: 2px;
+    /* margin-top: 0.5rem;
+    margin-bottom: 0.5rem; */
+}
+.commonwidthh3{
+    width: 33.33%;
+    padding: 2px;
+}
+.taxInvfs{
+    font-size: 15px;
+}
+@media print{
+   .lines, .einvdetails .einvoiceDetails, .fshead3comp {
+        font-size: 10px !important;
+    }
+    .max_min_h3{
+        min-height: 150px;
+        max-height: 150px;
+        min-width: 150px;
+        max-width: 150px;
+    }
+    .lines {
+        line-height: 13px !important ;
+        padding: 0px !important;
+    }
+
+    .headline {
+        height: 10px;
+        width: 100%;
+        background-color: rgb(131 126 126);
+        font-weight: bold;
+        color: white;
+        font-size: 20px !important;
+        padding: 1rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .taxInvfs{
+        font-size: 12px;
+    }
+    .headline2{
+        font-size: 18px !important;
+    }
+    .tranDetails{
+        padding: 0px;
+    }
+
+    .linesmain {
+        line-height: 100% !important;
+        padding: 0px !important;
+        height: auto !important;
+        font-size: 14px !important;
+    }
+
+
+}

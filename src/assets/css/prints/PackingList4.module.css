@@ -1,0 +1,131 @@
+.pkgList4 * {
+    font-size: 8px;
+    word-break: normal;
+    overflow-wrap: break-word;
+    font-family: Calibri;
+}
+
+.pkgList4{
+    max-width:  1470px !important;
+}
+
+.rowWisePad p{
+    padding: 2px;
+}
+
+.word_break *{
+    word-break: break-all;
+}
+
+.print_sec_sum4 {
+    right: 10px;
+    top: 10px;
+}
+
+.discountAmt {
+    min-width: 34%;
+    width: 34%;
+}
+
+
+.discountAmtnumber {
+    min-width: 6%;
+    width: 6%;
+}
+
+.pad_top {
+    padding-top: 35px;
+}
+
+.srNo {
+    width: 2%;
+    min-width: 2%;
+}
+
+.jewelcode {
+    width: 7%;
+    min-width: 7%;
+}
+
+.diamond {
+    width: 24%;
+    min-width: 24%;
+}
+
+.metal {
+    width: 21%;
+    min-width: 21%;
+}
+
+.stone {
+    width: 21%;
+    min-width: 21%;
+}
+
+.labour {
+    width: 9%;
+    min-width: 9%;
+}
+
+.other {
+    width: 10%;
+    min-width: 10%;
+}
+
+.amount {
+    width: 6%;
+    min-width: 6%;
+}
+
+.w_20 {
+    width: 20%;
+    min-width: 20%;
+}
+
+.taxes {
+    width: 94%;
+    min-width: 94%;
+}
+
+.font_12 * {
+    font-size: 12px;
+}
+
+.font_14 * {
+    font-size: 14px;
+}
+
+.font_1_12 * {
+    font-size: 11.5px;
+}
+
+.min_height_13{
+    min-height: 21.5px;
+}
+
+.pkgList4 table tr td{
+    padding: 0;
+}
+
+@media print {
+    .print_sec_sum4 {
+        display: none !important;
+    }
+
+    .pad_top {
+        padding-top: 15px;
+    }
+
+    .font_1_12 * {
+        font-size: 8px;
+    }
+    .min_height_13{
+        min-height: 17.5px;
+    }
+
+    .rowWisePad p{
+        padding: 1px;
+    }
+
+  
+}

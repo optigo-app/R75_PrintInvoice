@@ -1,0 +1,198 @@
+.containers3 *{
+    box-sizing: border-box;
+    word-break: break-all;
+    font-family: Calibri;
+}
+/* global */
+.containers3{
+    margin: 0 auto;
+    box-sizing: border-box;
+    padding: 10px;
+    padding-bottom: 5rem;
+    max-width: 675px;
+    width: 100%;
+    margin-top: 3rem;
+    /* display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 0 15rem;
+    margin: 0 auto;
+    margin-top: 3rem; */
+}
+.fsgs3{
+    font-size: 12px;
+}
+.centers3{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.lefts3{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.rs3{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.bgcs3{
+    background-color: #F1F1F1;
+}
+
+/* header */
+.headtexts3{
+    height: 60px;
+    background-color: #F1F1F1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 25px;
+    border: 1px solid black;
+    width: 100%;
+}
+
+/* table */
+.tables3{
+    width: 100%;
+}
+.theads3{
+    display: flex;
+    height: 50px;
+    background-color: #F1F1F1;
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+}
+
+/* table head columns */
+/* summary 3 misc */
+.col1s3m{
+    width: 14%;
+}
+.col2s3m{
+    width: 6%;
+}
+.col3s3m{
+    width: 8%;
+}
+.col4s3m{
+    width: 8%;
+}
+.col5s3m{
+    width: 8%;
+}
+.col6s3m{
+    width: 8%;
+}
+.col7s3m{
+    width: 10%;
+}
+.col8s3m{
+    width: 10%;
+}
+.col9s3m{
+    width: 8%;
+}
+.col10s3m{
+    width: 8%;
+}
+.col11s3m{
+    width: 12%;
+}
+
+/* summary 3 */
+.col1s3{
+    width: 14%;
+}
+.col2s3{
+    width: 8%;
+}
+.col3s3{
+    width: 8%;
+}
+.col4s3{
+    width: 8%;
+}
+.col5s3{
+    width: 10%;
+}
+.col6s3{
+    width: 10%;
+}
+.col7s3{
+    width: 0%;
+    display: none;
+}
+.col8s3{
+    width: 12%;
+}
+.col9s3{
+    width: 10%;
+}
+.col10s3{
+    width: 8%;
+}
+.col11s3{
+    width: 12%;
+}
+
+
+
+.finalcols3{
+    min-width: 20%;
+    text-align: center;
+}
+.wfines3{
+    width: 40.5%;
+}
+.wcashs3{
+    width: 59.5%;
+}
+/* table rows */
+.tbodyrows3{
+    display: flex;
+}
+/* tax part */
+.taxws3{
+    width: 14%;
+}
+.taxwamts3{
+    width: 12%;
+}
+.btn_print_s3{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+@media print {
+    .containers3{
+        margin-top: 1rem;
+        /* display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 0px;
+        padding: 1rem;
+        margin-top: 3rem; */
+    }
+    .btn_print_s3{
+        display: none;
+    }
+    .wfines3{
+        width: 41%;
+    }
+    .wcashs3{
+        width: 59%;
+    }
+    .fsgs3{
+        font-size: 10px;
+    }
+}

@@ -1,0 +1,101 @@
+
+.hallmarkContainer{
+    max-width: 1200px !important;
+    font-family: Calibri;
+}
+
+.hallmarkContainer *{
+    font-size: 12px;
+    line-height: 120%;
+}
+
+.min_height{
+    min-height: 25.8px;
+}
+
+.min_height_30{
+    min-height: 30px;
+}
+
+.metaltypeItemWisePrintHallmark{
+    width: 10%;
+}
+
+.categoryItemWisePrintHallmark{
+    width: 15%;
+}
+
+.pkgItemWisePrintHallmark{
+    width: 10%;
+    min-width: 10%;    
+}
+
+.countItemWisePrintHallmark{
+    width: 10%;
+    min-width: 10%;    
+}
+
+.dpcsItemWisePrintHallmark{
+    width: 9%;
+    min-width: 9%;    
+}
+
+.gwtItemWisePrintHallmark{
+    width: 10%;
+    min-width: 10%;    
+}
+
+/* .amountItemWisePrintHallmark{
+    width: 10%;
+    min-width: 10%;    
+} */
+
+.metaltypeItemWisePrintHallmark1{
+    width: 10%;
+}
+
+.categoryItemWisePrintHallmark1{
+    width: 12%;
+}
+
+.pkgItemWisePrintHallmark1{
+    width: 10%;
+    min-width: 10%;    
+}
+
+.countItemWisePrintHallmark1{
+    width: 10%;
+    min-width: 10%;    
+}
+
+.dpcsItemWisePrintHallmark1{
+    width: 7%;
+    min-width: 7%;    
+}
+
+.gwtItemWisePrintHallmark1{
+    width: 10%;
+    min-width: 10%;    
+}
+
+.amountItemWisePrintHallmark1{
+    width: 10%;
+    min-width: 10%;    
+}
+
+.logoImage{
+    min-width: 120px !important;
+    min-height: 100px !important;
+    width: 120px !important;
+    height: 100px !important;
+    object-fit: contain;
+    position: absolute;
+    right: 0;
+    top: -40px;
+}
+
+@media print{
+    .print_sec_sum4 {
+        display: none !important;
+      }
+}

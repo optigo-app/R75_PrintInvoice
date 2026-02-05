@@ -1,0 +1,43 @@
+.retailInvoicePrint3 * {
+    font-size: 14px;
+    font-family: Calibri;
+}
+
+.font_13,
+.font_13 * {
+    font-size: 13px;
+}
+
+.Variant,
+.Price,
+.Discount,
+.Product {
+    width: 11%;
+    min-width: 11%;
+}
+
+.KT,
+.Qty {
+    width: 6.5%;
+    min-width: 6.5%;
+}
+
+.Gross,
+.Dia,
+.Stone,
+.Misc,
+.Net {
+    width: 8.6%;
+    min-width: 8.6%;
+}
+
+
+@media print {
+
+    .retailInvoicePrint3 *,
+    .font_13,
+    .font_13 * {
+        font-size: 9px;
+    }
+
+}

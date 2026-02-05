@@ -1,0 +1,378 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.container_smp {
+    margin: 0 auto;
+    max-width: 952px;
+    font-size: 12px;
+    font-family: Calibri;
+}
+
+.d_flex_smp {
+    display: flex;
+}
+
+.justify_between_smp {
+    justify-content: space-between;
+}
+
+
+div {
+    word-break: break-word;
+}
+
+.pad_left_smp {
+    padding-left: 5px;
+}
+
+
+.font_20_smp {
+    font-size: 20px;
+}
+
+.font_14_smp {
+    font-size: 14px;
+}
+
+.font_18_smp {
+    font-size: 18px;
+}
+
+.font_15_smp {
+    font-size: 15px;
+}
+
+.font_13_5_smp {
+    font-size: 13.5px;
+}
+
+.font_13_smp {
+    font-size: 13px;
+}
+
+
+
+.font_bold_smp {
+    font-weight: bold;
+}
+
+
+.header_border_smp {
+    padding-bottom: 10px;
+    border-bottom: 2px solid #C3C3C3;
+}
+
+
+
+
+
+.br_right_smp {
+    border-right: 1px solid #DDDDDD;
+}
+
+.br_left_smp {
+    border-left: 1px solid #DDDDDD;
+}
+
+.br_top_smp {
+    border-top: 1px solid #DDDDDD;
+}
+
+.br_bottom_smp {
+    border-bottom: 1px solid #DDDDDD;
+}
+
+.br_all_smp {
+    border: 1px solid #DDDDDD;
+}
+
+
+
+
+.margin_10_smp {
+    margin-top: 10px;
+}
+
+.margin_10_bottom_smp{
+    margin-bottom: 10px;
+}
+.padding_all_smp {
+    padding: 5px;
+}
+
+
+
+.w_main_smp {
+    width: 952px;
+}
+
+.w_child1_smp {
+    width: 25px;
+}
+
+.w_child2_smp {
+    width: 105px;
+}
+
+.w_child3_smp {
+    width: 110px;
+}
+
+.w_child4_smp {
+    width: 60px;
+}
+
+.w_child5_smp {
+    width: 60px;
+}
+
+.w_child6_smp {
+    width: 60px;
+}
+
+.w_child7_smp {
+    width: 60px;
+}
+
+.w_child8_smp {
+    width: 60px;
+}
+
+.w_child9_smp {
+    width: 55px;
+}
+
+.w_child10_smp {
+    width: 50px;
+}
+
+.w_child11_smp {
+    width: 50px;
+}
+
+.w_child12_smp {
+    width: 50px;
+}
+
+.w_child13_smp {
+    width: 60px;
+}
+
+.w_child14_smp {
+    width: 70px;
+}
+
+.w_child15_smp {
+    width: 75px;
+}
+
+
+.w_smp {
+    width: 130px;
+}
+
+.pad_2_px {
+    padding: 1px 2px 0px;
+}
+
+.text_center_smp {
+    text-align: center;
+}
+
+.text_end_smp {
+    text-align: end;
+}
+
+.align_item_smp {
+    align-items: center;
+}
+
+.height_34_smp {
+    height: 34px;
+}
+
+.line_height_smp {
+    line-height: 1.2;
+}
+
+.font_wrap_smp {
+    word-wrap: break-word;
+}
+
+
+
+.vertical_top_smp {
+    vertical-align: top;
+}
+
+.vertical_bottom_smp {
+    vertical-align: bottom;
+}
+
+
+.background_smp {
+    background-color: #f5f5f5;
+}
+
+
+.summary_1 {
+    width: 76.6%;
+    height: 109px;
+    margin-top: 3px;
+}
+
+.summary_2 {
+    width: 23%;
+    height: 109px;
+    margin-left: 5px;
+    margin-top: 3px;
+    padding: 0 10px;
+}
+
+.pad_smp {
+    padding: 0px 17px;
+}
+
+.pad_top {
+    padding-top: 10px;
+}
+
+.padd_top {
+    padding-top: 5px;
+}
+
+.pad_right {
+    padding: 0px 10px;
+}
+
+.padd_right {
+    padding: 0px 10px;
+}
+
+.total_1 {
+    width: 76.6%;
+    height: 40px;
+}
+
+.total_2 {
+    width: 23%;
+    height: 40px;
+    margin-left: 5px;
+    padding: 0 10px;
+}
+
+.mar_smp {
+    margin-top: 3px;
+}
+
+.mar_10_top {
+    margin-top: 6px;
+}
+
+.padd_10_bottom {
+    padding-bottom: 6px !important;
+}
+
+.margin_left_smp {
+    margin-left: 6px;
+}
+
+.justify_end_smp {
+    justify-content: end;
+}
+
+.justify_center_smp{
+    justify-content: center;
+}
+
+.summary_w_smp {
+    width: 495px;
+}
+
+.w_50_smp {
+    width: 50%;
+}
+
+.w_82_SMP {
+    width: 70px;
+}
+
+.w_90_smp {
+    width: 90px;
+}
+
+.pad_smp {
+    padding: 0px 10px;
+}
+
+.padd_smp {
+    padding: 0px 17px;
+}
+
+.w_60_smp {
+    width: 60px;
+}
+
+.note_smp {
+    margin-top: 14px;
+    padding-bottom: 30px;
+}
+
+.sign_smp {
+    height: 60px;
+}
+
+.sign2_smp {
+    display: flex;
+    justify-content: center;
+    align-items: end;
+}
+
+.term_smp {
+    margin: 5px 0px;
+}
+
+.print_btn_smp{
+    border-left: 4px solid #5994BB !important;
+    font-family: Calibri;
+    font-size: 14px;
+    text-decoration: none;
+    cursor: pointer;
+    color: #000;
+    position: relative;
+    padding: 5px 7px;
+    border: 1px solid #C9C9C9;
+    background: linear-gradient(to bottom, #FFF, #EBEBEB);
+    border-radius: 5px;
+    box-shadow: inset 0px 1px 0px #F0F0F0, 0px 4px 0px 0px #DBDBDB, 0px 2px 3px #999;
+    padding-left: 5px !important;
+}
+
+.print_m{
+    margin: 5px 20px;
+}
+.print_padd_smp{
+    padding-left: 3px;
+}
+.float_right_smp{
+    float: right;
+}
+
+@media print {
+    .b_t_smp {
+        page-break-inside: avoid;
+    }
+    .d_none_print{
+        display: none;
+    }
+    .main{
+        zoom: 71%;
+      }
+}
+
+.d_none_smp{
+    display: none;
+}

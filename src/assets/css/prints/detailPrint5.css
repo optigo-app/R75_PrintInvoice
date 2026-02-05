@@ -1,0 +1,208 @@
+.headline_dp5{
+  align-items: center;
+  background-color: rgb(147, 146, 146);
+  color: rgb(255, 255, 255);
+  display: flex;
+  font-weight: 700;
+  height: 30px;
+  justify-content: flex-start;
+  padding: 0.6rem;
+  width: 100%;
+  font-size: 20px !important;
+}
+
+.spbrWord {
+  word-break: break-word;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+.SpBrders {
+  border-bottom: 1px solid #f0f0f0;
+  border-left: 1px solid #f0f0f0;
+  border-right: 1px solid #f0f0f0;
+}
+
+.FntFrPre {
+  font-size: 11px !important;
+  padding-top: 0.75rem !important;
+}
+
+.WdthSpDCM1 {
+  width: 16.66%;
+}
+
+.WdthSpDCM2 {
+  width: 16.66%;
+}
+
+.WdthSpDCM3 {
+  width: 16.66%;
+}
+
+.ATWdthSpDCM1 {
+  width: 20.66%;
+}
+
+.ATWdthSpDCM2 {
+  width: 16.66%;
+}
+
+.ATWdthSpDCM3 {
+  width: 12.66%;
+}
+
+.ATWdthSpDCM4 {
+  width: 16.66%;
+}
+
+.ATWdthSpDCM5 {
+  width: 16.66%;
+}
+
+.ATWdthSpDCM6 {
+  width: 16.66%;
+}
+
+.FntSbHed {
+  font-size: 11px;
+  line-height: 12px;
+}
+
+.SPFntSbHed {
+  font-size: 12px;
+  line-height: 12px;
+}
+
+.spFntCmpnyNam {
+  font-size: 16px;
+  line-height: 16px;
+}
+
+.SpFntSmryHed {
+  font-size: 12px;
+  line-height: 14px;
+}
+
+.SpFntSmry {
+  font-size: 10px;
+  line-height: 12px;
+}
+
+.heightCmon {
+  min-height: 16px;
+}
+
+.PrJobFnt {
+  font-size: 10.5px !important;
+  line-height: 15px !important;
+}
+
+.SpcAtRigt {
+  padding-right: 3px;
+}
+
+.headImg_Pcl7{
+  width: auto;
+  max-width: 230px;
+  max-height: 105px;
+}
+
+@media print {
+  @page {
+    margin: 15px 10px;
+  }
+
+  .SpBrdersBtom {
+    border-bottom: 1px solid #f0f0f0;
+  }
+  
+  .PgeBrakInsid {
+    page-break-inside: avoid;
+  }
+
+  .headImg_Pcl7{
+    width: auto;
+    max-width: 100px;
+    max-height: 80px;
+  }
+
+  .SpcAtRigt {
+    padding-right: 2px;
+  }
+
+  .FntFrPre {
+    font-size: 9px !important;
+    padding-top: 0.5rem !important;
+  }
+
+  .WdthSpDCM1 {
+    width: 17.99%;
+  }
+  
+  .WdthSpDCM2 {
+    width: 16.66%;
+  }
+  
+  .WdthSpDCM3 {
+    width: 14%;
+  }
+
+  .ATWdthSpDCM1 {
+    width: 25.16%;
+  }
+  
+  .ATWdthSpDCM2 {
+    width: 15.91%;
+  }
+  
+  .ATWdthSpDCM3 {
+    width: 8.66%;
+  }
+  
+  .ATWdthSpDCM4 {
+    width: 15.91%;
+  }
+  
+  .ATWdthSpDCM5 {
+    width: 16.66%;
+  }
+  
+  .ATWdthSpDCM6 {
+    width: 17.66%;
+  }
+
+  .FntSbHed {
+    font-size: 9px;
+    line-height: 10px;
+  }
+
+  .SPFntSbHed {
+    font-size: 10px;
+    line-height: 10px;
+  }
+
+  .spFntCmpnyNam {
+    font-size: 13px;
+    line-height: 13px;
+  }
+
+  .SpFntSmryHed {
+    font-size: 9px;
+    line-height: 11px;
+  }
+  
+  .SpFntSmry {
+    font-size: 8px;
+    line-height: 10px;
+  }
+
+  .heightCmon {
+    min-height: 14px;
+  }
+
+  .PrJobFnt {
+    font-size: 6.5px !important;
+    line-height: 8.5px !important;
+  }
+}

@@ -1,0 +1,228 @@
+
+
+.containerinvp3 {
+    max-width: 1200px !important;
+    padding: 0 15px !important;
+    margin: 2rem auto !important;
+    width: 100% !important;
+    box-sizing: border-box;
+    padding-bottom: 60px;
+    font-family: Calibri;
+}
+
+.headerinvp3 {
+    display: flex;
+    flex-direction: column;
+    border: 2px solid #d8d7d7;
+    width: 20%;
+    padding: 4px;
+}
+
+.head1invp3 {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 1px;
+}
+
+.header2invp3 {
+    margin-top: 4px;
+    border: 2px solid #d8d7d7;
+
+    display: flex;
+    justify-content: space-between;
+    padding: 3px;
+}
+
+.winvp3 {
+    width: 15rem;
+}
+
+.theadinvp3 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 40px;
+    border: 2px solid #d8d7d7;
+    margin-top: 5px;
+    font-weight: bold;
+}
+
+.wp1invp3 {
+    width: 25%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tableinvp3 {
+    display: flex;
+    flex-direction: column;
+}
+
+.wp3invp3 {
+    width: 25%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+
+.tableinvp3 {
+    display: flex;
+    width: 70%;
+}
+
+.tbodyinvp3 {
+    display: flex;
+    justify-content: space-between;
+    border-left: 2px solid #d8d7d7;
+    border-right: 2px solid #d8d7d7;
+}
+
+.wp1tbinvp3 {
+    width: 25%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 3px;
+}
+
+.wp3tbinvp3 {
+    width: 25%;
+    height: 100%;
+    padding: 0 4px;
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+}
+
+.tablebodyinvp3 {
+    /* border-bottom: 2px solid #d8d7d7; */
+}
+
+.totalinvp3 {
+    width: 30%;
+    border: 2px solid #d8d7d7;
+    margin-top: 5px;
+}
+
+.wordsinvp3 {
+    height: 30px;
+    display: flex;
+    justify-content: flex-start;
+    padding-left: 2px;
+    align-items: center;
+    width: 100%;
+    border: 2px solid #d8d7d7;
+    margin-top: 5px;
+}
+
+.summaryinvp3 {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+}
+
+.headinvp3 {
+    display: flex;
+    align-items: flex-end;
+    width: 100%;
+    flex-direction: column;
+    margin-top: 5px;
+}
+
+.brtopinvp3 {
+    border-top: 2px solid #d8d7d7;
+}
+
+.brrightinvp3 {
+    border-right: 2px solid #d8d7d7;
+}
+
+.fsinvp3 {
+    font-size: 12px;
+    line-height: 120%;
+}
+
+.descinvp3 {
+    width: 30%;
+    border-left: 2px solid #d4d4d4;
+
+}
+
+.descriptioninovicePrint3{
+    position: absolute;
+    top: 10%;
+    text-align: center;
+    display: none !important;
+}
+
+.discHeadinvp3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    border: 2px solid #d8d7d7;
+    margin-top: 5px;
+    font-weight: bold;
+    border-right: 0px;
+    border-left: 0px;
+    width: 100%;
+
+}
+
+.discBodyinvp3 {
+    display: flex;
+    flex-direction: column;
+    word-break: break-all;
+    
+}
+
+.totspaceinvp3 {
+    height: 15px;
+    width: 30%;
+
+    border-top: 2px solid #d8d7d7;
+
+}
+.empdivinvp3{
+    height: 15px;
+    border-top: 2px solid #d4d4d4;
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+}
+
+.head1invp3 br {
+    display: none;
+}
+.fsinvp3 br {
+    display: none !important;
+}
+.w1_invp3{
+    width: 33%;
+}
+.w2_invp3{
+    width: 67%;
+}
+@media print{
+    .btnpcl{
+        display: none !important;
+    }
+        .print_sec_sum4 {
+            display: none !important;
+          }
+          .fsinvp3 {
+            font-size: 10px;
+            line-height: 120%;
+        }
+        .w1_invp3{
+            width: 40%;
+        }
+        .w2_invp3{
+            width: 60%;
+        }
+}

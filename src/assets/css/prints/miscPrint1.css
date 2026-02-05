@@ -1,0 +1,78 @@
+/* .container_Misc_1{
+    max-width: 793px;
+    margin: 0 auto;
+    padding: 0 15px;
+} */
+
+.container_Misc_1 *{
+    line-height: 100%;
+    word-break: break-all;
+    font-family: Calibri;
+}
+
+.discriptionMisc1{
+    /* width: 65px;
+    min-width: 65px; */
+    width: 10%;
+    min-width: 10%;
+}
+
+.adpcMisc1, .kpcsMisc1, .kundMisc1, .motiMisc1, .bmotiMisc1, .mopMisc1, .minaMisc1, .stoneMisc1{
+    /* width: 44px;
+    min-width: 44px; */
+    width: 12.51%;
+    min-width: 12.51%;
+}
+.grsWtMisc1{
+    width: 8%;
+    min-width: 8%;
+}
+
+.bandaiMisc1{
+    width: 50px;
+    min-width: 50px;
+}
+
+.lessWtMisc1, .mperMisc1, .fineMisc1, .AmountMiscPrint1{
+    /* width: 55px;
+    min-width: 55px; */
+    width: 8.8%;
+    min-width: 8.8%;
+}
+
+.miscDetailsMicsPrint1{
+    width: 39%;
+    min-width: 39%;
+}
+
+.regNoMiscPrint1, .stoneDetailsMisc1, .discriptionMisc1, .adpcMisc1, .kpcsMisc1, .kundMisc1, .motiMisc1, .bmotiMisc1, .mopMisc1, .minaMisc1, .bandaiMisc1, .lessWtMisc1, .mperMisc1, .fineMisc1, .AmountMiscPrint1, .grsWtMisc1, .stoneMisc1, .mperMisc1 > p, .fineMisc1 > p, .grsWtMisc1 > p{
+    font-size: 11px;
+    line-height: 120%;
+}
+
+.height53Misc1{
+    min-height: 35px;
+}
+
+.regNoMiscPrint1{
+    /* width: 80px;
+    min-width: 80px; */
+    width: 8%;
+    min-width: 8%;
+}
+
+@media print{
+    .d-flex.border-bottom.border-start.border-end{
+        page-break-inside: avoid;
+    }
+    .printBtn_sec {
+        display: none;
+    }
+
+        .print_sec_sum4 {
+            display: none !important;
+          }
+          .d_none_pcl1{
+            display: none !important;
+          }
+}

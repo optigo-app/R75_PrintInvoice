@@ -1,0 +1,40 @@
+.fs_analytics_l .MuiTypography-root{
+    font-family: "Public Sans Light" !important;
+}
+.fs_analytics_l{
+    font-family: "Public Sans Light" !important;
+}
+
+
+.fs_analytics_l .apexcharts-datalabel {
+    animation: rotateAmountLabel 0.8s ease-in-out;
+    transform-origin: bottom left; /* For better alignment */
+  }
+
+  .apexcharts-text tspan {
+    position: relative;
+    font-size: 12px;
+    transform: rotate(270deg); /* Rotate the text 180 degrees */
+    transform-origin: center center; /* Ensure the rotation happens around the center */
+    /* top: 10px; 
+    bottom: 10px; 
+    text-anchor: middle;  */
+}
+
+.fs_analytics_l .MuiButtonBase-root {
+    font-family: "Public Sans Light" !important;
+}
+
+path.recharts-sector {
+    outline: none !important;
+}
+
+.fs_analytics_l .apexcharts-title-text{
+    font-family: "Public Sans Light" !important;
+}
+.fs_analytics_l .apexcharts-text .apexcharts-xaxis-title-text {
+    font-family: "Public Sans Light" !important;
+}
+.jobWisePR .apexcharts-title-text{
+    color: grey;
+}

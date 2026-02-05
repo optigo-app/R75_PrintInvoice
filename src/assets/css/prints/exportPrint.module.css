@@ -1,0 +1,110 @@
+.containerExportPrint{
+    max-width: 798px;
+    margin: 0 auto;
+    padding: 0 15px;
+    font-family: Calibri;
+}
+
+.img_container{
+    display: grid;
+    grid-template-columns: repeat(4, 23.5%);
+    grid-gap: 2%;
+}
+
+.div_img_cont{
+    width: 172px;
+    min-width: 192px;
+}
+.imgbox_ep{
+    height: 160px;
+    width: 185px;
+    box-sizing: border-box;
+}
+
+img{
+    /* max-height: 180px;
+    min-height: 180px; */
+    /* height: 170px;
+    width: 185px; */
+    height: 160px;
+    width: 185px;
+    box-sizing: border-box;
+    object-fit: contain;
+    object-position: center;
+}
+.divbox_ep{
+    box-sizing: border-box;
+    width: 187px;
+    height: 214px;
+}
+.m_ep{
+    margin-right: 0px;
+    margin-bottom: 2px;
+}
+
+@media print{
+    .print_sec_sum4 {
+        display: none !important;
+      }
+
+      .imgbox_ep{
+        height: 140px;
+        width: 150px;
+        box-sizing: border-box;
+    }
+    
+    img{
+        /* max-height: 180px;
+        min-height: 180px; */
+        /* height: 170px;
+        width: 185px; */
+        height: 140px;
+        width: 150px;
+        box-sizing: border-box;
+        object-fit: contain;
+        object-position: center;
+    }
+    .divbox_ep{
+        box-sizing: border-box;
+        width: 160px;
+        height: 190px;
+    }
+    .m_ep{
+        margin-right: 0px;
+        margin-bottom: 10px;
+    }
+    .lh_ep{
+        line-height: 16px;
+    }
+}
+
+/* @media (orientation: landscape) {
+    .contain:nth-child(12n+12) {
+      page-break-after: always !important;
+    }
+    .contain:nth-child(12n+13), .contain:nth-child(12n+14), .contain:nth-child(12n+15), .contain:nth-child(12n+16){
+        margin-bottom: 0 !important;
+        margin-top: 30px !important;
+    }
+    .contain:nth-child(1), .contain:nth-child(2), .contain:nth-child(3), .contain:nth-child(4){
+        margin-top: 0 !important;
+        padding-top: 0.5rem !important;
+    }
+  }
+   */
+  @media (orientation: portrait) {
+    /* .contain:nth-child(16n+16) {
+        page-break-after: always !important;
+    } */
+    /* .contain:nth-child(16n + 16) {
+        page-break-after: always !important;
+    } */
+    /* .contain:nth-child(16n+17), .contain:nth-child(16n+18), .contain:nth-child(16n+19), .contain:nth-child(16n+20){
+        margin-bottom: 0 !important;
+        margin-top: 30px !important;
+    } */
+    /* .contain:nth-child(1), .contain:nth-child(2), .contain:nth-child(3), .contain:nth-child(4){
+        margin-top: 0 !important;
+        padding-top: 0.5rem !important;
+    } */
+  }

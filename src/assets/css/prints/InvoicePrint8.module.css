@@ -1,0 +1,71 @@
+.invoiceprint8 *:not(.Declaration *), .invoiceprint8 .target_footer{
+    font-size: 12px !important;
+    line-height: 19px;
+    font-family: Calibri;
+}
+
+.Detail{
+    width: 19%;
+    min-width: 19%;
+}
+.Gross{
+    width: 14%;
+    min-width: 14%;
+}
+.Net{
+    width: 14%;
+    min-width: 14%;
+}
+.Pcs{
+    width: 11%;
+    min-width: 11%;
+}
+.Qty{
+    width: 14%;
+    min-width: 14%;
+}
+.Rate{
+    width: 14%;
+    min-width: 14%;
+}
+.Amount{
+    width: 14%;
+    min-width: 14%;
+}
+
+.subHeaderSec p{
+    line-height: 13px;
+}
+
+.invoiceprint8 .CompanyFullName{
+    font-size: 16px !important;
+}
+
+.invoiceprint8 .PrintHeadLabel{
+    font-size: 20px !important;
+}
+
+.invoiceprint8 .CompanyAddress{
+    line-height: 13px;
+}
+
+.invoiceprint8 .customerfirmname{
+    font-size: 14px !important;
+}
+
+.invoiceprint8 .font_15 {
+    font-size: 15px !important;
+}
+
+.invoiceprint8 .font_size_13 *, .invoiceprint8 .font_size_13{
+    font-size: 13px !important;
+}
+
+.invoiceprint8 .font_17{
+    font-size: 17px !important;
+}
+
+.invoiceprint8 .font_14{
+    font-size: 14px !important;
+}
+

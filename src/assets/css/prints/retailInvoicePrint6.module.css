@@ -1,0 +1,41 @@
+.retailInvoicePrint6 * {
+    font-size: 12px;
+    line-height: 120%;
+    font-family: Calibri;
+}
+
+.Sr {
+    width: 7%;
+    min-width: 7%;
+}
+
+.Product {
+    width: 10%;
+    min-width: 10%;
+}
+
+.Material {
+    width: 54%;
+    min-width: 54%;
+}
+
+.Making,
+.Others {
+    width: 9%;
+    min-width: 9%;
+}
+
+.Total{
+    width: 11%;
+    min-width: 11%;
+}
+
+.inwords{
+    width: 71%;
+    min-width: 71%;
+}
+
+.taxes{
+    width: 18%;
+    min-width: 18%;
+}

@@ -1,0 +1,79 @@
+.headlineh4 {
+    height: 40px;
+    width: 100%;
+    background-color: rgb(131 126 126);
+    font-weight: bold;
+    color: white;
+    font-size: 30px;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5px;
+}
+.qrcodeheadh4{
+    width: 100%;
+    min-height: 12rem;
+    border: 2px solid #e8e8e8;    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+    font-size: 20px;
+    box-sizing: border-box;
+}
+.qrcodeheadimgh4{
+    height: 150px;
+    margin-right: 5px;
+}
+.qrcodeheadimgh4 > canvas {
+    height: 145px !important;
+    width: 145px !important;
+}
+.invDetailsh4{
+    width: 100%;
+    font-weight: bold;
+    border-bottom: 2px solid #e8e8e8;
+    min-height: 20px;
+}
+.ackh4{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding-left: 3px;
+    padding-right: 3px;
+    width: 100%;
+    min-height: 50px;
+}
+.detailparth4{
+    border: 2px solid #e8e8e8;
+    margin-top: 10px;
+}
+.transDetailParth4{
+    min-height: 90px;
+    border: 2px solid #e8e8e8;
+    margin-top: 10px;
+}
+.subtranparth4{
+    min-height: 70px;
+    width: 33.33%;
+}
+.companydetailh4{
+    min-height: 14rem;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.companyInfoCenterh4{
+    width: 100%;
+    height: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 13px;
+}
+.printlogoimgh4{
+    width: 50% !important;
+}

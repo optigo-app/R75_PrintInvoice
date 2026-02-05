@@ -1,0 +1,180 @@
+.exportPrintContainer{
+    max-width: 762px;
+    padding: 0;
+    margin: 0 auto;
+    zoom: 1.5;
+    font-family: Calibri;
+}
+
+.withImageExport{
+    padding-top: 2px;
+}
+
+.exportPrintContainer * {
+    font-size: 8.5px;
+    line-height: 120%;
+    word-break: break-word;
+}
+
+.exportPrintContainer .btn_white{
+    font-size: 10px;
+    text-decoration: none;
+    cursor: pointer;
+    color: #000;
+    position: relative;
+    padding: 3px 4px 3px 3.5px;
+    border: 1px solid #C9C9C9;
+    background: linear-gradient(to bottom, #FFF, #EBEBEB);
+    border-radius: 5px;
+    box-shadow: inset 0px 1px 0px #F0F0F0, 0px 4px 0px 0px #DBDBDB, 0px 2px 3px #999;
+}
+
+.rowExport {
+    /* padding: 1px; */
+}
+
+.srNoExport{
+    width: 2%;    
+    min-width: 2%;
+}
+
+.itemExport{
+    width: 5%;    
+    min-width: 5%;
+}
+
+.ktColExport{
+    width: 4%;    
+    min-width: 4%;
+}
+
+.qtyExport{
+    width: 3.5%;    
+    min-width: 3.5%;
+}
+
+.grossExport{
+    width: 4.375%;    
+    min-width: 4.375%;
+}
+
+.netExport{
+    width: 4.375%;    
+    min-width: 4.375%;
+}
+
+.wastageExport{
+    width: 3.25%;    
+    min-width: 3.25%;
+}
+
+.totalGoldExport{
+    width: 4%;    
+    min-width: 4%;
+}
+
+.goldGmExport{
+    width: 5%;    
+    min-width: 5%;
+}
+
+.goldValueExport{
+    width: 5.5%;
+    min-width: 5.5%;
+}
+
+.padx_2{
+    padding-left: 2px;
+    padding-right: 2px;
+}
+
+.diamondSec{
+    width: 23%;
+    min-width: 23%;
+}
+.diamondColorExport{
+    width: 24%;    
+    min-width: 24%;
+}
+.diaShapeExport{
+    width: 14%;    
+    min-width: 14%;
+}
+
+.diaPcsExport{
+    width: 12%;    
+    min-width: 12%;
+}
+ .diaCtsExport{
+    width: 16%;    
+    min-width: 16%;
+}
+.diaRateExport{
+    width: 16%;
+    min-width: 16%;
+}
+.diaValueExport{
+    width: 18%;    
+    min-width: 18%;
+}
+
+.c2CsSec{
+    width: 14%;
+    min-width: 14%;
+}
+.c2csPcsExport{
+    width: 18%;    
+    min-width: 18%;
+}
+
+ .c2csCtsExport{
+    width: 27%;    
+    min-width: 27%;
+}
+
+.c2csRateExport{
+    width: 27%;    
+    min-width: 27%;
+}
+
+.c2csValueExport{
+    width: 28%;    
+    min-width: 28%;
+}
+
+
+
+.totalCtsExport{
+    width:  3.75%;    
+    min-width:  3.75%;
+}
+
+.totalValExport{
+    width: 4.5%;    
+    min-width: 4.5%;
+}
+
+.enamelWtExport{
+    width:  3.25%;    
+    min-width:  3.25%;
+}
+
+.labourValueExport{
+    width: 5%;    
+    min-width: 5%;
+}
+
+.totalFobExport{
+    width: 5.5%;    
+    min-width: 5.5%;
+}
+
+
+@media print {
+    .exportPrintContainer{
+        /* zoom: unset; */
+    }
+    .print_sec_sum4 {
+        display: none !important;
+      }
+}

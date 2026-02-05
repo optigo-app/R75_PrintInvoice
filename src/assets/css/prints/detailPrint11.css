@@ -1,0 +1,155 @@
+.containerDetailP11 {
+    line-height: 100%;
+    max-width: 1200px !important;
+    padding-left: 5px !important;
+    padding-right: 5px !important;
+    font-family: Calibri;
+}
+
+.containerDetailP11 * {
+    font-size: 12px;
+    line-height: 120%;
+}
+
+.srNoDetailPrint11 {
+    width: 5%;
+    min-width: 5%;
+}
+
+.designDetailPrint11 {
+    width: 11%;
+    min-width: 11%;
+}
+
+.diamondStoneDetailPrint11 {
+    width: 45%;
+    min-width: 45%;
+}
+
+.diamondStoneDetailPrint11Total {
+    width: 351px;
+    min-width: 351px;
+}
+
+.labourDetailPrint11 {
+    width: 12%;
+    min-width: 12%;
+}
+
+.totalAmountJewelleryDetailPrint11 {
+    width: 9%;
+    min-width: 9%;
+}
+
+.shapeDetailPrint11,
+.sizeDetailPrint11,
+.pcsDetailPrint11,
+.diaDetailPrint11,
+.priceDetailPrint11,
+.diaAmtDetailPrint11,
+.settingTypeDetailPrint11,
+.settingPriceDetailPrint11,
+.diamondDetail1,
+.totalMaterialAmountDetailPrint11 {
+    width: 11.11%;
+    min-width: 11.11%;
+}
+
+.diamondDetail{
+    width: 14.30%;
+    min-width: 14.30%;
+}
+
+
+.totalAmountDetailPrint11 {
+    width: 45px;
+    min-width: 45px;
+}
+
+.pad_bt_20DetailPrint11 {
+    padding-bottom: 20px;
+}
+
+.settingTotalPriceDetailPrint11 {
+    width: 45px;
+    min-width: 45px;
+}
+
+.totalDesignDetailPrint11 {
+    width: 16%;
+    min-width: 16%;
+}
+
+.remarkDetailPrint11 {
+    width: 350px;
+    min-width: 350px;
+}
+
+.blankSpaceDetailPrint11 {
+    width: 116px;
+    min-width: 116px;
+}
+
+.goldDetailsPrints11 {
+    width: 124px;
+    min-width: 124px;
+}
+
+.totalLessDetailPrint11 {
+    width: 90px;
+    min-width: 90px;
+}
+
+.totaljewAmountDetailPrint11 {
+    width: 56px;
+    min-width: 56px;
+}
+
+.grandTotalDetailprint11 {
+    width: 680px;
+    min-width: 680px;
+}
+
+.grandTotalNumberDetailPrint11 {
+    width: 56px;
+    min-width: 56px;
+}
+
+.min_height_20DetailPrint11 {
+    min-height: 20px;
+}
+
+.goldDetailPrint11 {
+    width: 18%;
+    min-width: 18%;
+}
+
+.detailgoldDertailprint11 {
+    width: 129px;
+    min-width: 129px;
+}
+
+.shapeDetailPrint11Total {
+    width: 72px;
+    min-width: 72px;
+}
+
+.pad_bt_20semiTotalDetailPrint11 {
+    padding-bottom: 40px;
+}
+
+.totalHeightDetailPrint11 {
+    height: 40px;
+}
+
+@media print {
+    .containerDetailP11 {
+        zoom: unset;
+    }
+    .containerDetailP11 * {
+        font-size: 9px;
+    }
+    .print_sec_sum4 {
+        display: none !important;
+      }
+}

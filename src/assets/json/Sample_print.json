@@ -1,0 +1,62 @@
+﻿[
+  [          
+    {
+        "Job No": "1/287255",
+        "Design No": "EM456016",
+        "Cust. Code": "LVPRO",
+        "Ord Dt": "15MAR23",
+        "Del date": "25AUG23",
+        "SIZE": "15-16-17 Inch",
+        "Metal type": "Gold",
+        "Metal Purity": "18K",
+        "Metal Color": "Y-P-W",
+        "Image": "LE-3.jpg",
+        "Instruction": "NEW STORE ORDER(URGENT) WITH CHAIN"
+    }
+  ],
+  [
+    {
+        "CODE": "D RND C-VS-FG",
+        "SIZE": "00000-0000",
+        "PCS": "40",
+        "WT": "0.785",
+        "PCS2":"",
+        "WT2":"",
+        "Barcode": ""
+    },
+    {
+        "CODE": "F CH AC-0065 GOLD 18K P",
+        "SIZE": "",
+        "PCS": "",
+        "WT": "",
+        "PCS2":"",
+        "WT2":"",
+        "Barcode": ""
+    },
+    {
+        "CODE": "C princess-MOL-BLU",
+        "SIZE": "(+4.5-5.0)",
+        "PCS": 20,
+        "WT": "0.895",
+        "PCS2":"",
+        "WT2":"",
+        "BARCODE": "barcode.jpg"
+    }
+],
+[
+    {
+        "DIAMOND": "32/0.176",
+        "CS": "20/0.000",
+        "METAL": "2.215",
+        "MISC": "0.215"
+    }
+]
+]
+
+ 
+
+
+
+
+
+

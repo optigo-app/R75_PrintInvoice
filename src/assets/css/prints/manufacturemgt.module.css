@@ -1,0 +1,117 @@
+.manufacture_container *{
+    font-size: 14px;
+    line-height: 120%;
+    font-family: Calibri;
+}
+
+.img_manufacture{
+    object-fit: contain;
+    height: 100%;
+    width: 100%;
+}
+.imgBox_ra{
+    max-width: 70px;
+    max-height: 70px;
+}
+.height_manufacture{
+    min-height: 150px;
+}
+
+.blankArea{
+    left: -2px;
+    bottom: -20px;
+    padding-bottom: 20px;
+    width: calc(100% + 4px);
+    z-index: 2;
+}
+
+.width_301{
+    min-width: 301px;
+    width: 301px;
+}
+
+
+.headline{
+    align-items: center;
+    background-color: #939292;
+    color: #fff;
+    display: flex;
+    font-size: 20px !important;
+    font-weight: 700;
+    height: 30px;
+    justify-content: flex-start;
+    padding: 1rem;
+    width: 100%;
+}
+.companyDetails{
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    
+}
+.headerImg{
+    width: 116px;
+    height: auto;
+    max-width: 116px;
+}
+.companyhead{
+    display: flex;
+    flex-direction: column;
+    padding-top: .4rem;
+    width: 85%;
+}
+.lines{
+    font-size: 14px;
+    line-height: 100%;
+}
+.altreceive_img{
+    height: 75px;
+    width: 75px;
+    object-fit: contain;
+}
+@media print{
+    .print_sec_sum4 {
+        display: none !important;
+      }
+
+      .img_manufacture{
+        object-fit: contain;
+        height: 100%;
+        width: 100%;
+    }
+    .imgBox_ra{
+        max-width: 50px;
+        max-height: 50px;
+    }
+    .pgia_ralt{
+        page-break-inside: avoid;
+    }
+    .manufacture_container *{
+        font-size: 11px;
+        line-height: 12px;
+        font-family: Calibri;
+    }
+    .headline{
+        align-items: center;
+        background-color: #939292;
+        color: #fff;
+        display: flex;
+        font-size: 15px !important;
+        font-weight: 700;
+        height: 18px;
+        justify-content: flex-start;
+        padding: 3px;
+        width: 100%;
+    }
+    .lines{
+        font-size: 11px;
+
+        line-height: 12px;
+        line-height: 100%;
+    }
+    .altreceive_img{
+        height: 65px;
+        width: 65px;
+        object-fit: contain;
+    }
+}

@@ -1,0 +1,114 @@
+.containerJewellery * {
+    font-size: 12px;
+    font-family: Calibri;
+}
+.containerJewelleryMaxWidth{
+    max-width: 836px !important;
+    box-sizing: border-box;
+}
+.fs_16_jti{
+    font-size: 16px;
+}
+
+.image{
+    max-height: 100px;
+    width: 100%;
+    object-fit: contain;
+}
+
+.generated{
+    font-size: 9px;
+}
+.lh_dec_JTI{
+    line-height: 14px;
+}
+
+.headLabelJTI_quote{
+    font-size: 20px;
+    background-color: #939292;
+    color: #FFF;
+    padding: 4px 0px 5px 6px !important;
+    font-weight: bold;
+}
+.lines{
+    font-size: 12px;
+    line-height: 13px;
+}
+.JTIlogo{
+    height: 120px;
+    width: 150px;
+}
+.fs_comment_jti{
+    font-size: 12px;
+}
+@media print{
+    .print_sec_sum4{
+        display: none !important;
+    }
+    .containerJewellery * {
+        font-size: 11px;
+        font-family: Calibri;
+    }
+    .fs_16_jti{
+        font-size: 14px;
+    }
+    .JTIlogo{
+        height: 100px !important;
+        width: 100px !important;
+    }
+    .image{
+        max-height: 80px;
+        width: 80%;
+        object-fit: contain;
+    }
+    .fs_comment_jti{
+        font-size: 9px;
+    }
+
+}
+
+/* .containerJewellery *:not(.declaration *) {
+    font-size: 12px
+}
+
+.font_13, .font_13 *:not(.declaration *){
+    font-size: 13px;
+}
+
+.font_14, .font_14 *:not(.declaration *){
+    font-size: 14px;
+}
+
+.font_15, .font_15 *:not(.declaration *){
+    font-size: 15px;
+}
+
+
+.word_Break *{
+    word-break: normal !important;
+}
+
+.image{
+    max-height: 100px;
+    object-fit: contain;
+}
+
+.generated{
+    font-size: 9px !important;
+}
+
+
+@media print{
+    .print_sec_sum4{
+        display: none !important;
+    }
+}
+ */
+
+/* .srNo, .jobNo, .image, .amount{
+    width: 15%;
+}
+
+.discription{
+    width: 40%;
+} */

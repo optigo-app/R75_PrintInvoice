@@ -1,0 +1,121 @@
+.fs_analytics_l .MuiDataGrid-columnHeaderTitle{
+    font-weight: bold !important;
+}
+
+
+@media screen and (max-width:1657px){
+    .fs_pd_kpi{
+        font-size: 14px !important;
+    }
+}
+@media screen and (max-width:1580px){
+    .fs_pd_kpi{
+        font-size: 13px !important;
+    }
+}
+
+@media screen and (max-width:1345px){
+    .dp_cmp {
+        width: 20% !important;
+    }
+}
+
+.fs_analytics_l .MuiTypography-root{
+    font-family: "Public Sans Light" !important;
+}
+.fs_analytics_l .MuiButtonBase-root{
+    font-family: "Public Sans Light" !important;
+}
+.fs_analytics_l{
+    font-family: "Public Sans Light" !important;
+}
+
+.onlyDatagrid .MuiDataGrid-footerContainer{
+    display: none !important;
+}
+
+
+@media screen and (max-width:1300px){
+    .media_w_100{
+        width: 70% !important;
+    }
+}
+@media screen and (max-width:940px){
+    .media_w_100{
+        width: 80% !important;
+    }
+}
+@media screen and (max-width:840px){
+    .media_w_100{
+        width: 90% !important;
+    }
+}
+@media screen and (max-width:760px){
+    .media_w_100{
+        width: 100% !important;
+    }
+}
+@media screen and (max-width:720px){
+    .media_w_100{
+        width: 100% !important;
+        display: flex;
+        flex-direction: column !important;
+        justify-content: center;
+        align-items: flex-start !important;
+    }
+
+
+}
+
+
+.center_kpi{
+    display:flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+}
+/* .fs_analytics_l .MuiDataGrid-columnHeaderTitle{
+    font-weight: bold !important;
+}
+
+
+@media screen and (max-width:1657px){
+    .fs_pd_kpi{
+        font-size: 14px !important;
+    }
+}
+@media screen and (max-width:1580px){
+    .fs_pd_kpi{
+        font-size: 13px !important;
+    }
+}
+
+@media screen and (max-width:1345px){
+    .dp_cmp {
+        width: 20% !important;
+    }
+} */
+
+
+.overlay_kpi {
+    position: fixed; /* Cover the entire screen */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1); /* Semi-transparent white */
+    z-index: 9999; /* Ensure it appears above other elements */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none; /* Prevent interaction with overlay */
+  }
+  .overlaykpi_content{
+    font-size: 1rem;
+    font-weight: bold;
+    color: #333;
+    background-color: #f0f0f0;
+    padding: 1rem 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }

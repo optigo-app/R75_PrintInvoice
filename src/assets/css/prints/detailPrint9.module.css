@@ -1,0 +1,102 @@
+.detailprint9 * {
+  font-size: 10px;
+  line-height: 120%;
+  word-break: normal;
+  font-family: Calibri;
+}
+
+.companyDetails *{
+  font-size: 12px;
+}
+
+.font_13 *{
+  font-size: 13px;
+}
+
+.addressFont{
+  font-size: 12px;
+}
+
+.sr {
+  width: 3%;
+  min-width: 3%;
+}
+
+.diamond {
+  width: 21%;
+  min-width: 21%;
+}
+
+.labour,
+.other,
+
+.design,
+.taxAmount {
+  width: 8%;
+  min-width: 8%;
+}
+
+.totalAmount{
+  width: 10%;
+  min-width: 10%;
+}
+.metal {
+  width: 25%;
+  min-width: 25%;
+}
+
+.stone {
+  width: 17%;
+  min-width: 17%;
+}
+
+.pad_bot_15 {
+  padding-bottom: 15px;
+}
+
+.taxWords {
+  width: 92%;
+  min-width: 92%;
+}
+
+.min_height_100 {
+  min-height: 85px;
+}
+
+.min_height_30 {
+  min-height: 30px;
+}
+
+.pad_bot_12{
+  padding-bottom: 12px;
+}
+
+.min_height_12{
+  min-height: 12px;
+}
+
+.word_break *{
+  word-break: break-all;
+}
+
+.fs_header_dp9{
+  font-size: 12px;
+}
+@media print{
+  /* .detailprint9 * { */
+    /* font-size: 10px;
+    line-height: 120%;
+    word-break: normal;
+  } */
+
+  .print_sec_sum4{
+    display: none !important;
+  }
+
+  .detailprint9 * {
+    font-size: 8px;
+  }
+  .fs_header_dp9{
+    font-size: 10px;
+  }
+}

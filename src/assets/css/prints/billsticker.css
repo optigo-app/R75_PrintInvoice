@@ -1,0 +1,74 @@
+.container_elv {
+    box-sizing: border-box;
+    height: 283.5px;
+    width: 283.5px;
+    padding: 5px;
+    padding-top: 2px;
+    border: 2px solid black;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    word-wrap: break-word;
+}
+
+.row_elv {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.barcode_elv {
+    height: 58px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2px;
+    box-sizing: border-box;
+    position: relative;
+}
+.num_elv {
+    font-weight: bold;
+    font-size: 23px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2px;
+    /* padding-top: 5px;
+    padding-bottom: 10px; */
+    box-sizing: border-box;
+}
+.fs_elv {
+    font-weight: bold;
+    font-size: 16px;
+    padding: 0px 5px;
+    line-height: 18px;
+}
+.end_elv {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    box-sizing: border-box;
+}
+.w50_elv {
+    width: 50%;
+}
+.barcode_elv >  .barcode_sticker{
+    box-sizing: border-box;
+    position: absolute;
+    display: block;
+    height: 45px !important;
+    margin: 0 auto;
+    max-width: 140.79375mm;
+    object-fit: cover;
+    right: 32px !important;
+    top: 15px !important;
+    transform: translate(0) rotate(180deg) !important;
+    width: 56.275mm !important;
+    z-index: 1;
+  }
+  
+  @media print{
+    .hide_bs{
+        display: none !important;
+    }
+
+  }

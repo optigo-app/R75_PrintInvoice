@@ -1,0 +1,411 @@
+html {
+    scrollbar-gutter: stable;
+}
+
+.mainRTMT {
+    width: 80vw !important;
+    font-family: Calibri;
+    letter-spacing: 0.2px !important;
+    border: 1px solid #f2f2f2;
+    margin: 20px auto;
+    margin-bottom: 10rem;
+    align-items: flex-start;
+}
+
+.retMatFont_22 {
+    font-size: 22px;
+}
+
+.retMatFont_14 {
+    font-size: 14px;
+    line-height: 14px;
+}
+
+.retMatFont_13 {
+    font-size: 13px;
+    line-height: 13px;
+}
+
+.spdispFlx {
+    display: flex;
+}
+
+.spMnHead {
+    display: flex;
+    padding: 10px;
+}
+
+.spHeadWdth1 {
+    width: 15%;
+    display: flex;
+    align-items: center;
+}
+
+.spHeadWdth2 {
+    width: 55%;
+    display: flex;
+    align-items: center;
+}
+
+.spHeadWdth3 {
+    width: 10%;
+    display: flex;
+    align-items: center;
+}
+
+.theLogoImg {
+    width: 70px;
+    height: 70px;
+    align-items: center;
+}
+
+.theIconImgPrnt {
+    width: 35px;
+    height: 35px;
+    align-items: center;
+}
+
+.theIconImg {
+    width: 30px;
+    height: 30px;
+    align-items: center;
+}
+
+.spSubHed {
+    width: 100%;
+    padding: 10px;
+}
+
+.subSubHed1 {
+    width: 50%;
+}
+
+.subSubHed2 {
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.bdyhead {
+    font-size: 16px;
+    line-height: 16px;
+}
+
+.mnContnt {
+    border-top: 1px solid #f2f2f2;
+    padding: 10px;
+}
+
+.bodyContnt {
+    width: 58%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+
+.detlsContnt {
+    width: 60%;
+    display: flex;
+}
+
+.dimndNClrstn {
+    width: 14.29%;
+    padding: 0px;
+    padding-left: 6px;
+    padding-right: 6px;
+}
+
+.comnFistCol {
+    width: 14.29%;
+}
+
+.otherRmnSpac {
+    width: 85.71%;
+}
+
+.proprDvson {
+    width: 16.67%;
+    padding-left: 6px;
+    padding-right: 6px;
+}
+
+.fndingStyl {
+    width: 12.50%;
+    padding: 0px;
+    padding-left: 6px;
+    padding-right: 6px;
+}
+
+.fndingFistCol {
+    width: 12.50%;
+}
+
+.fndingotherRmnSpac {
+    width: 87.50%;
+}
+
+.fndingproprDvson {
+    width: 14.28%;
+    /* 14.59 */
+    padding-left: 6px;
+    padding-right: 6px;
+}
+
+.detlsMtlContnt {
+    width: 35%;
+    display: flex;
+}
+
+.mtalStyl {
+    width: 25%;
+    padding: 0px;
+    padding-left: 6px;
+    padding-right: 6px;
+}
+
+.mtalFistCol {
+    width: 25%;
+}
+
+.mtalotherRmnSpac {
+    width: 75%;
+}
+
+.mtalproprDvson {
+    width: 33.33%;
+    padding-left: 6px;
+    padding-right: 6px;
+}
+
+.sFntStyl {
+    color: #7a7a7a;
+    font-weight: bold;
+    padding: 5px;
+}
+
+.spacCell {
+    height: 25px !important;
+}
+
+.spBrdrAll {
+    border: 1px solid #d6d6d6;
+}
+
+.spBrdrRigt {
+    border-right: 1px solid #d6d6d6;
+}
+
+.spBrdrLft {
+    border-left: 1px solid #d6d6d6;
+}
+
+.spBrdrTop {
+    border-top: 1px solid #d6d6d6;
+}
+
+.spBrdrBtom {
+    border-bottom: 1px solid #d6d6d6;
+}
+
+.spBgColr {
+    background-color: #fafafa;
+}
+
+.spBgColrExcl {
+    background-color: #ffffff;
+}
+
+.spbrWord {
+    word-break: break-word;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+}
+
+.spBold {
+    font-weight: bold !important;
+}
+
+.section-transition {
+    overflow: hidden;
+    transition: max-width 0.5s ease, padding 0.3s ease, margin 0.3s ease, opacity 0.5s ease;
+    max-width: 2000px;
+    opacity: 1;
+    padding-left: 0.1rem;
+    margin-right: 0.1rem;
+    white-space: nowrap;
+}
+
+.section-hidden {
+    max-width: 0;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    margin-right: 0 !important;
+    opacity: 0;
+}
+
+/* .section-transition {
+    overflow: hidden;
+    transition: max-width 0.5s ease, padding 0.5s ease, margin 0.5s ease, opacity 0.5s ease;
+    max-width: 100%; 
+    opacity: 1;
+    padding-left: 0.1rem;
+    padding-right: 1rem;
+    margin-right: 1rem;
+}
+
+.section-hidden {
+    max-width: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    margin-right: 0 !important;
+    opacity: 0 !important;
+} */
+
+
+
+/* For Special PDF */
+.pdf-export-mode {
+    font-size: 16px;
+    width: 800px;
+    margin: 0 auto;
+    padding-top: 0;
+    background-color: white;
+}
+
+.pdf-export-mode .spSubHed,
+.pdf-export-mode .spHeadWdth3 {
+    display: none !important;
+}
+
+.pdf-export-mode .retMatFont_22 {
+    font-size: 28px;
+}
+
+.pdf-export-mode .page_break {
+    page-break-before: always;
+}
+
+.pdf-export-mode .bodyContnt {
+    width: 98% !important;
+}
+
+.pdf-export-mode .detlsContnt {
+  width: 100% !important;
+}
+
+.pdf-export-mode .retMatFont_14 {
+    font-size: 17px;
+    line-height: 17px;
+}
+
+.pdf-export-mode .retMatFont_13 {
+    font-size: 16px;
+    line-height: 18px;
+}
+
+.pdf-export-mode .bdyhead {
+    font-size: 19px;
+    line-height: 19px;
+}
+
+.pdf-export-mode .spBgColr {
+    background-color: #ececec;
+}
+
+.pdf-export-mode .comnFistCol,
+.pdf-export-mode .fndingFistCol,
+.pdf-export-mode .mtalFistCol {
+    padding-top: 0px !important;
+    padding-bottom: 6px !important;
+}
+
+.pdf-export-mode .proprDvson,
+.pdf-export-mode .fndingproprDvson,
+.pdf-export-mode .mtalproprDvson,
+.pdf-export-mode .mtalStyl,
+.pdf-export-mode .fndingStyl,
+.pdf-export-mode .dimndNClrstn {
+    padding-bottom: 10px !important;
+}
+
+.pdf-export-mode .spHeadWdth2 {
+    width: 100% !important;
+}
+
+div.pdf-export-mode .mainRTMT {
+    border: 1px solid transparent !important;
+}
+
+.pdf-export-mode .sFntStyl {
+    color: #000000;
+}
+
+.pdf-export-mode .spBrdrAll {
+    border: 1px solid #000000;
+}
+
+.pdf-export-mode .spBrdrRigt {
+    border-right: 1px solid #000000;
+}
+
+.pdf-export-mode .spBrdrLft {
+    border-left: 1px solid #000000;
+}
+
+.pdf-export-mode .spBrdrTop {
+    border-top: 1px solid #000000;
+}
+
+.pdf-export-mode .spBrdrBtom {
+    border-bottom: 1px solid #000000;
+}
+
+
+/* For Excel */
+.excel {
+    display: none;
+} 
+
+@media print {
+    @page {
+        margin: 20px 20px;
+    }
+
+    .mainRTMT {
+        width: 100vw !important;
+    }
+
+    .spHeadWdth1,
+    .spHeadWdth3,
+    .spSubHed {
+        display: none;
+    }
+
+    .detlsContnt,
+    .bodyContnt {
+        width: 100%;
+    }
+
+    .detlsMtlContnt {
+        width: 60%;
+    }
+
+    .retMatFont_22 {
+        font-size: 18px;
+    }
+
+    .retMatFont_14 {
+        font-size: 12px;
+        line-height: 12px;
+    }
+
+    .retMatFont_13 {
+        font-size: 11px;
+        line-height: 11px;
+    }
+
+    .section-transition {
+        padding-right: 0rem;
+        margin-right: 0rem;
+    }
+}

@@ -1,0 +1,64 @@
+.containerSummry11AddressFont * {
+    font-size: 14px;
+    line-height: 120%;
+    font-family: Calibri;
+}
+
+
+.containerSummry11DataFont * {
+    font-size: 12px;
+    line-height: 120%;
+}
+
+.srNo {
+    width: 3%;
+    min-width: 3%;
+}
+
+.quality {
+    width: 4%;
+    min-width: 4%;
+}
+
+.purity {
+    width: 6%;
+    min-width: 6%;
+}
+
+.design {
+    width: 8%;
+    min-width: 8%;
+}
+
+.dia,
+.making,
+.csAmt,
+.goldFine,
+.goldAmt,
+.Amount,
+.gwt {
+    width: 6.5%;
+    min-width: 6.5%;
+}
+
+.otherCharges {
+    width: 7.5%;
+    min-width: 7.5%;
+}
+
+.total {
+    width: 21%;
+    min-width: 21%;
+}
+
+@media print {
+
+    .containerSummry11DataFont * {
+        font-size: 9px;
+    }
+
+        .print_sec_sum4 {
+            display: none !important;
+          }
+    
+}

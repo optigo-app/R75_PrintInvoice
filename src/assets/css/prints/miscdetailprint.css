@@ -1,0 +1,159 @@
+.container_mdp{
+    max-width: 1200px;
+    width: 100%;
+    padding: 10px;
+    padding-bottom: 5rem;
+    margin: 0 auto;
+    font-family: Calibri;
+}
+.headline_mdp{
+    font-weight: bold;
+    color: Black;
+    font-size: 14px;
+    text-transform: uppercase;
+    padding: 2px;
+    border: 1px solid #BDBDBD;
+    background-color: #F5F5F5;
+    padding-left: 10px;
+}
+.col1_mdp{
+    width: 2%;
+}
+.col2_mdp{
+    width: 10%;
+}
+.col3_mdp{
+    width: 23%;
+}
+.col4_mdp{
+    width: 20%;
+}
+.col5_mdp{
+    width: 20%;
+}
+.col6_mdp{
+    width: 5%;
+}
+.col7_mdp{
+    width: 10%;
+}
+.col8_mdp{
+    width: 10%;
+}
+.center_mdp{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.thead_mdp{
+    /* height: 40px; */
+    border: 1px solid black;
+    border-bottom: 1px solid #BDBDBD;
+    font-weight: bold;
+    background-color: #F5F5F5;
+}
+.br_right_mdp{
+    border-right: 1px solid #BDBDBD;
+}
+.br_right_mdp_2{
+    border-right: 1px solid black;
+}
+.br_left_mdp_2{
+    border-left: 1px solid black;
+}
+.br_left_mdp{
+    border-left: 1px solid #BDBDBD;
+}
+.br_bottom_mdp{
+    border-bottom: 1px solid #BDBDBD;
+}
+.br_top_mdp{
+    border-top: 1px solid #BDBDBD;
+}
+.fs_11_mdp{
+    font-size: 12px;
+}
+.fs_11_mdp_2{
+    font-size: 11px;
+}
+
+.col5_1_mdp{
+    width: 30%;
+}
+.col5_2_mdp{
+    width: 11%;
+}
+.col5_3_mdp{
+    width: 17%;
+}
+.col5_4_mdp{
+    width: 17%;
+}
+.col5_5_mdp{
+    width: 25%;
+}
+
+.col4_1_mdp{
+    width: 22%;
+}
+.col4_2_mdp{
+    width: 22%;
+}
+.col4_3_mdp{
+    width: 22%;
+}
+.col4_4_mdp{
+    width: 34%;
+}
+
+.col3_1_mdp{
+    width: 25%;
+}
+.col3_2_mdp{
+    width: 15%;
+}
+.col3_3_mdp{
+    width: 15%;
+}
+.col3_4_mdp{
+    width: 15%;
+}
+.col3_5_mdp{
+    width: 30%;
+}
+
+.bg_clr{
+    background-color: #F5F5F5;
+}
+
+.end_mdp{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.end_mdp_2{
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+}
+
+.img_mdp{
+    height: 75px;
+    width: 75px;
+}
+
+.col1_s_mdp{
+    width: 35%;
+}
+.col1_o_mdp{
+    width: 20%;
+}
+.col1_r_mdp{
+    width: 20%;
+}
+.box1_mdp{
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    height: 100%;
+}

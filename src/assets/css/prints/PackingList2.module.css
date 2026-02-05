@@ -1,0 +1,138 @@
+.packingList2 * {
+    font-size: 8.5px;
+    line-height: 120%;
+    word-break: normal;
+    font-family: Calibri;
+}
+
+.packingList2 {
+    zoom: 1.3;
+}
+
+.Sr {
+    width: 3%;
+    min-width: 3%;
+}
+
+.rowWisePad p {
+    padding: 2px;
+}
+
+.Jewelcode,
+.Price {
+    width: 7%;
+    min-width: 7%;
+}
+
+.Diamond,
+.Metal,
+.Stone {
+    width: 20%;
+    min-width: 20%;
+}
+
+.Metal
+ {
+    width: 21%;
+    min-width: 21%;
+}
+
+.Labour,
+.Other {
+    width: 11%;
+    min-width: 11%;
+}
+
+.w_20 {
+    width: 20%;
+    min-width: 20%;
+}
+
+.pb_21 {
+    padding-bottom: 15px;
+}
+
+.min_height {
+    min-height: 15px;
+}
+
+.stone_labour_other {
+    width: 42%;
+    min-width: 42%;
+}
+
+.discount {
+    width: 87%;
+    min-width: 87%;
+}
+
+.discount_amount {
+    width: 13.1%;
+    min-width: 13.1%;
+}
+
+.tax {
+    width: 93%;
+    min-width: 93%;
+}
+
+.font_12,
+.font_12 * {
+    font-size: 12px;
+}
+
+.font_11,
+.font_11 * {
+    font-size: 11px;
+}
+
+.font_1_12,
+.font_1_12 * {
+    word-break: break-all;
+    font-size: 12px;
+}
+
+.font_14,
+.font_14 * {
+    font-size: 14px;
+}
+
+.font_18,
+.font_18 * {
+    font-size: 18px;
+}
+
+.word_break * {
+    word-break: break-all;
+}
+
+.no_word_break * {
+    word-break: normal;
+}
+
+.packingList2 table tr td{
+    padding: 0 !important;
+}
+
+@media print {
+    .print_sec_sum4 {
+        display: none !important;
+    }
+
+    .packingList2 {
+        zoom: unset;
+    }
+
+    .rowWisePad p {
+        padding: 1px;
+    }
+
+    .packingList2 * {
+        font-size: 8px;
+    }
+
+    .font_1_12,
+    .font_1_12 * {
+        font-size: 8px;
+    }
+}

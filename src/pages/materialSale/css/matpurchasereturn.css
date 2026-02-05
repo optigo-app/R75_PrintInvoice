@@ -1,0 +1,99 @@
+.container_mpr{
+    max-width: 1050px;
+    width: 100%;
+    box-sizing: border-box;
+    padding-bottom: 60px;
+    font-size: 12px;
+}
+.headLabel_ms{
+    font-size: 20px;
+    background-color: #939292;
+    color: #FFF;
+    padding: 4px 0px 5px 6px;
+    font-weight: bold;
+}
+.custName_ms{
+    font-size: 16px;
+}
+/* borders */
+.bradp7{
+    border: 2px solid #e8e8e8;
+}
+.brtdp7{
+    border-top: 2px solid #e8e8e8;
+}
+.brdp7{
+    border-right: 2px solid #e8e8e8;
+}
+.bldp7{
+    border-left: 2px solid #e8e8e8;
+}
+.brbdp7{
+    border-bottom: 2px solid #e8e8e8;
+}
+
+.col1_mpr_ms{
+    width: 3%;
+}
+.col2_mpr_ms{
+    width: 15%;
+}
+.col3_mpr_ms{
+    width: 10%;
+}
+.col4_mpr_ms{
+    width: 5%;
+}
+.col5_mpr_ms{
+    width: 7%;
+}
+.col6_mpr_ms{
+    width: 7%;
+}
+.col7_mpr_ms{
+    width: 9%;
+}
+.col8_mpr_ms{
+    width: 7%;
+}
+.col9_mpr_ms{
+    width: 7%;
+}
+.col10_mpr_ms{
+    width: 7%;
+}
+.col11_mpr_ms{
+    width: 7%;
+}
+.col12_mpr_ms{
+    width: 7%;
+}
+.col13_mpr_ms{
+    width: 9%;
+}
+.sign_box_cr_ms{
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+@media print{
+    .container_mpr{
+        max-width: 1000px;
+        width: 100%;
+        box-sizing: border-box;
+        padding-bottom: 60px;
+        font-size: 10px;
+    }
+    .headLabel_ms{
+        font-size: 16px;
+        background-color: #939292;
+        color: #FFF;
+        padding: 4px 0px 5px 6px;
+        font-weight: bold;
+    }
+    .custName_ms{
+        font-size: 12px;
+    }
+}

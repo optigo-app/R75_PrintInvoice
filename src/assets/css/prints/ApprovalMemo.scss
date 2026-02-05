@@ -1,0 +1,175 @@
+.approval_printMain {
+  display: flex;
+  justify-content: center;
+  font-family: Calibri;
+
+  .App {
+  text-align: center;
+  font-size: 12px;
+  max-width: 1200px;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+.main_header {
+  font-size: 20px;
+  background-color: #939292 !important;
+  color: #fff;
+  padding: 4px 0px 5px 6px;
+  font-weight: bold;
+  display: flex;
+}
+
+.topmainSection_main {
+  display: flex;
+  border: 0.5px solid #bdbdbd;
+}
+.second_main_box_div {
+  border: 0.5px solid #bdbdbd;
+  margin-top: 5px;
+}
+
+.memo1_bottomSection_main {
+  display: flex;
+  border: 0.5px solid #bdbdbd;
+  margin-top: 5px;
+  height: 100px;
+}
+
+.topBox1 {
+  width: 35%;
+  padding: 5px;
+  border-right: 0.5px solid #bdbdbd;
+}
+
+.topBox2 {
+  width: 35%;
+  padding: 5px;
+  border-right: 0.5px solid #bdbdbd;
+}
+
+.topBox3 {
+  width: 30%;
+  padding: 5px;
+}
+
+.bottom_box_one_p {
+  margin: 0px;
+  display: flex;
+}
+
+.topBox_p {
+  margin: 0px;
+  display: flex;
+  line-height: 14px;
+}
+
+.second_box_top_title {
+  display: flex;
+}
+.second_box_top_title p {
+  display: flex;
+  margin: 0px;
+  font-weight: bold;
+  justify-content: center;
+  border-bottom: 1px solid #bdbdbd;
+  padding: 4px;
+}
+
+.second_box_description_main {
+  display: flex;
+  border-bottom: 1px solid #bdbdbd;
+}
+
+.second_box_description_main p {
+  margin: 0px;
+  padding: 4px;
+}
+
+.memo1_second_box_top_title_colm1 {
+  width: 6%;
+  border-right: 1px solid #bdbdbd;
+}
+
+.memo1_second_box_top_title_colm2 {
+  width: 47%;
+  border-right: 1px solid #bdbdbd;
+}
+
+.memo1_second_box_top_title_colm3 {
+  width: 47%;
+  border-right: 1px solid #bdbdbd;
+}
+
+.memo1_title_secondBox_bottom_desc{
+  display: flex;
+  text-decoration: underline;
+  font-weight: bold;
+  margin: 0px 0px 16px 0px!important;
+}
+
+.appvol_ramark_title{
+  display: flex;
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+.memo1_secondBox_bottom_desc {
+  // display: flex;
+  // text-decoration: underline;
+  // font-weight: bold;
+  margin: -20px 0px 4px 0px!important;
+  text-align: justify;
+  // font-style: italic;
+}
+
+.memo1_bottomSection_main_Box1 {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 4px;
+  border-right: 1px solid #bdbdbd;
+}
+
+.memo1_bottomSection_main_Box2 {
+  width: 50%;
+  padding: 4px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.invoice_print_btn{
+  height: 30px;
+  width: 120px;
+  background-color: lightgray;
+
+}
+
+@media print {
+  .btn_white{
+    display: none !important;
+  }
+  
+  .main_header {
+    font-size: 20px;
+    background-color: #939292 !important;
+    color: #fff;
+    padding: 4px 0px 5px 6px;
+    font-weight: bold;
+    display: flex;
+  }
+
+  .bottomSection_main_Box1 {
+    width: 45%;
+  }
+
+  .memo1_bottomSection_main_Box2 {
+    width: 25%;
+  }
+}
+}

@@ -1,0 +1,180 @@
+.EIB{
+    max-width: 1200px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    padding-bottom: 60px;
+    font-family: calibri;
+}
+.fs_sm_ebi{
+    font-size: 9px;
+    line-height: 10px;
+}
+.fs_eib{
+    font-size: 11px;
+    line-height: 13px;
+}
+.cust_head_eib{
+    font-size: 15px;
+}
+.eib_header{
+    margin-top: 90px;
+    margin-bottom: 90px;
+}
+.eib_head_company_logo{
+    height: 100px;
+    max-width: 116px;
+    object-fit: contain;
+}
+.head_sub_div{
+    height: 53px !important;
+}
+
+.col1_eib{
+    width: 5%;
+}
+.col2_eib{
+    width: 26%;
+}
+.col3_eib{
+    width: 9%;
+}
+.col4_eib{
+    width: 9%;
+}
+.col5_eib{
+    width: 12%;
+}
+.col6_eib{
+    width: 12%;
+}
+.col7_eib{
+    width: 12%;
+}
+.col8_eib{
+    width: 15%;
+}
+
+.center_eib{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.gcol1_eib{
+    width: 5%;   
+}
+.gcol2_eib{
+    width: 5%;   
+}
+.gcol3_eib{
+    width: 8%;   
+}
+.gcol4_eib{
+    width: 5%;   
+}
+.gcol5_eib{
+    width: 7%;   
+}
+.gcol6_eib{
+    width: 7%;   
+}
+.gcol7_eib{
+    width: 7%;   
+}
+.gcol8_eib{
+    width: 7%;   
+}
+.gcol9_eib{
+    width: 7%;   
+}
+.gcol10_eib{
+    width: 7%;   
+}
+.gcol11_eib{
+    width: 10%;   
+}
+.gcol12_eib{
+    width: 10%;   
+}
+.gcol13_eib{
+    width: 5%;   
+}
+.gcol14_eib{
+    width: 5%;   
+}
+.gcol15_eib{
+    width: 3%;   
+}
+.gcol16_eib{
+    width: 7%;   
+}
+
+.signBox_eib{
+    min-height: 80px;
+    box-sizing: border-box;
+}
+
+.minH_buyers_ebi{
+    min-height: 40px;
+}
+
+
+.toalDiv_1{
+    width: 49%;
+}
+.toalDiv_2{
+    width: 24%;
+}
+.toalDiv_3{
+    width: 27%;
+}
+
+.end_ebi{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+.start_ebi{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+.height_total_eib{
+    height: 28px;
+}
+@media print{
+    .d_none_eib{
+        display: none !important;
+    }
+    .fs_sm_ebi{
+        font-size: 6px;
+        line-height: 9px;
+    }
+    .fs_eib{
+        font-size: 7px;
+        line-height: 9px;
+    }
+    .fivecm_ebi{
+        margin-bottom: 60px;
+    }
+    .fivecm_ebi2{
+        margin-bottom: 0px !important;
+    }
+    .border_remove_eib{
+        border: 0px !important;
+    }
+    .signBox_eib{
+        min-height: 55px;
+        box-sizing: border-box;
+    }
+    .head_sub_div{
+        height: 35px !important;
+    }
+    .page_eib{
+        page-break-inside: avoid !important;
+    }
+    .minWInp{
+        min-width: 150px !important;
+    }
+}

@@ -1,0 +1,100 @@
+.header3{
+    word-break: break-all;
+    box-sizing: border-box;
+}
+.headline {
+    height: 40px;
+    width: 100%;
+    background-color: rgb(131 126 126);
+    font-weight: bold;
+    color: white;
+    font-size: 30px;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.companyDetails {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 12rem;
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+    border-bottom: 1px solid #e8e8e8;
+}
+
+.lines {
+    line-height: 100%;
+    padding: 2px;
+    font-size: 14px;
+}
+.linesmain {
+    line-height: 100%;
+    padding: 2px;
+    height: 22px;
+    font-size: 14px;
+}
+.headerImg {
+    width: 10% !important;
+}
+.einvoiceDetails{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    border-top: 1px solid #e8e8e8;
+    flex-wrap: wrap;
+    min-height: 25px;
+    height: 100%;
+}
+.fshead3comp{
+    font-size: 16px;
+    padding-left: 2px;
+    padding-right: 2px;
+
+}
+.einvdetails{
+    height: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 3px;
+    font-size: 16px;
+    font-weight: bold;
+    color: black;
+}
+
+.qrcodeupperdivh3{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.qrcodeupperdivh3 > .qrcodegenh3{
+    height: 135px !important;
+    width: 100% !important;
+    margin-right: 10px;
+}
+.qrcodeupperdivh3 > canvas{
+    height: 130px !important;
+    width: 33% !important;
+    margin-right: 10px;
+}
+
+.tranDetails{
+    border: 1px solid #e8e8e8;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+.commonwidthh3{
+    width: 33.33%;
+    padding: 2px;
+}
+
+@media print{
+   .lines, .einvdetails .einvoiceDetails, .fshead3comp {
+        font-size: 10px !important;
+    }
+}

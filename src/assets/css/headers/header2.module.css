@@ -1,0 +1,61 @@
+.headline {
+    height: 35px;
+    width: 100%;
+    background-color: rgb(131 126 126);
+    font-weight: bold;
+    color: white;
+    font-size: 22px;
+    padding: 1rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.companyDetails {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 15rem;
+}
+.custBlock {
+    display: flex;
+    justify-content: space-between;
+    min-height: 12rem;
+    border-top: 1px solid #dcd3d3;
+    border-left: 1px solid #dcd3d3;
+}
+
+.lines {
+    line-height: 100%;
+    padding: 2px;
+    height: 15px;
+}
+.headerImg {
+    height: 50%;
+    width: 50%;
+}
+.invoice {
+    line-height: 100%;
+    padding: 2px;
+    height: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.custDetails {
+    display: flex;
+    flex-direction: column;
+    font-size: 13px;
+    line-height: 100%;
+    width: 25%;
+    border-right: 1px solid #dcd3d3;
+}
+.companyhead{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+}

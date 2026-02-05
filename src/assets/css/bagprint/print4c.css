@@ -1,0 +1,132 @@
+#img4C{
+    box-sizing: border-box;
+    height: 99px !important;
+    width: 99px !important;
+    object-fit: contain;
+}
+.img_fir_4C{
+    box-sizing: border-box;
+    height: 101px;
+    width: 116px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.barcode_sticker_4ABCC{
+    /* height: 167pt; */
+}
+
+.barcode_img_4C>img {
+    /* top: -130px !important;
+    height: 12px !important;
+    width: 115px !important;
+    object-fit: cover;
+    transform: rotate(90deg) !important;
+    position: relative !important;
+    left: 42px !important;
+    margin: 0px; */
+    top: 205px !important;
+    height: 18px !important;
+    width: 169px !important;
+    object-fit: cover;
+    transform: rotate(90deg) !important;
+    position: absolute !important;
+    /* left: 238px !important; */
+    right: -67px;
+}
+.barcodeText4ABCC {
+    width: 60pt;
+    height: 168pt;
+    border-right: 1px solid black;
+}
+.diamond_custom_4BCC{
+    height: 26.8pt;
+    overflow: hidden;
+}
+#img4CC{
+    box-sizing: border-box;
+    height: 119px !important;
+    width: 119px !important;
+    object-fit: contain;
+}
+.img_sec_container_4ACC {
+    border-bottom: 1px solid #000 !important;
+    width: 120px;
+    height: 140px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+.lab_self_4ACC {
+    height: 24.3925pt;
+    display: flex;
+}
+.container_print4Apart_1CC{
+    height: 140px;
+}
+.part_3_container_4ACC {
+    display: flex;
+    height: 170pt;
+}
+.h4C{
+    height: 140px !important;
+}
+.ins4CH{
+    /* height: 16pt !important; */
+    height: 13pt !important;
+}
+.barcode_img_container_4B_CC {
+        width: 27pt;
+        border-left: 1px solid black;
+    
+    /* width: 27pt;
+    position: relative;
+    border-left: 1px solid #000; */
+}
+.barcode_img_container_4B_CC>img {
+    /* height: 12px !important;
+    width: 115px !important;
+    object-fit: cover !important;
+    transform: rotate(90deg) !important;
+    position: relative !important;
+    left: -38px !important;
+    right: -56px !important;
+    top: 94px !important; */
+    top: 227px !important;
+    height: 16px !important;
+    width: 154px !important;
+    object-fit: cover;
+    transform: rotate(90deg) !important;
+    position: absolute !important;
+    /* left: 238px !important; */
+    right: -58px;
+}
+
+.lh_4C_new{
+    line-height: 8px !important;
+}
+.priority4ACC{
+
+    height: 15.295pt;
+    /* height: 10.9pt; */
+    width: 100%;
+    display: flex;
+    overflow: hidden;
+}
+
+.part_3_container_4A_record {
+    display: flex;
+    height: 13.1pt;
+    /* height: 14.3pt; */
+}
+
+.fs_4c_lh{
+    font-size: 8.5pt;
+}
+.part_1_4ACC{
+     width: 171.7pt;
+}
+.part_1_4BCC{
+     width: 87pt;
+}

@@ -1,0 +1,524 @@
+* {
+    box-sizing: border-box;
+    word-break: break-all;
+
+}
+.summary1allf{
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 10px;
+    color: black;
+    font-family: Calibri;
+}
+
+.head1sum1 {
+    height: 30px;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 120%;
+    background-color: #8b8787;
+    color: white;
+    display: flex;
+    align-items: center;
+    padding-left: 3px;
+}
+
+.head2sum1 {
+    height: 120px;
+    width: 100%;
+    border: 1px solid #e8e8e8;
+    display: flex;
+    justify-content: space-between;
+}
+
+.headingsum1 {
+    line-height: 120%;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 2px;
+}
+
+.subhead2sum1 {
+    padding: 5px;
+}
+
+.head3sum1 {
+    width: 100%;
+    height: 60px;
+    margin-top: 6px;
+    border: 1px solid #e8e8e8;
+    display: flex;
+    justify-content: space-between;
+    padding: 3px;
+}
+
+.invoicehead3sum1 {
+    font-size: 18px;
+    line-height: 120%;
+    width: 22%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.binvsum1 {
+    line-height: 120%;
+    font-size: 18px;
+}
+
+.datehead3sum1 {
+    line-height: 120%;
+    font-size: 18px;
+}
+
+.totgstsum1 {
+    line-height: 120%;
+    font-size: 15px;
+}
+
+.head4sum1 {
+    width: 100%;
+    height: 125px;
+    border: 1px solid #e8e8e8;
+    border-top: 0px;
+    padding: 5px;
+}
+
+.samplehead4sum1 {
+    line-height: 120%;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.lhhead4sum1 {
+    line-height: 15px !important;
+    height: 15px;
+    font-size: 15px;
+}
+
+.lhhead1sum1 {
+    line-height: 18px;
+    font-size: 15px;
+}
+
+.tableSectionSum1 {
+    width: 100%;
+    margin-top: 7px;
+}
+
+.theadsum1 {
+    height: 30px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #e8e8e8;
+    font-weight: bold;
+}
+
+.wthsum1 {
+    width: 9.090%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 120%;
+    font-size: 12px;
+    border-right: 1px solid #e8e8e8;
+    height: 100%;
+}
+
+.wtbsum1 {
+    width: 9.090%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 120%;
+    font-size: 14px;
+    border-right: 1px solid #e8e8e8;
+}
+
+.brightsum1 {
+    border-right: 0px;
+}
+
+.srwsum1 {
+    width: 4.545% !important;
+}
+
+.designwsum1 {
+    width: 13.63%;
+}
+
+.tbodysum1 {
+    width: 100%;
+    min-height: 55px;
+    display: flex;
+    justify-content: space-between;
+    height: 100%;
+    border-bottom: 1px solid #e8e8e8;
+    border-left: 1px solid #e8e8e8;
+    border-right: 1px solid #e8e8e8;
+
+}
+
+.tbodysum1second {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    height: 100%;
+    border: 1px solid #e8e8e8;
+}
+
+.designContentsum1 {
+    font-size: 15px;
+    line-height: 120%;
+}
+
+.brbdesignsum1 {
+    border-bottom: 1px solid black;
+    line-height: 120%;
+    font-size: 13px;
+}
+
+.brbs1 {
+    border-bottom: 0px;
+}
+
+.secondheadsum1 {
+    width: 100%;
+}
+
+.secondtbodysum1 {
+    border-right: 1px solid #e8e8e8;
+    border-left: 1px solid #e8e8e8;
+    margin-top: 7px;
+    border-top: 1px solid #e8e8e8;
+}
+
+.wtotalsum1 {
+    width: 27.235%;
+}
+
+.htotalrowsum1 {
+    height: 35px;
+}
+
+.totrowfssum1 {
+    line-height: 120%;
+    font-size: 15px;
+}
+
+.alignleftsum1 {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    line-height: 120%;
+    padding-left: 2px;
+    font-size: 11px;
+}
+
+.alignrightsum1 {
+    display: flex;
+    justify-content: flex-end;
+    line-height: 120%;
+    align-items: center;
+    padding-right: 2px;
+    font-size: 11px;
+}
+
+.totaldesignsum1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-end;
+    border: 1px solid #e8e8e8;
+    border-top: 0px;
+    /* height: 65px; */
+    padding-right: 3px;
+}
+
+.wtotsum1 {
+    width: 27%;
+    height: 100%;
+    border-left: 1px solid #e8e8e8;
+}
+
+.gsttotsum1 {
+    display: flex;
+    justify-content: flex-end;
+    width: 50%;
+}
+
+.grandtotalsum1 {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 30px;
+    border: 1px solid #e8e8e8;
+    border-top: 0px;
+}
+
+.amtwordssum1 {
+    line-height: 120%;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.wgtsum1 {
+    width: 27.25%;
+}
+
+.summarysum1 {
+    width: 100%;
+    /* height: 100px; */
+    border: 1px solid #e8e8e8;
+    margin-top: 7px;
+}
+
+.summarysum1fs {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 3px;
+    height: 30px;
+    line-height: 120%;
+    font-size: 18px;
+    font-weight: bold;
+    border-bottom: 1px solid #e8e8e8;
+    background-color: #e0e0e0;
+}
+
+.summaryDetailsum1 {
+    display: flex;
+    justify-content: space-between;
+}
+
+.arrSum1 {
+    height: 16px;
+    width: 100%;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+}
+
+.summwsum1 {
+    display: flex;
+    width: 33.33%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.wsummarySum1 {
+    width: 25%;
+}
+
+.notessum1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 1px solid #e8e8e8;
+    border-top: 0px;
+}
+
+.noteSum1 {
+    font-size: 20px;
+    line-height: 120%;
+    font-weight: bold;
+    padding: 6px;
+    padding-bottom: 10px;
+}
+
+.noteDemosum1 *{
+    line-height: 20px;
+    font-weight: bold;
+    font-size: 12px;
+    padding: 1px;
+    word-wrap: break-word;
+    word-break: break-word;
+    align-items: flex-start;
+    display: flex;
+}
+
+.addSum1 {
+    font-size: 15px;
+    font-weight: bold;
+    line-height: 120%;
+    margin-top: 2rem;
+    padding: 3px;
+}
+
+.remarkSum1 {
+    height: 30px;
+    font-size: 15px;
+    line-height: 120%;
+    font-weight: bold;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.remarkValSum1 {
+    display: flex;
+    justify-self: center;
+    align-items: center;
+    padding: 3px;
+    line-height: 120%;
+    font-size: 15px;
+    font-weight: normal;
+}
+
+.footerSum1 {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 80px;
+    border: 1px solid #e8e8e8;
+    margin-bottom: 3rem;
+}
+
+.footerSignValSum1 {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    width: 100%;
+    border-right: 1px solid #e8e8e8;
+    font-weight: bold;
+    line-height: 120%;
+    font-size: 14px;
+    padding-bottom: 3px;
+}
+
+.footer2SignValSum1 {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    width: 100%;
+    font-weight: bold;
+    line-height: 120%;
+    font-size: 14px;
+    padding-bottom: 3px;
+}
+
+.footer1Sum1 {
+    display: flex;
+    width: 50%;
+}
+
+
+#sum1Img {
+    height: 90px;
+    width: 100px;
+    padding-right: 1rem;
+}
+
+#imgDySum1 {
+    height: 45px;
+    width: 45px;
+    
+}
+.fs13sum1{
+    line-height: 120%;
+    font-size: 13px;
+}
+
+
+
+
+.headlinerti{
+    height: 40px;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    background-color: #939292;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 5px;
+  }
+  .headrti{
+    padding: 5px;
+    font-size: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .fsrtis1{
+    font-size: 13px;
+  }
+  .custnamefsrti{
+    font-size: 16px;
+    font-weight: bold;
+  }
+  .cmpnamerti{
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 30px;
+  }
+  .custss1fs{
+    font-size: 20px;
+  }
+  .custss1fs2{
+    font-size: 18px;
+  }
+  .minhs1{
+    height: 6rem;
+  }
+  .container_summary table td{
+        padding: 0px;
+  }
+@media print {
+    .page_break_after {
+        page-break-after: always;
+    }
+    .summary1PrintSum1{
+        page-break-inside: avoid;
+    }
+    .pgbia{
+        page-break-inside: avoid;
+    }
+        .print_sec_sum4, .btnpcl {
+            display: none !important;
+          }
+
+          #sum1Img {
+            height: 80px;
+            width: 80px;
+            padding-right: 1rem;
+        }
+        .minhs1{
+            height: 4rem;
+          }
+          
+  .fsrtis1{
+    font-size: 10px;
+  }
+  .custnamefsrti{
+    font-size: 12px;
+    font-weight: bold;
+  }
+  .cmpnamerti{
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 30px;
+  }
+  .custss1fs{
+    font-size: 15px;
+  }
+  .custss1fs2{
+    font-size: 13px;
+  }
+  .summarysum1fs{
+    height: 20px;
+  }
+  .theadsum1{
+    height: 25px;
+  }
+  .grandtotalsum1{
+    height: 25px;
+  }
+
+
+}

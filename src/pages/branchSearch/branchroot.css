@@ -1,0 +1,8 @@
+@font-face {
+    font-family: "Public Sans";
+    src: url("../dashboard/fonts/Public_Sans/PublicSans-VariableFont_wght.ttf");
+  }
+  
+  .theme_fs_brs{
+    font-family: "Public Sans", sans-serif !important;
+  }

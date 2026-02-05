@@ -1,0 +1,52 @@
+
+
+@font-face {
+    font-family: 'Public Sans Black';
+    src: url('../../fonts/PublicSans-Black.ttf') format('truetype');
+  }
+  @font-face {
+    font-family: 'Public Sans Light';
+    src: url('../../fonts/PublicSans-Light.ttf') format('truetype');
+  }
+  .fs_analytics_b{
+    font-family: "Public Sans Black" !important;
+  }
+  .fs_analytics_l{
+    font-family: "Public Sans Light" !important;
+  }
+  .fs_analytics_semi_bold{
+    font-weight: 500;
+  }
+  .fs_analytics_bold{
+    font-weight: bold;
+  }
+  .fs_analytics_normal{
+    font-weight: bold;
+  }
+  .customtooltip{
+    font-size: 12px;
+    font-weight: bold;
+    padding: 0px;
+    margin: 0px;
+  }
+
+  
+.fs_analytics_l .MuiButtonBase-root {
+    font-family: "Public Sans" !important;
+}
+.fs_analytics_l .MuiMenuItem-root {
+    font-family: "Public Sans" !important;
+}
+
+.kayradashboard .MuiDataGrid-footerContainer{
+  display: none !important;
+}
+.kayradashboard .MuiDataGrid-main{
+  height: 30rem !important;
+}
+.kayrafilter{
+  padding-top: 8px !important;
+  padding-bottom: 8px !important;
+}
+
+

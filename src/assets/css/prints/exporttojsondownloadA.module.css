@@ -1,0 +1,23 @@
+.excelToJsonDownloadATable {
+    border-collapse: collapse;
+    font-family: Calibri;
+}
+
+.excelToJsonDownloadATable td p,
+.excelToJsonDownloadATable th {
+    border: 2px solid #000;
+}
+
+.paraColor{
+    background-color: red;
+}
+
+.red_text {
+    color: red;
+  }
+
+  @media print{
+    .print_sec_sum4 {
+        display: none !important;
+      }
+}

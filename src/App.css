@@ -1,0 +1,519 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Public+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap'); */
+
+* {
+  box-sizing: border-box;
+  /* font-family: Calibri; */
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+ul,
+ol {
+  list-style-type: none;
+  margin: 0 !important;
+  padding: 0;
+  color: #000;
+  text-decoration: unset;
+}
+
+.min_height_9_6 {
+  min-height: 9.6px;
+}
+
+/* .container {
+  max-width: 1007px !important;
+  padding: 0 15px !important;
+  margin: 0 auto !important;
+} */
+
+.btn_white {
+  font-family: Calibri;
+  font-size: 14px;
+  text-decoration: none;
+  cursor: pointer;
+  color: #000;
+  position: relative;
+  padding: 5px 7px 5px 5px;
+  background-color: #FFF;
+  border: 1px solid #C9C9C9;
+  background: -webkit-gradient(linear, left top, left bottom, from(#FFF), to(#E2E2E2));
+  background: -webkit-linear-gradient(top, #FFF, #E2E2E2);
+  background: -moz-linear-gradient(top, #FFF, #E2E2E2);
+  background: -ms-linear-gradient(top, #FFF, #E2E2E2);
+  background: -o-linear-gradient(top, #FFF, #E2E2E2);
+  background: linear-gradient(to bottom, #FFF, #EBEBEB);
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+  -webkit-box-shadow: inset 0px 1px 0px #F0F0F0, 0px 4px 0px 0px #DBDBDB, 0px 2px 3px #999;
+  -moz-box-shadow: inset 0px 1px 0px #F0F0F0, 0px 4px 0px 0px #DBDBDB, 0px 2px 3px #999;
+  -o-box-shadow: inset 0px 1px 0px #F0F0F0, 0px 4px 0px 0px #DBDBDB, 0px 2px 3px #999;
+  box-shadow: inset 0px 1px 0px #F0F0F0, 0px 4px 0px 0px #DBDBDB, 0px 2px 3px #999;
+}
+
+.blue {
+  border-left: 4px solid #5994BB !important;
+}
+
+.blue:hover {
+  border-left: 4px solid #5994BB !important;
+}
+
+.btn_white:hover {
+  background-color: #FFF !important;
+  border: 1px solid #D8D8D8;
+  background: linear-gradient(bottom, #F1F1F1 0%, #ffffff 100%);
+  background: -o-linear-gradient(bottom, #F1F1F1 0%, #ffffff 100%);
+  background: -moz-linear-gradient(bottom, #F1F1F1 0%, #ffffff 100%);
+  background: -webkit-linear-gradient(bottom, #F1F1F1 0%, #FFF 100%);
+  background: -ms-linear-gradient(bottom, #F1F1F1 0%, #ffffff 100%);
+  background: -webkit-gradient(linear, left bottom, left top, color-stop(0, #FFF), color-stop(1, #FFF));
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr=#97B65D, endColorstr=#CAE387);
+  cursor: pointer;
+}
+
+.loader_2 {
+  width: 102.5px;
+  height: 102.5px;
+}
+
+.bgGrey {
+  background: #939292;
+}
+
+.portrait_container {
+  max-width: 808px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.max_width_container {
+  max-width: 1200px !important;
+}
+
+.bgLightPink {
+  background: #F5F4F4;
+}
+
+.borderColorGrey {
+  border-color: #939292;
+}
+
+.lightGrey {
+  background-color: #f5f5f5;
+}
+
+.lightGrey_table {
+  background-color: #f5f5f5 !important;
+}
+
+.d_none {
+  display: none;
+}
+
+.pad_60_allPrint {
+  padding-bottom: 100px !important;
+}
+
+.pad_20_allPrint {
+  padding-bottom: 20px;
+}
+
+.d_flex {
+  display: flex;
+  box-sizing: border-box;
+  align-items: flex-start;
+}
+
+.line_height_123 {
+  line-height: 123%;
+}
+
+.px_1 {
+  padding-left: 1px;
+  padding-right: 1px;
+}
+
+.qrcodegen {
+  height: 60px !important;
+  width: 60px !important;
+}
+
+.imgWidth {
+  max-height: 75px;
+  width: 100%;
+  object-fit: contain;
+  object-position: center;
+}
+.imgWidth3 {
+  max-height: 75px;
+  max-width: 75px;
+  width: 100%;
+  object-fit: contain;
+  object-position: center;
+}
+
+.imgWidth2 {
+  max-height: 60px;
+  max-width: 60px;
+  width: 100%;
+  object-fit: contain;
+  object-position: center;
+}
+
+.text_secondary {
+  color: rgba(0, 0, 0, 0.3);
+}
+
+.image-container {
+  display: flex;
+  justify-content: center;
+  /* Horizontally center */
+  align-items: center;
+  /* Vertically center */
+  height: 100px;
+  /* Set a fixed height for the cell */
+  width: 100px;
+  /* Set a fixed width for the cell */
+}
+
+.image-container img {
+  max-width: 100%;
+  /* Ensure the image fits within the cell */
+  max-height: 100%;
+  /* Ensure the image fits within the cell */
+  display: block;
+  /* Remove any extra space around the image */
+  margin: 0 auto;
+  /* Center the image horizontally */
+}
+
+.logoimg {
+  max-width: 125px;
+  max-height: 125px;
+  object-fit: contain;
+  object-position: center;
+}
+
+.keep_zeroes_2 {
+  mso-number-format: '0.00'
+}
+
+.excel-cell {
+  border: 2px solid #000;
+  /* 2px solid border with a black color */
+}
+
+.designImagePrintAll {
+  width: 100%;
+  height: 100%;
+  max-width: 70px;
+  max-height: 70px;
+  object-fit: contain;
+  object-position: center;
+}
+
+.line_height_120 {
+  line-height: 120%;
+}
+
+.print_btn {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-right: 10px;
+  margin-top: 10px;
+}
+
+.min_width_max {
+  min-width: max-content;
+}
+
+blockquote div {
+  line-height: 100%;
+}
+
+.width_max_content {
+  min-width: max-content;
+}
+
+.min_height_label {
+  min-height: 30px
+}
+
+.min_height_13 {
+  min-height: 13px;
+}
+
+.border-dotted {
+  border-style: dotted !important;
+  border-width: 2px !important;
+  border-bottom: 0 !important;
+  border-left: 0 !important;
+  border-right: 0 !important;
+}
+
+/* jewelleryinvoiceContain */
+
+.jewelleryinvoiceContain .headerTitle {
+  font-size: 20px;
+}
+
+.computerGenerated {
+  text-transform: uppercase;
+  text-align: left;
+  font-size: 9px !important;
+  color: gray;
+}
+
+.min_height_title {
+  min-height: 36.8px;
+}
+
+.min_height_title_20 {
+  min-height: 20px;
+}
+
+.pad_1 {
+  padding: 1px;
+  padding-left: 2px;
+  padding-right: 2px;
+}
+
+.w_20 {
+  width: 20%;
+  min-width: 20%;
+}
+
+.preText {
+  font-size: 10px !important;
+}
+
+.height_inherit {
+  height: inherit;
+}
+
+body .border_left {
+  border-left: 1px solid #ff000000 !important;
+}
+
+.exportprint2 .footerTarget {
+  border-color: #000 !important;
+  border: 1px solid #000 !important;
+  margin-bottom: 0;
+  height: 60.39px !important;
+}
+
+
+.exportprint2 .footerTarget .w-50:first-child {
+  border-right: 1px solid #000 !important;
+}
+
+.exportInvoice .footerTarget,
+.exportInvoice .footerTarget>div:first-child {
+  border-color: #000 !important;
+}
+
+.retailPrint2 .headerTitle.target_header {
+  display: none;
+}
+
+.invoiceprint9Header .target_header * {
+  font-size: 12px !important;
+}
+
+.invoiceprint9Header .target_header:first-child {
+  display: none;
+}
+
+.invoiceprint9Header .target_header>div:first-child>div:first-child {
+  font-size: 16px !important;
+}
+
+html .footer_secInvoicePrint8 .target_footer * {
+  font-size: 15px !important;
+}
+
+.word_break {
+  word-break: break-all !important;
+}
+
+
+.retailInvoice_2_3 .target_header>div:first-child>div:first-child {
+  font-size: 16px;
+}
+
+.retailInvoice_2_3 .target_header>div:first-child>div:not(:first-child) {
+  font-size: 13px;
+}
+
+.retailInvoice_2_3_footer_Font_12 .target_footer * {
+  font-size: 12px !important;
+}
+
+.retailInvoice_2_3_footer_Font_12 .target_footer,
+.retailInvoice_2_3_footer_Font_12 .target_footer>div {
+  border-color: #000 !important;
+}
+
+.retailInvoicePrint7Header .target_header>div:first-child>div:first-child {
+  font-size: 16px;
+}
+
+.retailInvoicePrint7Header .target_header>div:first-child>div:not(:first-child) {
+  font-size: 12px;
+  line-height: 100%;
+}
+
+.retailinvoicePrint7Footer .target_footer>div:nth-child(2)>div:first-child,
+.retailinvoicePrint7Footer .target_footer>div:nth-child(3)>div:first-child {
+  font-weight: normal !important;
+}
+
+.retailinvoicePrint7Footer .target_footer *{
+  font-size: 12px;
+}
+
+.taxInvoicePrintHeaderSec .target_header:last-child > div:first-child > div:first-child{
+  font-size: 16px;
+}
+
+.taxInvoicePrintHeaderSec .target_header:last-child > div:first-child > div:not(:first-child){
+  font-size: 13px;
+}
+
+.detailPrint5Container .target_header > div:first-child > div:first-child{
+  font-size: 16px;
+}
+
+@media print {
+
+  .containerretailInvoice2 .retailInvoice_2_3_footer_Font_12 .target_footer * {
+    font-size: 12px !important;
+  }
+  .hide-on-print {
+    display: none;
+  }
+
+  .print_btn {
+    display: none !important
+  }
+
+  .no_break {
+    page-break-inside: avoid;
+  }
+
+  .pad_60_allPrint {
+    padding-bottom: 0 !important;
+  }
+
+  .d_none {
+    display: none !important;
+  }
+
+
+  .print_sec_sum4 {
+    display: none !important;
+  }
+
+
+  .invoiceprint9 .target_footer * {
+    font-size: 12px !important;
+  }
+
+  .retailPrint2 .p-1{
+    padding: 1px !important;
+  }
+}
+
+
+.tax_fs_12{
+  font-size: 12px;
+}
+
+
+.line_height_ivp11{
+  line-height: 17px !important;
+}
+
+
+
+.fsremark_10_invp1011{
+  font-size: 12px;
+}
+
+@media print{
+  .fslineh_10_invp1011{
+    line-height: 11px !important;
+  } 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.matsal_print_btn_none{
+  display: none;
+}
+
+.center_g{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.center_col_g{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.start_g{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.end_g{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.pe_g{
+  padding-right: 2px;
+}
+.ps_g{
+  padding-left: 2px;
+}
+
+.headline_dp5{
+  align-items: center;
+  background-color: rgb(147, 146, 146);
+  color: rgb(255, 255, 255);
+  display: flex;
+  font-weight: 700;
+  height: 30px;
+  justify-content: flex-start;
+  padding: 1rem;
+  width: 100%;
+  font-size: 20px !important;
+}

@@ -1,0 +1,182 @@
+html {
+    scrollbar-gutter: stable;
+}
+
+* {
+    word-break: break-all;
+    box-sizing: border-box;
+    line-height: 100%;
+}
+
+.fs_jip {
+    font-size: 12px !important;
+    line-height: 14px !important;
+}
+
+.fs_jts {
+    font-size: 13px;
+    line-height: 14px;
+}
+
+.spBgColor {
+    background: #f2f2f2;
+}
+
+.spfontCol {
+    color: #525252;
+}
+
+.spImag {
+    width: 90px;
+    height: 90px;
+}
+
+.lh_jts {
+    line-height: 20px !important;
+}
+
+.fs2_jts {
+    font-size: 14px;
+}
+
+.fs2_jts1 {
+    font-size: 14px;
+}
+
+.thead_jts {
+    display: flex;
+    height: 25px;
+    font-weight: bold;
+    background-color: #f2f2f2;
+    border: 1px solid #dddddd;
+    border-top: 0px;
+}
+
+.col1_jts {
+    width: 10%;
+}
+
+.col2_jts {
+    width: 15%;
+}
+
+.col3_jts {
+    width: 62%;
+}
+
+.col4_jts {
+    width: 13%;
+}
+
+.center_jts {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.start_jts {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.spinst * {
+    padding: 3px 3px;
+    padding-top: 0px;
+    font-size: 12px !important;
+    line-height: 13px !important;
+    font-weight: bold !important;
+    word-break: break-word !important;
+    overflow-wrap: break-word !important;
+    word-wrap: break-word !important;
+    font-family: Calibri, sans-serif !important;
+}
+
+.brr_jts {
+    border-right: 1px solid #dddddd;
+}
+
+.brl_jts {
+    border-left: 1px solid #dddddd;
+}
+
+.brb_jts {
+    border-bottom: 1px solid #dddddd;
+}
+
+.brall_jts {
+    border: 1px solid #dddddd;
+}
+
+.spbrWord {
+    word-break: break-word;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+}
+
+.TotlFnt {
+    font-size: 13px !important;
+}
+
+.TotlFnt1 {
+    font-size: 16px !important;
+}
+
+@media print {
+    .printJL {
+        page-break-inside: avoid;
+    }
+
+    .btnpcl {
+        display: none !important;
+    }
+
+    .spinst * {
+        font-size: 9px !important;
+        line-height: 11px !important;
+    }
+
+    .fs_jip {
+        font-size: 9px !important;
+        line-height: 11px !important;
+    }
+
+    .pbia_jts {
+        page-break-inside: avoid !important;
+    }
+
+    .fs_jts {
+        font-size: 10px;
+        line-height: 12px;
+    }
+
+    .lh_jts {
+        line-height: 16px !important;
+    }
+
+    .fs2_jts {
+        font-size: 12px;
+        line-height: 14px;
+    }
+
+    .thead_jts {
+        font-size: 12px;
+    }
+
+    .spImag {
+        width: 70px;
+        height: 70px;
+    }
+
+    .fs2_jts1 {
+        font-size: 11px;
+    }
+
+    .TotlFnt {
+        font-size: 10px !important;
+    }
+
+    .TotlFnt1 {
+        font-size: 14px !important;
+    }
+}

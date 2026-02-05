@@ -1,0 +1,87 @@
+.summarysContaoiner *{
+    line-height: 120%;
+    font-size: 12px;
+    font-family: Calibri;
+}
+
+.sr_no{
+    width: 5%;
+    min-width: 5%;
+}
+
+.design{
+    width: 9%;
+    min-width: 9%;
+}
+
+.design1 {
+    width: 14.1%;
+    min-width: 14.1%;
+}
+
+.designImagePrintAll {
+    max-width: 100%;
+}
+
+.amtDetail{
+    width: 7.1%;
+    min-width: 7.1%;
+}
+
+.amtDetailPurity{
+    width: 6.1%;
+    min-width: 6.1%;
+}
+
+.amtDetailPurity1{
+    width: 8.1%;
+    min-width: 8.1%;
+}
+
+.amtTotalDetail1{
+    width: 11.1%;
+    min-width: 11.1%;
+}
+
+.amtTotalDetail{
+    width: 9.1%;
+    min-width: 9.1%;
+}
+
+.diamond{
+    width: 21.3%;
+    min-width: 21.3%;
+}
+
+.stone{
+    width: 14.2%;
+    min-width: 14.2%;
+}
+
+.total{
+    width: 14%;
+    min-width: 14%;
+}
+
+.total1{
+    width: 19.1%;
+    min-width: 19.1%;
+}
+
+.spbrWord{
+    word-break: break-word;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+}
+
+.disF{
+    display: flex;
+}
+@media print{
+    .d_none{
+        display: none !important;
+    }
+        .print_sec_sum4 {
+            display: none !important;
+          }
+}

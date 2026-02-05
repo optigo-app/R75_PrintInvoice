@@ -1,0 +1,167 @@
+.InvoicePrint_10_11 *:not(.Declaration *){
+    line-height: 13px;
+    word-break: normal;
+    font-family: Calibri;
+}
+
+.min_height_21{
+    min-height: 21px;
+}
+.max_width_invp1011{
+    max-width: 873px !important;
+}
+.printBtn{
+    /* position: fixed;
+    right: 40px;
+    top: 20px; */
+}
+
+.font_12 *:not(.Declaration *), .font_12{
+    font-size: 12px;
+    line-height: 100%;
+}
+
+.font_16 *:not(.Declaration *), .font_16{
+    font-size: 16px;
+    line-height: 100%;
+}
+
+.font_15 *:not(.Declaration *), .font_15{
+    font-size: 15px;
+    line-height: 100%;
+}
+
+.font_14 *:not(.Declaration *), .font_14{
+    font-size: 14px;
+    line-height: 100%;
+}
+
+.font_13 *:not(.Declaration *), .font_13{
+    font-size: 13px;
+    line-height: 100%;
+}
+
+.font_17 *:not(.Declaration *), .font_17{
+    font-size: 17px;
+    line-height: 100%;
+}
+
+.footer{
+    align-items: unset !important;
+}
+
+.footers{
+    min-height: unset !important;
+    height: unset !important;
+}
+.delinvp11 *{
+    line-height: 18px !important;
+    font-size: 12px !important;
+}
+.head_line_invp1011{
+    line-height: 11px !important;
+}
+.headerTitle{
+    height: 30px;
+    width: 100%;
+    background-color: #939292;
+    font-weight: bold;
+    color: white;
+    font-size: 20px !important;
+    padding: 1rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.companyFUllnameInvp11{
+    font-size: 14px;
+}
+.inp_Desc{
+    width: 170px;
+    font-size: 12px;
+}
+.print_sec_sum42{
+    display: none !important;
+}
+.font_head{
+    font-size: 14px !important;
+}
+
+.inp_25_10{
+    height: 25px;
+}
+.fsremark_10{
+    font-size: 12px;
+}
+@media print{
+
+    .print_sec_sum4{
+        display: none !important;
+    }
+    .print_sec_sum42{
+        display: unset !important;
+    }
+
+    .InvoicePrint_10_11 *, .font_13 *:not(.Declaration *), .font_13{
+        font-size: 10px;
+        line-height: 100%;
+    }
+
+    .font_15 *:not(.Declaration *), .font_15, .font_14 *:not(.Declaration *), .font_14{
+        font-size: 12px;
+        line-height: 12px !important;
+    }
+
+    .font_17 *:not(.Declaration *), .font_17{
+        font-size: 14px;
+        line-height: 100%;
+    }
+
+    .delinvp11 *{
+        line-height: 19px !important;
+        font-size: 11px !important;
+    }
+    .InvoicePrint_10_11 *:not(.Declaration *){
+        font-size: 11px;
+        line-height: 15px;
+        word-break: normal;
+    }
+    .head_line_invp1011{
+        line-height: 12px !important;
+    }
+    .headerTitle{
+        height: 30px;
+        width: 100%;
+        background-color: #939292;
+        font-weight: bold;
+        color: white;
+        font-size: 13px !important;
+        padding: 7px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+    .companyFUllnameInvp11{
+        font-size: 12px;
+        line-height: 15px;
+    }
+    .font_head{
+        font-size: 14px !important;
+        line-height: 20px;
+    }
+
+    .inp_25_10{
+        height: auto;
+    }
+    .font_12 *:not(.Declaration *), .font_12{
+        font-size: 11px;
+        line-height: 12px !important;
+    }
+    .fsremark_10{
+        line-height: 10px !important;
+    }
+    .pbia_invpc11{
+        page-break-inside: avoid !important;
+    }
+
+}

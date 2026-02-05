@@ -1,0 +1,239 @@
+@font-face {
+    font-family: "Montserrat", sans-serif;
+    src: url("../../../assets/fonts/calibri-font-family/calibri-bold.ttf")
+      format("truetype");
+}
+.container_jts{
+    max-width: 8cm;
+    width: 100%;
+    padding-bottom: 5rem;
+    /* font-family: calibri; */
+    /* margin: 3rem auto; */
+}
+.fs_jts{
+    font-size: 8px;
+    line-height: 12px;
+}
+.fs2_jts{
+    font-size: 14px;
+}
+.fs2_jts1{
+    font-size: 11px;
+    line-height: 15px;
+    margin-bottom: 3px;
+}
+.es_mainHead{
+    text-align: center;
+    width: 100%;
+    font-weight: 1000;
+    margin-bottom: 3px;
+}
+.es_subHead{
+    display: flex;
+    justify-content: space-between;
+}
+.es_subHeadDp{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2px;
+}
+.es_detHead{
+    display: flex;
+    text-align: center;
+    align-items: center;
+    padding: 2px 0;
+}
+.es_detBody{
+    display: flex;
+    text-align: center;
+    padding-top: 2px;
+    padding-bottom: 15px;
+}
+.es_detTotal{
+    display: flex;
+    text-align: center;
+    padding-bottom: 2px;
+}
+.sevotfon{
+    width: 12.5%;
+}
+.sevotfsec{
+    width: 10.5%;
+}
+.sevotfthr{
+    width: 12.5%;
+}
+.sevotffor{
+    width: 10.5%;
+}
+.sevotffiv{
+    width: 13%;
+}
+.sevotfsx{
+    width: 12.5%;
+}
+.sevotfsev{
+    width: 12.5%;
+}
+.sevplsone{
+    width: 16.5%;
+    text-align: right;
+    padding-right: 6px;
+}
+.sevplsoneDp{
+    width: 16.5%;
+    text-align: right;
+}
+.spbrWord{
+    word-break: break-word;
+    overflow-wrap: break-word;
+    word-wrap: break-word; 
+}
+.spBgColor{
+    background: #F2F2F2;
+}
+.spfontCol{
+    color: #525252;
+}
+.spImag{
+    width: 90px;
+    height: 90px;
+}
+.lh_jts{
+    line-height: 20px !important;
+}
+.center_jts{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.start_jts{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.end_jts{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.brr_jts{
+    border-right: 1px solid #000000;
+}
+.brl_jts{
+    border-left: 1px solid #000000;
+}
+.brb_jts{
+    border-bottom: 1px solid #000000;
+}
+.brt_jts{
+    border-top: 1px solid #000000;
+}
+.brall_jts{
+    border: 1px solid #000000;
+}
+.w33_jts{
+    width: 33.33%;
+}
+.es_mTotal1{
+    display: flex;
+    width: 55%;
+    padding-bottom: 2px;
+}
+.es_mTotal2{
+    display: flex;
+    flex-direction: column;
+    width: 45%;
+    padding-bottom: 2px;
+}
+.es_mTotal2Dp{
+    display: flex;
+    width: 45%;
+    padding-bottom: 2px;
+}
+.es_inwrds{
+    display: flex;
+    padding: 1px 0px;
+    padding-bottom: 2px;
+}
+.es_mTotal2Sub1{
+    width: 50%;
+    text-align: start;
+}
+.es_mTotal2Sub2{
+    width: 50%;
+    text-align: right;
+}
+.es_dsflx{
+    display: flex;
+}
+.es_sptxCen{
+    text-align: center;
+}
+.es_slbld{
+    font-weight: 1000;
+}
+.es_slFnt{
+    font-size: 17px;
+    margin-bottom: 3px;
+}
+.es_slPad{
+    padding-top: 46px;
+}
+@media print {
+    .container_jts{
+        max-width: 7.8cm;
+        min-width: 7.8cm;
+        width: 100%;
+        font-family: Calibri;
+    }
+    .d_none_jts{
+        display: none !important;
+    }
+    .pbia_jts{
+        page-break-inside: avoid !important;
+    }
+    .dec_jts *{
+        font-size: 10px;
+        line-height: 12px;
+        padding: 2px;
+        word-wrap: break-word !important;
+        word-break: break-word !important;
+    }   
+    .static_jts{
+        text-transform: uppercase;
+        text-align: left;
+        font-size: 8px;
+        color: gray;
+    }
+    .fs_jts{
+        font-size: 8.5px;
+        line-height: 10.5px;
+    }
+    .lh_jts{
+        line-height: 16px !important;
+    }
+    .fs2_jts{
+        font-size: 12px;
+        line-height: 14px;
+    }
+    .spImag{
+        width: 70px;
+        height: 70px;
+    }
+    .fs2_jts1{
+        font-size: 10px;
+    }
+    .es_mainHead{
+        font-weight: 1000;
+    }
+    .es_slbld{
+        font-weight: 1200;
+    }
+    /* .lastPad{
+        padding-right: 4.4rem;
+    } */
+    .es_slFnt{
+        font-size: 15px;
+    }
+}

@@ -1,0 +1,90 @@
+.detailprint_ms{
+    margin: 0 auto;   
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
+    padding-bottom: 60px;
+}
+.container_ms{
+    max-width: 850px;
+    box-sizing: border-box;
+    width: 100%;
+    font-size: 12px;
+}
+.headLabel_ms{
+    font-size: 20px;
+    background-color: #939292;
+    color: #FFF;
+    padding: 4px 0px 5px 6px;
+    font-weight: bold;
+}
+
+.border_ms{
+   border: 1px solid #DCDCDC;
+}
+.border_end_ms{
+   border-right: 1px solid #DCDCDC;
+}
+.end_dp_ms{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.start_dp_ms{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+
+.custName_ms{
+    font-size: 16px;
+}
+
+.col1__dp_ms{
+    width: 5%;
+}
+.col2__dp_ms{
+    width: 22.5%;
+}
+.col3__dp_ms{
+    width: 32.5%;
+}
+.col4__dp_ms{
+    width: 10%;
+}
+.col5__dp_ms{
+    width: 10%;
+}
+.col6__dp_ms{
+    width: 10%;
+}
+.col7__dp_ms{
+    width: 10%;
+}
+
+.signBox_dp_ms{
+    text-align: center;
+    width: 50%;
+    height: 80px;
+    vertical-align: bottom;
+    padding-bottom: 10px;
+    border: 1px solid #DCDCDC;
+    font-size: 12px;
+}
+
+@media print {
+    .matsal_print_btn_none{
+        display: none !important;
+    }
+    .container_ms{
+        max-width: 850px;
+        box-sizing: border-box;
+        width: 100%;
+        font-size: 10px;
+    }
+    .custName_ms{
+        font-size: 13px;
+    }
+}

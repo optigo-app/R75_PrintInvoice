@@ -1,0 +1,252 @@
+.taxinvoice1 {
+    width: 866px;
+    font-size: 12px;
+    line-height: 120%;
+    font-family: Calibri;
+}
+
+
+
+.taxInvoicePirnt1{
+    padding-bottom: 60px;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.taxInvoicePirnt1 *:not(.declarationTaxInvoice1 *){
+    line-height: 120%;
+    font-size: 12px;
+}
+
+.taxinvoice1Head {
+    line-height: 120%;
+    font-size: 20px;
+    color: #FFF;
+    padding: 4px 0px 5px 6px !important;
+    background: #939292;
+}
+
+.sr_invoice1 {
+    width: 41.8px;
+    min-width: 41.8px;
+}
+
+.sr_invoicePrint1{
+    width: 5%;
+    min-width: 5%;
+}
+
+.product_discription_invoice1 {
+    width: 125.39px;
+    min-width: 125.39px;
+}
+
+.product_discription_invoice_print_1 {
+    width: 14%;
+    min-width: 14%;
+}
+
+.hsn_invoice1,
+.making_invoice1,
+.others_invoice1 {
+    width: 63.8px;
+    min-width: 63.8px;
+}
+
+.total_invoice1 {
+    width: 70.8px;
+    min-width: 70.8px;
+}
+
+.others_invoicePrint1{
+    width: 9.5%;
+    min-width: 9.5%;
+}
+
+
+.total_invoicePrint1 {
+    width: 10.004%;
+    min-width: 10.004%;
+}
+.hsn_invoicePrint1{
+    width: 6%;
+    min-width: 6%;
+}
+
+.making_invoicePrint1{
+    width: 7.5%;
+    min-width: 7.5%;
+}
+
+.materialInvoicePrint1{
+    width: 48%;
+    min-width: 48%;
+}
+
+.hsn_invoice1 {
+    display: grid;
+    place-items: center;
+}
+
+/* .material_invoice1 {
+    width: 417.97px;
+} */
+
+.table_invoice1 {
+    line-height: 120%;
+    font-size: 12px;
+}
+
+.headHeightInvoice1 {
+    min-height: 34px;
+}
+
+.customer_name_invoice1 {
+    line-height: 120%;
+    font-size: 14px;
+}
+
+.material_invoice_1 {
+    width: 76.23px;
+    min-width: 76.23px;
+}
+
+.Carat_invoice_1,
+.GWT_invoice_1 {
+    width: 68.88px;
+    min-width: 68.88px;
+}
+
+.STONE_invoice_1 {
+    width: 78.59px;
+    min-width: 78.59px;
+}
+
+.NWT_invoice_1 {
+    width: 58.52px;
+    min-width: 58.52px;
+}
+
+.Rate_invoice_1 {
+    width: 61.88px;
+    min-width: 61.88px;
+}
+
+.totalNumbersinvoice1 {
+    width: 580px;
+}
+
+.min_padding_invoice1 {
+    padding: 2px 2px 2px 5px;
+}
+
+.material_invoice_inner1 {
+    display: grid;
+}
+
+.material_inner_invoice1>div {
+    align-items: center;
+    display: flex;
+}
+
+.total_sec_invoice1 {
+    line-height: 120%;
+    font-size: 17px;
+}
+
+.rateInvoice1 {
+    width: 63px;
+}
+
+.newt_invoice1 {
+    line-height: 120%;
+    font-size: 12px;
+}
+
+.oldGoldInvoice1 {
+    width: 581px;
+}
+
+.narration_bank_invoice1 {
+    width: 476.48px;
+}
+
+
+
+
+.oldGoldInvoicePrint1, .totalNumbersinvoicePrint1{
+    width: 73%;
+}
+.cgstinvoicePrint1, .totalTaxinvoicePrint1{
+    width: 17.1%;    
+}
+
+.total_sum_invoiceprint1, .totalTaxNumberinvoiceprint1{
+    width: 9.9%;
+} 
+
+.totalTaxNumberinvoice1 {
+    width: 92px;
+}
+
+.onlineBankinvoice1 {
+    width: 301px;
+}
+
+.Signatureinvoice1 {
+    width: 276px;
+}
+
+.Signature2invoice1 {
+    width: 260px;
+}
+
+.minHeight20_5_taxInvoice1 {
+    min-height: 14.5px;
+    line-height: 50%;
+}
+
+.d-flex.border-bottom.material_inner_invoice1 {
+    line-height: 50%;
+}
+
+.text-center.border-bottom.material_inner_invoice1.p-1.minHeight20_5_taxInvoice1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.imgTaxInvoice1{
+    max-height: 75px;
+    object-fit: contain;
+    object-position: center;
+}
+
+.font_size_16_tax_invoice_1, .font_size_16_tax_invoice_1 *{
+    font-size: 16px !important;
+}
+
+.pad_2_tax_invoice_1 p{
+    padding: 2px;
+}
+
+@media print {
+    .table_row_invoice1,
+    .print_break_avoid_invoice1 {
+        page-break-inside: avoid;
+    }
+    .taxInvoicePirnt1{
+        padding-bottom: 0;
+        padding-top: 5px !important;
+        margin-top: 0 !important;
+    }
+
+    .print_sec_sum4{
+        display: none !important;
+    }
+
+    .taxinvoice1, .taxInvoicePirnt1 *:not(.declarationTaxInvoice1 *) {
+        font-size: 9px;
+    }
+    
+}

@@ -1,0 +1,285 @@
+* {
+    box-sizing: border-box;
+    word-break: break-all;
+    line-height: 100%;
+}
+
+.containerprint16A {
+    width: 360px;
+    height: 523px;
+    border: 2px solid black;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-left: 1.5rem;
+    margin-top: 1.5rem;
+    font-family: Calibri;
+    /* margin-left: 0.7rem;
+    margin-top: 0.7rem; */
+    /* margin: 1rem; */
+    /* margin-left: 2rem;
+    margin-top: 2.5rem; */
+}
+
+.header16A {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid black;
+}
+
+.img16A {
+    height: 127px;
+    width: 127px;
+    border-left: 1px solid black;
+    border-bottom: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header16AjobInfo {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    height: 64px;
+    border-bottom: 1px solid black;
+}
+
+.header16AjobInfo2 {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid black;
+    height: 63px;
+}
+
+.job16A {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 230px;
+    height: 16px;
+
+}
+
+.headJob16A {
+    display: flex;
+    flex-direction: column;
+}
+
+.mate16A {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    height: 62px;
+    width: 100%;
+    border-right: 1px solid black;
+}
+
+.mate16AD {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    height: 16px;
+    /* width: 100%; */
+    border-right: 1px solid black;
+}
+
+
+.material16A {
+    display: flex;
+    justify-content: space-between;
+    width: 230px;
+}
+
+.rmw16Apx {
+    /* width: 70px !important; */
+    width: 22% !important;
+}
+
+.qw16Apx {
+    width: 15% !important;
+}
+
+.sw16Apx {
+    width: 20% !important;
+}
+
+.a16Apx {
+    width: 19% !important;
+}
+
+.w16Apx {
+    width: 12% !important;
+}
+
+.pcs16Aw {
+    width: 50px !important;
+}
+
+.grw16A {
+    width: 64px !important;
+}
+
+.prop16A {
+    height: 16px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    line-height: 100%;
+    font-size: 10px;
+    width: 100%;
+    padding-left: 1px;
+    border-bottom: 1px solid black;
+}
+
+.main16A {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    height: 350px;
+    border-bottom: 1px solid black;
+}
+
+.thead16A {
+    display: flex;
+    justify-content: space-between;
+    width: 328px;
+    height: 16px;
+    border-bottom: 1px solid black;
+}
+
+.footer16A {
+    display: flex;
+    height: 100px;
+}
+
+.wd16A {
+    width: 55px !important;
+}
+
+.wt16A {
+    width: 57.5px !important;
+}
+
+.rmtype16A {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100%;
+    line-height: 8px;
+    font-size: 8.5px;
+    width: 100%;
+    padding-left: 1px;
+}
+
+.rmtype16AE {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 13px;
+    border-right: 1px solid black;
+    width: 100%;
+}
+
+.pcswtactual16A {
+    width: 40%;
+    font-size: 9.5px;
+}
+
+.pcswtactual16AA {
+    width: 60%;
+    font-size: 9.5px;
+}
+
+.actpcs16A {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+    height: 100%;
+}
+
+.footer16A {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.ins16A {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    line-height: 9px;
+    padding-left: 2px;
+    height: 23px;
+}
+
+.b16A {
+    border-bottom: 1px solid black;
+    color: red;
+}
+
+
+
+.barcode16A .barcode_sticker {
+    width: 180px;
+    height: 20px;
+    object-fit: cover;
+    transform: rotate(90deg);
+    position: absolute;
+    top: 110px;
+    left: 15.8rem;
+
+}
+
+.tableBarcdoe16A {
+    display: flex;
+    position: relative;
+}
+
+.issue16A {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    border-bottom: 1px solid black;
+}
+
+.fs16A {
+    font-size: 12px;
+}
+
+.print16A {
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 12px;
+}
+
+#img16A {
+    width: 125px !important;
+    height: 127px !important;
+    border: none !important;
+}
+
+.d_none {
+    display: none !important;
+}
+
+@media print {
+    /* .containerprint16A:nth-child(4n) {
+        page-break-after: always;
+    } */
+
+    /* .containerprint16A:nth-child(2n + 1){
+        margin-top: 2rem;
+    }
+    .containerprint16A:nth-child(2n + 2){
+        margin-top: 2rem;
+    }
+    .containerprint16A:nth-child(4n){
+        page-break-after: always;
+    } */
+}

@@ -1,0 +1,45 @@
+.retailInvoicePrint7 *:not(.declaration *) {
+    font-size: 12px;
+    line-height: 120%;
+    font-family: Calibri;
+}
+
+.Sr {
+    width: 7%;
+    min-width: 7%;
+}
+
+.Product {
+    width: 20%;
+    min-width: 20%;
+}
+
+.Material {
+    width: 55%;
+    min-width: 55%;
+}
+
+.Making,
+.Others {
+    width: 9%;
+    min-width: 9%;
+}
+
+.Total {
+    width: 18%;
+    min-width: 18%;
+}
+
+.inwords {
+    width: 60%;
+    min-width: 60%;
+}
+
+.taxes {
+    width: 22%;
+    min-width: 22%;
+}
+
+.declaration span{
+    line-height: 150%;
+}

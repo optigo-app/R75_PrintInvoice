@@ -1,0 +1,136 @@
+.container_s10 *{
+    box-sizing: border-box;
+    word-break: break-all;
+    font-family: Calibri;
+}
+.container_s10{
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-bottom: 60px;
+    padding-bottom: 60px;
+}
+.fs_s10{
+    font-size: 14px;
+}
+.bg_s10{
+    background-color: #e8e8e8;
+}
+.fs_s10_2{
+    font-size: 16px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+.lh_s10{
+    line-height: 16px;
+}
+.center_s10{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.left_s10{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.right_s10{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.pad_r_s10{
+    padding-right: 2px;
+}
+.pad_l_s10{
+    padding-left: 2px;
+}
+.headlalbel_s10{
+    height: 30px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: #939292;
+    font-size: 16 !important;
+    color: white;
+}
+.plogo_s10{
+    width: 100%;
+    /* height: 30%;
+    width: 30%; */
+}
+
+
+/* table */
+.tablehead_S10{
+    height: 30px;
+}
+.col1_s10{
+    width: 5%;
+}
+.col2_s10{
+    width: 13%;
+}
+
+/* 8*9 */
+.col3_s10{
+    width: 9%; 
+}
+.col4_s10{
+    width: 10%; 
+}
+
+.w1_s10{
+    width: 70%;
+}
+.w2_s10{
+    width: 15%;
+}
+
+/* tax */
+.tax_w_s10{
+    width: 19.15%;
+}
+.tax_w_s10_2{
+    width: 19.15%;
+}
+.fs_s10_cust{
+    font-size: 20px !important;
+}
+.fs_s10_com{
+    font-size: 16px !important;
+}
+@media print{
+    .hideBtn_s10{
+        display: none !important;
+    }
+    .container_s10{
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 10px;
+    }
+    .fs_s10{
+        font-size: 9.5px;
+    }
+    .lh_s10{
+        line-height: 10px;
+    }
+    .fs_s10_2{
+        font-size: 11px;
+    }
+    .tax_w_s10{
+        width: 19.35%;
+    }
+    .tax_w_s10_2{
+        width: 19.00%;
+    }
+    .plogo_s10{
+        height: 100%;
+        width: 100%;
+    }
+    .fs_s10_cust{
+        font-size: 13px !important;
+    }
+    .fs_s10_com{
+        font-size: 11px !important;
+    }
+}

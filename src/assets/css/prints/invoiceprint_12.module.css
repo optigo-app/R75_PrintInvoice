@@ -1,0 +1,74 @@
+.InvoicePrint_12 * {
+  font-size: 11px;
+  word-break: normal;
+  font-family: Calibri;
+}
+
+.Sr {
+  width: 4%;
+  min-width: 4%;
+}
+
+.Product {
+    width: 13%;
+    min-width: 13%;
+}
+
+.KT,
+.Qty {
+    width: 5%;
+    min-width: 5%;
+}
+
+.Gross,
+.Dia,
+.Stone,
+.Net {
+    width: 9%;
+    min-width: 9%;
+}
+
+.Other {
+    width: 17%;
+    min-width: 17%;
+}
+
+.Making,
+.ProductVal {
+    width: 10%;
+    min-width: 10%;
+}
+
+.table > div{
+  padding: 0 3px;
+}
+
+.words{
+  width: 68%;
+  min-width: 68%;
+}
+
+.totalAmount{
+  width: 32%;
+  min-width: 32%;
+}
+
+.totalAmtWord{
+width: 68.8%;
+min-width: 68.8%;
+}
+.totalAmtValue{
+  width: 31.1%;
+  min-width: 31.1%;
+}
+
+
+@media print {
+  .print_sec_sum4 {
+    display: none !important;
+  }
+
+  /* .InvoicePrint_12{
+    padding-top: 150px;
+  } */
+}

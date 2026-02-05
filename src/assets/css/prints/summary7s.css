@@ -1,0 +1,45 @@
+.container7s *{
+    box-sizing: border-box;
+    word-break: break-all;
+    font-family: Calibri;
+}
+.container7s{
+    padding: 3px;
+    max-width: 90mm;
+    margin: 0 auto;
+    font-size: 18px;
+}
+
+/* table head */
+.col1s7{
+    width: 10%;
+}
+.col2s7{
+    width: 25%;
+}
+.col3s7{
+    width: 25%;
+}
+.col4s7{
+    width: 10%;
+}
+.col5s7{
+    width: 30%;
+}
+
+
+@media print{
+    .HSDivs7{
+        display: none !important;
+    }
+    .pbias7{
+        page-break-inside: avoid;
+    }
+    .container7s{
+        padding: 3px;
+        padding-top: 1rem;
+        max-width: 90mm;
+        margin: 0 auto;
+        font-size: 12px;
+    }
+}

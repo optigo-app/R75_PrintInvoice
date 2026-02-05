@@ -1,0 +1,338 @@
+.container7Acopy * {
+    box-sizing: border-box;
+    word-break: break-all;
+    line-height: 8px;
+    font-size: 12px;
+    font-family: Calibri;
+}
+
+.container7Acopy {
+    width: 94.5mm;
+    height: 130.5mm;
+    border: 1px solid black;
+    border-radius: 8px;
+    margin-top: 3.8rem;
+    margin-left: 1.5rem;
+}
+
+.head7Acopy {
+    height: 113px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.headerdesc7Acopy {
+    /* width: 100%; */
+}
+
+.img7Acopy {
+    /* width: 9.89mm; */
+    width: 32mm;
+    height: 100%;
+    border-left: 1px solid #989898;
+    border-bottom: 1px solid #989898;
+}
+
+.jobno7Acopy {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 16px;
+    padding: 2px;
+}
+
+.barcodebag7Acopy {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 3px;
+    position: relative;
+    padding-bottom: 0.7px;
+}
+
+.h7Acopy {
+    height: 12px;
+}
+
+.remark7Acopy {
+    width: 97%;
+    height: 17.76mm;
+    display: flex;
+    justify-content: space-between;
+    margin-left: 3px;
+    
+    border: 1px solid #989898;
+    border-radius: 8px;
+}
+
+.h327Acopy {
+    height: 22px;
+    width: 18.47mm;
+    width: 21.47mm;
+    border-bottom: 1px solid #989898;
+    border-left: 1px solid #989898;
+    padding-left: 1.8px;
+    padding-top: 0.8px;
+}
+
+.headW7Acopy {
+    width: 62mm;
+    height: 116px;
+}
+
+.fs7Acopy {
+    font-size: 10px;
+}
+
+
+/* tablecss */
+.thead7Acopy {
+    /* width: 99%;
+    display: flex;
+    height: 4.567mm;
+    border-bottom: 1px solid #989898;
+    font-weight: bold;
+    margin-top: 3px;
+    border-top: 1px solid #989898; */
+    /* width: 99%; */
+    display: flex;
+    height: 4.567mm;
+    border-bottom: 1px solid #989898;
+    font-weight: bold;
+    margin-top: 3px;
+    /* border-top: 1px solid #989898; */
+    margin-right: 2px;
+}
+
+.headCol7Acopy {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-right: 1px solid #989898;
+}
+
+.wheadsep7Acopy {
+    width: 9.86mm;
+    min-width: 9.86mm;
+    height: 5.357mm;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-right: 1px solid #989898;
+    border-bottom: 1px solid #989898;
+    font-weight: 500;
+}
+
+.worker7Acopy {
+    width: 12.16mm;
+    min-width: 12.16mm;
+}
+
+.metal7Acopy {
+    width: 15.30mm;
+    min-width: 15.30mm;
+}
+
+.ext7Acopy {
+    width: 18.94mm;
+    min-width: 18.94mm;
+}
+
+.mo7Acopy {
+    width: 15.07mm;
+    min-width: 15.07mm;
+}
+
+.diff7Acopy {
+    width: 11.34mm;
+    min-width: 11.34mm;
+}
+
+.enbrb7Acopy {
+    border-right: 0px;
+    width: 9.89mm;
+    min-width: 9.89mm;
+}
+
+.emptyTable7Acopy {
+    display: block;
+    width: 99%;
+    margin: 0 auto;
+}
+
+.border_top_left_print7Acopy {
+    border-top-left-radius: 5px;
+}
+
+.border_top_right_print7Acopy {
+    border-top-right-radius: 5px;
+}
+
+.border_bottom_left_print7Acopy {
+    border-bottom-left-radius: 5px;
+}
+
+.border_bottom_right_print7Acopy {
+    border-bottom-right-radius: 5px;
+}
+
+.border_color {
+    border-color: #989898 !important;
+}
+
+
+/* footerpart */
+.entry7Acopy{
+    width: 32mm;
+    border: 1px solid #989898;
+    border-top-right-radius: 6px;
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+    margin-left: 2px;
+    margin-top: 2px;
+}
+.entryCol7Acopy{
+    /* height: 4.96mm; */
+    height: 4.3mm;
+    padding-left: 2px;
+    padding-top: 2px;
+    border-bottom: 1px solid #989898;
+    font-weight: bold;
+    position: relative;
+}
+
+.entryCol7Acopy::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 33px;
+    border-right: 1px dotted #989898;
+    height: 100%;
+    width: 1px;
+}
+
+.diacsentry7Acopy{
+    width: 34.10mm;
+    height: 26.2mm;
+    border: 1px solid #989898;
+    border-top-right-radius: 6px;
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+    margin-left: 2px;
+    margin-top: 2px;
+}
+.emptybox7Acopy{
+    width: 24mm;
+    height: 26.2mm;
+    border: 1px solid #989898;
+    border-top-right-radius: 6px;
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+    margin-left: 2px;
+    margin-top: 2px;
+}
+
+.footerEntry7Acopy{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.footer7Acopy{
+    display: flex;
+    border: 1px solid #989898;
+    height: 4.4mm;
+    width: 99%;
+    border-top-right-radius: 6px;
+    border-top-left-radius: 6px;
+    margin: 0 auto;
+    
+}
+.brbnone7Acopy{
+    border: 0px;
+}
+.footerCol7Acopyall{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    border-right: 1px solid #989898;
+}
+.brl7Acopy1{
+    border-left: 1px solid #989898;
+    border-right: 1px solid #989898;
+    border-top-right-radius: 0px;
+    border-top-left-radius: 0px;
+}
+.brl7Acopy2{
+    border-left: 1px solid #989898;
+    border-right: 1px solid #989898;
+    border-bottom: 1px solid #989898;
+    border-top-right-radius: 0px;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+}
+
+.footercss7Acopy{
+    margin-top: 3px;
+}
+#img7Acopy{
+    height: 29.5mm;
+    width: 30mm;
+}
+.barcodeGenerator7Acopy > .barcode_sticker{
+    position: absolute;
+    top: 5px !important;
+    right: unset !important;
+    left: 118px !important;
+    transform: translate(0) rotate(0deg) !important;
+    width: 30mm !important;
+    /* max-width: 20mm !important; */
+    height: 4mm !important;
+    object-fit: cover;
+    /* position: absolute;
+    top: 5px !important;
+    right: unset !important;
+    left: 150px !important;
+    transform: translate(0) rotate(0deg) !important;
+    width: 20mm !important;
+    height: 4mm !important;
+    object-fit: cover; */
+    /* max-width: 20mm !important; */
+}
+.fs20A{
+    font-size: 9.5px;
+}
+.lh20A{
+    line-height: 7px;
+}
+.textHide20A{
+    font-size: 8.5px;
+    max-height: 7px;
+    overflow: hidden;
+    position: relative;
+    top: 2px;
+}
+@media print{
+    .container7Acopy:nth-child(4n+4){
+        page-break-after: always;
+    }
+    .container7Acopy {
+        margin-top: 0;
+    }
+
+      .container7Acopy:nth-child(4n+1), .container7Acopy:nth-child(4n+2){
+        position: relative;
+        top: 45px;
+      }
+
+      .container7Acopy:nth-child(4n+4), .container7Acopy:nth-child(4n+3){
+        position: relative;
+        top: 90px;
+      }
+}

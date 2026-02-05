@@ -1,0 +1,566 @@
+.print4A {
+    display: flex;
+    flex-wrap: wrap;
+    font-family: Calibri;
+}
+
+.border_bottom4A {
+    border-bottom: 0.75pt solid #000;
+}
+
+.border_bottom_2_4A {
+    border-bottom: 1pt solid #000;
+}
+
+.border_right4A {
+    border-right: 0.75pt solid #000;
+}
+
+.border_right_2_4A {
+    border-right: 1pt solid #000;
+}
+
+
+/* .container4AD{
+    height: 382px;
+    width: 367px;
+} */
+.print4Apart_1 {
+    min-width: 350px; 
+    min-height: 368px;
+    width: 350px;
+    height: 368px;
+    padding: 0pt;
+    margin-left: 1.1rem;
+    margin: 15pt 0 2pt 14pt;
+    border-radius: 8pt;
+    border: 2pt solid #3D3D3D;
+    border-collapse: collapse;
+    display: flex;
+    flex-wrap: wrap;
+    overflow: hidden;
+    margin-bottom: 15px;
+}
+
+
+.sales_Rep_text_4A_2{
+    font-size: 9px;
+}
+.part_1_4A {
+    width: 169.7pt;
+    /* border-right: 1px solid #000; */
+}
+
+.part_1_container_4A {
+    width: 173.7pt;
+}
+
+.title4A {
+    height: 12.375pt;
+    overflow: hidden;
+}
+
+.jobDiaGold4A {
+    display: flex;
+    justify-content: space-between;
+    /* align-items: center; */
+}
+
+.d_flex4A {
+    display: flex;
+}
+
+.jobDiaGoldText4A {
+    line-height: 15pt;
+    font-size: 9pt;
+    font-weight: bold;
+}
+
+.height_border_31_4A {
+    height: 23.25pt;
+    display: flex;
+    overflow: hidden;
+}
+
+.height_23_4A {
+    height: 13pt;
+    overflow: hidden;
+}
+
+.cust4A {
+    font-size: 7pt;
+    width: 70pt;
+}
+
+.custText4A {
+    color: #a8a8a8;
+    font-size: 7pt;
+}
+
+.custTextRes4A {
+    font-size: 9pt;
+}
+
+.ordDt4A {
+    width: 37pt;
+}
+
+.delDt4A {
+    width: 37pt;
+    font-size: 7pt;
+}
+
+.size4A {
+    width: 26pt;
+}
+
+.size4AA {
+    width: 29pt;
+}
+
+.code4A {
+    margin-bottom: -3px;
+    width: 53pt;
+    /* font-size: 9pt; */
+}
+
+.bagPrint4CRecord .code4A{
+    width: 64.63pt;
+}
+
+.bagPrint4CRecord .size4AS {
+    width: 30.2825pt;
+}
+
+.truncatefind4A {
+    white-space: nowrap; /* Prevents text from wrapping */
+    overflow: hidden; /* Hides the overflowing text */
+    text-overflow: ellipsis; /* Displays ellipsis (...) when text overflows */
+    max-width: 122px; /* Adjust the maximum width as needed */
+  }
+.code_4A_change {
+    min-width: 46.5pt;
+    width: 46.5pt;
+    line-height: 145%;
+}
+
+.size4AS {
+    width: 41.9125pt;
+    /* text-align: center; */
+}
+
+.wt4A {
+    width: 22.995pt;
+    text-align: center;
+}
+
+.code4A_text {
+    font-size: 7pt;
+    line-height: 115%;
+}
+
+.pcs4A {
+    width: 18pt;
+    text-align: center;
+}
+
+.cust4A,
+.ordDt4A,
+.delDt4A,
+.size4A,
+.code4A,
+.size4AS,
+.pcs4A,
+.wt4A,
+.cast_ins,
+.red_4A,
+.loc4A,
+.qc4A,
+.priority_sec_4A {
+    padding-left: 1.5pt
+}
+
+.record_line_4A {
+    height: 13pt;
+    display: flex;
+    overflow: hidden;
+}
+
+.part_2_4A {
+    width: 88pt;
+    height: 243pt;
+    overflow: hidden;
+    /* border-left: 1px solid black; */
+}
+
+.part_2_container_4A {
+    width: 88pt;
+    height: 233pt;
+}
+
+.part_3_4A {
+    border-top: 1px solid #000;
+    width: 100%;
+    height: 30pt;
+}
+
+.cast_ins {
+    font-size: 7pt;
+    align-items: center;
+    line-height: 115%;
+}
+
+.red_4A {
+    color: red;
+    font-size: 9pt;
+    font-weight: bold;
+}
+
+.img_sec_4A {
+    /* border-bottom: 1px solid #000; */
+    width: 101%;
+}
+
+.img_sec_4A img {
+    
+    /* width: 100%;
+    height: 100%; */
+    /* width: 100% !important;
+    height: 100% !important;   05-04-2024 */
+}
+
+.barcode_sticker_4A {
+    display: flex;
+    height: 170pt;
+}
+
+.BARCODE_TEXT_4A {
+    width: 100%;
+}
+
+.diamond_4A {
+    height: 13pt;
+}
+
+.diamond_text_4A {
+    font-size: 8pt;
+}
+
+.diamond_custom_4A {
+    height: 25.8pt;
+    overflow: hidden;
+}
+
+.barcodeText4A {
+    width: 60pt;
+    /* border-right: 1px solid black; */
+}
+
+.barcode_img_4A {
+    width: 28pt;
+    /* position: relative; */
+}
+
+.barcode_img_4A>img {
+    /* top: 100px !important;
+    height: 23px !important;
+    width: 175px !important;
+    object-fit: cover !important;
+    transform: rotate(90deg) !important;
+    position: relative !important;
+    left: -67px !important; */
+    top: 205px !important;
+    height: 23px !important;
+    width: 175px !important;
+    object-fit: cover;
+    transform: rotate(90deg) !important;
+    position: absolute !important;
+    /* left: 238px !important; */
+    right: -66px;
+}
+
+.priority4A {
+    /* height: 14.595pt; */
+    height: 10.9pt;
+    width: 100%;
+    display: flex;
+    overflow: hidden;
+}
+.priority4c {
+    height: 15.7pt;
+    /* height: 10.9pt; */
+    width: 100%;
+    display: flex;
+    overflow: hidden;
+}
+
+.priority4A>div {
+    text-align: center;
+}
+
+.priority_text_4A {
+    line-height: 14pt;
+    vertical-align: middle;
+    color: rgba(199, 199, 199, 0.8);
+    font-size: 7pt;
+}
+
+.loc4A {
+    width: 44.2375pt;
+}
+
+.priority_sec_4A {
+    width: 68pt;
+}
+
+.qc4A {
+    width: 58pt;
+}
+
+.sales_rep_4A {
+    /* height: 23.895pt; */
+    height: 21.895pt;
+    display: flex;
+}
+
+.sales_Rep_text_4A {
+    font-size: 7pt;
+}
+
+.sales_Rep_letter_4A {
+    font-size: 8pt;
+}
+
+.sales_Rep_text_4A_2{
+    font-size: 9px !important;
+}
+.start_center_4A{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.lab_self_4A {
+    /* height: 35.3925pt; */
+    height: 20.3925pt;
+    display: flex;
+}
+.lab_self_4c {
+    /* height: 28.3925pt; */
+    height: 34pt;
+    /* height: 20.3925pt; */
+    display: flex;
+}
+
+.d_flex_4a {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding-left: 2px;
+}
+
+.img_sec_container_4A {
+    border-bottom: 1px solid #000;
+    width: 101%;
+    /* height: 115.4pt; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+.img_sec_container_4c {
+    border-bottom: 1px solid #000;
+    width: 101%;
+    height: 115.4pt;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.part_3_container_4A {
+    display: flex;
+    /* height: 156pt; */
+    height: 185pt;
+}
+.part_3_container_4c {
+    display: flex;
+    height: 156pt;
+    /* height: 185pt; */
+}
+
+.part_3_container_4A_sec {
+    width: 228.1275pt;
+}
+
+.part_3_container_4A_record {
+    display: flex;
+    /* height: 12.1pt; */
+    height: 14.3pt;
+}
+.part_3_container_4c_record {
+    display: flex;
+    height: 12.1pt;
+    /* height: 14.1pt; */
+}
+
+.dept_4A {
+    width: 28pt;
+}
+.center_4A_d{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.issue_4A,
+.receive_4A {
+    width: 43pt;
+}
+
+.scrap_4A,
+.worker_4A {
+    width: 46pt;
+}
+
+.pcs_4A {
+    width: 21pt;
+}
+
+.part_3_container_4A_record>div {
+    font-size: 7pt;
+    text-align: center;
+    padding-left: 1px;
+}
+
+.container_print4Apart_1 {
+    /* height: 153px; */
+    /* height: 119px   ; */
+    height: 115px;
+}
+.container_print4cpart_1 {
+    height: 153px;
+    /* height: 119px   ; */
+}
+
+.barcode_img_container_4A {
+    width: 27pt;
+    /* position: relative; */
+    border-left: 1px solid #000;
+    /* height: 230px;
+    border: 1px solid #989898;
+    width: 30px;
+    border-top: 0px;
+    border-bottom: 0px;
+    border-right: 0px; */
+}
+
+.barcode_img_container_4A>.barcode_sticker {
+    /* height: 23px !important;
+    width: 175px !important;
+    object-fit: cover !important;
+    transform: rotate(90deg) !important;
+    position: absolute !important;
+    left: -66px !important;
+    right: -56px !important;
+    top: 91px !important; */
+    /* height: 20px !important;
+    width: 200px !important;
+    object-fit: cover;
+    position: absolute !important;
+    top: 110px !important;
+    right: -86.5px !important;
+    transform: rotate(90deg)  !important; */
+
+    height: 23px !important;
+    width: 175px !important;
+    object-fit: cover !important;
+    transform: rotate(90deg) !important;
+    position: absolute !important;
+    /* left: -66px !important; */
+    right: -68px !important;
+    top: 215px !important;
+}
+
+.part_1_container_4A {
+    width: 169.7pt;
+}
+
+/* .cast_4A{
+    min-width: max-content;
+} */
+
+.record_line_4A:last-child {
+    border-bottom: unset !important;
+}
+
+.record_line_4A>div {
+    line-height: 170%;
+}
+
+.dflex4Ak {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#img4A {
+    /* height: 142px;
+    width: 118px; */
+}
+#img4c {
+    height: 142px;
+    width: 118px;
+}
+
+.height_11_Print4a {
+    height: 11pt;
+    line-height: 175%;
+}
+
+.finding {
+    line-height: 150%;
+    font-size: 7pt;
+}
+.lh4A{
+    line-height: 7px;
+}
+.print4apart_1{
+    margin: 1pt 0 20px 14pt;
+    position: relative;
+}
+
+.print4bpart_1{
+    margin: 1pt 0 20px 14pt;
+    position: relative;
+}
+@media print {
+    /* .print4Apart_1:nth-child(6n+6) {
+        page-break-after: always !important;
+    } */
+    .container4AA:nth-child(6n+6), .container4B:nth-child(6n+6){
+        page-break-after: always;
+      }
+
+      .container4AA:nth-child(6n+1), .container4AA:nth-child(6n+2), .container4AA:nth-child(6n+3), 
+      .container4B:nth-child(6n+1), .container4B:nth-child(6n+2), .container4B:nth-child(6n+3){
+        position: relative;
+        top: 19px;
+      }
+
+      .container4AA:nth-child(6n+4), .container4AA:nth-child(6n+5), .container4AA:nth-child(6n+6), 
+      .container4B:nth-child(6n+4), .container4B:nth-child(6n+5), .container4B:nth-child(6n+6){
+        position: relative;
+        top: 38px;
+      }
+      .print4apart_1{
+        margin: 1pt 0 0 14pt;
+    }
+
+    .print4bpart_1{
+        margin: 1pt 0 20px 14pt;
+    }
+      .print4Apart_1{
+        margin-bottom: 0;
+    }
+
+  
+}

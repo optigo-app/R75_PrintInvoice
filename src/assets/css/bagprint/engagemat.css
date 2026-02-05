@@ -1,0 +1,14 @@
+.allengageMatjbs{
+    padding-bottom: 60px;
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+.containerEMJBS{
+    border: 1px solid black;
+    padding: 5px;
+    height: 8rem;
+    width: 20rem;
+}

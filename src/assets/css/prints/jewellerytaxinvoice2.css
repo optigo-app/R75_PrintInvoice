@@ -1,0 +1,147 @@
+.container_jti2{
+    max-width: 1200px;
+    width: 100%;
+    padding: 10px;
+    margin: 0 auto;
+    padding-bottom: 5rem;
+    font-family: Calibri;
+}
+.fs_head_jti2{
+    font-size: 25px;
+}
+.fs_jti2{
+    font-size: 14px;
+    line-height: 16px;
+}
+.lh_jti2{
+    line-height: 20px !important;
+}
+.fs2_jti2{
+    font-size: 16px;
+    line-height: 18px;
+}
+.thead_jti2{
+    display: flex;
+    height: 30px;
+    font-weight: bold;
+    font-size: 15px;
+    background-color: #F2F2F2;
+    border: 1px solid #DDDDDD;
+    border-top: 0px;
+}
+.col1_jti2{
+    width: 8%;
+}
+.col2_jti2{
+    width: 12%;
+}
+.col3_jti2{
+    width: 55%;
+}
+.col4_jti2{
+    width: 12%;
+}
+.col5_jti2{
+    width: 13%;
+}
+.center_jti2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.start_jti2{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.end_jti2{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.brr_jti2{
+    border-right: 1px solid #DDDDDD;
+}
+.brl_jti2{
+    border-left: 1px solid #DDDDDD;
+}
+.brb_jti2{
+    border-bottom: 1px solid #DDDDDD;
+}
+.brall_jti2{
+    border: 1px solid #DDDDDD;
+}
+.desimg_jti2{
+    min-height: 100px;
+    min-width: 100px;
+    max-width: 100px;
+    max-height: 100px;
+}
+.w33_jts{
+    width: 33.33%;
+}
+.w1_jts{
+    width: 61%;
+}
+.w2_jts{
+    width: 39%;
+}
+.static_jti2{
+    text-transform: uppercase;
+    text-align: left;
+    font-size: 12px;
+    color: gray;
+}
+.dec_jti2 *{
+    font-size: 12px;
+    line-height: 16px;
+    padding: 2px;
+    word-wrap: break-word !important;
+    word-break: break-word !important;
+}
+.minh_jti2{
+    min-height: 75px;
+}
+
+
+@media print {
+    .d_none_jti2{
+        display: none !important;
+    }
+    .pbia_jti2{
+        page-break-inside: avoid !important;
+    }
+    .dec_jti2 *{
+        font-size: 10px;
+        line-height: 13px;
+        padding: 2px;
+        word-wrap: break-word !important;
+        word-break: break-word !important;
+    }   
+    .static_jti2{
+        text-transform: uppercase;
+        text-align: left;
+        font-size: 10px;
+        color: gray;
+    }
+    .fs_jti2{
+        font-size: 12px;
+        line-height: 14px;
+    }
+    .lh_jti2{
+        line-height: 16px !important;
+    }
+    .fs2_jti2{
+        font-size: 14px;
+        line-height: 16px;
+    }
+    .thead_jti2{
+        font-size: 12px;
+    }
+    .desimg_jti2{
+        min-height: 75px;
+        min-width: 75px;
+        max-width: 75px;
+        max-height: 75px;
+    }
+}

@@ -1,0 +1,16 @@
+.footer1Info{
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    border: 1px solid #dcd3d3;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    font-size: 14px;
+    color: black;
+    font-family: Calibri;
+}
+.borderRightF1{
+    border-right: 1px solid #dcd3d3;
+}

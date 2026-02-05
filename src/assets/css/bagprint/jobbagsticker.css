@@ -1,0 +1,45 @@
+.mainjobbagsticker *{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    word-break: break-all;
+    line-height: 8px;
+    padding-left: 6px;
+    font-family: Calibri;
+}
+.containerjbsbg{
+    height: 25rem;
+    width: 16rem;
+    margin: 0 auto;
+    padding: 0.5rem;   
+    page-break-after: always;
+}
+
+.fsjbsbg{
+    font-size: 20px;
+    font-weight: 500;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    line-height: 8px;
+    height: 25px;
+    padding-left: 1rem;
+}
+.mainjobbagsticker{
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+    padding-bottom: 60px;
+}
+@media print {
+    .containerjbsbg{
+        page-break-after: always;
+        page-break-before: always;
+        margin-top: 1rem;
+    }
+    .mainjobbagsticker{
+        display: block;
+        flex-wrap: unset;
+    }
+    
+}

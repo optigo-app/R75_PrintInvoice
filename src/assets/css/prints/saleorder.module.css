@@ -1,0 +1,81 @@
+.containerJewellery * {
+  font-size: 13px;
+  font-family: Calibri;
+}
+
+.containerJewellery > div:first-child > div:first-child > span:first-child {
+  font-size: 16px !important;
+}
+
+.srNo {
+  width: 5%;
+  min-width: 5%;
+}
+
+.image {
+  width: 10%;
+  min-width: 10%;
+}
+
+.itemCode {
+  width: 18%;
+  min-width: 18%;
+}
+
+.description {
+  width: 36%;
+  min-width: 36%;
+}
+
+.descriptionWithoutAmaount {
+  width: 63%;
+  min-width: 63%;
+}
+
+.unitPrice {
+  width: 13%;
+  min-width: 13%;
+}
+
+.amount {
+  width: 13%;
+  min-width: 13%;
+}
+
+.quantity{
+  width: 5%;
+  min-width: 5%;
+}
+.total{
+  width: 67%;
+  min-width: 67%;
+}
+
+.remarks {
+  width: 20%;
+  min-width: 20%;
+}
+
+.gold18k{
+  width: 50%;
+  min-width: 50%;
+}
+
+.grandTotal{
+  width: 17%;
+  min-width: 17%;
+}
+
+.quantityTotal{
+  width: 5%;
+  min-width: 5%;
+}
+
+@media print {
+  .containerJewellery {
+    max-width: 100% !important;
+  }
+  .print_sec_sum4{
+    display: none !important;
+  }
+}

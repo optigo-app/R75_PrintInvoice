@@ -1,0 +1,137 @@
+.diamond_custom_4B {
+    height: 17.8pt;
+    overflow: hidden;
+}
+
+#img4B{
+    height: 150px !important;
+    width: 110px !important;
+    display: block;
+    margin-left: auto;
+}
+#img4b {
+    height: 142px;
+    width: 118px;
+}
+.size4AB{
+    width: 30pt;
+}
+.part_2_4B {
+    width: 89pt;
+    height: 243pt;
+    overflow: hidden;
+}
+.lab_self_4b{
+    height: 34pt;
+    /* height: 20.3925pt; */
+    display: flex;
+}
+.barcodeText4AB{
+    width: 60pt;
+    height: 130pt;
+    border-right: 1px solid black;
+}
+.barcodeText4AB_4C{
+    width: 60pt;
+    height: 130pt;
+    /* border-right: 1px solid black; */
+}
+.barcode_sticker_4AB{
+    display: flex;
+    height: 130pt;
+}
+.barcode_img_4B>img {
+    /* top: 75px !important;
+    height: 25px !important;
+    width: 170px !important;
+    object-fit: cover;
+    transform: rotate(90deg) !important;
+    position: relative !important;
+    left: -66px !important;
+    margin: 0px; */
+    top: 227px !important;
+    height: 16px !important;
+    width: 154px !important;
+    object-fit: cover;
+    transform: rotate(90deg) !important;
+    position: absolute !important;
+    /* left: 238px !important; */
+    right: -58px;
+}
+.barcode_img_container_4B>img {
+    /* height: 23px !important;
+    width: 175px !important;
+    object-fit: cover !important;
+    transform: rotate(90deg) !important;
+    position: relative !important;
+    left: -66px !important;
+    right: -56px !important;
+    top: 91px !important; */
+    top: 227px !important;
+    height: 16px !important;
+    width: 154px !important;
+    object-fit: cover;
+    transform: rotate(90deg) !important;
+    position: absolute !important;
+    /* left: 238px !important; */
+    right: -58px;
+}
+.barcode_img_container_4B {
+    width: 27pt;
+    border-left: 1px solid black;
+    /* width: 27pt;
+    position: relative;
+    border-left: 1px solid #000; */
+}
+
+.bagPrint4C *{
+    font-family: Helvetica Neue !important;
+}
+
+.bagPrint4CHead *{
+    line-height: 120%;
+}
+
+.bagPrint4CInstruction *{
+    line-height: 120%;
+    font-size: 8px !important;
+}
+
+.priority4b{
+    
+        height: 15.95pt;
+        /* height: 10.9pt; */
+        width: 100%;
+        display: flex;
+        overflow: hidden;
+    
+}
+.part_3_container_4b_record{
+    display: flex;
+    height: 12.1pt;
+    /* height: 14.1pt; */
+}
+.part_3_container_4b {
+    display: flex;
+    height: 156pt;
+    /* height: 185pt; */
+}
+.container_print4bpart_1 {
+    height: 155px;
+    /* height: 119px   ; */
+}
+
+.img_sec_container_4b {
+    border-bottom: 1px solid #000;
+    width: 101%;
+    height: 116pt;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.print4apart_1{
+    margin: 1pt 0 20px 14pt;
+    position: relative;
+}

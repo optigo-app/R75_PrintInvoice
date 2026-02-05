@@ -1,0 +1,132 @@
+.summary9 * {
+    font-size: 12px;
+    line-height: 120%;
+    word-break: normal;
+    font-family: Calibri;
+}
+
+.SR {
+    width: 4%;
+    min-width: 4%;
+}
+
+.DESIGN {
+    width: 11%;
+    min-width: 11%;
+}
+
+.STONE {
+    width: 25%;
+    min-width: 25%;
+}
+
+.GWT,
+.NWT,
+.PURITY,
+.WASTAGE,
+.GOLDRate,
+.PUREWT {
+    width: 6%;
+    min-width: 6%;
+}
+
+.TOTALMISC {
+    width: 8%;
+    min-width: 8%;
+}
+
+.GOLDAMOUNT {
+    width: 8%;
+    min-width: 8%;
+}
+
+.TOTALAMT {
+    width: 8%;
+    min-width: 8%;
+}
+
+.tableTotal {
+    width: 15%;
+    min-width: 15%;
+}
+
+.w_20 {
+    width: 20%;
+    min-width: 20%;
+}
+
+.metalCol {
+    width: calc(100% / 7);
+    min-width: calc(100% / 7);
+}
+
+.shapeName, .shapeName * {
+    word-break: break-all;
+}
+
+.font_13_5 *,
+.font_13_5 {
+    font-size: 13.5px;
+}
+
+.font_20 *,
+.font_20 {
+    font-size: 20px;
+}
+
+.font_18 *,
+.font_18 {
+    font-size: 18px;
+}
+
+.font_14 *,
+.font_14 {
+    font-size: 14px;
+}
+
+.font_15 *,
+.font_15 {
+    font-size: 15px;
+}
+
+.heightPad {
+    min-height: 22.39px;
+}
+
+.line1Stones, .line2Stones, .line3Stones{
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 1px;
+    background: #dee2e6;
+}
+
+.line1Stones{
+    left: calc(25% - 1px);
+}
+
+.line2Stones{
+    left: calc(50% - 1px);
+}
+
+.line3Stones{
+    left: calc(75% - 1px);
+}
+
+.pad_2{
+    padding: 2px;
+}
+
+@media print {
+    .print_sec_sum4 {
+        display: none !important;
+    }
+
+    .summary9 * {
+        font-size: 8px;
+    }
+
+    .heightPad {
+        min-height: 20px;
+    }
+}

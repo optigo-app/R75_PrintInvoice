@@ -1,0 +1,405 @@
+html {
+    scrollbar-gutter: stable;
+}
+
+.containerDetailPrint1 {
+    max-width: 1200px !important;
+    padding: 0 5px !important;
+    font-family: Calibri;
+}
+
+.containerDetailPrint1 p,
+.containerDetailPrint1 p span {
+    word-break: break-all;
+    font-size: 12px;
+    line-height: 100%;
+    font-family: Calibri;
+}
+
+.containerDetailPrint1 * {
+    font-size: 10px;
+}
+
+.jewelleryPackingList {
+    background-color: #939292;
+}
+
+.lhDetailPrint1 {
+    line-height: 130%;
+}
+
+.srNoDetailprint11 {
+    width: 3%;
+    min-width: 3%;
+}
+
+.designDetalPrint1 {
+    width: 10%;
+    min-width: 10%;
+}
+
+.diamondDetailPrint1l {
+    width: 22.9%;
+    min-width: 22.9%;
+}
+
+.diamondDetailPrint1p {
+    width: 21.9%;
+    min-width: 21.9%;
+}
+
+.stoneDetailsPrint1l {
+    width: 23.8%;
+    min-width: 23.8%;
+}
+
+.stoneDetailsPrint1p {
+    width: 20.8%;
+    min-width: 20.8%;
+}
+
+
+
+.metalDetailPrint1 {
+    width: 200px;
+    min-width: 200px;
+}
+
+.stoneDetailPrint1 {
+    width: 200px;
+    min-width: 200px;
+}
+
+.otherAmountDetailPrint1 {
+    width: 11.3%;
+    min-width: 11.3%;
+}
+
+.otherAmountDetailPrint1p {
+    width: 10.3%;
+    min-width: 10.3%;
+}
+
+.otherAmountDetailPrint1l {
+    width: 5.3%;
+    min-width: 5.3%;
+}
+
+.labourAmountDetailPrint1 {
+    width: 9%;
+    min-width: 9%;
+}
+
+.totalAmountDetailPrint1 {
+    width: 5%;
+    min-width: 5%;
+}
+
+.metalGoldDetailPrint1,
+.metalTotalDetailPrint1 {
+    width: 20%;
+    min-width: 20%;
+}
+
+.metalGoldDetailPrint1l,
+.metalTotalDetailPrint1l {
+    width: 22%;
+    min-width: 22%;
+}
+
+.metalGoldDetailPrint1p,
+.metalTotalDetailPrint1p {
+    width: 20%;
+    min-width: 20%;
+}
+
+.diamondDetailPrint1l * {
+    word-break: break-all;
+}
+
+.parentDetailPrint1 {
+    display: inline-flex;
+    justify-content: space-between;
+}
+
+.designDetalPrint1Total {
+    width: 13%;
+    min-width: 13%;
+}
+
+.cgstDetailPrint1 {
+    min-width: 95%;
+    width: 95%;
+}
+
+.cgstTotalDetailPrint1 {
+    min-width: 5%;
+    width: 5%;
+}
+
+.summaryPadBotDetailPrint1 {
+    padding-bottom: 30px;
+}
+
+.totalLineDetailPrint1 {
+    min-height: 21px;
+}
+
+.createdByDetailPrint1 {
+    min-height: 116px;
+}
+
+.paddingBottomTotalDetailPrint1 {
+    padding-bottom: 22px;
+}
+
+.totalMinHeightDetailPrint1 {
+    min-height: 18px;
+}
+.containerDetailPrint1 .detailPrint1L_font_13 *,
+.containerDetailPrint1 .detailPrint1L_font_13 {
+    font-size: 13px;
+}
+.containerDetailPrint1 .detailPrint1L_font_14 *,
+.containerDetailPrint1 .detailPrint1L_font_14 {
+    font-size: 14px;
+    line-height: 17px !important;
+}
+
+.containerDetailPrint1 .detailPrint1L_font_16 *,
+.containerDetailPrint1 .detailPrint1L_font_16 {
+    font-size: 16px;
+}
+
+.containerDetailPrint1 .detailPrint1L_font_11 *,
+.containerDetailPrint1 .detailPrint1L_font_11 {
+    font-size: 11px;
+    line-height: 13px;
+}
+
+.containerDetailPrint1 .detailPrint1L_font_12 *,
+.containerDetailPrint1 .detailPrint1L_font_12 {
+    font-size: 12px;
+}
+
+.paddingLeftDetailPrint1{
+    padding-left: 1px !important;
+}
+
+.paddingRightDetailPrint1{
+    padding-right: 1px !important;
+}
+
+.paddingRightDetailPrint1l{
+    padding-right: 1px !important;
+}
+
+/********************** **********************/
+.Wdth {
+    width: 18%;
+}
+
+.WdthCod {
+    width: 17%;
+}
+
+.WdthWT {
+    width: 13.75%;
+}
+
+.WdthPcs {
+    width: 12%;
+}
+
+.WdthSiz {
+    width: 17.30%;
+}
+
+.WdthAmt {
+    width: 21.95%;
+}
+
+
+
+.Wdth1 {
+    width: 20%;
+}
+
+
+.WdthAmtTotl {
+    width: 25%;
+}
+
+.WdthWtTotl {
+    width: 18.50%;
+}
+
+.WdthPcsTotl {
+    width: 25%;
+}
+
+.WdthRemnTotl {
+    width: 15%;
+}
+
+.WdthRemnTotl1 {
+    width: 16.50%;
+}
+
+
+
+.Fntdt * {
+    font-size: 10px !important;
+    line-height: 11px !important;
+}
+
+.FntdtInst * {
+    font-size: 12px !important;
+    line-height: 14px !important;
+}
+
+.FntLnHit {
+    line-height: 15px !important;
+}
+
+.SpacAtTp {
+    padding-top: 3px;
+}
+
+.SpacForInst {
+    padding-top: 2px;
+    padding-left: 4px;
+    padding-bottom: 2px;
+}
+
+.FntForInst {
+    font-size: 14px;
+    line-height: 15px;
+}
+
+.SpacForInstExt {
+    padding-left: 3px;
+}
+
+.spbrWord {
+    word-break: break-word;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+}
+
+.SpBrders {
+    border-right: 1px solid #f0f0f0;
+    border-bottom: 1px solid #f0f0f0;
+    border-left: 1px solid #f0f0f0;
+}
+
+@media print {
+    @page {
+        margin: 5mm 5mm;
+    }
+
+    .containerDetailPrint1 {
+        zoom: unset;
+        margin: 0;
+    }
+
+    .totalLineDetailPrint1 {
+        min-height: 18px;
+    
+    }
+
+    .recordDetailPrint1 {
+        page-break-inside: avoid;
+    }
+
+    /* Headers */
+    .containerDetailPrint1 p,
+    .containerDetailPrint1 p span {
+        font-size: 9px;
+    }
+
+    .print_sec_sum4 {
+        display: none !important;
+    }
+
+    .containerDetailPrint1 .detailPrint1L_font_11 *,
+    .containerDetailPrint1 .detailPrint1L_font_11 {
+        font-size: 9px;
+        line-height: 10px;
+    }
+
+    .containerDetailPrint1 .detailPrint1L_font_14 *,
+    .containerDetailPrint1 .detailPrint1L_font_14 {
+        font-size: 12px;
+        line-height: 14px !important;
+    }
+
+    .Fntdt * {
+        font-size: 8px !important;
+        line-height: 9px !important;
+    }
+
+    .FntLnHit {
+        line-height: 11px !important;
+    }
+
+    .spbrWord {
+        word-break: break-word !important;
+        overflow-wrap: break-word !important;
+        word-wrap: break-word !important;
+    }
+
+    .SpacForInst {
+        padding-top: 1px;
+        padding-left: 2px;
+        padding-bottom: 1px;
+    }
+    
+    .SpacForInstExt {
+        padding-left: 0px;
+    }
+
+    .FntForInst {
+        font-size: 12px;
+        line-height: 13px;
+    }
+
+    .FntdtInst * {
+        font-size: 10px !important;
+        line-height: 11px !important;
+    }
+
+    .createdByDetailPrint1 {
+        min-height: 96px;
+    }
+}
+
+@media print and (orientation: portrait) {
+    /* Headers */
+    .containerDetailPrint1 p,
+    .containerDetailPrint1 p span {
+        font-size: 9px;
+    }
+
+    .containerDetailPrint1 .detailPrint1L_font_11 *,
+    .containerDetailPrint1 .detailPrint1L_font_11 {
+        font-size: 7.5px;
+        line-height: 8.5px;
+    }
+
+    .Fntdt * {
+        font-size: 6.5px !important;
+        line-height: 7.5px !important;
+    }
+
+    .containerDetailPrint1 .detailPrint1L_font_14 *,
+    .containerDetailPrint1 .detailPrint1L_font_14 {
+        font-size: 10px;
+        line-height: 13px !important;
+    }
+
+    .containerDetailPrint1 .detailPrint1L_font_16 *,
+    .containerDetailPrint1 .detailPrint1L_font_16 {
+        font-size: 14px;
+    }
+}

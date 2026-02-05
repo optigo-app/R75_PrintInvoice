@@ -1,0 +1,89 @@
+.containerBg18 {
+    height: 343px;
+    width: 344px;
+    border: 2px solid black;
+    border-radius: 4px;
+    /* margin-top: 2.5rem; */
+    margin-top: 1.5rem;
+    /* margin-left: 2rem; */
+    margin-left: 0.95rem;
+    font-family: Calibri;
+}
+
+.headBg18 {
+    height: 80px;
+    border-bottom: 1px solid black;
+}
+
+.h1Bg18 {
+    height: 25px;
+    border-bottom: 1px solid black;
+}
+
+.h2Bg18 {
+    height: 20px;
+    border-bottom: 1px solid black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.tableBg18 {
+    height: 262px;
+}
+
+.theadBg18 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 40px;
+    border-bottom: 1px solid black;
+}
+
+.wc1Bg18 {
+    width: 75px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50%;
+}
+
+.hBg18 {
+    height: 100%;
+    border-right: 1px solid black;
+}
+
+.brBg18 {
+    border-right: 1px solid black;
+}
+
+.bbBg18 {
+    border-bottom: 1px solid black;
+}
+
+.tbodyrBg18 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 20.05px;
+    width: 100%;
+    border-bottom: 1px solid black;
+}
+
+.printBg18 {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+}
+
+.fontall {
+    line-height: 7.5px;
+    word-break: break-all;
+    font-size: 9.7px;
+}
+
+@media print {
+    /* .containerBg18:nth-child(6n+1) {
+        page-break-after: always;
+    } */
+}

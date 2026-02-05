@@ -1,0 +1,31 @@
+.w_h2_rp{
+    width: 40% !important;
+}
+.w_h2_rp_2{
+    width: 60% !important;
+}
+@media print {
+    .tablerow_rp{
+        page-break-inside: avoid !important;
+    }
+    .fs_rp_2{
+        font-size: 9px !important;
+    }
+    .fs_rp_2_bold{
+        font-size: 9px !important;
+    }
+    .minw_rp2{
+        min-width: 10% !important;
+        width: 100% !important;
+    }
+    .danger_rp *{
+        font-size: 9px !important; /* Specify your desired font size */
+        line-height: 14px !important; /* Specify your desired line height */
+      }
+      .w_h2_rp{
+        width: 50% !important;
+    }
+    .w_h2_rp_2{
+        width: 50% !important;
+    }
+}

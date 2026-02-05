@@ -1,0 +1,272 @@
+.estimate_img{
+    height: 169.5px;
+    width: 264px;
+    padding: 20px;
+    justify-content: center;
+    align-items: center;
+}
+.containerEstimate {
+    max-width: 297mm !important;
+    font-family: Calibri;
+}
+.estimatePrintFont_16{
+    font-size: 16px
+}
+.estimatePrintFont_14{
+    font-size: 14px;
+    line-height: 14px;
+}
+.spMrgTFive{
+    margin-top: 4px;
+}
+.spMrgBFive{
+    margin-bottom: 4px;
+}
+.spnfntIns{
+    font-size: 14px;
+    line-height: 14px;
+    align-content: center;
+}
+.spstlClr {
+    font-size: 14px;
+    line-height: 14px;
+    height: 25px;
+    padding-left: 3px;
+    align-content: center;
+}
+.spnHitArtisn{
+    height: 19.4px;
+    padding-left: 3px;
+    align-content: center;
+}
+.spnfntArtisn {
+    font-size: 13px;
+    line-height: 13px;
+}
+.spdispFlx{
+    display: flex;
+}
+.spdispFlxClum {
+    display: flex;
+    flex-direction: column;
+}
+.spwdth1{
+    width: 45%;
+    padding-top: 2px;
+}
+.spwdth2{
+    width: 55%;
+}
+.Suspwdth1{
+    width: 45%;
+    text-align: center;
+    padding-top: 2px;
+    background-color: rgb(240, 218, 189);
+}
+.Suspwdth2{
+    width: 55%;
+    text-align: center;
+    padding-top: 2px;
+    background-color: rgb(189, 207, 235);
+}
+.spmrgLft{
+    padding-left: 7px;
+}
+.spdtl1{
+    width: 44%;
+}
+.Suspdtl1{
+    width: 25%;
+}
+.Suspdtl2{
+    width: 25%;
+}
+.Suspdtl3{
+    width: 50%;
+}
+.spdtl2{
+    width: 125.2%;
+    margin-left: 10px;
+    border-top: none;
+}
+.sptxtend{
+    height: 19.24px;
+    padding-left: 3px;
+    align-content: center;
+}
+.Sesptxtend{
+    height: 19.1px;
+    padding-left: 3px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.spHitIns{
+    min-height: 90px;
+    padding-left: 3px;
+    padding-top: 5px;
+}
+.spWdthIns{
+    width: 75%;
+}
+.spMrgdt1{
+    padding-top: 17px;
+}
+.spbrWord {
+    word-break: break-word;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+}
+.spBold{
+    font-weight: bold;
+}
+.dtlWdth1{
+    width: 15%;
+}
+.dtlWdth2{
+    width: 10%;
+}
+.dtlWdth3{
+    width: 10%;
+}
+.dtlWdth4{
+    width: 10%;
+}
+.dtlWdth5{
+    width: 12.5%;
+}
+.dtlWdth6{
+    width: 12.5%;
+}
+.dtlWdth7{
+    width: 10%;
+}
+.dtlWdth8{
+    width: 10%;
+}
+.dtlWdth9{
+    width: 10%;
+}
+.spfntszDCM{
+    font-size: 9px;
+    line-height: 10px;
+}
+.SuBspfntszDCM{
+    font-size: 10px;
+    line-height: 11px;
+}
+.SuspfntszDCM{
+    font-size: 10px;
+    line-height: 11px;
+    text-align: right;
+    padding-right: 3px;
+}
+.sptxtCn{
+    text-align: center;
+}
+.spbgColr {
+    background: #dadada;
+}
+.border_color_estimate{
+    border: 2px solid #000000 !important; 
+}
+.spbrdrTop{
+    border-top: 1px solid #000000;
+}
+.spbrdRght{
+    border-right: 1px solid #000000;
+}
+.spbrdrBtom{
+    border-bottom: 1px solid #000000;
+}
+.spbrdrLft{
+    border-left: 1px solid #000000;
+}
+.spbrdrTopDR{
+    border-top: 2px solid #000000;
+}
+.spbrdRghtDR{
+    border-right: 2px solid #000000;
+}
+.spbrdrBtomDR{
+    border-bottom: 2px solid #000000;
+}
+.spbrdrLftDR{
+    border-left: 2px solid #000000;
+}
+.no-border .spbrdrBtom {
+    border-bottom: none !important;
+} 
+@media print {
+    @page {
+        margin: 4rem 1rem;
+    }
+    .print_sec_sum4 {
+        display: none !important;
+    }
+    .spBold{
+        font-weight: bold;
+    }
+    .spdtl2{
+        width: 126.5%;
+    }
+    .estimatePrintFont_16{
+        font-size: 14px
+    }
+    .estimatePrintFont_14{
+        font-size: 11px;
+        line-height: 11px;
+    }
+    .spnfntArtisn{
+        font-size: 8.90px;
+        line-height: 8.90px;
+    }
+    .spnHitArtisn{
+        height: 17.5px;
+        padding-left: 1.5px;
+    }
+    .sptxtend{
+        height: 19.2px;
+        padding-left: 1.5px;
+    }
+    .Sesptxtend{
+        height: 19px;
+        padding-left: 1.5px;
+    }
+    .spfntszDCM{
+        font-size: 9px;
+        line-height: 9.5px;
+    }
+    .SuspfntszDCM{
+        font-size: 9.5px;
+        line-height: 10px;
+        padding-right: 1.5px;
+    }
+    .SuBspfntszDCM{
+        font-size: 9.5px;
+        line-height: 10px;
+    }
+    .spBtomspc{
+        margin-bottom: 5rem;
+    }
+}
+@media print and (orientation: landscape) {
+    @page {
+        margin: 15px 15px;
+    }
+    .spdtl2{
+        width: 125.5%;
+    }
+    .SuBspfntszDCM{
+        font-size: 10px;
+        line-height: 11px;
+    }
+    .SuspfntszDCM{
+        font-size: 10px;
+        line-height: 11px;
+        padding-right: 1.5px;
+    }
+    .spBtomspc{
+        margin-bottom: 1rem;
+    }
+}

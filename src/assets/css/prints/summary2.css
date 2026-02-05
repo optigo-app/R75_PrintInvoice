@@ -1,0 +1,197 @@
+.containerS2 *{
+    box-sizing: border-box;
+    word-break: break-all;
+    font-family: Calibri;
+}
+/* global */
+.containerS2{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+    margin-top: 7rem;
+}
+.pbs2{
+    padding-bottom: 100px !important;
+}
+.lhs2{
+    line-height: 14px;
+}
+.fsgs2{
+    font-size: 14px;
+}
+.centers2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.starts2{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.tops2{
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+}
+.toplefts2{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+.ends2{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.bgcs2{
+    background-color: #F2F2F2;
+}
+.fsh_s2{
+    font-size: 20px !important;
+    line-height: 35px !important;
+}
+.fsh3_s2{
+    font-size: 15px !important;
+    line-height: 20px !important;
+}
+.fsh3_s2_{
+    font-size: 18px !important;
+    line-height: 24px !important;
+}
+.fsh2_s2{
+    font-size: 12px !important;
+    line-height: 14px !important;
+}
+/* header */
+.printlogos2{
+    max-height: 116px;
+    max-width: 116px;
+    width: 100%;
+    height: 100%;
+    margin-right: 2rem;
+}
+
+/* table */
+
+/* table head */
+.theads2{
+    height: 50px;
+}
+
+.thcol1s2{
+    width: 4%; 
+}
+.thcol2s2{
+    width: 12%;
+}
+.thcol3s2{
+    width: 7%;
+}
+.thcol4s2{
+    width: 7%;
+}
+.thcol5s2{
+    width: 7%;
+}
+.thcol6s2{
+    width: 7%;
+}
+.thcol7s2{
+    width: 7%;
+}
+.thcol8s2{
+    width: 6%;
+}
+.thcol9s2{
+    width: 6%;
+}
+.thcol10s2{
+    width: 7%;
+}
+.thcol11s2{
+    width: 8%;
+}
+.thcol12s2{
+    width: 6%;
+}
+.thcol13s2{
+    width: 8%;
+}
+.thcol14s2{
+    width: 8%;
+}
+
+/* table body */
+.desImgs2{
+    height: 65%;
+    width: 50%;
+}
+/* tax */
+.boxwtaxs2{
+    width: 16.2%;
+}
+@media print{
+    .hidebtns2{
+        display: none !important;
+    }
+    .fsgs2{
+        font-size: 8px;
+    }
+    .lhs2{
+        line-height: 8px;
+    }
+    .boxwtaxs2{
+        width: 20%;
+    }
+    .printlogos2{
+        max-height: 100px;
+        max-width: 100px;
+        height: 100%;
+        width: 100%;
+        margin-right: 0.5rem;
+    }
+    .pbias2{
+        page-break-inside: avoid !important;
+    }
+    .containerS2{
+        padding: 1rem;
+    }
+    .pbs2{
+        padding-bottom: 0px !important;
+    }
+    .containerS2{
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 1rem;
+        margin-top: 0px;
+    }
+    .fsh_s2{
+        font-size: 16px !important;
+        line-height: 26px !important;
+    }
+    .fsh3_s2{
+        font-size: 13px !important;
+        line-height: 18px !important;
+    }
+    .fsh3_s2_{
+        font-size: 15px !important;
+        line-height: 20px !important;
+    }
+    .fsh2_s2{
+        font-size: 9px !important;
+        line-height: 11px !important;
+    }
+    .danger_s2 *{
+        font-size: 9px !important;
+        line-height: 15px !important;
+    }
+    .tabtotal_s2{
+        min-height: 24px !important;
+        max-height: 26px !important;
+    }
+    .boxwtaxs2{
+        padding: 0px !important;
+        padding-right: 4px !important;
+    }
+}

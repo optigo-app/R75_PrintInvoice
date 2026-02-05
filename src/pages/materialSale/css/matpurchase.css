@@ -1,0 +1,78 @@
+.mat_purchase_container{
+    max-width: 834px;
+    width: 100%;
+    box-sizing: border-box;
+    padding-bottom: 60px;
+    font-size: 12px;
+}
+.headLabel_ms{
+    font-size: 20px;
+    background-color: #939292;
+    color: #FFF;
+    padding: 4px 0px 5px 6px;
+    font-weight: bold;
+}
+/* borders */
+.bradp7{
+    border: 2px solid #e8e8e8;
+}
+.brtdp7{
+    border-top: 2px solid #e8e8e8;
+}
+.brdp7{
+    border-right: 2px solid #e8e8e8;
+}
+.bldp7{
+    border-left: 2px solid #e8e8e8;
+}
+.brbdp7{
+    border-bottom: 2px solid #e8e8e8;
+}
+
+.sign_box_cr_ms{
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+
+.col1_mp_ms{
+    width: 4%;
+}
+.col2_mp_ms{
+    width: 24%;
+}
+.col3_mp_ms{
+    width: 40%;
+}
+.col4_mp_ms{
+    width: 5%;
+}
+.col5_mp_ms{
+    width: 7%;
+}
+.col6_mp_ms{
+    width: 10%;
+}
+.col7_mp_ms{
+    width: 10%;
+}
+
+.gtotal_mp_ms{
+    font-size: 16px;
+    font-weight: bold;
+}
+
+@media print{
+    .mat_purchase_container{
+        font-size: 10px;
+    }
+    .headLabel_ms{
+        font-size: 16px;
+    }
+    .gtotal_mp_ms{
+        font-size: 12px;
+        font-weight: bold;
+    }   
+}

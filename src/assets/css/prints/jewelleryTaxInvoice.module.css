@@ -1,0 +1,159 @@
+html {
+    scrollbar-gutter: stable;
+}
+
+/* .containerJewellery * {
+    font-size: 12px;
+    font-family: Calibri;
+} */
+
+.containerJewellery * {
+    font-size: 12px;
+    font-family: Calibri, Arial, sans-serif !important;
+}
+
+
+.containerJewelleryMaxWidth {
+    max-width: 836px !important;
+    margin-bottom: 300px;
+    box-sizing: border-box;
+}
+
+.fs_16_jti {
+    font-size: 16px;
+}
+
+.image {
+    max-height: 100px;
+    width: 100%;
+    object-fit: contain;
+}
+
+.generated {
+    font-size: 9px;
+}
+
+.lh_dec_JTI {
+    line-height: 14px;
+}
+
+.headLabelJTI_quote {
+    font-size: 20px;
+    background-color: #939292;
+    color: #FFF;
+    padding: 4px 0px 5px 6px !important;
+    font-weight: bold;
+}
+
+.lines {
+    font-size: 12px;
+    line-height: 13px;
+}
+
+.JTIlogo {
+    height: 120px;
+    width: 150px;
+}
+
+.fs_comment_jti {
+    font-size: 12px;
+}
+
+.printSpacer {
+    width: 100%;
+    min-height: 0 !important;
+    line-height: 0;
+    font-size: 0;
+    display: block;
+  }
+  
+@media print {
+    .printSpacer {
+      page-break-inside: avoid !important;
+      border: none !important;
+      padding: 0 !important;
+      margin: 0 !important;
+      background: transparent !important;
+    }
+
+    @page {
+        margin: 20px;
+    }
+
+    .containerJewelleryMaxWidth {
+        margin-bottom: 0px;
+    }
+
+    .spacer {
+        page-break-inside: avoid;
+    }
+
+    /* body {
+        padding-bottom: 50px !important;
+    }
+
+    .wrapper {
+        height: auto;
+        width: 210mm;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .mainContent {
+        flex-grow: 1;
+        height: auto;
+        padding-bottom: 30px !important;
+    }
+
+    .footer {
+        display: block;
+        padding: 0.5rem;
+        text-align: center;
+        border-top: 1px solid #ccc;
+        height: 10mm;
+        background-color: #939292;
+        margin-left: 10px !important;
+        margin-right: 10px !important;
+        margin-top: 10px !important;
+        margin-bottom: 0px !important;
+        
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        
+        z-index: 999;
+    } */
+    
+    .pgBrkInsid {
+        page-break-inside: avoid !important;
+    }
+
+    .print_sec_sum4 {
+        display: none !important;
+    }
+
+    .containerJewellery * {
+        font-size: 11px;
+        font-family: Calibri;
+    }
+
+    .fs_16_jti {
+        font-size: 14px;
+    }
+
+    .JTIlogo {
+        height: 100px !important;
+        width: 100px !important;
+    }
+
+    .image {
+        max-height: 80px;
+        width: 80%;
+        object-fit: contain;
+    }
+
+    .fs_comment_jti {
+        font-size: 9px;
+    }
+}

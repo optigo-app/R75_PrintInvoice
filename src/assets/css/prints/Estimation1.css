@@ -1,0 +1,70 @@
+html {
+  scrollbar-gutter: stable;
+}
+
+.FrstWdth {
+  width: 70vw;
+}
+
+.estimation1_main {
+  width: 400px;
+
+  .topheaderMain {
+    .copmName {
+      text-align: center;
+      font-size: 13px;
+      line-height: 17px;
+    }
+
+    .title_estimate {
+      text-align: center;
+      font-size: 12px;
+      line-height: 16px;
+    }
+
+    .compPhone {
+      font-size: 11px;
+      line-height: 15px;
+      text-align: center;
+    }
+  }
+
+  .deatilSectionMain {
+    font-size: 11px;
+    line-height: 21px;
+    .detail_section_main {
+      display: flex;
+      .detail_Setion1 {
+        width: 40%;
+      }
+      .detail_Setion2 {
+        width: 60%;
+        display: flex;
+        justify-content: space-between;
+
+        .detail_Setion2_sub2 p {
+          display: flex;
+          justify-content: flex-end;
+        }
+      }
+    }
+  }
+
+  .estimate_bottom_total {
+    display: flex;
+    font-size: 11px;
+    line-height: 18px;
+    border-bottom: 1px solid;
+    margin-bottom: 50px;
+
+  }
+}
+
+.fontDmdClr {
+  font-size: 11px;
+  line-height: 17px;
+}
+
+.fontCheck {
+  font-size: 14px;
+}

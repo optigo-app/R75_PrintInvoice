@@ -1,0 +1,134 @@
+.container_ls *{
+    box-sizing: border-box;
+    word-break: break-all;
+    font-family: Calibri;
+}
+.container_ls{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-bottom: 5rem;
+}
+
+.w_ls{
+    width: 33.33%;
+}
+.fs_ls{
+    font-size: 14px;
+}
+.fs_ls_head{
+    font-size: 12px;
+    line-height: 14px;
+}
+.lh_ls{
+    line-height: 14px;
+}
+.end_ls{
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.col1_ls{
+    width: 3%;
+}
+.col2_ls{
+    width: 12%;
+}
+.col3_ls{
+    width: 18%;
+}
+.col4_ls{
+    width: 19%;
+}
+.col5_ls{
+    width: 18%;
+}
+.col6_ls{
+    width: 10%;
+}
+.col7_ls{
+    width: 10%;
+}
+.col8_ls{
+    width: 10%;
+}
+
+/* table body */
+.col_1_ls {
+    width: 3%;
+}
+.col_2_ls {
+    width: 12%;
+}
+.col_3_ls {
+    width: 10%;
+}
+.col_4_ls {
+    width: 8%;
+}
+.col_5_ls {
+    width: 9.5%;
+}
+.col_6_ls {
+    width: 9.5%;
+}
+.col_7_ls {
+    width: 9%;
+}
+.col_8_ls {
+    width: 9%;
+}
+.col_9_ls {
+    width: 10%;
+}
+.col_10_ls{
+    width: 10%;
+}
+.col_11_ls{
+    width: 10%;
+}
+
+/* tax total */
+.tax_w_ls{
+    width: 70%;
+}
+.tax_w_ls2{
+    width: 30%;
+}
+.printhead_ls{
+    height: 40px;
+    background-color: #939292;
+    padding-left: 10px;
+    font-size: 20px;
+    color: white;
+    font-weight: bold;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.fs_ls_2{
+    font-size: 16px;
+}
+@media print{
+    .fs_ls{
+        font-size: 10px;
+    }
+    .lh_ls{
+        line-height: 10px;
+    }
+    .container_ls{
+        padding: 1rem;
+    }
+    .d_none_ls{
+        display: none !important;
+    }
+    .container_ls .target_footer *{
+        font-size: 10px !important; 
+    }
+    .container_ls .target_header *{
+        font-size: 10px !important;
+    }
+    .ls_pg_Break{
+        page-break-inside: avoid !important;
+    }
+}

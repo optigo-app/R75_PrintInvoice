@@ -1,0 +1,22 @@
+.invoicePrint6 *{
+    font-size: 12px;
+    font-family: Calibri;
+}
+
+.min_height_100{
+    min-height: 100px;
+}
+
+.min_height_130{
+    min-height: 130px;
+}
+
+.min_height_24{
+    min-height: 18px;
+}
+
+@media print{
+    .print_sec_sum4{
+        display: none !important;
+    }
+} 

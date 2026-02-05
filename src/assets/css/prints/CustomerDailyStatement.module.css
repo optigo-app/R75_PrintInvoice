@@ -1,0 +1,69 @@
+.CustomerDailyStatement *{
+    font-size: 10px;
+    word-break: break-word; 
+    overflow-wrap: break-word; 
+
+    font-family: Calibri;
+}
+
+.bill {
+    width: 12%;
+    min-width: 12%;
+}
+
+.items {
+    width: 15%;
+    min-width: 15%;
+}
+
+.ratePerGm{
+    width: 7%;
+    min-width: 7%;
+}
+
+.part3{
+    width: 66%;
+    min-width: 66%;
+}
+
+.per,
+.taxPer {
+    width: 5%;
+    min-width: 5%;
+}
+
+.gross_gold_ct_wt {
+    width: 85%;
+    min-width: 85%;
+}
+
+.final {
+    width: 18%;
+    min-width: 18%;
+}
+
+.gross_sec_7{
+    width: calc(100% / 7);
+    min-width: calc(100% / 7);
+}
+
+/* .items_sec{
+    width: 88%;
+    min-width: 88%;
+} */
+
+.items_sec{
+    width: 88%;
+    min-width: 88%;
+}
+
+.items_sec1{
+    width: 6.5%;
+    min-width: 6.5%;
+}
+
+@media print{
+    .print_sec_sum4{
+        display: none !important;
+    }
+}

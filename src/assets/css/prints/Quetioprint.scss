@@ -1,0 +1,563 @@
+.qut1_main {
+  display: flex;
+  justify-content: center;
+
+  .qut1_print_main_div {
+    text-align: center;
+    font-size: 12px;
+    max-width: 1430px;
+    // max-width: 1200px;
+    width: 100%;
+  }
+
+  .qut1_main_header {
+    font-size: 20px;
+    background-color: #939292 !important;
+    color: #fff;
+    padding: 4px 0px 5px 6px;
+    font-weight: bold;
+    display: flex;
+  }
+
+  .qut1_address_main {
+    display: flex;
+    border: 0.5px solid #bdbdbd;
+
+    .qut1_address_box1 {
+      width: 35%;
+      border-right: 1px solid #bdbdbd;
+      padding: 5px;
+    }
+
+    .qut1_address_box2 {
+      width: 35%;
+      border-right: 1px solid #bdbdbd;
+      padding: 5px;
+    }
+
+    .qut1_address_box3 {
+      width: 30%;
+      padding: 5px;
+    }
+
+    .qut1_address_box_p {
+      margin: 0px;
+      display: flex;
+    }
+  }
+
+  //table..........
+  .qut1_tableMain_div {
+    border: 0.5px solid #bdbdbd;
+    margin-top: 5px;
+
+    //header.................
+    .Qut1_table_header_maindiv {
+      display: flex;
+      border-bottom: 1px solid #bdbdbd;
+      background-color: #F5F5F5;
+      .qut1_table_header_col_title {
+        display: flex;
+        margin: 0px;
+        font-weight: bold;
+        justify-content: center;
+      }
+
+      .qut1_table_header_col_titleWithSub {
+        display: flex;
+        margin: 0px;
+        font-weight: bold;
+        justify-content: center;
+        border-bottom: 1px solid #bdbdbd;
+      }
+
+      .qut1_table_header_col1 {
+        width: 2%;
+        border-right: 1px solid #bdbdbd;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .qut1_table_header_col2 {
+        width: 10%;
+        border-right: 1px solid #bdbdbd;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .qut1_table_header_col3 {
+        width: 20%;
+        border-right: 1px solid #bdbdbd;
+        margin: 0px;
+
+        .qut1_table_header_col3_subheader {
+          display: flex;
+          padding-inline: 2px;
+          font-weight: bold;
+
+          .qut1_table_header_col3_subheader_1 {
+            border-right: 1px solid #bdbdbd !important;
+            width: 30%;
+          }
+          .qut1_table_header_col3_subheader_2 {
+            border-right: 1px solid #bdbdbd;
+            width: 17%;
+          }
+          .qut1_table_header_col3_subheader_3 {
+            border-right: 1px solid #bdbdbd;
+            width: 12%;
+          }
+          .qut1_table_header_col3_subheader_4 {
+            border-right: 1px solid #bdbdbd;
+            width: 14%;
+          }
+          .qut1_table_header_col3_subheader_5 {
+            border-right: 1px solid #bdbdbd;
+            width: 16%;
+          }
+          .qut1_table_header_col3_subheader_6 {
+            width: 21%;
+            border: none;
+          }
+        }
+      }
+
+      .qut1_table_header_col4 {
+        width: 20%;
+        border-right: 1px solid #bdbdbd;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        .qut1_table_header_col4_subheader {
+          display: flex;
+
+          .qut1_table_header_col4_subheader_same {
+            width: 20%;
+            display: flex;
+            margin: 0px;
+            font-weight: bold;
+            justify-content: center;
+            border-right: 1px solid #bdbdbd;
+          }
+
+          .qut1_table_header_col4_subheader_same_last {
+            width: 20%;
+            display: flex;
+            margin: 0px;
+            font-weight: bold;
+            justify-content: center;
+          }
+        }
+      }
+
+      .qut1_table_header_col5 {
+        width: 20%;
+        border-right: 1px solid #bdbdbd;
+
+        .qut1_table_header_col5_subheader {
+          display: flex;
+          padding-inline: 2px;
+          font-weight: bold;
+
+          .qut1_table_header_col5_subheader_1 {
+            border-right: 1px solid #bdbdbd;
+            width: 20%;
+          }
+          .qut1_table_header_col5_subheader_2 {
+            border-right: 1px solid #bdbdbd;
+            width: 17%;
+          }
+          .qut1_table_header_col5_subheader_3 {
+            border-right: 1px solid #bdbdbd;
+            width: 12%;
+          }
+          .qut1_table_header_col5_subheader_4 {
+            border-right: 1px solid #bdbdbd;
+            width: 14%;
+          }
+          .qut1_table_header_col5_subheader_5 {
+            border-right: 1px solid #bdbdbd;
+            width: 16%;
+          }
+          .qut1_table_header_col5_subheader_6 {
+            width: 21%;
+            border: none;
+          }
+        }
+      }
+
+      .qut1_table_header_col6 {
+        width: 6%;
+        border-right: 1px solid #bdbdbd;
+      }
+
+      .qut1_table_header_col7 {
+        width: 14%;
+        border-right: 1px solid #bdbdbd;
+        .qut1_table_header_col7_subheader {
+          display: flex;
+          margin: 0px;
+          font-weight: bold;
+          justify-content: center;
+        }
+        .qut1_table_header_col7_subheader_1 {
+          width: 50%;
+          display: flex;
+          margin: 0px;
+          justify-content: center;
+          border-right: 1px solid #bdbdbd;
+        }
+        .qut1_table_header_col7_subheader_last {
+          width: 50%;
+          display: flex;
+          margin: 0px;
+          font-weight: bold;
+          justify-content: center;
+        }
+      }
+
+      .qut1_table_header_col8 {
+        width: 8%;
+        border-right: 1px solid #bdbdbd;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+
+    //values...........
+    .Qut1_table_Data_main {
+      display: flex;
+      border-bottom: 1px solid #bdbdbd;
+
+      .qut1_table_total_assign_height {
+        height: 19px;
+      }
+
+      .qut1_table_header_col_title {
+        display: flex;
+        margin: 0px;
+        font-weight: bold;
+        justify-content: center;
+      }
+
+      .qut1_table_header_col_titleWithSub {
+        display: flex;
+        margin: 0px;
+        font-weight: bold;
+        justify-content: center;
+        border-bottom: 1px solid #bdbdbd;
+      }
+
+      .Qut1_table_Data_col1 {
+        width: 2%;
+        border-right: 1px solid #bdbdbd;
+        display: flex;
+        justify-content: center;
+      }
+
+      .Qut1_table_Data_col2 {
+        width: 10%;
+        border-right: 1px solid #bdbdbd;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .Qut1_table_Data_col3 {
+        width: 20%;
+        border-right: 1px solid #bdbdbd;
+        margin: 0px;
+
+        .qut1_table_header_col3_subheader {
+          display: flex;
+          .qut1_table_header_col3_subheader_1 {
+            width: 30%;
+          }
+          .qut1_table_header_col3_subheader_2 {
+            width: 17%;
+          }
+          .qut1_table_header_col3_subheader_3 {
+            width: 12%;
+          }
+          .qut1_table_header_col3_subheader_4 {
+            width: 17%;
+          }
+          .qut1_table_header_col3_subheader_5 {
+            // border-right: 1px solid #bdbdbd;
+            width: 13%;
+          }
+          .qut1_table_header_col3_subheader_6 {
+            width: 21%;
+          }
+
+          .qut1_table_header_col3_totalValues {
+            border-right: 1px solid #bdbdbd !important;
+            border-top: 1px solid #bdbdbd !important;
+          }
+
+          .qut1_table_header_col3_finalTotalValues {
+            border-right: 1px solid #bdbdbd !important;
+          }
+        }
+      }
+
+      .Qut1_table_Data_col4 {
+        width: 20%;
+        border-right: 1px solid #bdbdbd;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        .qut1_table_header_col4_subheader {
+          display: flex;
+          .qut1_table_header_col4_subheader_data {
+            width: 20%;
+            display: flex;
+            margin: 0px;
+            justify-content: center;
+          }
+
+          .qut1_table_header_col4_subheader_data_total {
+            width: 20%;
+            display: flex;
+            margin: 0px;
+            justify-content: center;
+            border-right: 1px solid #bdbdbd;
+            border-top: 1px solid #bdbdbd;
+            background-color: rgb(245, 245, 245);
+          }
+
+          .qut1_table_header_col4_finalTotalValues {
+            border-right: 1px solid #bdbdbd;
+          }
+          .qut1_table_header_col3_subheader_6 {
+            width: 21%;
+          }
+        }
+      }
+
+      .Qut1_table_Data_col5 {
+        width: 20%;
+        border-right: 1px solid #bdbdbd;
+        .qut1_table_header_col5_subheader {
+          display: flex;
+          .qut1_table_header_col5_subheader_1 {
+            width: 20%;
+          }
+          .qut1_table_header_col5_subheader_2 {
+            width: 17%;
+          }
+          .qut1_table_header_col5_subheader_3 {
+            width: 12%;
+          }
+          .qut1_table_header_col5_subheader_4 {
+            width: 14%;
+          }
+          .qut1_table_header_col5_subheader_5 {
+            width: 16%;
+          }
+          .qut1_table_header_col5_subheader_6 {
+            width: 21%;
+          }
+
+          .qut1_table_header_col5_totalValues {
+            border-right: 1px solid #bdbdbd !important;
+            border-top: 1px solid #bdbdbd !important;
+          }
+        }
+      }
+
+      .Qut1_table_Data_col6 {
+        width: 6%;
+        border-right: 1px solid #bdbdbd;
+      }
+
+      .Qut1_table_Data_col7 {
+        width: 14%;
+        border-right: 1px solid #bdbdbd;
+
+        .qut1_table_header_col7_subheader_1 {
+          width: 50%;
+          display: flex;
+          margin: 0px;
+          justify-content: center;
+        }
+        .qut1_table_header_col7_subheader_last {
+          width: 50%;
+          display: flex;
+          margin: 0px;
+          font-weight: bold;
+          justify-content: center;
+        }
+      }
+
+      .Qut1_table_Data_col8 {
+        width: 8%;
+        border-right: 1px solid #bdbdbd;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+  }
+
+  //........................................................................
+  .App-logo {
+    height: 40vmin;
+    pointer-events: none;
+  }
+
+  .bottom_box_one_p {
+    margin: 0px;
+    display: flex;
+  }
+
+  .second_box_description_main {
+    display: flex;
+    border-bottom: 1px solid #bdbdbd;
+  }
+
+  .second_box_description_main p {
+    margin: 0px;
+    padding: 4px;
+  }
+
+  .memo1_title_secondBox_bottom_desc {
+    display: flex;
+    text-decoration: underline;
+    font-weight: bold;
+    margin: 4px 0px !important;
+  }
+
+  .memo1_secondBox_bottom_desc {
+    display: flex;
+    text-decoration: underline;
+    font-weight: bold;
+    margin: -20px 0px 4px 0px !important;
+    text-align: justify;
+    font-style: italic;
+  }
+
+  .paking3__bottomSection_main {
+    display: flex;
+    margin-top: 5px;
+    width: 100%;
+    gap: 10px;
+
+    .paking3__bottomSection_Box1 {
+      width: 50%;
+      display: flex;
+      gap: 10px;
+
+      .paking3__bottomSection_Box1_subBox1 {
+        width: 70%;
+        border: 0.5px solid #bdbdbd;
+        .paking3__bottomSection_Box1_subBox1_summury {
+          display: flex;
+          justify-content: space-between;
+        }
+      }
+      .paking3__bottomSection_Box1_subBox2 {
+        width: 30%;
+        border: 0.5px solid #bdbdbd;
+      }
+    }
+    .paking3__bottomSection_Box2 {
+      width: 50%;
+      display: flex;
+      justify-content: flex-end;
+
+      .paking3__bottomSection_Box2_subBox1 {
+        width: 80%;
+        border: 0.5px solid #bdbdbd;
+      }
+
+      .paking3__bottomSection_Box2_subBox2 {
+        // min-height: 150px;
+        width: 22%;
+        border: 1px solid #bdbdbd;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+      }
+
+      .paking3__bottomSection_Box2_subBox3 {
+        width: 48%;
+        // min-height: 150px;
+        border: 1px solid #bdbdbd;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+      }
+    }
+  }
+
+  .paking3_total_div {
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+  }
+
+  .invoice_print_btn {
+    height: 30px;
+    width: 120px;
+    background-color: lightgray;
+  }
+
+  .qut_summury_total_box_div {
+    display: flex;
+    justify-content: space-between;
+    padding-inline: 2px;
+    line-height: 16px;
+  }
+
+  @media print {
+    .qut1_print_main_div {
+      font-size: 7px !important;
+    }
+
+    .btn_white {
+      display: none !important;
+    }
+
+    .quation_design_img {
+      height: 60px !important;
+      width: 60px !important;
+    }
+
+    .Qut1_table_Data_main {
+      page-break-inside: avoid !important;
+    }
+
+    .qut1_table_total_assign_height{
+      height: 13px !important;
+    }
+
+
+
+    .paking3__bottomSection_main {
+  
+      .paking3__bottomSection_Box1 {
+        width: 70% !important;
+    
+      }
+
+      .qut_summury_total_box_div {
+        line-height: 10px !important;
+      }
+
+      .paking3__bottomSection_Box2 {
+        width: 30% !important;
+
+        .paking3__bottomSection_Box2_subBox2 {
+          width: 50% !important;
+        }
+      }
+    }
+  
+  }
+}

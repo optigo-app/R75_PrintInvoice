@@ -1,0 +1,161 @@
+.tax_invoice_container {
+    /* zoom: 1.2; */
+    width: 1259px;
+    min-width: 1259px;
+    max-width: 1259px;
+    color: black;
+    box-sizing: border-box;
+    font-family: Calibri;
+}
+
+.tax_invoice_container *,
+.container * {
+    font-size: 12px;
+    line-height: 120%;
+    word-break: normal;
+}
+
+.rowWisePad p {
+    /* padding: 2px; */
+    padding: 1px;
+    box-sizing: border-box;
+}
+
+.srno { 
+    width: 18px;
+    box-sizing: border-box;
+    /* width: 3%;
+    min-width: 3%; */
+}
+
+.design {
+    width: 125px;
+    box-sizing: border-box;
+    /* width: 7%;
+    min-width: 7%; */
+}
+
+.diamond {
+    width: 337px;
+    box-sizing: border-box;
+    /* width: 24%;
+    min-width: 24%; */
+}
+
+.metal {
+    width: 219px;
+    box-sizing: border-box;
+    /* width: 22%;
+    min-width: 22%; */
+}
+
+.stone {
+    width: 315px;
+    box-sizing: border-box;
+    /* width: 24%;
+    min-width: 24%; */
+}
+
+.otherAmount {
+    width: 59px;
+    box-sizing: border-box;
+    /* width: 50px; */
+    /* width: 4%;
+    min-width: 4%; */
+}
+
+.labourAmount {
+    width: 103px;
+    box-sizing: border-box;
+    /* width: 9%;
+    min-width: 9%; */
+}
+
+.totalAmount {
+    width: 73px;
+    box-sizing: border-box;
+    /* width: 7%;
+    min-width: 7%; */
+}
+
+.cgst {
+    width: 94%;
+    min-width: 94%;
+    box-sizing: border-box;
+}
+
+.pad_1 {
+    padding: 1px;
+}
+
+.customerFirmName {
+    font-size: 12px;
+}
+
+.wordBreak * {
+    word-break: break-word !important;
+}
+.nowordBreak * {
+    word-break: normal !important;
+}
+
+.font_13,
+.font_13 * {
+    font-size: 13px;
+}
+
+.font_12,
+.font_12 * {
+    font-size: 12px;
+}
+
+.font_15,
+.font_15 * {
+    font-size: 15px;
+}
+
+.minHeight {
+    min-Height: 12px;
+}
+
+
+/* .font_12{} */
+
+
+@media print {
+    .print_sec_sum4 {
+        display: none !important;
+    }
+
+    .tax_invoice_container {
+        padding-top: 5px !important;
+    }
+
+    .tax_invoice_container *,
+    .container * {
+        font-size: 9.5px;
+        line-height: 11px;
+    }
+
+    .customerFirmName {
+        font-size: 12px;
+        line-height: 13px;
+    }
+
+    .tax_invoice_container *,
+    .container *,
+    .font_13,
+    .font_13 *,
+    .font_12,
+    .font_12 *,
+    .font_15,
+    .font_15 * {
+        font-size: 12px;
+        line-height: 12px;
+    }
+
+    /* .tax_invoice_container {
+        zoom: unset;
+    } */
+    
+}

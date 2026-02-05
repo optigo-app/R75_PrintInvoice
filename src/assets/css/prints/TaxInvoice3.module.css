@@ -1,0 +1,78 @@
+.taxinvoice3 * {
+  font-size: 12px;
+  line-height: 120%;
+  font-family: Calibri;
+}
+
+/* Sr#	Item	Purity	Qty	Gold	Diamond	ColorStone	Others	Labour	Total */
+
+.Sr {
+  width: 5%;
+  min-width: 5%;
+}
+
+.Item{
+    width: 10%;
+    min-width: 10%;
+}
+
+.font_14, .font_14 *{
+  font-size: 14px;
+}
+
+
+.Diamond,
+.ColorStone {
+  width: 16%;
+  min-width: 16%;
+}
+.Gold{
+  width: 17%;
+  min-width: 17%;
+}
+
+.Others {
+  width: 7.39%;
+  min-width: 7.39%;
+}
+
+.Labour {
+  width: 7.78%;
+  min-width: 7.78%;
+}
+
+.Purity{
+  width: 6.39%;
+  min-width: 6.39%;
+}
+
+.Total {
+  width: 9.39%;
+  min-width: 9.39%;
+}
+.Qty{
+  width: 5%;
+  min-width: 5%;
+}
+
+.words{
+  width: 69.7%;
+  min-width: 69.7%;
+}
+
+.grandTotal{
+  width: 30.3%;
+  min-width: 30.3%;
+}
+
+
+@media print{
+  .print_sec_sum4{
+    display: none !important;
+  }
+
+  .taxinvoice3 *{
+    font-size: 9px;
+  }
+}
+

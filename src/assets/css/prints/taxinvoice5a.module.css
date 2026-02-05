@@ -1,0 +1,123 @@
+.taxinvoice5 *{
+    font-size: 14px;
+    line-height: 100%;
+    word-break: normal;
+    font-family: Calibri;
+}
+.max_width_container_ti{
+  max-width: 870px;
+}
+
+
+
+.taxinvoice5 .font_16,.taxinvoice5 .font_16 *{
+  font-size: 16px;
+}
+
+.taxinvoice5 .font_12,.taxinvoice5  .font_12 *{
+  font-size: 12px;
+}
+
+/* .taxinvoice5 .font_14, .font_14 *{
+  font-size: 14px;
+} */
+
+.Sr {
+    width: 7%;
+    min-width: 7%;
+  }
+
+.Jewel {
+  width: 16%;
+  min-width: 16%;
+}
+.KT {
+  width: 12%;
+  min-width: 12%;
+}
+.Gross {
+  /* width: 14%;
+  min-width: 14%; */
+  width: 10%;
+  min-width: 10%;
+}
+.Net {
+  /* width: 14%;
+  min-width: 14%; */
+  width: 10%;
+  min-width: 10%;
+}
+.Diamond {
+  width: 11%;
+  min-width: 11%;
+  /* width: 14%;
+  min-width: 14%; */
+}
+.Stone {
+  width: 11%;
+  min-width: 11%;
+  /* width: 14%;
+  min-width: 14%; */
+}
+.Discount {
+  width: 11%;
+  min-width: 11%;
+}
+.Price {
+  width: 12%;
+  min-width: 12%;
+}
+
+
+
+.words {
+  width: 59%;
+  min-width: 59%;
+}
+.grandTotal {
+  width: 41%;
+  min-width: 41%;
+}
+.grandTotalWord {
+  width: 73%;
+  min-width: 73%;
+}
+.grandTotalValue {
+  width: 27%;
+  min-width: 27%;
+}
+.sup{
+    font-size: 11px;
+}
+
+.word_break,.word_break *{
+  word-break: break-all;
+} 
+.declti *{
+  line-height: 130%;
+}
+@media print{
+  .print_sec_sum4{
+    display: none !important;
+  }
+  .taxinvoice5 .font_16,.taxinvoice5 .font_16 *{
+    font-size: 15px !important;
+    line-height: 16px !important;
+  }
+  
+  .taxinvoice5 .font_12,.taxinvoice5  .font_12 *{
+    font-size: 13px !important;
+    line-height: 14px !important;
+  }
+  .taxinvoice5 *{
+    font-size: 11px;
+    line-height: 12px !important;
+    word-break: normal;
+}
+.fstitle_ti5{
+  font-size: 19px !important;
+}
+.lhheaderti5{
+  line-height: 7px !important;
+}
+}

@@ -1,0 +1,50 @@
+.estimate1Container *:not(.remark *){
+    font-size: 16px;
+    word-break: normal;
+    font-family: Calibri;
+}
+
+.img{
+    max-height: 75px;
+    object-fit: contain;
+    object-position: center;
+}
+
+.word_break *{
+    word-break: break-all;
+}
+
+.word_breaks *{
+    word-break: break-all !important;
+}
+
+.estimate1Container .font_16,.estimate1Container .font_16 *{
+    font-size: 16px;
+}
+
+.estimate1Container .font_12, .estimate1Container .font_12 *{
+    font-size: 12px;
+}
+
+.estimate1Container .font_112, .estimate1Container .font_112 *{
+    font-size: 12px;
+}
+
+@media print{
+    .print_sec_sum4{
+        display: none !important;
+    }
+    
+    .estimate1Container .font_12, .estimate1Container .font_12 *{
+        font-size: 9px;
+    }
+
+    .estimate1Container{
+        padding-top: 150px;
+    }
+
+    .estimateprint_top_label{
+        padding: 0px !important;
+    }
+
+}

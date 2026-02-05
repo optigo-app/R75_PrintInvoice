@@ -1,0 +1,114 @@
+.detailprint8 *{
+    font-size: 11px;
+    line-height: 120%;
+    word-break: normal;
+    font-family: Calibri;
+}
+
+ .qty, .totalt{
+    width: 5%;
+    min-width: 5%;
+}
+.Sr{
+    width: 3.5%;
+    min-width: 3.5%;
+}
+.design{
+    width: 10%;
+    min-width: 10%;
+}
+
+.Pcs{
+    width: 7%;
+    min-width: 7%;
+}
+.material{
+    width: 51.5%;
+    min-width: 51.5%;
+}
+
+.word_breakNormal{
+    word-break: break-all;
+}
+
+.min_height_title{
+    min-height: 35px;
+    max-height: 35px;
+}
+
+.other, .wtt{
+    width: 7%;
+    min-width: 7%;
+}
+.labour, .ctwt{
+    width: 14%;
+    min-width: 14%;
+}
+.amount, .taxAmount, .tt{
+    width: 9%;
+    min-width: 9%;
+}
+.Material {
+    width: 15%;
+    min-width: 15%;
+}
+
+.Shape{
+    width: 19%;
+    min-width: 19%;
+}
+.Qlty, .Color {
+    width: 8%;
+    min-width: 8%;
+}
+.Size{
+    width: 11%;
+    min-width: 11%;
+}
+ .Rate, .Amount{
+    width: 11%;
+    min-width: 11%;
+}
+
+.WtCtw{
+    width: 10%;
+    min-width: 10%;
+}
+.words{
+    width: 70%;
+    min-width: 70%;
+}
+.taxes{
+    width: 21%;
+    min-width: 21%;
+}   
+.qtyt{
+    width: 33%;
+    min-width: 33%;
+}
+.dt{
+    width: 21.3%;
+    min-width: 21.3%;
+}
+.ct{
+    width: 6%;
+    min-width: 6%;
+}
+.mt{
+    width: 4.7%;
+    min-width: 4.7%;
+}
+
+.font_12, .font_12 *{
+    font-size: 12px;
+}
+
+.font_14, .font_14 *{
+    font-size: 14px;
+}
+
+@media print{
+    .detailprint8 *{
+        font-size: 9px !important;
+    }
+}

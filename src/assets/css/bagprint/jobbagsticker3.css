@@ -1,0 +1,141 @@
+
+.container_job_bag_sticker_3 * {
+    font-family: Calibri;
+    line-height: 8px;
+    font-family: Calibri;
+}
+
+#jobsticker3 {
+    padding: 1em;
+    height: 270px !important;
+    width: 250px !important;
+}
+
+.container_job_bag_sticker_3 {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 0;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+}
+
+.bag_space {
+    box-sizing: border-box;
+    width: 145.6mm !important;
+    /* margin: 0 auto; */
+    margin-top: 3rem;
+    margin-left: 8rem;
+    page-break-after: always;
+}
+
+.imgSize3 {
+    width: 10px;
+    height: 10px;
+}
+
+.heading_job_3 {
+    display: flex;
+    padding: 1rem;
+    position: relative;
+    width: 135mm;
+    height: 120.6mm;
+}
+
+.img_aside_3 {
+    height: 300px;
+    width: 23rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.ins_3 {
+    margin-top: -1rem;
+    padding: 1em;
+    width: 245px;
+    height: 150px;
+    word-break: break-all;
+}
+
+.width_dept {
+    width: 9mm !important;
+}
+
+.barcode img {
+    box-sizing: border-box;
+    height: 10.5291666667mm;
+    left: -24.024166667mm;
+    position: absolute;
+    top: 25.929166667mm;
+    -webkit-transform: rotate(90deg) translate(-50%);
+    transform: rotate(90deg) translate(-50%);
+    width: 36.777083333mm;
+}
+
+.barcode_sticker_new {
+    display: block;
+    height: 30px !important;
+    width: 250px !important;
+    margin: 0 auto;
+    object-fit: cover;
+    position: relative;
+    right: -130px;
+    top: 115px;
+    transform: translate(0) rotate(90deg) !important;
+    z-index: 1;
+}
+
+.barcode img {
+    height: 12px;
+    left: -90.8px;
+    position: absolute;
+    top: 98px;
+    -webkit-transform: rotate(90deg) translate(-50%);
+    transform: rotate(90deg) translate(-50%);
+    width: 139px;
+}
+
+.databarcode_3 {
+    display: flex;
+    width: 13rem;
+    margin-top: 10px;
+}
+
+
+.data_center_3 {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 20em;
+}
+
+.h1_3 {
+    font-size: 1.8rem;
+    word-break: break-all;
+    line-height: 42px;
+    font-weight: 500;
+}
+
+.imgSection_3 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.img_job3 {
+    height: 25rem;
+    width: 20rem;
+}
+
+.d_none_update {
+    display: none;
+}
+
+@media print {
+    .container_job_bag_sticker_3 {
+        flex-direction: column !important;
+        font-family: Calibri !important;
+    }
+
+}

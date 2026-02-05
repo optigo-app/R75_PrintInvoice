@@ -1,0 +1,660 @@
+.summary-print-4 {
+  font-family: "Calibri", sans-serif !important;
+}
+
+.h1_sum4 {
+  line-height: 120%;
+  font-size: 20px;
+  font-size: Calibri !important;
+}
+
+.fs_S4 {
+  font-size: Calibri !important;
+}
+
+.address_sum4 > p {
+  margin-bottom: 0;
+  font-size: Calibri !important;
+}
+
+.address_para_sum4 {
+  line-height: 120%;
+  font-size: 13.5px;
+}
+
+.logo_sec_sum4 > img {
+  max-width: 150px;
+}
+
+.header_section_sum4 {
+  border-bottom: 2px solid #c3c3c3;
+}
+
+.invoice_text_sum4 > h2 {
+  font-size: 17px;
+  line-height: 120%;
+  font-weight: 400;
+}
+
+.invoice_text_sum4 > h2 > span {
+  font-weight: 700;
+}
+
+.address_line_sum4 > p {
+  font-size: 12px;
+  line-height: 14px;
+}
+
+.address_line_sum4 > h3 {
+  font-weight: 700;
+  line-height: 120%;
+  font-size: 14px;
+}
+
+.address_lines_sum4 > p {
+  line-height: 120%;
+  font-size: 15px;
+}
+
+.address_lines_sum4 > p > span {
+  font-weight: 700;
+}
+
+.sum4_table div {
+  line-height: 120%;
+  font-size: 12px;
+}
+
+.sum12_table div,
+.sum12_table * {
+  line-height: 120% !important;
+  font-size: 11px !important;
+}
+
+.col1{
+  width: 3%;
+}
+.col2{
+  width: 8%;
+}
+.col3{
+  width: 8%;
+}
+.col4{
+  width: 5%;
+}
+.col5{
+  width: 6%;
+}
+.col6{
+  width: 6%;
+}
+.col7{
+  width: 5%;
+}
+.col8{
+  width: 5%;
+}
+.col9{
+  width: 5%;
+}
+.col10{
+  width: 5%;
+}
+.col11{
+  width: 5%;
+}
+.col12{
+  width: 5%;
+}
+.col13{
+  width: 6%;
+}
+.col14{
+  width: 6%;
+}
+.col15{
+  width: 7%;
+}
+.col16{
+  width: 7%;
+}
+.col17{
+  width: 8%;
+}
+
+
+.summury4_col1{
+  width: 3%;
+}
+.summury4_col2{
+  width: 8%;
+}
+.summury4_col3{
+  width: 8%;
+}
+.summury4_col4{
+  width: 5%;
+}
+.summury4_col5{
+  width: 6%;
+}
+.summury4_col6{
+  width: 6%;
+}
+.summury4_col7{
+  width: 5%;
+}
+.summury4_col8{
+  width: 5%;
+}
+.summury4_col9{
+  width: 5%;
+}
+.summury4_col10{
+  width: 5%;
+}
+.summury4_col11{
+  width: 5%;
+}
+.summury4_col12{
+  width: 5%;
+}
+.summury4_col13{
+  width: 6%;
+}
+.summury4_col14{
+  width: 6%;
+}
+.summury4_col15{
+  width: 7%;
+}
+.summury4_col16{
+  width: 7%;
+}
+.summury4_col17{
+  width: 8%;
+}
+
+.summury4_col4m {
+  width: 6%;
+}
+.summury4_col5m {
+  width: 7%;
+}
+.summury4_col6m {
+  width: 7%;
+}
+.summury4_col7m {
+  width: 6%;
+}
+.summury4_col8m {
+  width: 6%;
+}
+.summury4_col9m {
+  width: 6%;
+}
+.summury4_col10m {
+  width: 6%;
+}
+.summury4_col11m {
+  width: 6%;
+}
+.summury4_col12m {
+  width: 6%;
+}
+.summury4_col15m {
+  width: 8%;
+}
+.summury4_col16m {
+  width: 8%;
+}
+.summury4_col17m {
+  width: 9%;
+}
+
+
+.col4m {
+  width: 6%;
+}
+.col5m {
+  width: 7%;
+}
+.col6m {
+  width: 7%;
+}
+.col7m {
+  width: 6%;
+}
+.col8m {
+  width: 6%;
+}
+.col9m {
+  width: 6%;
+}
+.col10m {
+  width: 6%;
+}
+.col11m {
+  width: 6%;
+}
+.col12m {
+  width: 6%;
+}
+.col15m {
+  width: 8%;
+}
+.col16m {
+  width: 8%;
+}
+.col17m {
+  width: 9%;
+}
+
+.word_break_setting {
+  word-break: break-word !important;
+}
+
+.amount_sum_4 {
+  width: 9%;
+}
+.amount_sum_4_show{
+  width: 7.5%;
+}
+
+.sum4_table img {
+  max-width: 60px;
+  width: 60px;
+}
+
+.total_sum4 {
+  /* width: 135.5px; */
+  width: 11%;
+  min-width: 11%;
+}
+
+.total_sum12 {
+  /* width: 135.5px; */
+  width: 25%;
+  min-width: 25%;
+}
+
+.bg_total_sum4 {
+  background: #f2f2f2;
+  min-height: 23px;
+}
+
+.summary_detail_sum4 {
+  height: fit-content;
+  width: 52%;
+  margin-right: 0.5%;
+}
+
+.cgst_sum4 {
+  /* width: 479px; */
+  width: 47.5%;
+  min-width: 47.5%;
+}
+
+.total_sec_sum4 > div {
+  line-height: 120%;
+  font-size: 13px;
+}
+
+.deatil_SectionTitle{
+  margin-top: 50px !important;
+}
+
+.summary_detail_sum4 > div {
+  line-height: 120%;
+  font-size: 15px;
+}
+
+.gold_24kt_sum4 div,
+.cgst_sum4 div {
+  line-height: 120%;
+  font-size: 12px;
+  line-height: 100%;
+}
+.gold_24kt_sum4 {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5px;
+}
+
+.font_16_sum4 {
+  line-height: 120%;
+  font-size: 16px;
+}
+
+.font_15_sum4 {
+  line-height: 120%;
+  font-size: 15px;
+}
+
+.font_14_sum4 {
+  line-height: 120%;
+  font-size: 14px;
+}
+
+.font_13_sum4 {
+  line-height: 120%;
+  font-size: 13px;
+}
+
+.metal_type_sum4 {
+  /* width: 80px;
+    min-width: 80px; */
+  width: 20%;
+  min-width: 20%;
+}
+
+.dia_wt_sum4,
+.GWt_sum4,
+.net_wt_sum4,
+.fine_wt_sum4 {
+  /* width: 74px;
+    min-width: 74px; */
+  width: 15%;
+  min-width: 15%;
+}
+
+.gold_amount_sum4 {
+  /* width: 100px;
+    min-width: 100px; */
+  width: 20%;
+  min-width: 20%;
+}
+
+.cgst_sum4 > div > div {
+  text-align: center;
+}
+
+.sgst_sec_sum4 {
+  /* width: 723px; */
+  width: 80%;
+  min-width: 80%;
+  min-height: 80px;
+  margin-right: 0.5%;
+}
+
+.sgst_part_sum4 {
+  /* width: 250px; */
+  width: 19.5%;
+  min-width: 19.5%;
+}
+
+.sgst_sec_sum4 > div:first-child {
+  line-height: 120%;
+  font-size: 15px;
+}
+
+.amazon_sum4 {
+  width: 200px;
+}
+
+.amazon_text_sum4 {
+  width: max-content;
+  padding-right: 10px;
+}
+
+.amazon_number_sum4 {
+  width: max-content;
+}
+
+.width_315_sum4 {
+  width: 315px;
+}
+
+.width_295_sum4 {
+  width: 295px;
+}
+
+.remark_list_sum4 > li {
+  line-height: 130%;
+  line-height: 120%;
+  font-size: 15px;
+}
+
+.height_65_sum4 {
+  height: 65px;
+}
+
+.total_sgst_text_sum4 {
+  width: 80%;
+  min-width: 80%;
+  margin-right: 0.5%;
+}
+
+.total_sgst_number_sum4 {
+  /* width: 250px; */
+  width: 19.5%;
+  min-width: 19.5%;
+}
+
+.total_sgst_sum4 p {
+  line-height: 120%;
+  font-size: 14px;
+}
+
+.metalTypeSum4,
+.netWtSum4,
+.tunchSum4,
+.pureWtSum4 {
+  /* width: 137.45px; */
+  width: 14%;
+  min-width: 14%;
+}
+
+.GwtSum4 {
+  /* width: 115.05px; */
+  width: 14%;
+  min-width: 14%;
+}
+
+.goldPriceSum4 {
+  width: 14%;
+  min-width: 14%;
+}
+
+.goldAmtSum4 {
+  width: 16%;
+  min-width: 16%;
+}
+
+.height34Sum4 {
+  height: 34px;
+}
+
+.diamondTypeSum4 {
+  width: 55%;
+  min-width: 55%;
+  margin-right: 0.5;
+}
+
+.csTypeSum4 {
+  /* width: 445px; */
+  width: 44.5%;
+  min-width: 44.5%;
+}
+
+.DiamondTypeSum4,
+.DiamondPriceSum4,
+.DiamondDiscountSum4,
+.DiamondAmountSum4 {
+  width: 22%;
+  min-width: 22%;
+}
+
+.DiamondCtwSum4 {
+  min-width: 12%;
+}
+
+.cstypeTextSum4 {
+  /* width: 110.7px; */
+  min-width: 25%;
+  width: 25%;
+}
+.wdth51 {
+  width: 50.10%;
+}
+.wdth49 {
+  width: 49.90%;
+}
+.sum4_table p {
+  line-height: 130%;
+}
+
+.font_alignment_Setting {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Summary_Detail_title {
+  font-size: 15px !important;
+  background: #f2f2f2;
+}
+
+@media print {
+  @page{
+    margin: 20px;
+  }
+  .summury4_col_font{
+    font-size: 5px !important;
+  }
+
+  .font_15_sum4 {
+    line-height: 90%;
+    font-size: 11px !important;
+  }
+  .font_14_sum4 {
+    line-height: 90%;
+    font-size: 10.5px !important;
+  }
+
+  .other_summury_font div {
+    font-size: 11px !important;
+  }
+
+  .gold_24kt_sum4 {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 1.5px !important;
+  }
+  .bg_total_sum4 {
+    display: flex;
+    align-items: end;
+    min-height: 15px !important;
+  }
+
+  .summury4_notes_text {
+    font-size: 8px !important;
+  }
+
+  .summury4_notes_text span {
+    font-size: 8px !important;
+  }
+  .summury4_padding_top {
+    padding-top: 0px !important;
+  }
+
+  .total_sec_sum4 > div {
+    font-size: 11px !important;
+  }
+
+  .total_sgst_sum4 p {
+    line-height: 100%;
+    font-size: 10px !important;
+  }
+
+  .summury4_total_font {
+    margin-bottom: 5px !important;
+  }
+
+  .address_line_sum4 > p {
+    font-size: 9.5px !important;
+    line-height: 10.5px !important;
+  }
+
+  .sum4_table div {
+    font-size: 8px !important;
+  }
+
+  .total_sgst_number_sum4 {
+    font-size: 10.5px !important;
+    display: flex;
+    flex-direction: column;
+    gap: 3px !important;
+  }
+
+  .show_summury_title {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: start !important;
+    margin-bottom: 10px !important;
+  }
+
+  .summary_detail_sum4 div {
+    font-size: 12px !important;
+  }
+
+  .cgst_sum4 div {
+    font-size: 11px !important;
+  }
+
+  .sum4_table img {
+    max-width: 45px !important;
+    width: 45px !important;
+  }
+
+  .height34Sum4 {
+    height: 20px;
+  }
+
+  .address_lines_sum4 > p {
+    font-size: 11px !important;
+  }
+
+  .Summary_Detail_title {
+    font-size: 25px !important;
+  }
+
+  .invoice_text_sum4 > h2 {
+    font-size: 14px;
+    line-height: 100%;
+    font-weight: 400;
+  }
+
+  .address_para_sum4 {
+    font-size: 10px !important;
+    line-height: 90% !important;
+  }
+
+  .address_line_sum4 h3 {
+    font-size: 11px !important;
+  }
+
+  .h1_sum4 {
+    font-size: 15px !important;
+  }
+
+  .no_break {
+    page-break-inside: avoid;
+  }
+
+  .pno_break {
+    page-break-before: always;
+  }
+
+  .print_sec_sum4 {
+    display: none !important;
+  }
+
+  .sum4_table > div,
+  .note_sec_sum4,
+  .remarks_sum4 {
+    /* border-top: 0.5px solid #dee2e6 !important; */
+    page-break-inside: avoid;
+  }
+}

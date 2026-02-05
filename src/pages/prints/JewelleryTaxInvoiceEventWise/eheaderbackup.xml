@@ -1,0 +1,76 @@
+ <div>
+        <div className={`header3`}>
+
+        {/* <div className="headline">
+          <div className="fs-4">{json0Data?.PrintHeadLabel}</div>
+          <div className="fs-4">{json0Data?.E_HeadLabel}</div>
+        </div> */}
+        <div>
+          
+        </div>
+        <div className={`companyDetails d-flex justify-content-between align-items-start w-100 `} >
+          <div className="pt-2" style={{width:"60%"}}>
+            {/* <div>
+              <img src={json0Data?.PrintLogo} alt="home" className="mb-2" style={{ width: "116px" }} />
+            </div> */}
+            <div className={`fw-bold fs-5 linesmain`}>{json0Data?.CompanyFullName}</div>
+            <div className={`lines`}>{json0Data?.CompanyAddress}</div>
+            <div className={`lines`}>{json0Data?.CompanyCity} {json0Data?.CompanyAddress2}</div>
+            <div className={`lines`}>{json0Data?.CompanyCity} - {json0Data?.CompanyPinCode} {json0Data?.CompanyState} ({json0Data?.CompanyCountry})</div>
+            <div className={`${`lines`} flex-wrap`}>T {json0Data?.CompanyTellNo} {json0Data?.CompanyTollFreeNo !== "" && ` | TOLL FREE ${json0Data?.CompanyTollFreeNo} | TOLL FREE ${json0Data?.CompanyTollFreeNo}`} </div>
+            <div className={`lines`}>
+              {json0Data?.CompanyEmail} | {json0Data?.CompanyWebsite}
+            </div>
+            <div className="lines">
+              {json0Data?.Company_VAT_GST_No} {(json0Data?.Company_CST_STATE_No !== "" && json0Data?.Company_CST_STATE !== "") && `| ${json0Data?.Company_CST_STATE} - ${json0Data?.Company_CST_STATE_No}`} 
+              {json0Data?.Com_pannumber !== "" && ` | PAN-${json0Data?.Com_pannumber}`}
+            </div>
+          </div>
+          <div className="" style={{width:"40%"}}>
+            <div className={`qrcodeupperdivh3`} style={{maxHeight:'250px'}}>
+              {console.log(json0Data)}
+              {/* <QrCodeForPrint text="hellosdkjnksdfbnkjbsfkjbbdasfklnenfsdeflkhnresglkjgklkndfkgjngkjngklnasdfkjndfdglkndfgknkdfgjnkjadekjsdnkj" /> */}
+              <img src={json0Data?.E_Qr} alt="" style={{objectFit:'contain'}} onError={handleGlobalImgError} />
+            </div>
+            <div className="w-100 text-end fw-bold pe-2 lh-1" style={{fontSize: "15px"}}>
+              {json0Data?.InvoiceBillType}
+            </div>
+          </div>
+        </div>
+        <div className={`tranDetails`}>
+          <div className={`einvdetails`}>1.e-Invoice Details</div>
+          <div className={`einvoiceDetails`}>
+            <div className="d-flex">
+              <div className={`fw-bold fshead3comp`}>IRN : </div>
+              <div className={`fshead3comp`}> {json0Data?.E_IRN}</div>
+            </div>
+            <div className="d-flex">
+              <div className={`fw-bold fshead3comp`}>Ack No.</div>
+              <div className={`fshead3comp`}> {json0Data?.E_AckNo}</div>
+            </div>
+            <div className="d-flex">
+              <div className={`fw-bold fshead3comp`}>Ack. Date :</div>
+              <div className={`fshead3comp`}> {json0Data?.E_AckDt}</div>
+            </div>
+          </div>
+        </div>
+        <div className={`tranDetails`}>
+          <div className={`einvdetails`}>2.Transaction Details</div>
+          <div className={`einvoiceDetails`}>
+            <div className={`commonwidthh3`}>
+              <div><b>Category : </b> {json0Data?.E_Category}</div>
+              <div><b>Invoice Type : </b> Tax Invoice</div>
+            </div>
+            <div className={`commonwidthh3`}>
+              <div><b>Invoice No : </b> {json0Data?.InvoiceNo}</div>
+              <div><b>Invoice Date : </b> {json0Data?.EntryDate}</div>
+            </div>
+            <div className={`commonwidthh3`}>
+              <div><b>IGST on INTRA : </b> {json0Data?.E_INTRA}</div>
+              <div><b>Description : </b> {json0Data?.E_Desc}</div>
+            </div>
+          </div>
+        </div>
+
+        </div>
+        </div>

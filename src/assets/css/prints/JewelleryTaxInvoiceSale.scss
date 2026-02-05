@@ -1,0 +1,59 @@
+@font-face {
+  font-family: "Calibri";
+  src: url("../../../assets/fonts/calibri-font-family/calibri-regular.ttf")
+    format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Calibri";
+  src: url("../../../assets/fonts/calibri-font-family/calibri-bold.ttf")
+    format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Calibri";
+  src: url("../../../assets/fonts/calibri-font-family/calibri-italic.ttf")
+    format("truetype");
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Calibri";
+  src: url("../../../assets/fonts/calibri-font-family/calibri-bold-italic.ttf")
+    format("truetype");
+  font-weight: bold;
+  font-style: italic;
+}
+
+.jewelleryinvoiceContain_new {
+  font-family: "Calibri", sans-serif !important;
+
+  .branchAddress_jti {
+    font-family: "Calibri", sans-serif !important;
+    font-size: 12px !important;
+  }
+
+  .jewel_tax_invoice_setting{
+    font-family: "Calibri", sans-serif !important;
+  }
+
+  .jewel_customer_addres_line_top{
+    font-size: 12px;
+    font-weight: bold;
+  }
+
+  .jewel_customer_addres_line{
+    font-size: 11.1px !important;
+    line-height: 13px !important;
+    width: 180px;
+  }
+
+  .jewel_top_right_infor{
+    font-family: "Calibri", sans-serif !important;
+  }
+}

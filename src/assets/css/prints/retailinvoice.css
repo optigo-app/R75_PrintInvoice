@@ -1,0 +1,120 @@
+.container_ri{
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 5rem;
+    padding: 1rem;
+    padding-bottom: 5rem;
+    color: black;
+    font-family: Calibri;
+}
+.fs_ri{
+    font-size: 13px;
+    line-height: 15px;
+}
+.center_ri{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.start_jus_ri{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.end_ri{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.printheadlabel_ri{
+    height: 40px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    background-color: #939292;
+    padding-left: 5px;
+}
+.box1_ri{
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border: 1px solid black;
+    width: 25%;
+}
+
+.col1_ri{
+    width: 12%;
+}
+.col2_ri{
+    width: 6%;
+}
+.col3_ri{
+    width: 6%;
+}
+.col4_ri{
+    width: 7%;
+}
+.col5_ri{
+    width: 7%;
+}
+.col6_ri{
+    width: 7%;
+}
+.col7_ri{
+    width: 7%;
+}
+.col8_ri{
+    width: 10%;
+}
+.col9_ri{
+    width: 8%;
+}
+.col10_ri{
+    width: 10%;
+}
+.col11_ri{
+    width: 10%;
+}
+.col12_ri{
+    width: 10%;
+}
+.note_ri *{
+    font-size: 13px;
+    line-height: 18px;
+}
+.brb_clr{
+    border-bottom: 1pt solid rgb(219, 219, 219);
+}
+.img_ri{
+    max-width: 75px;
+    max-height: 75px;
+    
+}
+@media print {
+    .d-none_ri{
+        display: none !important;
+    }
+    .pbia{
+        page-break-inside: avoid !important;
+    }
+    .fs_ri{
+        font-size: 9.5px;
+        line-height: 12px;
+    }
+    .box1_ri{
+        font-size: 9.5px;
+    }
+    .note_ri *{
+        font-size: 9px;
+        line-height: 12px;
+    }
+    .img_ri{
+        max-width: 65px;
+        max-height: 65px;   
+    }
+}

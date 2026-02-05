@@ -1,0 +1,55 @@
+.sm_container{
+    box-sizing: border-box;
+
+    font-size: 18px;
+    line-height: 22px;
+    font-weight: bold;
+    font-family: Verdana !important;
+
+    display: flex;
+    align-items: flex-start;
+    padding: 2px;
+    margin: 0px;
+}
+
+
+
+.qrcodebgSM > .qrcodegen{
+    height: 80px !important;
+    width: 80px !important;
+}
+
+
+.div1_SM{
+}
+.div2_SM{
+    padding-right: 15px;
+}
+.mt_8_SM{
+    margin-top: 4px;
+}
+.rfbagValSM{
+    border-bottom: 3px solid black;
+    line-height: 30px;
+}
+
+
+.end_SM{
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    width: 15%;
+}
+.center_sm_rf{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media print {
+    .print_btn_SM{
+        display: none !important;
+    }
+
+}
+

@@ -1,0 +1,379 @@
+html {
+    scrollbar-gutter: stable;
+}
+
+.containerEstimate {
+    max-width: 335mm !important;
+    font-family: Calibri;
+    box-sizing: border-box;
+}
+
+.containerEstimate *{
+    font-size: 12px;
+}
+
+.mainDetailEstimate {
+    min-width: 100px;
+}
+
+.srNoEstimatePrint {
+    /* width: 25px;
+    min-width: 25px; */
+    width: 3%;
+    min-width: 3%;
+}
+
+.designEstimatePrint {
+    /* width: 110px;
+    min-width: 110px; */
+    width: 10%;
+    min-width: 10%;
+}
+
+.SpacHeadY {
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+
+.SpacSubHeadY {
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+
+.diamondEstimatePrint,
+.stoneEstimatePrint {
+    /* width: 269.5px;
+    min-width: 269.5px; */
+    width: 24%;
+    min-width: 24%;
+}
+
+.border_color_estimate {
+    border: 1px solid #BDBDBD !important; 
+}
+
+.border_color_estimates {
+    border-color: #BDBDBD !important;
+}
+
+.metalEstimatePrint {
+    /* width: 205px;
+    min-width: 205px; */
+    width: 19%;
+    min-width: 19%;
+}
+
+
+.totalAmountEstimatePrint {
+    /* width: 60px;
+    min-width: 60px; */
+    width: 6%;
+    min-width: 6%;
+}
+
+.OtherAmountEstimatePrint{
+    width: 5%;
+    min-width: 5%;
+}
+
+.labourEstimatePrint {
+    /* width: 90px;
+    min-width: 90px; */
+    width: 9%;
+    min-width: 9%;
+}
+
+
+.estimatePrintFont_14{
+    font-size: 14px
+}
+
+
+.recordEstimatePrint * {
+    font-size: 9px;
+    /* word-break: normal; */
+    word-break: break-all;
+    line-height: 100%;
+}
+
+.recordTaxTotals * {
+    font-size: 9px;
+    /* word-break: normal; */
+    word-break: break-all;
+    line-height: 100%;
+}
+
+.recordPrint * {
+    font-size: 9px;
+    word-break: break-all;
+    line-height: 9px;
+}
+
+.recordPrintWordSum {
+    font-size: 10px !important;
+    word-break: break-all;
+    line-height: 15px !important;
+}
+
+.width20EstimatePrint {
+    width: 20%;
+    min-width: 20%;
+}
+
+.width20DividedSize {
+    width: 15%;
+    min-width: 15%;
+}
+
+.width20DividedWt {
+    width: 14%;
+    min-width: 14%;
+}
+
+.width20Divided {
+    width: 11%;
+    min-width: 11%;
+}
+
+.width200EstimatePrint {
+    width: 20%;
+    min-width: 20%;
+}
+
+.totalBgEstimatePrint {
+    background: #f5f5f5;
+}
+
+.height_48_estimatePrint {
+    height: 48px;
+}
+
+.height_20_estimatePrint{
+    height: 20px;
+}
+
+.width_38_estimatePrint {
+    width: 38px;
+}
+.totalEstimatePrint {
+    /* width: 135px;
+    min-width: 135px; */
+    width: 13%;
+    min-width: 13%;
+}
+
+.summaryEstimateprint {
+    width: 332px;
+    min-width: 332px;
+}
+
+.diamondDetailEstimateprint {
+    width: 170px;
+    min-width: 170px;
+}
+
+.otherDetailEstimateprint {
+    width: 150px;
+    min-width: 150px;
+}
+
+.blankDetailEstimatePrint {
+    width: 210px;
+    min-width: 210px;
+}
+
+.createdByEstimatePrint {
+    width: 243px;
+    min-width: 243px;
+}
+
+.height3remEstimatePrint {
+    height: calc(100% + 3rem) !important;
+}
+
+.min_height_24_estimatePrint {
+    height: 15px;
+}
+
+.min_height_100EstimatePrint{
+    min-height: 71px;
+}
+
+.minHeightSign {
+    min-height: 104px;
+    max-height: 104px;
+}
+
+.height_30_estimatePrint{
+    height: 30px;
+}
+
+.pad_bot_30_estimatePrint{
+    padding-bottom: 30px;
+}
+
+.pad_bot_25_estimatePrint{
+    padding-bottom: 25px;
+}
+
+.pad_bot_29_estimatePrint{
+    padding-bottom: 21.5px;
+}
+
+.pad_bot_18_estimatePrint {
+    padding-bottom: 18px;
+}
+
+.height_18_estimatePrint {
+    height: 18px;
+}
+
+.heiht_18_8_estimatePrint{
+    height: 18.8px;
+}
+
+.height_19_estimatePrint {
+    height: 19px;
+}
+
+.height_28_5_estimatePrint {
+    min-height: 14.5px;
+}
+
+.height_29_5_estimatePrint {
+    height: 14.5px;
+}
+
+.width_40_estimatePrint{
+    min-width: 20%;
+    width: 20%;
+}
+
+.width_45_estimatePrint{
+    min-width: 45px;
+    width: 45px;
+}
+
+.pad_bot_40_estimatePrint{
+    padding-bottom: 40px ;
+}
+
+.p_1Estimate{
+    padding: 1px 2px 1px 1px;
+}
+
+.pSpaceTop {
+    padding-top: 2px;
+}
+
+.pSpaceTaxAmtY {
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+
+.BrdrTop {
+    border-top: 1px solid #f5f5f5;
+}
+
+.estimate_img{
+    max-height: 50px;
+    object-fit: contain;
+    object-position: left;
+    margin-left: 5px;
+}
+
+/* .word_break_estimate *{
+    word-break: break-all;
+} */
+
+.word_break_estimatePrint *{
+    word-break: break-all;
+}
+
+.spBold {
+    font-weight: bold;
+}
+
+.spbrWord {
+    word-break: break-word;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+}
+
+.fontCLR {
+    color: #000;
+}
+
+@media print {
+    @page {
+        margin: 20px 15px;
+    }
+
+    .spbrWord {
+        word-break: break-word !important;
+        overflow-wrap: break-word !important;
+        word-wrap: break-word !important;
+    }
+
+    .BrdrTop {
+        border-top: 1px solid #f5f5f5;
+    }
+
+    .containerEstimate *{
+        font-size: 8px;
+        box-sizing: border-box !important;
+    }
+
+    .PageNotBrkPrint {
+        page-break-inside: avoid;
+    }
+
+    .recordEstimatePrint * {
+        font-size: 6px;
+        word-break: break-all;
+        line-height: 100%;
+    }
+
+    .recordTaxTotals * {
+        font-size: 6px;
+        word-break: break-all;
+        line-height: 120%;
+    }
+
+    .recordPrint * {
+        font-size: 6px;
+        word-break: break-all;
+        line-height: 6px;
+    }
+
+    .recordPrintWordSum {
+        font-size: 6.5px !important;
+        word-break: break-all;
+        line-height: 12px !important;
+    }
+
+    .print_sec_sum4 {
+        display: none !important;
+    }
+
+    .height_28_5_estimatePrint {
+        min-height: 10.5px;
+    }
+
+    .min_height_100EstimatePrint {
+        min-height: 50px !important;
+    }
+
+    .min_height_24_estimatePrint {
+        height: 10px;
+    }
+
+    .minHeightSign {
+        min-height: 75px;
+        max-height: 75px;
+    }
+
+    .spBold{
+        font-weight: bold;
+    }
+}

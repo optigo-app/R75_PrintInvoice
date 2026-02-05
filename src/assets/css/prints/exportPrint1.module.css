@@ -1,0 +1,87 @@
+/* .containerExportPrint1 {
+    max-width: 798px;
+    margin: 0 auto;
+    padding: 0 15px;
+} */
+
+.containerExportPrint1 *:not(.Declaration *) {
+    font-size: 14px;
+    line-height: 120%;
+    font-family: Calibri;
+}
+
+.font_12, .font_12 *{
+    font-size: 12px;
+}
+
+.font_14, .font_14 *{
+    font-size: 14px;
+}
+
+.srNoExport1 {
+    /* width: 35px;
+    min-width: 35px; */
+    width: 5%;
+    min-width: 5%;
+}
+
+.discriptionExport1 {
+    /* width: 122px;
+    min-width: 122px; */
+    width: 15%;
+    min-width: 15%;
+}
+
+.designExport1 {
+    /* width: 85px;
+    min-width: 85px; */
+    width: 10%;
+    min-width: 10%;
+}
+
+.QuantityPcsExport1 {
+    /* width: 115px;
+    min-width: 115px; */
+    width: 15%;
+    min-width: 15%;
+}
+
+.HSNCODEExport1 {
+    /* width: 96px;
+    min-width: 96px; */
+    width: 15%;
+    min-width: 15%;
+}
+
+.GrossWtExport1 {
+    width: 10%;
+    min-width: 10%;
+}
+
+.RateExport1 {
+    width: 15%;
+    min-width: 15%;
+}
+
+.AmountExport1 {
+    width: 15%;
+    min-width: 15%;
+}
+
+.rowExport1>div {
+    padding: 3px;
+}
+
+.minHeight_24_8ExportPrint1 {
+    min-height: 24.8px;
+}
+
+@media print {
+    .print_sec_sum4 {
+        display: none !important;
+    }
+
+    .containerExportPrint1 * {
+        font-size: 12px;
+    }
+}

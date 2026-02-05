@@ -1,0 +1,31 @@
+.hp_container{
+    margin: 0 auto;
+    padding: 10px;
+    box-sizing: border-box;
+    font-size: 12px;
+}
+.input_field_hp{
+    padding: 10px;
+    border-radius: 12px;
+    border: 1px solid rgb(182, 59, 182);
+    outline: none;
+    min-width: 20rem;
+}
+.input_field_hp:focus{
+    outline: none;
+    border: 2px solid rgb(182 59 182 / 72%);
+}
+.input_field_hp:disabled {
+    outline: none;
+    background-color: #d1d1d1;  /* Light grey background */
+    color: #808080;             /* Grey text color */
+}
+
+.custom_chip_hp{
+    background-color: #90ee908c ;
+    padding: 6px 14px;
+    border-radius: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

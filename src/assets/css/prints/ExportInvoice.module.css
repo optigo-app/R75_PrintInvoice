@@ -1,0 +1,149 @@
+.exportInvoice *{
+    word-break: normal; 
+    overflow-wrap: break-word; 
+    font-size: 12.80px;
+    font-family: Calibri;
+}
+
+
+
+.exportInvoice p{
+    line-height: 120%; 
+}
+
+.min_height41_59{
+    min-height: 41.59px;
+}
+
+.min_height34{
+    min-height: 34px;
+}
+
+.rtgs{
+    width: 11%;
+    min-width: 11%;
+}
+
+.srNo{
+    width: 5%;
+    min-width: 5%;
+}
+
+.goods{
+    width: 23%;
+    min-width: 23%;
+}
+
+.kt{
+    width: 7%;
+    min-width: 7%;
+}
+
+.pcs{
+    width: 7%;
+    min-width: 7%;
+}
+
+.grossWt{
+    width: 10%;
+    min-width: 10%;
+}
+
+.NetWt{
+    width: 10%;
+    min-width: 10%;
+}
+
+.Rate{
+    /* width: 16.9%;
+    min-width: 16.9%; */
+    width: 17.1%;
+    min-width: 17.1%;
+}
+
+.value{
+    width: 10%;
+    min-width: 10%;
+}
+
+.small{
+    width: 38.99%;
+    min-width: 38.99%;
+}
+
+.w_20{
+    width: 20%;
+    min-width: 20%;
+}
+
+.smallgold{
+    width: calc(80% / 11);
+    min-width: calc(80% / 11);
+}
+
+.smallstudding{
+    width: 20%;
+    min-width: 20%;
+}
+/* 
+.smallgr{
+    width: 6.67%;
+    min-width: 6.67%;
+}
+
+.smallnt{
+    width: 6.67%;
+    min-width: 6.67%;
+}
+
+.smallgoldwtgms{
+    width: 6.67%;
+    min-width: 6.67%;
+}
+
+.smallgoldrate{
+    width: 6.67%;
+    min-width: 6.67%;
+}
+
+.smallgoldvalue{
+    width: 6.67%;
+    min-width: 6.67%;
+}
+
+.smallgoldfine{
+    width: 6.67%;
+    min-width: 6.67%;
+}
+
+.smalltotalgold{
+    width: 6.67%;
+    min-width: 6.67%;
+}
+
+.smallvaper{
+    width: 6.67%;
+    min-width: 6.67%;
+}
+
+.smallmakingcharges{
+    width: 6.67%;
+    min-width: 6.67%;
+} */
+
+
+/* 
+.smalltotalfob{
+    width: 6.67%;
+    min-width: 6.67%;
+} */
+
+.exportInvoice .exportPrinttable *{
+    word-break: break-all;
+}
+
+@media print{
+    .print_sec_sum4{
+        display: none !important;
+    }
+}

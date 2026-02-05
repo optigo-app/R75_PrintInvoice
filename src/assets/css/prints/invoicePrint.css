@@ -1,0 +1,127 @@
+.inoviceprintContainer *:not(.declarationInvoicePrint *){
+    font-size: 12px;
+    line-height: 100%;
+    line-height: 14px;
+    font-family: Calibri;
+}
+
+.declarationInvoicePrint *{
+    line-height: 135%;
+    word-wrap: break-word;
+    word-break: break-word;
+    font-family: Calibri;
+}
+
+/* .minHieght150InvoicePrint{
+    min-height: 150px;
+} */
+
+.minHieght28InvoicePrint{
+    min-height: 28px;
+}
+
+.minHeight100InvoicePrint{
+    min-height: 100px;
+}
+
+.minHieght138InvoicePrint{
+    min-height: 100px;
+}
+
+.invoicePrintLogo{
+    max-height: 70px;
+    object-fit: contain;
+    object-position: right;
+}
+.pd_top_invp{
+    /* position: absolute;
+    top: 35%;
+    left: 25%; */
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    flex-direction: column !important;
+    margin-top: 35% !important;
+}
+.p_2{
+    padding: 5px;
+}
+.mb_2{
+    margin-bottom: 8px;
+}
+.invp_830{
+    max-width: 830px !important;
+}
+.pad_10_invp_830{
+    padding: 10px;
+}
+.minh_invp_830{
+    min-height: 90px;
+}
+.minh_invp_830_2{
+    min-height: 180px;
+}
+.minh_invp_830_3{
+    min-height: 100px;
+}
+
+/* VivekM */
+.brderBtomLt {
+    border-bottom: 1px solid #dddddd;
+    margin-bottom: 8px;
+}
+
+.brdrTop {
+    border-top: 2px solid #000;
+}
+
+.brdrRigt {
+    border-right: 2px solid #000;
+}
+
+.brdrBtom {
+    border-bottom: 2px solid #000;
+}
+
+.brdrLft {
+    border-left: 2px solid #000;
+}
+
+.brdrAll {
+    border: 2px solid #000;
+}
+
+.spbrWord {
+    word-break: break-word;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+}
+
+@media print{
+    .print_sec_sum4 {
+        display: none !important;
+      }
+    .pd_top_invp{
+        /* position: absolute;
+        top: 35%;
+        left: 20%; */
+        margin-top: 30% !important;
+    }
+    .p_2{
+        padding: 3px;
+    }
+    .mb_2{
+        margin-bottom: 4px;
+    }
+    .invp_830_fs{
+        font-size: 10px !important;
+        line-height: 10px !important;
+    }
+    .invp_830_fs_head_label{
+        font-size: 14px !important;
+    }
+    .minh_invp_830_2{
+        min-height: 120px;
+    }
+    
+}

@@ -1,0 +1,249 @@
+html {
+    scrollbar-gutter: stable;
+}
+
+.mainRTMT {
+    width: 50vw !important;
+    font-family: Calibri;
+    letter-spacing: 0.2px !important;
+    margin: 20px auto;
+    margin-bottom: 10rem;
+    align-items: flex-start;
+}
+
+.retMatFont_22 {
+    font-size: 22px;
+}
+
+.retMatFont_14 {
+    font-size: 14px;
+    line-height: 14px;
+}
+
+.retMatFont_16 {
+    font-size: 16px;
+    line-height: 22px;
+}
+
+.retMatFont_18 {
+    font-size: 18px;
+    line-height: 18px;
+    padding-left: 2px;
+}
+
+.retMatFont_13 {
+    font-size: 13px;
+    line-height: 13px;
+}
+
+.spdispFlx {
+    display: flex;
+}
+
+.spMnHead {
+    display: flex;
+    padding-bottom: 10px;
+}
+
+.spHeadWdth1 {
+    width: 29.33%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+.spHeadWdth2 {
+    width: 35.33%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+.spHeadWdth3 {
+    width: 35.33%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+.dividHeadWdth1 {
+    width: 35%;
+}
+
+.dividHeadWdth2 {
+    width: 65%;
+}
+
+.theLogoImg {
+    width: 70px;
+    height: 70px;
+    align-items: center;
+}
+
+.theIconImgPrnt {
+    width: 35px;
+    height: 35px;
+    align-items: center;
+}
+
+.theIconImg {
+    width: 30px;
+    height: 30px;
+    align-items: center;
+}
+
+.mnContnt {
+    width: 71%;
+    border-top: 1px solid #000000;
+    padding-top: 10px;
+}
+
+.imgContnt {
+    width: 29%;
+    border-top: 1px solid #000000;
+}
+
+.imgWdth {
+    width: 100%;
+    height: 250px;
+    box-sizing: border-box;
+    object-fit: contain;
+    padding: 20px;
+}
+
+.detlsContnt {
+    display: flex;
+}
+
+.dimndNClrstn {
+    width: 12.50%;
+    padding: 0px;
+    padding-left: 6px;
+    padding-right: 6px;
+}
+
+.detlsMtlContnt {
+    width: 35%;
+    display: flex;
+}
+
+.mtalStyl {
+    width: 25%;
+    padding: 0px;
+    padding-left: 6px;
+    padding-right: 6px;
+}
+
+.mtalproprDvson {
+    width: 33.33%;
+    padding-left: 6px;
+    padding-right: 6px;
+}
+
+.sFntStyl {
+    color: #7a7a7a;
+    font-weight: bold;
+    padding: 5px;
+}
+
+.spacCell {
+    height: 25px !important;
+}
+
+.spBrdrAllBlck {
+    border: 1px solid #000000;
+    padding: 20px;
+}
+
+.spBrdrAll {
+    border: 1px solid #f1f1f1;
+}
+
+.spBrdrRigt {
+    border-right: 1px solid #f1f1f1;
+}
+
+.spBrdrLft {
+    border-left: 1px solid #f1f1f1;
+}
+
+.spBrdrTop {
+    border-top: 1px solid #f1f1f1;
+}
+
+.spBrdrBtom {
+    border-bottom: 1px solid #f1f1f1;
+}
+
+.spBrdrBtomNone {
+    border-bottom: none;
+}
+
+.spBgColr {
+    background-color: #f1f1f1;
+}
+
+.spbrWord {
+    word-break: break-word;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+}
+
+.spBold {
+    font-weight: bold !important;
+}
+
+@media print {
+    @page {
+        margin: 5px 25px;
+    }
+
+    .mainRTMT {
+        width: 100vw !important;
+    }
+
+    .dis-none {
+        display: none;
+    }
+
+    .detlsContnt,
+    .bodyContnt {
+        width: 100%;
+    }
+
+    .detlsMtlContnt {
+        width: 60%;
+    }
+
+    .retMatFont_22 {
+        font-size: 18px;
+    }
+
+    .retMatFont_18 {
+        font-size: 14px;
+        line-height: 15px;
+    }
+
+    .retMatFont_16 {
+        font-size: 13px;
+        line-height: 19px;
+    }
+
+    .retMatFont_14 {
+        font-size: 11px;
+        line-height: 12px;
+    }
+
+    .retMatFont_13 {
+        font-size: 10px;
+        line-height: 11px;
+    }
+
+    .dividHeadWdth1 {
+        width: 35%;
+    }
+    
+    .dividHeadWdth2 {
+        width: 65%;
+    }
+}

@@ -1,0 +1,70 @@
+.retailPrint2 *{
+    font-size: 12px;
+    line-height: 120%;
+    word-break: normal;
+    overflow-wrap:break-word;
+    font-family: Calibri;
+}
+
+.target_header *{
+    font-size: 12px;
+}
+
+.target_header .headerPara > div:not(:first-child){
+    font-size: 12px;
+    padding: 0 !important;
+}
+
+.headerPara *{
+    line-height: 130% !important;
+}
+
+.word_break *, .word_break{
+    word-break: break-all;
+}
+
+.Sr{
+    width: 3%;
+    min-width: 3%;
+}
+
+.Item, .Product, .Design, .IGI{
+    width: 7.33%;
+    min-width: 7.33%;
+}
+
+.QR, .Certificate, .MRP{
+    width: 6%;
+    min-width: 6%;
+}
+
+.TotalAmount{
+    width: 7%;
+    min-width: 7%;
+}
+
+.Metal,
+.Gross, 
+.Less,
+.Net,
+.DiaQuality,
+.DiaColor,
+.DiaPcs,
+.DiaWt, 
+.DisAmt, 
+.discountPer{
+    width: 5%;
+    min-width: 5%;
+}
+
+
+
+@media print{
+    .retailPrint2 *{
+        font-size: 8px;
+    }
+    .subHeader *{
+        font-size: 10px;
+    }
+  
+}

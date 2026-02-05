@@ -1,0 +1,68 @@
+.Sr {
+    width: 6%;
+    min-width: 6%;
+}
+
+.Design {
+    width: 10%;
+    min-width: 10%;
+}
+
+.Diamond {
+    width: 37%;
+    min-width: 37%;
+}
+
+.Making {
+    width: 15%;
+    min-width: 15%;
+}
+
+.Product {
+    width: 14%;
+    min-width: 14%;
+}
+
+.Discount {
+    width: 8%;
+    min-width: 8%;
+}
+
+.Total {
+    width: 10%;
+    min-width: 10%;
+}
+
+.total{
+    width: 16%;
+    min-width: 16%;
+}
+
+.taxes{
+    width: 90%;
+    min-width: 90%;
+}
+
+.estimationPrint * {
+    font-size: 14px;
+    word-break: normal;
+    overflow-wrap: break-word;
+}
+
+.estimationPrint .font_12 *, .estimationPrint .font_12{
+    font-size: 12px;
+}
+
+.estimationPrint .font_11 *, .estimationPrint .font_11{
+    font-size: 11px;
+}
+
+.estimationPrint *:not(.border-black){
+    border-color: #BDBDBD;
+}
+
+@media print {
+    .print_sec_sum4 {
+        display: none !important;
+    }
+}

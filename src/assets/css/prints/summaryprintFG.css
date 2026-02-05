@@ -1,0 +1,139 @@
+.itemWisePrintContainer {
+    zoom: 1.2;
+}
+
+.itemWisePrintfont * {
+    font-size: 10px;
+    line-height: 120%;
+    font-family: Calibri;
+}
+
+.commnWdth {
+    width: 6.54%;
+}
+
+.commnWdth1 {
+    width: 8.25%;
+}
+
+.commnWdth2 {
+    width: 3.25%;
+}
+
+.commnWdth3 {
+    width: 87.525%;
+}
+
+.main_pad_item_wise_print>div {
+    text-align: center;
+    align-content: center;
+}
+
+.printLeftitemWise {
+    margin-right: -183px;
+}
+
+.itemWisePrintHead *,
+.itemWisePrintHead {
+    font-size: 12px !important;
+}
+
+.itemWisePrint1Font_tab_15 *,
+html .itemWisePrint1Font_tab_15 {
+    font-size: 15px !important;
+}
+
+.main_pad_item_wise_print .p-1 {
+    padding: 2px !important;
+}
+
+.itemWisePrintfont .breakNormalItemWIse *, .itemWisePrintfont .breakNormalItemWIse{
+    word-break: normal !important;
+}
+
+.margnRight {
+    margin-right: 25px;
+}
+
+.padngLft {
+    padding-left: 7px;
+}
+
+.padngRight {
+    padding-right: 3px;
+}
+
+.padngLft2 {
+    padding-left: 3px;
+}
+
+.brderLft {
+    border-left: 1px solid #000;
+}
+
+.brderRigt {
+    border-right: 1px solid #000;
+}
+
+.brderTop {
+    border-top: 1px solid #000;
+}
+
+.brderBtom {
+    border-bottom: 1px solid #000;
+}
+
+.brderevrWher {
+    border: 1px solid #000;
+}
+
+.spBrkWord {
+    word-break: break-word;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+}
+
+.minHeigt {
+    height: 20px;
+    align-content: center;
+}
+
+@media print {
+    .itemWisePrintContainer {
+        zoom: unset;
+    }
+
+    .printLeftitemWise {
+        margin-right: unset;
+    }
+
+
+    .itemWisePrintHead *,
+    .itemWisePrintHead,
+    .itemWisePrint1Font_tab_15 *,
+    html .itemWisePrint1Font_tab_15,
+    .itemWisePrint1Font_tab_14 *,
+    .itemWisePrint1Font_tab_14,
+    .itemWisePrint1Font_14_category *,
+    .itemWisePrint1Font_14_category,
+    .itemWisePrint1Font_13_total *,
+    .itemWisePrint1Font_13_total,
+    .itemWisePrint1Font_16_total *,
+    .itemWisePrint1Font_16_total {
+        font-size: 8px !important;
+    }
+
+    .itemWisePrintfont1_  .itemWisePrintHead *{
+        font-size: 14px !important;
+    }
+
+    .itemWisePrintfont1_ .itemWisePrint1Font_tab_14, .itemWisePrintfont1_ .itemWisePrint1Font_tab_14 *,.itemWisePrintfont1_
+    .itemWisePrintfont1_ .itemWisePrint1Font_13_total *, .itemWisePrint1Font_13_total, .itemWisePrint1Font_16_total *, .itemWisePrint1Font_16_total{
+        font-size: 9px !important;
+    }
+
+    .itemWisePrintfont1_ .amountInWordsItemWise *, .itemWisePrintfont1_ .amountInWordsItemWise{
+        font-size: 12px !important;
+    }
+
+}

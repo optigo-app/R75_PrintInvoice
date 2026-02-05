@@ -1,0 +1,193 @@
+.containers5 *{
+    box-sizing: border-box;
+    word-break: break-all;
+    font-family: Calibri;
+}
+/* global */
+.containers5{
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-top: 1rem;
+}
+.fsgs5{
+    font-size: 14px;
+}
+.logos5{
+    width: 40%;
+    height: 70%;
+}
+.imgs5{
+    width: 80%;
+    height: 40%;
+}
+.bgs5{
+    background-color: #F2F2F2;
+}
+.centers5{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.ends5{
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    padding-right: 1px;
+}
+.Topcenters5{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-right: 1px;
+}
+
+
+
+/* table */
+
+/* tablehead */
+.colh1s5{
+    width: 3%;
+}
+.colh2s5{
+    width: 9%;
+}
+.colh3s5{
+    width: 6%;
+}
+.colh4s5{
+    width: 6%;
+}
+.colh5s5{
+    width: 6%;
+}
+.colh6s5{
+    width: 15%;
+}
+.colh7s5{
+    width: 20%;
+}
+.colh8s5{
+    width: 14%;
+}
+.colh9s5{
+    width: 7%;
+}
+.colh10s5{
+    width: 7%;
+}
+.colh11s5{
+    width: 7%;
+}
+.subcolhs5{
+    width: 33.33%;
+}
+
+
+/* table body */
+/* sr */
+.col1s5{
+    width: 3%;
+}
+/* sku */
+.col2s5{
+    width: 9%;
+}
+/* purity */
+.col3s5{
+    width: 6%;
+}
+/* gwt */
+.col4s5{
+    width: 6%;
+}
+/* nwt */
+.col5s5{
+    width: 6%;
+}
+/* misc */
+.colmiscs5{
+    width: 15%;
+}
+.col6s5{
+    width: 4%;
+}
+.col7s5{
+    width: 5%;
+}
+.col8s5{
+    width: 6%;
+}
+/* colorstone */
+.colctss5{
+    width: 20%;
+}
+.col9s5{
+    width: 5%;
+}
+.col10s5{
+    width: 4%;
+}
+.col11s5{
+    width: 5%;
+}
+.col12s5{
+    width: 6%;
+}
+/* making */
+.colmaks5{
+    width: 14%;
+}
+.col13s5{
+    width: 7%;
+}
+.col14s5{
+    width: 7%;
+}
+/* wastage */
+.col15s5{
+    width: 7%;
+}
+/* other */
+.col16s5{
+    width: 7%;
+}
+/* total */
+.col17s5{
+    width: 7%;
+}
+
+
+/* summary */
+.wp1s5{
+    width: 40%;
+}
+.wp2s5{
+    width: 30%;
+}
+.wp3s5{
+    width: 30%;
+}
+.pb10s5{
+    padding-top: 10px;
+}
+@media print {
+    .HSs5{
+        display: none !important;
+    }
+    .containers5{
+        max-width: 1200px;
+        margin: 0 auto;
+        margin-top: 5px !important;
+        padding: 10px;
+    }
+    .fsgs5{
+        font-size: 9px;
+    }
+    .pbiag{
+        page-break-inside: avoid;
+    }
+    .pb10s5{
+        padding-top: 10px;
+    }
+}

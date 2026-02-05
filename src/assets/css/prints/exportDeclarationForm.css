@@ -1,0 +1,33 @@
+.exportDeclarationForm p{
+    font-size: 12px;
+    line-height: 120%;
+    font-family: Calibri;
+}
+
+.height44ExportDetailForm{
+    min-height: 44px;
+}
+
+.height40ExportDetailForm{
+    min-height: 40px;
+}
+
+.height35ExportDetailForm{
+    min-height: 35px;
+}
+
+.height150ExportDetailForm {
+    min-height: 150px;
+}
+
+.center_vertically_stamp_export_declaration_form {
+    position: relative;
+    bottom: -83%;
+    height: 100%;
+  }
+
+  @media print{
+    .print_sec_sum4 {
+        display: none !important;
+      }
+  }

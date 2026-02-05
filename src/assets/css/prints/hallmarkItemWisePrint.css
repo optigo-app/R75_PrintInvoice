@@ -1,0 +1,61 @@
+.hallmarkItemWisePrintContainer{
+    zoom: 1;
+    padding-bottom: 60px;
+    font-family: Calibri;
+}
+
+.itemWisePrintfontHallmark * {
+    font-size: 12px;
+    line-height: 120%;
+    font-family: Calibri;
+}
+
+.metaltypeItemWisePrintHallmark{
+    min-width: 112px;
+    width: 112px;
+}
+
+.categoryItemWisePrintHallmark {
+    width: 150px;
+    min-width: 150px;
+}
+
+.pkgItemWisePrintHallmark {
+    width: 60px;
+    min-width: 60px;
+}
+
+.countItemWisePrintHallmark {
+    width: 60px;
+    min-width: 60px;
+}
+
+.dpcsItemWisePrintHallmark {
+    width: 60px;
+    min-width: 60px;
+}
+
+.gwtItemWisePrintHallmark {
+    width: 70px;
+    min-width: 70px;
+}
+
+.cgstTotalItemWiseRowHallmark {
+    min-width: 90.8%;
+    width: 90.9%;
+}
+
+.cgstAmountItemWiseRowHallmark {
+    min-width: 9%;
+    width: 9%;
+}
+
+@media print{
+    .hallmarkItemWisePrintContainer{
+        padding-bottom: 0;
+    }
+
+        .print_sec_sum4 {
+            display: none !important;
+          }
+}

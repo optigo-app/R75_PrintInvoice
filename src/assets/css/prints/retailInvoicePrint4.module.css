@@ -1,0 +1,21 @@
+.productRetailInvoicePrint4{
+    width: 20%;
+}
+
+.MakingRetailInvoicePrint4{
+    width: 13%;
+}
+
+.othersRetailinvoicePrint4{
+    width: 12%;
+}
+
+.materialRetailInvoicePrint4{
+    width: 60%;
+}
+
+@media print{
+    .print_sec_sum4 {
+        display: none !important;
+      }
+}

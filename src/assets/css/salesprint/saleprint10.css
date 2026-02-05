@@ -1,0 +1,360 @@
+.itemWisePrintContainer {
+    zoom: 1.2;
+}
+
+.itemWisePrintfont * {
+    font-size: 10px;
+    line-height: 120%;
+    font-family: Calibri;
+}
+
+.metaltypeItemWisePrint {
+    width: 5.5%;
+    min-width: 5.5%;
+}
+
+.metaltypeItemWisePrint1 {
+    width: 7.9%;
+    min-width: 7.9%;
+}
+
+.metaltypeItemWisePrint2 {
+    width: 8.8%;
+    min-width: 8.8%;
+}
+
+.categoryItemWisePrint {
+    width: 6.5%;
+    min-width: 6.5%;
+}
+
+.categoryItemWisePrint1 {
+    width: 11%;
+    min-width: 11%;
+}
+
+.pkgItemWisePrint {
+    width: 3.5%;
+    min-width: 3.5%;
+}
+
+.pkgItemWisePrint1 {
+    width: 4.6%;
+    min-width: 4.6%;
+}
+
+.dpcsItemWisePrint {
+    width: 3.5%;
+    min-width: 3.5%;
+}
+
+.cAmtItemWisePrint {
+    width: 4.5%;
+    min-width: 4.5%;
+}
+
+.gwtItemWisePrint {
+    width: 3.5%;
+    min-width: 3.5%;
+}
+
+.gwtItemWisePrint1 {
+    width: 5.25%;
+    min-width: 5.25%;
+}
+
+.countItemWisePrint {
+    width: 4%;
+    min-width: 4%;
+}
+
+.countItemWisePrint1 {
+    width: 4.95%;
+    min-width: 4.95%;
+}
+
+.rateItemWisePrint {
+    width: 4.9%;
+    min-width: 4.9%;
+}
+
+.rateItemWisePrint1 {
+    width: 5.3%;
+    min-width: 5.3%;
+}
+
+.mAmtItemWisePrint {
+    width: 5.1%;
+    min-width: 5.1%;
+}
+
+.mAmtItemWisePrint1 {
+    width: 8.1%;
+    min-width: 8.1%;
+}
+
+.otherAmtItemWisePrint {
+    width: 6%;
+    min-width: 6%;
+}
+
+.otherAmtItemWisePrint1 {
+    width: 7.1%;
+    min-width: 7.1%;
+}
+
+.wastageItemWisePrint {
+    width: 4.5%;
+    min-width: 4.5%;
+}
+
+.wastageItemWisePrint2 {
+    width: 5.9%;
+    min-width: 5.9%;
+}
+
+.wastageItemWisePrint1 {
+    width: 6.8%;
+    min-width: 6.8%;
+}
+
+.makingItemWisePrint {
+    width: 4.8%;
+    min-width: 4.8%;
+}
+
+.makingItemWisePrint1 {
+    width: 7.65%;
+    min-width: 7.65%;
+}
+
+.labourItemWisePrint {
+    width: 6.2%;
+    min-width: 6.2%;
+}
+
+.labourItemWisePrint1 {
+    width: 7.2%;
+    min-width: 7.2%;
+}
+
+.percentageItemWiseprint {
+    width: 3.7%;
+    min-width: 3.7%;
+}
+
+.percentageItemWiseprint1 {
+    width: 4.5%;
+    min-width: 4.5%;
+}
+
+.percentageItemWiseprint2 {
+    width: 38px;
+    min-width: 38px;
+}
+
+.percentageItemWiseprint2 {
+    width: 5.3%;
+    min-width: 5.3%;
+}
+
+.fineAmt {
+    width: 3.8%;
+    min-width: 3.8%;
+}
+
+.fineAmt1 {
+    width: 40px;
+    min-width: 40px;
+}
+
+.fineAmt1 {
+    width: 5.5%;
+    min-width: 5.5%;
+}
+
+.totalAmt {
+    width: 5.5%;
+    min-width: 5.5%;
+}
+
+.totalAmt1 {
+    width: 8.2%;
+    min-width: 8.2%;
+}
+
+
+.main_pad_item_wise_print>div {
+    padding: 1px;
+    text-align: center;
+}
+
+.main_pad_item_wise_print *,
+.main_pad_item_wise_print_row *,
+.main_pad_item_wise_print_row1 * {
+    font-size: 8px;
+    line-height: 120%;
+}
+
+.main_pad_item_wise_print_row>div {
+    padding: 1px;
+}
+
+.cgstTotalItemWiseRow {
+    min-width: 94.5%;
+    width: 94.5%;
+}
+
+.cgstTotalItemWiseRow1 {
+    min-width: 695px;
+    width: 695px;
+}
+
+.cgstTotalItemWiseRow2 {
+    min-width: 91.9%;
+    width: 91.9%;
+}
+
+.cgstTotalItemWiseRow11 {
+    min-width: 91.9%;
+    width: 91.9%;
+}
+
+.cgstAmountItemWiseRow {
+    min-width: 5.5%;
+    width: 5.5%;
+}
+
+.cgstAmountItemWiseRow1 {
+    min-width: 8.6%;
+    width: 8.6%;
+}
+
+.cgstAmountItemWiseRow1111 {
+    min-width: 8.1%;
+    width: 8.1%;
+}
+
+.cgstAmountItemWiseRow1222 {
+    min-width: 8.19%;
+    width: 8.19%;
+}
+
+.main_pad_item_wise_print_row1>div, .cgstAmountItemWiseRow1 p {
+    padding: 3px;
+}
+
+.printLeftitemWise {
+    margin-right: -183px;
+}
+
+.amountInWordsItemWise * {
+    font-size: 8px;
+}
+
+.itemWisePrintHead *,
+.itemWisePrintHead {
+    font-size: 12px !important;
+}
+
+.itemWisePrint1Font_tab_15 *,
+html .itemWisePrint1Font_tab_15 {
+    font-size: 15px !important;
+}
+
+.itemWisePrint1Font_tab_14 *,
+.itemWisePrint1Font_tab_14 {
+    font-size: 9px !important;
+}
+
+.itemWisePrint2Font_tab_14 *,
+.itemWisePrint2Font_tab_14 {
+    font-size: 10px !important;
+}
+
+.itemWisePrintFont_tab_14 *,
+.itemWisePrintFont_tab_14 {
+    font-size: 8px !important;
+}
+
+.itemWisePrint1Font_14_category *,
+.itemWisePrint1Font_14_category {
+    font-size: 9px !important;
+    word-break: break-all !important;
+}
+
+.itemWisePrint1Font_14_category .itemWisePrintCategory{
+    word-break: normal !important;
+}
+
+.itemWisePrint1Font_13_total *,
+.itemWisePrint1Font_13_total {
+    font-size: 9px !important;
+}
+
+.itemWisePrint1Font_16_total *,
+.itemWisePrint1Font_16_total {
+    font-size: 16px !important;
+}
+
+.main_pad_item_wise_print .p-1 {
+    padding: 2px !important;
+}
+
+.itemWisePrintFont_11 *,
+.itemWisePrintFont_11 {
+    font-size: 11px !important;
+    word-break: break-all !important;
+}
+
+.itemWisePrintfont .breakNormalItemWIse *, .itemWisePrintfont .breakNormalItemWIse{
+    word-break: normal !important;
+}
+
+@media print {
+    .itemWisePrintContainer {
+        zoom: unset;
+    }
+
+    .printLeftitemWise {
+        margin-right: unset;
+    }
+
+    .print_sec_sum4 {
+        display: none !important;
+    }
+
+
+    .itemWisePrintHead *,
+    .itemWisePrintHead,
+    .itemWisePrint1Font_tab_15 *,
+    html .itemWisePrint1Font_tab_15,
+    .itemWisePrint1Font_tab_14 *,
+    .itemWisePrint1Font_tab_14,
+    .itemWisePrint2Font_tab_14 *,
+    .itemWisePrint2Font_tab_14,
+    .itemWisePrintFont_tab_14 *,
+    .itemWisePrintFont_tab_14,
+    .itemWisePrint1Font_14_category *,
+    .itemWisePrint1Font_14_category,
+    .itemWisePrint1Font_13_total *,
+    .itemWisePrint1Font_13_total,
+    .itemWisePrint1Font_16_total *,
+    .itemWisePrint1Font_16_total {
+        font-size: 8px !important;
+    }
+
+    .itemWisePrintfont1_  .itemWisePrintHead *{
+        font-size: 14px !important;
+    }
+
+    .itemWisePrintfont1_ .itemWisePrint1Font_tab_14, .itemWisePrintfont1_ .itemWisePrint1Font_tab_14 *,.itemWisePrintfont1_ .itemWisePrintFont_tab_14 *,
+    .itemWisePrintfont1_ .itemWisePrintFont_tab_14,  .itemWisePrint1Font_13_total *, .itemWisePrint1Font_13_total, .itemWisePrint1Font_16_total *, .itemWisePrint1Font_16_total{
+        font-size: 9px !important;
+    }
+
+    .itemWisePrintfont1_ .amountInWordsItemWise *, .itemWisePrintfont1_ .amountInWordsItemWise{
+        font-size: 12px !important;
+    }
+
+}

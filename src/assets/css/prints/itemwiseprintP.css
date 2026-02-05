@@ -1,0 +1,359 @@
+html {
+    scrollbar-gutter: stable;
+}
+
+.itemWisePrintfont * {
+    font-family: Calibri;
+}
+
+.metaltypeItemWisePrint1 {
+    width: 11%;
+    min-width: 11%;
+    padding: 1px 3px;
+}
+
+.categoryItemWisePrint1 {
+    width: 14.10%;
+    min-width: 14.10%;
+    padding: 1px 3px;
+}
+
+.pkgItemWisePrint1 {
+    width: 8.70%;
+    min-width: 8.70%;
+    padding: 1px 3px;
+}
+
+.countItemWisePrint1 {
+    width: 7.05%;
+    min-width: 7.05%;
+    padding: 1px 3px;
+}
+
+.gwtItemWisePrint1 {
+    width: 8.35%;
+    min-width: 8.35%;
+    padding: 1px 3px;
+}
+
+.tnchItemWisePrint1 {
+    width: 8.80%;
+    min-width: 8.75%;
+    padding: 1px 3px;
+}
+
+.wastageItemWisePrint1 {
+    width: 9.45%;
+    min-width: 9.50%;
+    padding: 1px 3px;
+}
+
+.fineAmt1 {
+    width: 8.60%;
+    min-width: 8.60%;
+    padding: 1px 3px;
+}
+
+.makingItemWisePrint1 {
+    width: 10.95%;
+    min-width: 10.95%;
+    padding: 1px 3px;
+}
+
+.totalAmt1 {
+    width: 12.80%;
+    min-width: 12.80%;
+    padding: 1px;
+}
+
+.main_pad_item_wise_print>div {
+    padding: 1px;
+    text-align: center;
+}
+
+.main_pad_item_wise_print_row1>div, .cgstAmountItemWiseRow1 p {
+    padding: 3px;
+}
+
+.printLeftitemWise {
+    margin-right: -183px;
+}
+
+.itemWisePrintHead {
+    font-size: 12px;
+}
+
+.itemWisePrintFont_tab_14 {
+    font-size: 12px;
+    line-height: 18px;
+}
+
+.itemWisePrint1Font_16_total {
+    font-size: 16px;
+    padding: 0.25rem;
+}
+
+.main_pad_item_wise_print .p-1 {
+    padding: 2px !important;
+}
+
+.itemWisePrintFont_11 {
+    font-size: 13px;
+    line-height: 18px;
+    word-break: break-all;
+}
+
+.itemWisePrintfont .breakNormalItemWIse * {
+    word-break: normal !important;
+}
+
+.spbrRht{
+    border-right: 1px solid #dddddd;
+}
+.spbrlFt{
+    border-left: 1px solid #dddddd;
+}
+.brBtom{
+    border-bottom: 1px solid #dddddd;
+}
+.brTpm{
+    border-top: 1px solid #dddddd;
+}
+.brbxAll{
+    border: 1px solid #dddddd;
+}
+
+.w30_inv2{
+    width: 30.01%;
+    padding-left: 4px;
+}
+.w1_inv2{
+    width: 35%;
+    min-height: 102px;
+    padding-left: 4px;
+}
+.w2_inv2{
+    width: 35%;
+    padding-left: 4px;
+}
+
+.wdthHd{
+    width: 25%;
+}
+
+.wdthHd1{
+    width: 75%;
+}
+
+.spfntBld{
+    font-weight: bold;
+}
+
+.spfntsZ{
+    font-size: 15px !important;
+    line-height: 15px !important;
+}
+
+.WdthFrEqlCmon {
+    width: 29%;
+    padding: 1px 3px;
+    text-align: end;
+}
+.WdthAftrBlnc {
+    width: 13%;
+    padding: 1px 3px;
+    text-align: end;
+}
+
+.WdthAftrBlnc1 {
+    width: 40%;
+    padding: 1px 3px;
+}
+
+.WdthAftrBlnc2 {
+    width: 30%;
+    display: flex;
+    padding: 1px 3px;
+}
+
+.SUBWdthAftrBlnc1 {
+    width: 40%;
+    padding: 1px 3px;
+}
+
+.SUBWdthAftrBlnc2 {
+    width: 60%;
+    padding: 1px 3px;
+}
+
+.spaceFrmlft {
+    padding-left: 15px;
+}
+
+.inExchngHeight {
+    height: 80px;
+}
+
+.inExchngMinHeight {
+    min-height: 18px;
+}
+
+.spcFrRecvdItm {
+    padding: 3px 0px;
+}
+
+@media print {
+    @page {
+        /* size: A5; */
+        size: auto;
+        margin: 25px 15px;  
+    }
+
+    .printLeftitemWise {
+        margin-right: unset;
+    }
+
+    .print_sec_sum4 {
+        display: none !important;
+    }
+
+    .itemWisePrintHead {
+        font-size: 10px;
+    }
+    
+    .itemWisePrintFont_tab_14 {
+        font-size: 10px;
+        line-height: 14px;
+    }
+    
+    .itemWisePrint1Font_16_total {
+        font-size: 14px;
+        padding: 0rem;
+    }
+    
+    .itemWisePrintFont_11 {
+        font-size: 11px;
+        line-height: 15px;
+        word-break: break-all;
+    }
+
+    .spfntsZ{
+        font-size: 13px !important;
+        line-height: 13px !important;
+    }
+
+    .SUBWdthAftrBlnc1 {
+        width: 50%;
+        padding: 1px 3px;
+    }
+
+    .SUBWdthAftrBlnc2 {
+        width: 50%;
+        padding: 1px 3px;
+    }
+
+    .spaceFrmlft {
+        padding-left: 8px;
+    }
+
+    .inExchngMinHeight {
+        min-height: 16px;
+    }
+
+    @media (max-width: 160mm) {
+        /* fits A5 */
+        @page {
+            margin: 15px 15px;
+        }
+
+        .w1_inv2 {
+            min-height: 75px;
+        }
+
+        .inExchngHeight {
+            height: 60px;
+        }
+    
+        .itemWisePrintHead {
+            font-size: 8px;
+        }
+        
+        .itemWisePrintFont_tab_14 {
+            font-size: 8px;
+            line-height: 12px;
+        }
+        
+        .itemWisePrint1Font_16_total {
+            font-size: 12px;
+            padding: 0rem;
+        }
+        
+        .itemWisePrintFont_11 {
+            font-size: 9px;
+            line-height: 13px;
+            word-break: break-all;
+        }
+    
+        .spfntsZ{
+            font-size: 10.50px !important;
+            line-height: 10.50px !important;
+        }
+
+        .wdthHd{
+            width: 30%;
+        }
+
+        .wdthHd1{
+            width: 70%;
+        }
+
+        .WdthAftrBlnc1 {
+            width: 20%;
+            padding: 1px 3px;
+        }
+        
+        .WdthAftrBlnc2 {
+            width: 40%;
+            display: flex;
+            padding: 1px 3px;
+        }
+        
+        .SUBWdthAftrBlnc1 {
+            width: 50%;
+            padding: 1px 3px;
+        }
+
+        .SUBWdthAftrBlnc2 {
+            width: 50%;
+            padding: 1px 3px;
+        }
+      }
+    
+      @media (min-width: 161mm) {
+        /* fits A4 */
+        .itemWisePrintHead {
+            font-size: 10px;
+        }
+        
+        .itemWisePrintFont_tab_14 {
+            font-size: 10px;
+            line-height: 14px;
+        }
+        
+        .itemWisePrint1Font_16_total {
+            font-size: 14px;
+            padding: 0rem;
+        }
+        
+        .itemWisePrintFont_11 {
+            font-size: 11px;
+            line-height: 15px;
+            word-break: break-all;
+        }
+    
+        .spfntsZ{
+            font-size: 13px !important;
+            line-height: 13px !important;
+        }
+      }
+}

@@ -1,0 +1,150 @@
+.detailPrint5 {
+  word-break: normal;
+  font-size: 12px;
+  line-height: 15px;
+  font-family: Calibri;
+}
+
+.detailPrint5{
+  zoom: 1;
+}
+
+.detailPrint5TableHead {
+  font-size: 11px;
+}
+
+.detailPrint5TableHeadAMT {
+  font-size: 11px;
+}
+
+.detailPrint5Table {
+  font-size: 10px;
+  line-height: 12px;
+}
+
+.detailPrint5 p, .metal > div > div, .diamond > div > div, .stone > div > div, .labour > div > div > div > div > div, .totaltotal > div{
+  padding: 1px;
+}
+
+.wordBreak *, .wordBreak {
+  word-break: break-all;
+}
+
+.srNo {
+  width: 3%;
+  min-width: 3%;
+}
+
+.design {
+  width: 10%;
+  min-width: 10%;
+}
+
+.diamond{
+  width: 22%;
+  min-width: 22%;
+}
+
+.metal{
+  width: 22%;
+  min-width: 22%;
+}
+
+.stone{
+  width: 22%;
+  min-width: 22%;
+}
+
+.otherAmount {
+  width: 5%;
+  min-width: 5%;
+}
+.labour {
+  width: 9%;
+  min-width: 9%;
+}
+.totalAmount {
+  width: 7%;
+  min-width: 7%;
+  padding-right: 2px;
+}
+
+.w_20 {
+  width: 20%;
+  min-width: 20%;
+}
+
+.img {
+  max-width: 75px;
+  max-height: 75px;
+  object-fit: contain;
+}
+
+.min_height_15 {
+  height: 17px;
+}
+
+.total {
+  width: 13%;
+  min-width: 13%;
+}
+
+.taxes {
+  width: 93%;
+  min-width: 93%;
+  padding-right: 2px;
+}
+
+.height_createBy{
+    height: 100px;
+}
+
+@media print {
+  @page {
+    margin: 15px 10px;
+  }
+
+  .print_sec_sum4 {
+    display: none !important;
+  }
+
+  .taxes {
+    padding-right: 1px;
+  }
+
+  .totalAmount {
+    padding-right: 1px;
+  }
+
+  .detailPrint5 {
+    font-size: 9px;
+    line-height: 11px;
+  }
+
+  .detailPrint5Table {
+    font-size: 6px;
+    line-height: 8PX;
+  }
+
+  .sumFont{
+    font-size: 7px;
+  }
+
+  .detailPrint5{
+    zoom: unset;
+  }
+
+  .detailPrint5TableHead {
+    font-size: 8.5px;
+  }
+
+  .detailPrint5TableHeadAMT {
+    font-size: 8px;
+    padding: 0;
+    margin: 0;
+  }
+
+  .min_height_15 {
+    height: 14.5px;
+  }
+}

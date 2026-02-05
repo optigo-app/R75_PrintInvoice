@@ -1,0 +1,338 @@
+.containerEstimate {
+  max-width: 297mm !important;
+  font-family: Calibri;
+}
+
+.containerDetailPrint {
+  width: 100%;
+  max-width: 100% !important;
+  font-family: Calibri;
+}
+
+.containerDetailPrint * {
+  font-size: 13px;
+}
+
+.containerEstimate * {
+  font-size: 13px;
+}
+
+.imagePrint_title_one {
+  font-size: 60px;
+}
+
+.imagePrint_title_two {
+  font-size: 60px;
+}
+
+.mainDetailEstimate {
+  min-width: 100px;
+}
+
+.srNoEstimatePrint {
+  /* width: 25px;
+    min-width: 25px; */
+  width: 3%;
+  min-width: 3%;
+}
+
+.designEstimatePrint {
+  width: 15%;
+  min-width: 15%;
+}
+.diamondEstimatePrint {
+  width: 29%;
+  min-width: 29%;
+}
+.stoneEstimatePrint {
+  width: 29%;
+  min-width: 29%;
+}
+.metalEstimatePrint {
+  width: 24%;
+  min-width: 24%;
+}
+
+.border_color_estimate {
+  border: 1px solid #bdbdbd !important;
+}
+
+.border_color_estimates {
+  border-color: #bdbdbd !important;
+}
+.estimatePrintFont_14 {
+  font-size: 14px;
+}
+.estimatePrintFont_11 {
+  font-size: 11px;
+  word-break: break-all;
+  line-height: 120%;
+}
+.recordEstimatePrint * {
+  font-size: 10px;
+  word-break: break-all;
+  line-height: 120%;
+}
+
+.width20EstimatePrint {
+  width: 22%;
+  min-width: 22%;
+}
+.Suwidth20EstimatePrint {
+  width: 34%;
+  min-width: 34%;
+}
+
+.width200EstimatePrint {
+  width: 30%;
+  min-width: 30%;
+}
+.Suwidth200EstimatePrint {
+  width: 40%;
+  min-width: 40%;
+}
+
+.totalBgEstimatePrint {
+  background: #f5f5f5;
+}
+
+.height_48_estimatePrint {
+  height: 48px;
+}
+
+.height_20_estimatePrint {
+  height: 20px;
+}
+
+.width_38_estimatePrint {
+  width: 38px;
+}
+.totalEstimatePrint {
+  width: 18%;
+  min-width: 18%;
+}
+
+.summaryEstimateprint {
+  width: 15%;
+}
+
+.diamondDetailEstimateprint {
+  width: 170px;
+  min-width: 170px;
+}
+
+.otherDetailEstimateprint {
+  width: 150px;
+  min-width: 150px;
+}
+
+.createdByEstimatePrint {
+  width: 243px;
+  min-width: 243px;
+}
+
+.height3remEstimatePrint {
+  height: calc(100% + 3rem) !important;
+}
+
+.min_height_24_estimatePrint {
+  min-height: 12px;
+}
+
+.height_30_estimatePrint {
+  height: 30px;
+}
+
+.pad_bot_30_estimatePrint {
+  padding-bottom: 30px;
+}
+
+.pad_bot_25_estimatePrint {
+  padding-bottom: 25px;
+}
+
+.pad_bot_29_estimatePrint {
+  padding-bottom: 21.5px;
+}
+
+.height_28_5_estimatePrint {
+  min-height: 15.5px;
+}
+
+.width_40_estimatePrint {
+  min-width: 30%;
+  width: 30%;
+}
+.Suwidth_40_estimatePrint {
+  min-width: 40%;
+  width: 40%;
+}
+
+.width_45_estimatePrint {
+  min-width: 45px;
+  width: 45px;
+}
+
+.pad_bot_40_estimatePrint {
+  padding-bottom: 40px;
+}
+
+.p_1Estimate {
+  padding: 1px;
+}
+
+.estimate_img {
+  max-height: 50px;
+  object-fit: contain;
+  object-position: left;
+  margin-left: 5px;
+}
+.word_break_estimatePrint * {
+  word-break: break-all;
+}
+.spCMPnm {
+  font-size: 16px;
+}
+.sphed {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  line-height: 17px;
+}
+.spbrWord {
+  word-break: break-word;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+.sphit {
+  height: 17px;
+}
+.spmrg {
+  padding-top: 3px;
+}
+.spBold {
+  font-weight: bold;
+}
+.spbrdrTop {
+  border-top: 1px solid #bdbdbd;
+}
+.spspcLft {
+  padding-left: 3px;
+}
+@media print {
+  @page {
+    margin: 2rem 1rem;
+  }
+  .recordEstimatePrint * {
+    font-size: 10px !important;
+    line-height: 120%;
+    word-break: break-all;
+    page-break-inside: avoid;
+  }
+  .estimatePrintFont_11 {
+    font-size: 10.5px;
+    page-break-inside: avoid;
+    word-break: break-all;
+    line-height: 120%;
+  }
+  .print_sec_sum4 {
+    display: none !important;
+  }
+  .spBold {
+    font-weight: bold;
+  }
+  .summaryEstimateprint {
+    width: 20%;
+  }
+  .containerEstimate * {
+    font-size: 12px;
+    line-height: 14px;
+  }
+
+  .containerDetailPrint * {
+    font-size: 12px;
+    line-height: 14px;
+  }
+  .spCMPnm {
+    font-size: 15px;
+  }
+  .height_28_5_estimatePrint {
+    min-height: 17px;
+  }
+  .top-border {
+    border-top: 1px solid #bdbdbd;
+  }
+  .spbrWord {
+    word-break: break-word;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+  }
+}
+@media print and (orientation: portrait) {
+  .outsouce_detail_summury_box {
+    width: 20% !important;
+  }
+
+  .outsouce_detail_created_box {
+    width: 15% !important;
+  }
+
+  .print-top-border {
+    border-top: 1px solid #bdbdbd;
+  }
+
+  .outsorce_image_printmodel {
+    height: auto !important;
+  }
+
+  .imagePrint_title_one {
+    font-size: 30px !important;
+  }
+
+  .imagePrint_title_two {
+    font-size: 25px !important;
+  }
+
+  .imagePrint_title_main {
+    gap: 30px !important;
+  }
+
+  .print-page-break {
+    page-break-before: always;
+  }
+}
+
+@media print and (orientation: landscape) {
+  .outsouce_detail_summury_box {
+    width: 15% !important;
+  }
+
+  .outsouce_detail_created_box {
+    width: 10% !important;
+  }
+
+  .print-page-break {
+    page-break-before: always; /* each item starts on new page */
+  }
+
+  .print_top_border_land {
+    border-top: 1px solid #bdbdbd;
+  }
+
+  .outsorce_image_printmodel {
+    height: auto !important;
+  }
+
+  .imagePrint_title_one {
+    font-size: 30px !important;
+  }
+
+  .imagePrint_title_two {
+    font-size: 25px !important;
+  }
+
+  .imagePrint_title_main {
+    gap: 30px !important;
+  }
+}

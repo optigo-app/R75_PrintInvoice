@@ -1,0 +1,129 @@
+.Packinglist6 * {
+    font-size: 8px;
+    line-height: 120%;
+    font-family: Calibri;
+}
+
+.Packinglist6 {
+    zoom: 1.2;
+    max-width: 1470px !important;
+}
+
+.rowWisePad p {
+    padding: 2px;
+}
+
+.srNo {
+    width: 4%;
+    min-width: 4%;
+}
+
+.Jewelcode {
+    width: 10%;
+    min-width: 10%;
+}
+
+.total {
+    width: 14%;
+    min-width: 14%;
+}
+
+.Metal {
+    width: 26%;
+    min-width: 26%;
+}
+
+.Stone {
+    width: 21%;
+    min-width: 21%;
+}
+
+.Labour {
+    width: 12%;
+    min-width: 12%;
+}
+
+.Other {
+    width: 20%;
+    min-width: 20%;
+}
+
+.Price {
+    width: 7%;
+    min-width: 7%;
+}
+
+.min_height_9_6 {
+    min-height: 18px;
+}
+
+.taxes {
+    width: 93%;
+    min-width: 93%;
+}
+
+.w_20 {
+    width: 20%;
+    min-width: 20%;
+}
+
+.discount {
+    /* width: calc(78% - (20% / 4));
+    min-width: calc(78% - (20% / 4)); */
+    width: 72.31%;
+    min-width: 72.31%;
+}
+
+.otherAmount {
+    width: calc(20% / 3);
+    min-width: calc(20% / 3);
+}
+
+.font_11 *,
+.font_11 {
+    font-size: 11px;
+}
+
+.font_12 *,
+.font_12 {
+    font-size: 12px;
+}
+
+.font_14 *,
+.font_14 {
+    font-size: 14px;
+}
+
+.font_18 *,
+.font_18 {
+    font-size: 18px;
+}
+
+.font_1_12 *,
+.font_1_12 {
+    font-size: 12px;
+}
+
+.Packinglist6 table td {
+    padding: 0;
+    margin: 0;
+}
+
+@media print {
+
+    .Packinglist6 {
+        zoom: unset;
+    }
+
+    .font_1_12 *,
+    .font_1_12 {
+        font-size: 8px;
+    }
+
+    .min_height_9_6 {
+        min-height: 13px;
+    }
+
+
+
+}

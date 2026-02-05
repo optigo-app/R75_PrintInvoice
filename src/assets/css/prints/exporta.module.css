@@ -1,0 +1,40 @@
+.exportprint2 *{
+    font-size: 9px;
+    line-height: 120%;
+    word-break: break-all;
+    box-sizing: border-box;
+    font-family: Calibri;
+}
+
+.des, .studding{
+    width: 20%;
+    min-width: 20%;
+}
+
+.material{
+    width: 40%;
+    min-width: 40%;
+}
+
+.fob{
+    width: 20%;
+    min-width: 20%;
+}
+
+.grs{
+    /* width: 11.11%;
+    min-width: 11.11%; */
+    width: 12.5%;
+    min-width: 12.5%;
+}
+
+.minHeight_19_8{
+    min-height: 19.8px;
+}
+
+
+@media print{
+    .print_sec_sum4{
+        display: none !important;
+    }
+}

@@ -1,0 +1,56 @@
+.RetailPrint3 *{
+    font-size: 12px;
+    line-height: 120%;
+    word-break: normal;
+    font-family: Calibri;
+}
+
+.Sr{
+    width: 3%;
+    min-width: 3%;
+}
+.Product{
+    width: 10%;
+    min-width: 10%;
+}
+.Material{
+    width: 87.1%;
+    min-width: 87.1%;
+}
+
+.material	{
+    width: 10%;
+    min-width: 10%;
+}
+.qty, 
+.color,
+.pcs,
+.gWt,
+.nWt,
+.rate,
+.amount,
+.making,
+.discount,
+.total	{
+    width: 9%;
+    min-width: 9%;
+}
+
+.inWords{
+    width: 76.5%;
+    min-width: 76.5%;
+}
+
+.inNumbers{
+    width: 15.7%;
+    min-width: 15.7%;
+}
+
+.totalInNumbers{
+    width: 7.8%;
+    min-width: 7.8%;
+}
+
+.minHeight28_42{
+    min-height: 28.42px;
+}

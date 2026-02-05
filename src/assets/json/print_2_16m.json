@@ -1,0 +1,151 @@
+﻿[
+    {
+        "Order": "04-May-23",
+        "DUE": "09-May-23",
+        "Job Info": "1/6333",
+        "PARTY": "G01",
+        "Metal Info": "GOLD 18K P-W",
+        "Design Info": "CTNCK-00112EA",
+        "ORD NO": "SKU/1000/2023",
+        "SIZE": "23.25",
+        "ORDER Type": "RUBER MOULD",
+        "PRIORITY": "NORMAL",
+        "NET WT:": "100.23",
+        "DIA PCS:": "1024",
+        "CLR PCS:": "1025",
+        "QT NO:": "QT123785",
+        "GR WT:": "100.23",
+        "DIA WT:": "100.23",
+        "CLR WT:": "100.23",
+        "CREAT BY:": "SHRIDHAR",
+        "Image": "\\\\evo\\BASKET_mix\\Basket_on_evolet_\\D\\shridhar\\import-image\\2000IMG1\\1Ring_500"
+    },
+    [
+        {
+            "RM TYPE": "D BUGGET",
+            "Qulity": "VVS-SI",
+            "COLOR": "FG",
+            "SIZE": "14.5-15.5",
+            "ACTUAL": "100",
+            "": "100.25",
+            "WT": null,
+            "BARCODE": "",
+            "TOTAL": "100"
+        },
+        {
+            "RM TYPE": "TOTAL",
+            "Qulity": "",
+            "COLOR": "",
+            "SIZE": "",
+            "ACTUAL": "100",
+            "": "",
+            "WT": "",
+            "BARCODE": "",
+            "TOTAL": "100"
+        },
+        {
+            "RM TYPE": "C MRQ",
+            "Qulity": "S2-MOL",
+            "COLOR": "BLK",
+            "SIZE": "(+5.0-5.5)",
+            "ACTUAL": "20",
+            "": "0.025",
+            "WT": null,
+            "BARCODE": null,
+            "TOTAL": "20"
+        },
+        {
+            "RM TYPE": "TOTAL",
+            "Qulity": "",
+            "COLOR": "",
+            "SIZE": "",
+            "ACTUAL": "20",
+            "": "",
+            "WT": "",
+            "BARCODE": "",
+            "TOTAL": "20"
+        }
+    ],
+    [
+        {
+            "0": "ISSUE",
+            "GRAND": "0",
+            "FILLING": "0",
+            "EPD": "0",
+            "P.P": "0",
+            "SET": "0",
+            "F.P": "0",
+            "RHD-QC": "0"
+        },
+        {
+            "0": "RECEIVE",
+            "GRAND": "0",
+            "FILLING": "0",
+            "EPD": "0",
+            "P.P": "0",
+            "SET": "0",
+            "F.P": "0",
+            "RHD-QC": "0"
+        },
+        {
+            "0": "DIFF",
+            "GRAND": "0",
+            "FILLING": "0",
+            "EPD": "0",
+            "P.P": "0",
+            "SET": "0",
+            "F.P": "0",
+            "RHD-QC": "0"
+        },
+        {
+            "0": "PCS",
+            "GRAND": "0",
+            "FILLING": "0",
+            "EPD": "0",
+            "P.P": "0",
+            "SET": "0",
+            "F.P": "0",
+            "RHD-QC": "0"
+        },
+        {
+            "0": "SCRAP",
+            "GRAND": "0",
+            "FILLING": "0",
+            "EPD": "0",
+            "P.P": "0",
+            "SET": "0",
+            "F.P": "0",
+            "RHD-QC": "0"
+        },
+        {
+            "0": "DGN INS:",
+            "GRAND": "",
+            "FILLING": "",
+            "EPD": "",
+            "P.P": "",
+            "SET": "",
+            "F.P": "",
+            "RHD-QC": ""
+        },
+        {
+            "0": "PRD INS:",
+            "GRAND": "",
+            "FILLING": "",
+            "EPD": "",
+            "P.P": "",
+            "SET": "",
+            "F.P": "",
+            "RHD-QC": ""
+        },
+        {
+            "0": "CUST INS:",
+            "GRAND": "",
+            "FILLING": null,
+            "EPD": null,
+            "P.P": null,
+            "SET": null,
+            "F.P": null,
+            "RHD-QC": null
+        }
+    ]
+]

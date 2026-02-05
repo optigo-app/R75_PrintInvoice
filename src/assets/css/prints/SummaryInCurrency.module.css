@@ -1,0 +1,94 @@
+.summaryInCurrency * {
+    font-size: 12px;
+    line-height: 120%;
+    font-family: Calibri;
+    word-break: normal;
+}
+
+.SR {
+    width: 5%;
+    min-width: 5%;
+}
+
+.QLTY{
+    width: 5.1%;
+    min-width: 5.1%;
+}
+
+
+.PURITY,
+.DIAWT,
+.DIARATE,
+.DIAAMT,
+.GWT,
+.NWT,
+.MAKING,
+.CSAMT,
+.GOLDFINE
+{
+    width: 7.1%;
+    min-width: 7.1%;
+}
+
+.GOLDAMT,
+.AMOUNT{
+    width: 8.1%;
+    min-width: 8.1%;
+}
+
+.word_break *, .word_break{
+    word-break: break-all;
+}
+
+.DESIGN {
+    width: 10%;
+    min-width: 10%;
+}
+
+.total{
+    width: 27.2%;
+    min-width: 27.2%;
+}
+
+.font_14, .font_14 *{
+    font-size: 14px;
+}
+
+.font_15, .font_15 *{
+    font-size: 15px;
+}
+
+.font_16, .font_16 *{
+    font-size: 16px;
+}
+
+.font_18, .font_18 *{
+    font-size: 18px;
+}
+
+@media print {
+    .print_sec_sum4 {
+        display: none !important;
+    }
+
+    .summaryInCurrency * {
+        font-size: 9px;
+    }
+
+    .font_14, .font_14 *{
+        font-size: 14px;
+    }
+    
+    .font_15, .font_15 *{
+        font-size: 15px;
+    }
+    
+    .font_16, .font_16 *{
+        font-size: 16px;
+    }
+    
+    .font_18, .font_18 *{
+        font-size: 18px;
+    }
+    
+}

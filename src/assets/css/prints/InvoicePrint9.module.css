@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Open+Sans:wght@300;400;500;600;700;800&family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Public+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+.invoiceprint9 * {
+    font-size: 12px;
+    line-height: 120%;
+    font-family: "Open Sans";
+}
+
+.invoiceprint9Header *{
+    font-size: 12px !important;
+}
+
+.space{
+    padding-top: 20px;
+}
+
+.footerContainer *{
+    font-size: 15px;
+}
+
+.Image {
+    width: 12.5%;
+    min-width: 12.5%;
+}
+
+.SNo {
+    width: 4.5%;
+    min-width: 4.5%;
+}
+
+.Description {
+    width: 16%;
+    min-width: 16%;
+}
+
+.HSN {
+    width: 6%;
+    min-width: 6%;
+}
+
+.Pcs {
+    width: 5%;
+    min-width: 5%;
+}
+
+.GGms {
+    width: 10%;
+    min-width: 10%;
+}
+
+.Stone {
+    width: 10%;
+    min-width: 10%;
+}
+
+.NGms {
+    width: 10%;
+    min-width: 10%;
+}
+
+.Rate {
+    width: 9%;
+    min-width: 9%;
+}
+
+.VA {
+    width: 7%;
+    min-width: 7%;
+}
+
+.Amount {
+    width: 10%;
+    min-width: 10%;
+}
+
+.total{
+    width: 39%;
+    min-width: 39%;    
+}
+
+.font_15, .font_15 *{
+    font-size: 15px;
+}
+
+.font_13{
+    font-size: 13px;
+}
+
+.font_14{
+    font-size: 14px;
+}
+
+@media print{
+    .font_15, .font_15 *, .invoiceprint9 *, .font_13, .font_14 {
+        font-size: 9px;
+    }
+    .space{
+        padding-top: 148px;
+    }
+}

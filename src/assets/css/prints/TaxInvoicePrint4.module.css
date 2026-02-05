@@ -1,0 +1,71 @@
+.taxinvoiceprint4 *{
+  font-size: 12px;
+  line-height: 120%;
+  word-break: normal;
+  font-family: Calibri;
+}
+
+.Sr {
+  width: 5%;
+  min-width: 5%;
+}
+
+.font_14, .font_14 *{
+  font-size: 14px;
+}
+
+.font_16, .font_16 *{
+  font-size: 16px;
+}
+
+.Description {
+  width: 13%;
+  min-width: 13%;
+}
+
+.Purity {
+  width: 10%;
+  min-width: 10%;
+}
+
+.Gr,
+.DWt,
+.DRate,
+.StWt,
+.StRate,
+.NetWt,
+.Wastage,
+.Rate {
+    width: 7.5%;
+    min-width: 7.5%;
+}
+
+.Amount {
+  width: 12%;
+  min-width: 12%;
+}
+
+
+.words{
+  width: 72.99%;
+  min-width: 72.99%;
+}
+.grandTotal{
+  width: 27.1%;
+  min-width: 27.1%;
+}
+
+.Values{
+  width: 55.45%;
+  min-width: 55.45%;
+}
+.amounts{
+  width: 44.55%;
+  min-width: 44.55%;
+}
+
+@media print{
+  .print_sec_sum4{
+    display: none !important;
+  }
+}

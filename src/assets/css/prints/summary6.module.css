@@ -1,0 +1,108 @@
+.summary6 * {
+    font-size: 12px;
+    line-height: 120%;
+    word-break: normal;
+    font-weight: 500;
+    border-color: #918c8c !important;
+    font-family: Calibri;
+}
+
+.font_16{
+    font-size: 16px !important;
+}
+
+.sr{
+    width: 6%;
+    min-width: 6%;
+}
+.design{
+    width: 12%;
+    min-width: 12%;
+}
+
+.wordBreak *{
+    word-break: break-all;
+}
+
+.summary6 .bottomLine{
+    border-color: #726f6f !important;
+}
+
+.metal, 
+.gwt,
+.nwt,
+.dpcs,
+.dwt,
+.cspcs,
+.cswt,
+.order,
+.total{
+    width: 9.12%;
+    min-width: 9.12%;
+}
+
+.tax{
+    width: 27.29%;
+    min-width: 27.29%;
+}
+
+.taxWords{
+    width: 72.71%;
+    min-width: 72.71%;
+}
+
+/* .wid_22{
+    width: 23.9721%;
+    min-width: 23.9721%;
+} */
+
+.d_grid{
+    grid-template-columns: repeat(auto-fill, minmax(23%, 1fr)); /* or your desired column configuration */
+    grid-gap: 2%;
+}
+
+.print_sec_sum4{
+    position: absolute;
+    right: 5%;
+    top: 15px;
+}
+
+.font_size_19{
+    font-size: 19px !important;
+}
+
+.font_size_18, .font_size_18 *{
+    font-size: 18px !important;
+}
+
+.font_size_15, .font_size_15 *{
+    font-size: 15px !important;
+}
+
+.font_size_10, .font_size_10 *{
+    font-size: 11px !important;
+}
+
+.font_size_12, .font_size_12 *{
+    font-size: 12px !important;
+}
+
+.font_size_12_5, .font_size_12_5 *{
+    font-size: 12.5px !important;
+}
+
+.font_size_13, .font_size_13 *{
+    font-size: 13px !important;
+}
+
+.font_size_14, .font_size_14 *{
+    font-size: 14px !important;
+}
+
+
+
+@media print{
+    .print_sec_sum4{
+        display: none !important;
+    }
+}
