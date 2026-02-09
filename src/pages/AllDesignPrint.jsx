@@ -16,9 +16,9 @@ const AllDesignPrint = () => {
   const [isFaviconLoaded, setIsFaviconLoaded] = useState(true);
 
   useEffect(() => {
-      setFaviconIcon(atob(queryParams?.get("Fv")))
+    setFaviconIcon(atob(queryParams?.get("Fv")))
   }, [faviconIcon])
-    
+
   if (etp === null) {
     etp = "cHJpbnQ=";
   }
@@ -42,6 +42,8 @@ const AllDesignPrint = () => {
       const SpNo = queryParams.get("SpNo");
       const SpVer = queryParams.get("SpVer");
       const SV = queryParams.get("SV");
+      const fdate = queryParams.get("fdate");
+      const tdate = queryParams.get("tdate");
       return (
         <AnotherComponent
           billNumber={billNum}
@@ -50,10 +52,12 @@ const AllDesignPrint = () => {
           invoiceNo={invoiceno}
           printName={printname}
           evn={evn}
-          ApiVer = {ApiVer}
-          SpNo = {SpNo}
-          SpVer = {SpVer}
-          SV = {SV}
+          ApiVer={ApiVer}
+          SpNo={SpNo}
+          SpVer={SpVer}
+          SV={SV}
+          fdate={fdate}
+          tdate={tdate}
         />
       );
     } catch (error) {
@@ -157,12 +161,12 @@ const AllDesignPrint = () => {
       'memomaterialissue': module?.MemoMaterialIssue || [],
       'materialpurchasereturn': module?.MaterialPurchaseReturn || [],
       'product_alteration': module?.Product_Alteration || [],
-      'jewellerybook': module?.Jewellery_Book|| [],
+      'jewellerybook': module?.Jewellery_Book || [],
     };
-  
+
     return eventMappings[evnname] || [];
   };
-  
+
   const checkFavicon = () => {
     setIsFaviconLoaded(true);
   };
@@ -183,11 +187,11 @@ const AllDesignPrint = () => {
       setIsFaviconLoaded(false);
     }
   };
-  
+
   useEffect(() => {
     takePrint();
     checkFaviconUrl();
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

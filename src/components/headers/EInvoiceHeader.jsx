@@ -17,8 +17,11 @@ const EInvoiceHeader = ({ data }) => {
           </div> */}
           <div className={`fw-bold fs-5 ${style.linesmain}`}>{data?.CompanyFullName}</div>
           <div className={style.lines}>{data?.CompanyAddress}</div>
-          <div className={style.lines}>{data?.CompanyCity} {data?.CompanyAddress2}</div>
-          <div className={style.lines}>{data?.CompanyCity} - {data?.CompanyPinCode} {data?.CompanyState} ({data?.CompanyCountry})</div>
+          <div className={style.lines}>
+            {/* {data?.CompanyCity} */}
+             {data?.CompanyAddress2}</div>
+          <div className={style.lines}>
+            {data?.CompanyCity} - {data?.CompanyPinCode} {data?.CompanyState} ({data?.CompanyCountry})</div>
           <div className={`${style.lines} flex-wrap`}>T {data?.CompanyTellNo} {data?.CompanyTollFreeNo !== "" && ` | TOLL FREE ${data?.CompanyTollFreeNo} | TOLL FREE ${data?.CompanyTollFreeNo}`} </div>
           <div className={style.lines}>
             {data?.CompanyEmail} | {data?.CompanyWebsite}
