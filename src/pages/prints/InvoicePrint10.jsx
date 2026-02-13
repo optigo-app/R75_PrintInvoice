@@ -1304,6 +1304,12 @@ const InvoicePrint_10_11 = ({
             style={{ width: "33.33%" }}
           >
             <div className={`${style?.fsremark_10} fw-normal`}>Signature</div>
+            <img
+                        src={headerData?.DigitalSignature}
+                        style={{
+                          width: '390px'
+                        }}   
+                      />
             <div >
               {headerData?.CompanyFullName}
             </div>

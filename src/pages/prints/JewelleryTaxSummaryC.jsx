@@ -25,6 +25,7 @@ const JewelleryTaxSummaryC = ({
   evn,
   ApiVer,
 }) => {
+  console.log('evn: ', atob(evn));
   const toWords = new ToWords();
   const [result, setResult] = useState(null);
   const [msg, setMsg] = useState("");
@@ -219,7 +220,7 @@ const JewelleryTaxSummaryC = ({
                   </div>
                   <div className="fs_jts devidePDetail2">
                     <div className="d-flex w-100">
-                      <div className="w-50">Invoice#:</div>
+                      <div className="w-50">{atob(evn) == "orders" ? "Order#" :  "Invoice#"}:</div>
                       <div className="fw-bold w-50">
                         {result?.header?.InvoiceNo}
                       </div>
