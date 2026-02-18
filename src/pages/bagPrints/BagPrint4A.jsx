@@ -827,9 +827,11 @@ const BagPrint4A = ({ queries, headers }) => {
                                   {e?.data?.Certificate ? `Certi# - ${e?.data?.Certificate}` : ""} */}
                                   {
                                     [
-                                      e?.data?.ishallmark == 1 && "Hallmark",
-                                      e?.data?.Ustamping && `Stamp - ${e?.data?.Ustamping?.slice(0, 8)}`,
-                                      e?.data?.Certificate && `Certi# - ${e?.data?.Certificate.slice(0, 8)}`
+                                      e?.data?.Ustamping && ` ${e?.data?.Ustamping?.slice(0, 12)}`,
+                                      e?.data?.IsDiamondPcs && ` ${"DPcs"}`,
+                                      e?.data?.IsDiamondWt && ` ${"DWt"}`,
+                                      e?.data?.Certificate && ` ${e?.data?.Certificate.slice(0, 12)}`,
+                                      e?.data?.ishallmark == 1 && "HUID",
                                     ]
                                       .filter(Boolean)
                                       .join(", ")
