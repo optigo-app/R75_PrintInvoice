@@ -191,6 +191,8 @@ const Print1Material = ({
     (totalAmount || 0) +
     (totalEtraTaxAmount || 0) +
     (taxAmont?.tax1Amount || 0) +
+    (taxAmont?.CGSTTotalAmount || 0) +
+    (taxAmont?.SGSTTotalAmount || 0) +
     (taxAmont?.tax2Amount || 0) +
     (taxAmont?.tax4Amount || 0) +
     (taxAmont?.tax5Amount || 0) +
@@ -323,9 +325,29 @@ const Print1Material = ({
 
                 </div>
               <div className="disflx brbxAll">
-                <div className="w1_inv2 spTpMrgHD spfnthead disflx">
+                <div className="w1_inv2 spTpMrgHD spfnthead ">
+                  <div className="disflx">
                   <div className="spfntBld">To,</div>
-                  <div className="spfntsZ spfntBld" style={{ paddingLeft: "4px" }}>{json0Data?.Customercode}</div>
+                  <div className="spfntsZ spfntBld" style={{ paddingLeft: "4px" }}>
+                  {json0Data?.IsPrint_ShortCustomerDetails === 0 ? json0Data?.customerfirmname : json0Data?.Customercode}
+                    
+                   </div>
+                  </div>
+                  <div>
+                  {json0Data?.IsPrint_ShortCustomerDetails === 0 && (
+                       <div style={{marginLeft:"19px",marginBottom:"8px"}}>
+                       {json0Data?.customerstreet && (<div>{json0Data?.customerstreet } </div> )} 
+                       {json0Data?.customerregion && (<div>{json0Data?.customerregion } </div> )} 
+                       {json0Data?.customercity && json0Data?.PinCode !== "" && (<div>{json0Data?.customercity} - {json0Data?.PinCode} </div> )} 
+                       {json0Data?.customeremail && (<div>{json0Data?.customeremail } </div> )} 
+                       {json0Data?.customermobileno && (<div>{json0Data?.customermobileno } </div> )} 
+                        <div className=""> {json0Data?.Cust_VAT_GST_No !== "" && (`${json0Data?.Cust_VAT_GST}-${json0Data?.Cust_VAT_GST_No}`)} {json0Data?.Cust_VAT_GST_No && json0Data?.Cust_CST_STATE_No !== "" && ("| ")} 
+                           {json0Data?.Cust_CST_STATE_No !== "" && (`${json0Data?.Cust_CST_STATE}-${json0Data?.Cust_CST_STATE_No}`)} {json0Data?.Cust_CST_STATE_No && json0Data?.ComPanCard !== "" && ("|")} {json0Data?.customerPANno !== "" && ( `PAN-${json0Data?.customerPANno} `)}</div>
+        
+                        
+                        </div>
+                  )}
+                  </div>
                 </div>
                 <div className="w2_inv2">
                 </div>
