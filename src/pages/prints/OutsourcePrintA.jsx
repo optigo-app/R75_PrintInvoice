@@ -1130,10 +1130,8 @@ const OutsourcePrintA = ({ urls, token, invoiceNo, printName, evn, ApiVer }) => 
     })
   : [];
 
-  
-  
-  console.log("json2Data", json2Data);
-  console.log("json1Data", json1Data);
+  // console.log("json2Data", json2Data);
+  // console.log("json1Data", json1Data);
 
   return (
     <>
@@ -1265,7 +1263,7 @@ const OutsourcePrintA = ({ urls, token, invoiceNo, printName, evn, ApiVer }) => 
                     <div key={i} className={`spdispFlx ${i === diamondRows[index].length - 1 ? 'no-border' : ''}`}>
                       <div className="dtlWdth1 spbrdRght spbrdrBtom estimatePrintFont_14 Sesptxtend spfntszDCM">
                         <p className="spbrWord">
-                          {[el?.Shape_Code, el?.Quality_Code, el?.Color_Code].filter(Boolean).join("/")}
+                          {[el?.MaterialTypeName, el?.Shape_Code, el?.Quality_Code, el?.Color_Code].filter(Boolean).join("/")}
                         </p>
                       </div>
                       <div className="dtlWdth2 spbrdRght spbrdrBtom estimatePrintFont_14 Sesptxtend SuBspfntszDCM">{el?.SizeName || ""}</div>

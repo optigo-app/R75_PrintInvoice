@@ -13,10 +13,8 @@ import {
   otherAmountDetail,
   taxGenrator,
 } from "../../GlobalFunctions";
-import Loader2 from "../../components/Loader2";
 import Loader from "../../components/Loader";
 import { cloneDeep } from "lodash";
-import { OrganizeDataPrint } from "../../GlobalFunctions/OrganizeDataPrint";
 import { MetalShapeNameWiseArr } from "../../GlobalFunctions/MetalShapeNameWiseArr";
 const OrderPrintAM = ({ urls, token, invoiceNo, printName, evn, ApiVer }) => {
   const [image, setImage] = useState(true);
@@ -530,7 +528,7 @@ const OrderPrintAM = ({ urls, token, invoiceNo, printName, evn, ApiVer }) => {
       }
     });
 
-    console.log("totalstotals", totals);
+    // console.log("totalstotals", totals);
 
     setDiamondDetail(diamondDetailList2);
     setTotal(totals);
@@ -1423,7 +1421,7 @@ const OrderPrintAM = ({ urls, token, invoiceNo, printName, evn, ApiVer }) => {
                                 <div className="d-flex " key={ind}>
                                   <div className="width20EstimatePrint p_1Estimate">
                                     <p className="">
-                                      {ele?.ShapeName} {ele?.QualityName}{" "}
+                                      {ele?.MaterialTypeName} {ele?.ShapeName} {ele?.QualityName}{" "}
                                       {ele?.Colorname}
                                     </p>
                                   </div>
@@ -1810,10 +1808,7 @@ const OrderPrintAM = ({ urls, token, invoiceNo, printName, evn, ApiVer }) => {
                                   {e?.labourArr?.map((ele, ind) => {
                                     return (
                                       <p key={ind}>
-                                        {NumberWithCommas(+ele?.label, 2) !==
-                                        "NaN"
-                                          ? NumberWithCommas(+ele?.label, 2)
-                                          : ele?.label}
+                                        {e?.MakingChargeDiscount !== 0 ? `${fixedValues(e?.MakingChargeDiscount,2)} %` : NumberWithCommas(+ele?.label, 2) !== "NaN" ? NumberWithCommas(+ele?.label, 2) : ele?.label}
                                       </p>
                                     );
                                   })}

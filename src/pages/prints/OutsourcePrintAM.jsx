@@ -1566,7 +1566,7 @@ const OutsourcePrintAM = ({ urls, token, invoiceNo, printName, evn, ApiVer }) =>
                                 <div className="d-flex " key={ind}>
                                   <div className="Suwidth20EstimatePrint p_1Estimate">
                                     <p className="spspcLft spbrWord">
-                                      {ele?.ShapeName} {ele?.QualityName}{" "}
+                                      {ele?.MaterialTypeName} {ele?.ShapeName} {ele?.QualityName}{" "}
                                       {ele?.Colorname}
                                     </p>
                                   </div>
