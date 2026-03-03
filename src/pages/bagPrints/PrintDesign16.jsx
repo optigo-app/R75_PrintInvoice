@@ -7,6 +7,7 @@ import Loader from "../../components/Loader";
 import BarcodeGenerator from "../../components/BarcodeGenerator";
 import { GetData } from "./../../GlobalFunctions/GetData";
 import { organizeData } from "./../../GlobalFunctions/OrganizeBagPrintData";
+import { GetChunkData } from "../../GlobalFunctions/GetChunkData";
 import { GetUniquejob } from "../../GlobalFunctions/GetUniqueJob";
 // import { checkInstruction } from "../../GlobalFunctions";
 
@@ -16,6 +17,7 @@ const PrintDesign16 = ({ queries, headers }) => {
   const resultString = GetUniquejob(queryParams?.str_srjobno);
   const [data, setData] = useState([]);
   const chunkSize = 15;
+ 
 
   useEffect(() => {
     if (Object.keys(queryParams)?.length !== 0) {
@@ -54,12 +56,28 @@ const PrintDesign16 = ({ queries, headers }) => {
               diaPcs: 0,
               diaWt: 0,
             };
+            let fin = {
+              finPcs: 0,
+              finWt: 0,
+            };
+            let mi = {
+              miPcs: 0,
+              minWt: 0,
+            };
             let diamondData = [];
             let clrData = [];
+            let finData = [];
+            let miData = [];
             let diamondWeight = 0;
             let diamondPcs = 0;
             let clrWeight = 0;
             let clrpcs = 0;
+
+            let finWeight = 0;
+            let finpcs = 0;
+
+            let miWeight = 0;
+            let minpcs = 0;
             // eslint-disable-next-line array-callback-return
             a?.rd1?.map((e, i) => {
               if (
@@ -80,6 +98,20 @@ const PrintDesign16 = ({ queries, headers }) => {
                 clrData.push(e);
                 clrWeight = clrWeight + e?.ActualWeight;
                 clrpcs = clrpcs + e?.ActualPcs;
+              }
+              else if (e?.MasterManagement_DiamondStoneTypeid === 5) {
+                fin.finPcs = fin.finPcs + e?.ActualPcs;
+                fin.finWt = clr.finWt + e?.ActualWeight;
+                finData.push(e);
+                finWeight = finWeight + e?.ActualWeight;
+                finpcs = finpcs + e?.ActualPcs;
+              }
+              else if (e?.MasterManagement_DiamondStoneTypeid === 7) {
+                mi.miPcs = mi.miPcs + e?.ActualPcs;
+                mi.minWt = mi.minWt + e?.ActualWeight;
+                miData.push(e);
+                miWeight = miWeight + e?.ActualWeight;
+                minpcs = minpcs + e?.ActualPcs;
               }
             });
 
@@ -137,7 +169,63 @@ const PrintDesign16 = ({ queries, headers }) => {
               };
               clrData.push(clrDataObject);
             }
-            let originlData = [...diamondData, ...clrData];
+
+            // if (finData.length > 0) {
+            //   let finDataObject = {
+            //     ActualPcs: finpcs,
+            //     ActualWeight: finWeight,
+            //     ColorCode: "",
+            //     ColorName: "",
+            //     ConcatedFullShapeQualityColorCode: "",
+            //     ConcatedFullShapeQualityColorName: "",
+            //     ConcatedShapeQualityColorName: "",
+            //     IssuePcs: "",
+            //     IssueWeight: "",
+            //     LimitedShapeQualityColorCode: "",
+            //     MasterManagement_DiamondStoneTypeid: "",
+            //     MetalColor: "",
+            //     Quality: "",
+            //     QualityCode: "",
+            //     Quality_DisplayOrder: "",
+            //     SerialJobno: "",
+            //     Shapecode: "",
+            //     Shapename: "Total",
+            //     Size_DisplayOrder: "",
+            //     Sizename: "",
+            //     TruncateShapename: "",
+            //     totalFontWeight: "900",
+            //   };
+            //   finData.push(finDataObject);
+            // }
+
+            if (miData.length > 0) {
+              let miDataObject = {
+                ActualPcs: minpcs,
+                ActualWeight: miWeight,
+                ColorCode: "",
+                ColorName: "",
+                ConcatedFullShapeQualityColorCode: "",
+                ConcatedFullShapeQualityColorName: "",
+                ConcatedShapeQualityColorName: "",
+                IssuePcs: "",
+                IssueWeight: "",
+                LimitedShapeQualityColorCode: "",
+                MasterManagement_DiamondStoneTypeid: "",
+                MetalColor: "",
+                Quality: "",
+                QualityCode: "",
+                Quality_DisplayOrder: "",
+                SerialJobno: "",
+                Shapecode: "",
+                Shapename: "Total",
+                Size_DisplayOrder: "",
+                Sizename: "",
+                TruncateShapename: "",
+                totalFontWeight: "900",
+              };
+              miData.push(miDataObject);
+            }
+            let originlData = [...diamondData, ...clrData,...miData,...finData];
             let chData = [];
             let count = 0;
             for (let i = 0; i < originlData?.length; i += chunkSize) {
@@ -159,6 +247,9 @@ const PrintDesign16 = ({ queries, headers }) => {
             let imagePath = queryParams?.imagepath;
             imagePath = atob(queryParams?.imagepath);
             let img = imagePath + a?.rd?.ThumbImagePath;
+            let arrofchunk = GetChunkData(chunkSize, chData);
+                    
+              arrofchunk = arrofchunk.slice(0, 1);
             responseData.push({
               data: a,
               additional: {
@@ -167,6 +258,7 @@ const PrintDesign16 = ({ queries, headers }) => {
                 dia: dia,
                 img: img,
                 chdata: chData,
+                pages: arrofchunk,
               },
             });
           });
@@ -224,7 +316,7 @@ const PrintDesign16 = ({ queries, headers }) => {
                 className="btn_white blue print_btn"
                 onClick={(e) => handlePrint(e)}
               >
-                Print
+                Print 
               </button>
             </div>
             <div className="d_flex flex_wrap  print_section bag_design_2">
@@ -564,10 +656,10 @@ const PrintDesign16 = ({ queries, headers }) => {
                                     style={{
                                       height: "3.7041666667mm",
                                       fontWeight: "900",
-                                      paddingTop: "2px",
+                                      paddingTop: "0px",
                                       paddingLeft: "0.79375mm",
                                       width: "10.7mm",
-                                      fontSize: "11.5px",
+                                      fontSize: "11px",
                                     }}
                                   >
                                     WT
@@ -918,7 +1010,12 @@ const PrintDesign16 = ({ queries, headers }) => {
                     </React.Fragment>
                   );
                 } else {
-                  return e?.additional?.chdata?.map((chunk, index) => {
+                  return (e?.additional?.pages?.length > 0 ? e?.additional?.pages?.[0].data : [{}]).map((chunk, index) => {
+                    
+                   
+                  // return e?.additional?.chdata?.map((chunk, index) => {
+                    
+                    
                     return (
                       <React.Fragment key={index}>
                         <div
@@ -1229,7 +1326,7 @@ const PrintDesign16 = ({ queries, headers }) => {
                                       fontWeight: "900",
                                       textAlign: "center",
                                       paddingLeft: "0.79375mm",
-                                      width: "16.345958333mm",
+                                      width: "14.345958333mm",
                                       fontSize: "11px",
                                     }}
                                   >
@@ -1241,7 +1338,7 @@ const PrintDesign16 = ({ queries, headers }) => {
                                       height: "3.7041666667mm",
                                       fontWeight: "900",
                                       paddingLeft: "0.79375mm",
-                                      width: "11.5mm",
+                                      width: "14.5mm",
                                       fontSize: "11px",
                                     }}
                                   >
@@ -1261,18 +1358,30 @@ const PrintDesign16 = ({ queries, headers }) => {
                                   </div>
                                 </div>
 
-                                {chunk?.data?.map((e, i) => {
+                                {chunk?.data?.map((a, i) => {
+                                  
+                                  const TheDataLen = e?.additional?.pages?.[0]?.data?.[0]?.data?.length ?? 0;
+                                   
+                                 
+                                  // console.log("TCL: chunk?.data?.length", chunk?.data?.length)
+                                  // console.log("TheDataLen", TheDataLen);
+                                  const TheDif = TheDataLen <= 21 ? 21 - TheDataLen : 0;
+                                  // console.log("TheDif", TheDif);
+                                  const TheDifSh = TheDif === 0 ? 21 : TheDif;
+                                  // console.log("TheDifSh", TheDifSh);
+                                  const isLastRow = i === TheDifSh - 1;
+                                  // console.log("isLastRow", isLastRow);
                                   return (
                                     <div className="d_flex" key={i}>
                                       <div
-                                        className={`border_right border_bottom display ${e?.Shapename?.length > 15
+                                        className={`border_right border_bottom  display ${a?.Shapename?.length > 15
                                             ? "line_height_fontSmall"
                                             : ""
                                           }`}
                                         style={{
-                                          width: "17.853583333mm",
+                                          width: a?.MasterManagement_DiamondStoneTypeid === 5 ? "56.65mm" : "17.853583333mm",
                                           fontWeight:
-                                            e?.totalFontWeight === "900"
+                                            a?.totalFontWeight === "900"
                                               ? "900"
                                               : "bold",
                                           boxSizing: "border-box",
@@ -1284,15 +1393,21 @@ const PrintDesign16 = ({ queries, headers }) => {
                                           lineHeight: "7px",
                                         }}
                                       >
-                                        {e?.Shapename === "Total" ? (
-                                          <b>{e?.Shapename}</b>
+                                        {a?.Shapename === "Total" ? (
+                                          <b>{a?.Shapename}</b>
                                         ) : (
-                                          e?.Shapename?.slice(0, 15)
+                                          a?.MasterManagement_DiamondStoneTypeid ===5 ?(
+                                              `${a?.Shapename ?? ""} ${a?.Quality ?? ""} ${a?.MetalColor ?? ""}`.trim().slice(0, 45)
+                                          ):(
+                                            a?.Shapename?.slice(0, 15)
+                                          )
+                                          
+                                           
                                         )}
                                       </div>
 
                                       <div
-                                        className={`border_right border_bottom display ${e?.Quality?.length > 10
+                                        className={`border_right border_bottom display ${a?.Quality?.length > 10
                                             ? "line_height_fontSmall"
                                             : ""
                                           }`}
@@ -1307,13 +1422,14 @@ const PrintDesign16 = ({ queries, headers }) => {
                                           boxOrient: "vertical",
                                           overflow: "hidden",
                                           lineHeight: "7px",
+                                          display: a?.MasterManagement_DiamondStoneTypeid === 5 ? "none" : "flex",
                                         }}
                                       >
-                                        {e?.Quality?.slice(0, 10)}
+                                        {a?.Quality?.slice(0, 10)}
                                       </div>
 
                                       <div
-                                        className={`border_right border_bottom display ${e?.MetalColor?.length > 10
+                                        className={`border_right border_bottom display ${a?.MetalColor?.length > 10
                                             ? "line_height_fontSmall"
                                             : ""
                                           }`}
@@ -1325,13 +1441,14 @@ const PrintDesign16 = ({ queries, headers }) => {
                                           textAlign: "end",
                                           lineHeight: "6.5px",
                                           justifyContent: "center",
+                                          display: a?.MasterManagement_DiamondStoneTypeid === 5 ? "none" : "flex",
                                         }}
                                       >
-                                        {e?.MetalColor?.slice(0, 10)}
+                                        {a?.ColorName?.slice(0, 10)}
                                       </div>
 
                                       <div
-                                        className={`border_right border_bottom display ${e?.Sizename?.length > 15
+                                        className={`border_right border_bottom display ${a?.Sizename?.length > 15
                                             ? "line_height_fontSmall"
                                             : ""
                                           }`}
@@ -1345,79 +1462,91 @@ const PrintDesign16 = ({ queries, headers }) => {
                                           display: "flex",
                                           justifyContent: "center",
                                           alignItems: "center",
+                                          display: a?.MasterManagement_DiamondStoneTypeid === 5 ? "none" : "flex",
                                         }}
                                       >
-                                        {e?.Sizename?.slice(0, 15)}
+                                        {a?.Sizename?.slice(0, 15)}
                                       </div>
 
                                       <div
-                                        className={`border_right border_bottom display ${e?.ActualPcs?.length > 7
+                                        className={`border_right border_bottom display ${a?.ActualPcs?.length > 7
                                             ? "line_height_fontSmall"
                                             : ""
                                           } wtnewclasscol16`}
+                                         
                                       >
-                                        {e?.Shapename === "Total" ? (
+                                        {a?.Shapename === "Total" ? (
                                           <b
                                             style={{
                                               fontSize:
-                                                e?.Shapename === "Total"
+                                                a?.Shapename === "Total"
                                                   ? "9px"
                                                   : "inherit",
                                             }}
                                           >
-                                            {+e?.ActualPcs}
+                                            {+a?.ActualPcs}
                                           </b>
                                         ) : (
-                                          +e?.ActualPcs
+                                          +a?.ActualPcs
                                         )}
                                       </div>
 
                                       <div
-                                        className={`border_right border_bottom display ${e?.ActualWeight?.length > 7
+                                        className={`border_right border_bottom display ${a?.ActualWeight?.length > 7
                                             ? "line_height_fontSmall"
                                             : ""
                                           } newclasscol16`}
                                       >
-                                        {e?.Shapename === "Total" ? (
+                                        {a?.Shapename === "Total" ? (
                                           <b
                                             style={{
                                               lineHeight: "6px",
                                               fontSize:
-                                                e?.Shapename === "Total"
+                                                a?.Shapename === "Total"
                                                   ? "9px"
                                                   : "inherit",
                                             }}
                                           >
-                                            {e?.ActualWeight?.toFixed(3)}
+                                            {a?.ActualWeight?.toFixed(3)}
                                           </b>
                                         ) : (
-                                          e?.ActualWeight?.toFixed(3)
+                                          a?.ActualWeight?.toFixed(3)
                                         )}
                                       </div>
 
                                       <div
-                                        className={`border_right2 border_bottom display ${e?.Sizename?.length > 12
+                                        className={`border_right2 border_bottom display ${a?.Sizename?.length > 12
                                             ? "line_height_fontSmall"
                                             : ""
                                           }`}
                                         style={{
-                                          width: "11.7952mm",
+                                          width: "14.7952mm",
                                           fontWeight: "bold",
-                                          fontSize: "10px",
+                                          fontSize: "9px",
                                           height: "3.7041666667mm",
                                           textAlign: "end",
-                                          paddingRight: "1.3229166667mm",
+                                          paddingRight: "2px",
                                           paddingLeft: "1.3229166667mm",
                                           lineHeight: "7px",
+                                          display:"flex",
+                                          alignItems:"center",
+                                          justifyContent:"flex-end"
                                         }}
-                                      ></div>
+                                      >{a?.EngagePcs>0 && a?.EngageWt>0 &&(a?.EngagePcs+"/"+a?.EngageWt)}</div>
                                     </div>
                                   );
                                 })}
-                                {Array.from(
-                                  { length: chunk?.length },
-                                  (_, index) => (
-                                    <div className="d_flex " key={index}>
+
+                   {Array.from({ length: 15 - (e?.additional?.pages?.[0]?.data?.[index]?.data?.length || 0) }, (_, index) => {
+                    
+                     const TheDataLen = e?.additional?.pages?.[0]?.data?.[0]?.data?.length ?? 0;
+                    //  console.log("TheDataLen ",TheDataLen)
+                                   
+                                  const TheDif = TheDataLen <= 15 ? 15 - TheDataLen : 0;
+                                 
+                                  const isLastRow = index === TheDif - 1;
+                                 return(
+                                  <div className="d_flex " key={index}>
                                       <div
                                         className="border_right border_bottom display"
                                         style={{
@@ -1457,7 +1586,7 @@ const PrintDesign16 = ({ queries, headers }) => {
                                       <div
                                         className="border_right border_bottom display"
                                         style={{
-                                          width: "7.3792291667mm",
+                                          width: "5.3792291667mm",
                                           fontSize: "1.8520833333mm",
                                           height: "3.7041666667mm",
                                         }}
@@ -1473,14 +1602,15 @@ const PrintDesign16 = ({ queries, headers }) => {
                                       <div
                                         className="border_right2 border_bottom display"
                                         style={{
-                                          width: "11.7952mm",
+                                          width: "14.7952mm",
                                           fontSize: "1.8520833333mm",
                                           height: "3.7041666667mm",
                                         }}
                                       ></div>
                                     </div>
-                                  )
-                                )}
+                                 )
+                                  
+                                })}
                               </div>
                               <div className="bag_footer_border_remove border_right ">
                                 <div className="thikborder">

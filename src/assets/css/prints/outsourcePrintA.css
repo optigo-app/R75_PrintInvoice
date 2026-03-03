@@ -113,9 +113,10 @@
     padding-top: 17px;
 }
 .spbrWord {
-    word-break: break-word;
+    /* word-break: break-word; */
     overflow-wrap: break-word;
-    word-wrap: break-word;
+    /* word-wrap: break-word; */
+    line-height: 8px;
 }
 .spBold{
     font-weight: bold;

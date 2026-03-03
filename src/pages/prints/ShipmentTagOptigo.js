@@ -67,7 +67,7 @@ export default function ShipmentTagOptigo({ token, invoiceNo, printName, urls, e
           {result?.Shipment_Json?.map((e, i) => (
             <div key={i} className="invoice-container">
               {/* Header */}
-              <div className="header">
+              <div className="header" style={{marginBottom: "15px"}}>
                 <div className="party0">
                   <img
                     src={e?.InvoicePrintLogo}
@@ -80,17 +80,17 @@ export default function ShipmentTagOptigo({ token, invoiceNo, printName, urls, e
                 </div>
                 <div className="party1 from" style={{ borderRight: "1px solid" }}>
                   <div className="address-block">
-                    <strong className="brBtom">FROM:</strong>
-                    <div className="spbrWord spBold">{e?.ShippingFrom}</div>
-                    {e?.ShippingFromPrintlable !== "" && <div dangerouslySetInnerHTML={{ __html: e?.ShippingFromPrintlable }}/>}
+                    <strong className="brBtom" style={{ fontSize: "7px" }}>FROM:</strong>
+                    <div className="spbrWord spBold" style={{ fontSize: "6px" }}>{e?.ShippingFrom}</div>
+                    {e?.ShippingFromPrintlable !== "" && <div style={{ fontSize: "6px" }} dangerouslySetInnerHTML={{ __html: e?.ShippingFromPrintlable }}/>}
                   </div>
                 </div>
                 <div className="party2 to">
                   <div className="address-block">
-                    <strong className="spPadg brBtom">TO:</strong>
-                    <div className="spbrWord spBold">{e?.ShippingFullName}</div>
-                    <div className="spbrWord">
-                      {e?.ShippingToPrintlable !== "" && <div dangerouslySetInnerHTML={{ __html: formattedText }} />}
+                    <strong className="spPadg brBtom" style={{ fontSize: "7px" }}>TO:</strong>
+                    <div className="spbrWord spBold" style={{ fontSize: "6px" }}>{e?.ShippingFullName}</div>
+                    <div className="spbrWord wordwarper" >
+                      {e?.ShippingToPrintlable !== "" && <div style={{ fontSize: "6px" }} dangerouslySetInnerHTML={{ __html: formattedText }} />}
                       {/* <div>{e?.ShippingCity}‑{e?.ShippingPincode}, {e?.ShippingState} ‑ {e?.ShippingCountry}</div>
                       <div>Phone: {e?.ShippingMobileNo}</div> */}
                     </div>
@@ -104,18 +104,18 @@ export default function ShipmentTagOptigo({ token, invoiceNo, printName, urls, e
               <div className="mid-section">
                 <div className="secondOPart1">
                   <div className="brBtom brRight">
-                    <div className="spMgl">Date:</div> <div className="spFntst spMgl">{e?.Shipmentdate}</div>
+                    <div className="spMgl">Date:</div> <div className="spFntst spMgl pmb2" style={{ fontSize: "6.5px" }}>{e?.Shipmentdate}</div>
                   </div>
                   <div className="brBtom brRight">
                     <div className="spMgl spMgT"> Delivery By:</div>
-                    <div className="spFntst spMgl">
+                    <div className="spFntst spMgl pmb2" style={{ fontSize: "6.5px" }}>
                       {e?.Deliveredby?.length > 25 ?
                         e?.Deliveredby?.slice(0, 25) + "..." : e?.Deliveredby}
                       </div>
                   </div>
                   <div className="brRight">
                     <div className="spMgl spMgT"> Shipment:</div> 
-                    <div className="spFntst spMgl">
+                    <div className="spFntst spMgl pmb2" style={{ fontSize: "6.5px" }}>
                     {e?.Shipmentno?.length > 25
                       ? e.Shipmentno.slice(0, 25) + "..."
                       : e.Shipmentno}
@@ -123,8 +123,8 @@ export default function ShipmentTagOptigo({ token, invoiceNo, printName, urls, e
                   </div>
                 </div>
                 <div className="secondOPart2">
-                    <div style={{ fontSize: "7px", }}>Order No.</div>
-                    <div style={{ fontSize: "8px", fontWeight: "bold" }}>{e?.BillNo}</div>
+                    <div style={{ fontSize: "6.5px", }}>Order No.</div>
+                    <div style={{ fontSize: "6.5px", fontWeight: "bold" }}>{e?.BillNo}</div>
                 </div>
                 <div className="secondOPart3">
                   <QRCode

@@ -202,8 +202,17 @@
   font-weight: bold;
 }
 
+.wordwarper div{
+  white-space: normal;
+  word-break: normal;         
+  overflow-wrap: break-word; 
+}
+
 @media print {
   .hidedp10{
     display: none;
+  }
+  .pmb2{
+    margin-bottom: 2px;
   }
 }
