@@ -692,7 +692,7 @@ const PackingList7DGroup = ({
 
                     <div className="px-1"></div>
                     <div className="px-1">
-                      {result?.header?.customeremail1}{" "}
+                   
                       {result?.header?.vat_cst_pan}{" "}
                       {result?.header?.Cust_CST_STATE}-
                       {result?.header?.Cust_CST_STATE_No}

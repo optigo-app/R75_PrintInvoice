@@ -207,6 +207,12 @@
   word-break: normal;         
   overflow-wrap: break-word; 
 }
+.wordwarper,
+.wordwarper * {
+  white-space: normal !important;
+  word-break: normal !important;         
+  overflow-wrap: break-word !important; 
+}
 
 @media print {
   .hidedp10{
