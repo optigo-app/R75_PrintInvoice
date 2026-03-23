@@ -90,7 +90,7 @@ const InvoicePrintN = ({
 
         metalArr.push({
           label: e?.MetalTypePurity,
-          value: e?.NetWt * e?.Quantity + e?.LossWt,
+          value: e?.NetWt * e?.Quantity+e?.LossWt,
           gm: true,
         });
       } else {
@@ -215,7 +215,7 @@ const InvoicePrintN = ({
     setBank(debitCardinfo);
 
     let finalArr = [];
-    console.log("TCL: loadData ->  datas?.resultArray", datas?.resultArray)
+    console.log("TCL: loadData ->  datas?.resultArray",  datas?.resultArray)
     datas?.resultArray?.forEach((a) => {
       if (a?.GroupJob === "") {
         finalArr.push(a);
@@ -235,7 +235,7 @@ const InvoicePrintN = ({
             finalArr[find_record].HUID = b?.HUID;
             finalArr[find_record].DesignImage = b?.DesignImage; // CQ Solving PSJewels 16/01/26
           }
-
+ 
 
           finalArr[find_record].grosswt += b?.grosswt;
           finalArr[find_record].NetWt += b?.NetWt;
@@ -247,10 +247,10 @@ const InvoicePrintN = ({
           finalArr[find_record].OtherCharges += b?.OtherCharges;
           finalArr[find_record].TotalDiamondHandling += b?.TotalDiamondHandling;
           finalArr[find_record].Quantity += b?.Quantity;
-
-          // keep original wastage of main record
+          
+// keep original wastage of main record
           finalArr[find_record].Wastage = finalArr[find_record].Wastage;
-
+          
           finalArr[find_record].totals.metal.IsPrimaryMetal += b?.totals?.metal?.IsPrimaryMetal;
           finalArr[find_record].totals.metal.Wt += b?.totals?.metal?.Wt;
           finalArr[find_record].totals.diamonds.Wt += b?.totals?.diamonds?.Wt;
@@ -720,9 +720,6 @@ const InvoicePrintN = ({
     result?.header?.AdvanceAmount +
     bank?.reduce((acc, cObj) => acc + +cObj?.amount, 0);
 
-
-  console.log("TCL: totalConverted", totalConverted)
-
   const difference = Math.round((totalConverted - totalPayments) * 100) / 100;
 
 
@@ -789,7 +786,7 @@ const InvoicePrintN = ({
     sumFields = ["Pcs", "RMwt", "Amount"],
     stringFields = ["ShapeName", "QualityName"],
     flagFields = ["IsPrimaryMetal"],
-    valueFields = ["metalWastage", "isRateOnPcs", "grosswt", "StockBarcode", "GroupJob", "Hid", "metalWastage1"]   // <-- added
+    valueFields = ["metalWastage", "isRateOnPcs", "grosswt", "StockBarcode", "GroupJob","Hid","metalWastage1"]   // <-- added
   }) => {
 
     const grouped = (data ?? []).reduce((acc, item) => {
@@ -939,14 +936,14 @@ const InvoicePrintN = ({
                   <div className="form-check pe-3">
                     <input
                       className="form-check-input"
-                      id="sum"
+                      id="image"
                       type="checkbox"
                       checked={summ}
                       onChange={handleChangeSummary}
                     />
                     <label
                       className="form-check-label pt-1"
-                      for="sum"
+                      for="image"
                     >
                       Summary
                     </label>
@@ -1446,7 +1443,7 @@ const InvoicePrintN = ({
                                         {/* Gross Wt */}
                                         <div className="col-2 d-flex align-items-start justify-content-end" style={{ width: "14%" }}>
                                           <p className="p-1 text-end lh-1">
-                                            {d?.GroupJob ? d?.GroupJob == d?.StockBarcode ? d.IsPrimaryMetal === 1 ? fixedValues(e?.grosswt, 3) : "" : "" : d.IsPrimaryMetal === 1 ? fixedValues(e?.grosswt, 3) : ""}
+                                            {d?.GroupJob  ? d?.GroupJob == d?.StockBarcode ?   d.IsPrimaryMetal === 1 ? fixedValues(e?.grosswt, 3) : ""  :""    : d.IsPrimaryMetal === 1 ? fixedValues(e?.grosswt, 3) : ""}
                                           </p>
                                         </div>
 
@@ -1488,11 +1485,11 @@ const InvoicePrintN = ({
                                             {
                                               d.IsPrimaryMetal === 1
                                                 ? NumberWithCommas(
-                                                  (d?.metalWastage1), // convert array → string
+                                                  (d?.metalWastage1 ), // convert array → string
                                                   2
                                                 )
                                                 : NumberWithCommas(d?.metalWastage, 2)
-                                            }
+                                              }
                                           </p>
                                         </div>
 

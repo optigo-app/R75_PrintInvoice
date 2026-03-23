@@ -27,6 +27,7 @@ const RetailInvoiceprint4 = ({
 }) => {
   const [headerData, setHeaderData] = useState({});
   const [data, setdata] = useState([]);
+  console.log("TCL: data", data)
   const [msg, setMsg] = useState("");
   const [loader, setLoader] = useState(true);
   const toWords = new ToWords();
@@ -56,7 +57,7 @@ const RetailInvoiceprint4 = ({
   const [document, setDocument] = useState([]);
   function loadData(data) {
     // console.log("datadatadata", data);
-    
+
     try {
       setHeaderData(data?.BillPrint_Json[0]);
       let blankArr = [];
@@ -105,7 +106,7 @@ const RetailInvoiceprint4 = ({
               } else {
                 otherMetals?.push(ele);
                 totals.multiMetalMiscHsCode += ele?.Wt;
-                hallmarkingCount += 1;
+                // hallmarkingCount += 1;
               }
             } else if (ele?.MasterManagement_DiamondStoneTypeid === 1) {
               diamonds?.push(ele);
@@ -148,7 +149,7 @@ const RetailInvoiceprint4 = ({
             } else if (ele?.MasterManagement_DiamondStoneTypeid === 5) {
               finding?.push(ele);
               findingWt += ele?.Wt;
-              hallmarkingCount += 1;
+              // hallmarkingCount += 1;
             }
           }
         });
@@ -746,15 +747,26 @@ const RetailInvoiceprint4 = ({
                                       >
                                         {/* {e?.Tunch !== 0 && NumberWithCommas(e?.Tunch, 3)}  */}
                                         {ele?.QualityName}{" "}
-                                        {e?.Tunch !== 0 &&
+                                        {e?.Tunch !== 0 && ` / ${NumberWithCommas(e?.Tunch, 2)}%`}
+
+                                        {/* {(e?.hallmarkingCount !== 0 || e?.HUID !== "" || e?.isWithHallMark === 1) && */}
+                                         {(  e?.HUID !== "" || e?.isWithHallMark === 1) &&
+                                          " Hallmarking"
+                                        }
+                                        {/* {e?.Tunch !== 0 &&
                                           ` / ${NumberWithCommas(
                                             e?.Tunch,
                                             2
-                                          )}% ${
-                                            e?.hallmarkingCount !== 0
-                                              ? "Hallmarking"
-                                              : ""
-                                          }`}
+                                          )}%
+                                          
+                                          ${e?.hallmarkingCount !== 0
+                                            ? "Hallmarking"
+                                            : ""
+                                          }`
+                                          }
+                                        {e?.HUID != "" && "Hallmarking"}
+                                        {e?.isWithHallMark == 1 && "Hallmarking"} */}
+
                                       </p>
                                     </div>
                                     <div
@@ -775,9 +787,9 @@ const RetailInvoiceprint4 = ({
                                       <p className=" p-1 text-end lh-1">
                                         {e?.otherMetals?.length === 0
                                           ? NumberWithCommas(
-                                              e?.NetWt + e?.LossWt,
-                                              3
-                                            )
+                                            e?.NetWt + e?.LossWt,
+                                            3
+                                          )
                                           : NumberWithCommas(ele?.Wt, 3)}
                                       </p>
                                     </div>
@@ -787,7 +799,7 @@ const RetailInvoiceprint4 = ({
                                       <p className=" p-1 text-end lh-1">
                                         {NumberWithCommas(
                                           ele?.Rate /
-                                            headerData?.CurrencyExchRate,
+                                          headerData?.CurrencyExchRate,
                                           2
                                         )}
                                       </p>
@@ -830,7 +842,7 @@ const RetailInvoiceprint4 = ({
                                     <p className=" p-1 text-end lh-1">
                                       {NumberWithCommas(
                                         e?.diamondRate /
-                                          headerData?.CurrencyExchRate,
+                                        headerData?.CurrencyExchRate,
                                         2
                                       )}
                                     </p>
@@ -872,7 +884,7 @@ const RetailInvoiceprint4 = ({
                                     <p className=" p-1 text-end lh-1">
                                       {NumberWithCommas(
                                         e?.colorStoneRate /
-                                          headerData?.CurrencyExchRate,
+                                        headerData?.CurrencyExchRate,
                                         2
                                       )}
                                     </p>
@@ -1051,7 +1063,7 @@ const RetailInvoiceprint4 = ({
                           >
                             <p className="text-end p-1">
                               {e?.MakingChargeDiscount !== 0 ? `${NumberWithCommas(e?.MakingChargeDiscount, 2)} %` : e?.MaKingCharge_Unit === 0 ? "" :
-                              `${NumberWithCommas(e?.MaKingCharge_Unit, 2)}`}
+                                `${NumberWithCommas(e?.MaKingCharge_Unit, 2)}`}
                             </p>
                           </div>
                           <div
@@ -1059,7 +1071,7 @@ const RetailInvoiceprint4 = ({
                           >
                             <p className=" text-end p-1">
                               {/* {NumberWithCommas(e?.OtherCharges, 2)} */}
-                              {NumberWithCommas(e?.OtherCharges / ( e?.NetWt + e?.LossWt ), 2)}
+                              {NumberWithCommas(e?.OtherCharges / (e?.NetWt + e?.LossWt), 2)}
                             </p>
                           </div>
                           <div
@@ -1172,16 +1184,16 @@ const RetailInvoiceprint4 = ({
                             {toWords.convert(
                               +(
                                 total?.beforeTax /
-                                  headerData?.CurrencyExchRate +
+                                headerData?.CurrencyExchRate +
                                 taxes?.reduce(
                                   (acc, cObj) =>
                                     acc +
                                     +cObj?.amount /
-                                      headerData?.CurrencyExchRate,
+                                    headerData?.CurrencyExchRate,
                                   0
                                 ) +
                                 headerData?.AddLess /
-                                  headerData?.CurrencyExchRate
+                                headerData?.CurrencyExchRate
                               )?.toFixed(2)
                             )}{" "}
                             Only
@@ -1256,7 +1268,7 @@ const RetailInvoiceprint4 = ({
                             total?.beforeTax / headerData?.CurrencyExchRate,
                             2
                           )}{/** Before Tax */}
-                        </p> 
+                        </p>
                         {taxes.length > 0 &&
                           taxes.map((e, i) => {
                             return (
@@ -1272,7 +1284,7 @@ const RetailInvoiceprint4 = ({
                           <p className="pb-1 px-1 text-end">
                             {NumberWithCommas(
                               headerData?.AddLess /
-                                headerData?.CurrencyExchRate,
+                              headerData?.CurrencyExchRate,
                               2
                             )}
                           </p>
@@ -1299,7 +1311,7 @@ const RetailInvoiceprint4 = ({
                           })}
                         {/* <p className="pb-1 px-1 text-end">{NumberWithCommas(headerData?.BankReceived, 2)}</p> */}
                         <p className="pb-1 px-1 text-end">
-                          {NumberWithCommas(headerData?.AdvanceAmount,2
+                          {NumberWithCommas(headerData?.AdvanceAmount, 2
                           )} {/** Advance Given Amount */}
                         </p>
                         <p className="pb-1 px-1 text-end">
@@ -1315,14 +1327,14 @@ const RetailInvoiceprint4 = ({
                           ></span>
                           {NumberWithCommas(
                             total?.beforeTax / headerData?.CurrencyExchRate +
-                              taxes?.reduce(
-                                (acc, cObj) =>
-                                  acc +
-                                  +cObj?.amount / headerData?.CurrencyExchRate,
-                                0
-                              ) +
-                              headerData?.AddLess /
-                                headerData?.CurrencyExchRate,
+                            taxes?.reduce(
+                              (acc, cObj) =>
+                                acc +
+                                +cObj?.amount / headerData?.CurrencyExchRate,
+                              0
+                            ) +
+                            headerData?.AddLess /
+                            headerData?.CurrencyExchRate,
                             2
                           )} {/** Grand Total */}
                         </p>

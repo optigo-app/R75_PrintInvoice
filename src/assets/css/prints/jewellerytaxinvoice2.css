@@ -102,9 +102,15 @@
 .minh_jti2{
     min-height: 75px;
 }
+.paymentTerms{
+    width: 187px;
+}
 
 
 @media print {
+    .paymentTerms{
+        width: 150px !important;
+    }
     .d_none_jti2{
         display: none !important;
     }
