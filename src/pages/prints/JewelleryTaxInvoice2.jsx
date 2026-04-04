@@ -314,7 +314,7 @@ const JewelleryTaxInvoice2 = ({ token, invoiceNo, printName, urls, evn, ApiVer }
                     {
                         msg === '' ? <>
                             <div className='container_jti2'>
-                                <div className=' d-flex justify-content-between align-items-start mt-5 pt-5 d_none_jti2'>
+                                <div className=' d-flex justify-content-between align-items-start mt-5 pt-5 '>
 
                                     <div className="compant_details">
                                         <div className="d-flex w-100">
@@ -362,7 +362,7 @@ const JewelleryTaxInvoice2 = ({ token, invoiceNo, printName, urls, evn, ApiVer }
                                     </div>
 
 
-                                    <div className="checkboxs" style={{ display: "flex", alignItems: "center" }}>
+                                    <div className="checkboxs d_none_jti2" style={{ display: "flex", alignItems: "center" }}>
                                         <div>
                                             <input
                                                 type="checkbox"

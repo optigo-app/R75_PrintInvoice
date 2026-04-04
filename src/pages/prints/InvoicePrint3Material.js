@@ -733,6 +733,10 @@ const InvoicePrint3Material = ({
                 </div>
                 <div className="spbnkdtl1">
                   <div>Signature</div>
+                  {json0Data?.DigitalSignature &&
+                  
+                  <img src={json0Data?.DigitalSignature} alt="" />
+                  }
                   <div className="spfntBld">{json0Data?.CompanyFullName}</div>
                 </div>
               </div>
