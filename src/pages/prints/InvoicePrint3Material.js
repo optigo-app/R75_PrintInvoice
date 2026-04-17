@@ -401,8 +401,8 @@ const InvoicePrint3Material = ({
                           }
                         </div>
                         <div className={`spbrRht Sucol3_inv2 ${rateFlag ? 'RTSucol3_inv2' : ''}`}>{e?.HSN_No === "" ? "-" : e?.HSN_No}</div>
-                        <div className={`${rateFlag ? 'RTSucol4FnDMnt_inv2' : ''} Sucol4FnDMnt_inv2 spbrRht spbrWord`}>{e?.shape === "" || e?.ItemName?.toLowerCase() === "metal" || e?.ItemName?.toLowerCase() === "alloy" || allowedNames.includes(e?.ItemName?.toLowerCase()) ? "-" : e?.shape}</div>
-                        <div className="Sucol5_inv2 spbrRht spbrWord">{e?.quality === "" ? "-" : e?.quality}</div>
+                        <div className={`${rateFlag ? 'RTSucol4FnDMnt_inv2' : ''} Sucol4FnDMnt_inv2 spbrRht spbrWord`} style={{width: '9.5%'}}>{e?.shape === "" || e?.ItemName?.toLowerCase() === "metal" || e?.ItemName?.toLowerCase() === "alloy" || allowedNames.includes(e?.ItemName?.toLowerCase()) ? "-" : e?.shape}</div>
+                        <div className="Sucol5_inv2 spbrRht spbrWord" >{e?.quality === "" ? "-" : e?.quality}</div>
                         <div className="Sucol6_inv2 spbrRht spbrWord">{e?.color === "" ? "-" : e?.color}</div>
                         <div className="Sucol7_inv2 spbrRht spbrWord">{e?.size === "" ? "-" : e?.size}</div>
                         {rateFlag ? (

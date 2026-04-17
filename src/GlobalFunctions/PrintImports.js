@@ -10,6 +10,7 @@ export const printConditions = [
   {printName: 'detail print c', etpType: 'print', componentName: 'DetailPrintC'},
   // {printName: 'print (l)', etpType: 'print', componentName: 'DetailPrint1Printlp'},
   // {printName: 'print (p)', etpType: 'print', componentName: 'DetailPrint1Printlp'},
+  {printName: 'Detail Print1 (P) CJ', etpType: 'print', componentName: 'DetailPrint1PCJSale'}, 
   {printName: 'detail print1 group(l)', etpType: 'print', componentName: 'DetailPrint1LPGroup'},
   {printName: 'detail print1 group(p)', etpType: 'print', componentName: 'DetailPrint1LPGroup'},
   {printName: 'detail print2', etpType: 'print', componentName: 'DetailPrint2'},
@@ -151,12 +152,13 @@ export const printConditions = [
   {printName: 'tax invoice 3', etpType: 'print', componentName: 'TaxInvoice3'},
   {printName: 'tax invoice print 4', etpType: 'print', componentName: 'TaxInvoicePrint4'}, 
   {printName: 'tax invoice 5', etpType: 'print', componentName: 'TaxInvoice5'}, 
+  { printName: 'tax invoice 5 S', etpType: 'print', componentName: 'TaxInvoice5S' },   // amish 
   {printName: 'tax invoice 5a', etpType: 'print', componentName: 'TaxInvoice5A'},
   {printName: 'tax invoice 6', etpType: 'print', componentName: 'TaxInvoice5'},
   {printName: 'print 2', etpType: 'print', componentName: 'Print2'},
   {printName: 'Invoice Print D', etpType: 'print', componentName: 'InvoicePrintD'},
   {printName: 'Invoice Print N', etpType: 'print', componentName: 'InvoicePrintN'}, // amish
-
+ 
   {printName: 'tax invoice a', etpType: 'print', componentName: 'TaxInvoiceA'},
   {printName: 'material sale print', etpType: 'print', componentName: 'MaterialSalePrint'},
   {printName: 'estimate print k', etpType: 'print', componentName: 'EstimatePrintK'},

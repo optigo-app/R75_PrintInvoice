@@ -28,6 +28,7 @@ const TaxInvoice5 = ({ token, invoiceNo, printName, urls, evn, ApiVer }) => {
   const [pnm, setPnm] = useState(atob(printName).toLowerCase());
   const toWords = new ToWords();
   const [isImageWorking, setIsImageWorking] = useState(true);
+  const [headerss, setHeaderss] = useState(null);
   const handleImageErrors = () => {
     setIsImageWorking(false);
   };
@@ -38,6 +39,8 @@ const TaxInvoice5 = ({ token, invoiceNo, printName, urls, evn, ApiVer }) => {
     let adr = data?.BillPrint_Json[0]?.Printlable.split(`\r\n`);
     setAddress(adr);
     setFooter(FooterComponent("2", data?.BillPrint_Json[0]));
+    let headersss = HeaderComponent("3", data?.BillPrint_Json[0]);
+    setHeaderss(headersss);
     let datas = OrganizeDataPrint(
       data?.BillPrint_Json[0],
       data?.BillPrint_Json1,
@@ -136,8 +139,8 @@ const TaxInvoice5 = ({ token, invoiceNo, printName, urls, evn, ApiVer }) => {
           setLoader(false);
           // setMsg(data?.Message);
           const err = checkMsg(data?.Message);
-                    console.log(data?.Message);
-                    setMsg(err);
+          console.log(data?.Message);
+          setMsg(err);
         }
       } catch (error) {
         console.error(error);
@@ -166,23 +169,29 @@ const TaxInvoice5 = ({ token, invoiceNo, printName, urls, evn, ApiVer }) => {
         </div>
       </div>
       {/* header */}
-      <div className={`px-2 pb-1 ${style?.fstitle_ti5}`} style={{ fontSize: "24px", fontWeight: "700", textDecoration: "underline #000 3px" }}>{headerData?.PrintHeadLabel}</div>
-      <div className={`${style2.companyDetails} ${style?.lhheaderti5}`}>
-        <div className={`${style2.companyhead} ${style?.lhheaderti5} p-2 `}>
-          <div className={`${style2.lines} ${style?.font_16}`} style={{ fontWeight: "bold" }}>
-            {headerData?.CompanyFullName}
+     
+
+      {/* header with barcode */}
+      {headerData?.IsEinvoice !== 1 ? <>
+        <div>
+          <div className={`px-2 pb-1 ${style?.fstitle_ti5}`} style={{ fontSize: "24px", fontWeight: "700", textDecoration: "underline #000 3px" }}>{headerData?.PrintHeadLabel}</div>
+          <div className={`${style2.companyDetails} ${style?.lhheaderti5}`}>
+   
+            <div className={`${style2.companyhead} ${style?.lhheaderti5} p-2 `}>
+              <div className={`${style2.lines} ${style?.font_16}`} style={{ fontWeight: "bold" }}>
+                {headerData?.CompanyFullName}
+              </div>
+              <div className={`${style2.lines} ${style?.lhheaderti5}`}>{headerData?.CompanyAddress}</div>
+              <div className={`${style2.lines} ${style?.lhheaderti5}`}>{headerData?.CompanyAddress2}</div>
+              <div className={`${style2.lines} ${style?.lhheaderti5}`}>{headerData?.CompanyCity}-{headerData?.CompanyPinCode},{headerData?.CompanyState}({headerData?.CompanyCountry})</div>
+              <div className={`px-1 fw-bold ${style?.font_16}`} >
+                {headerData?.Company_VAT_GST_No} | {headerData?.Company_CST_STATE}-{headerData?.Company_CST_STATE_No} | PAN-{headerData?.Pannumber}
+              </div>
+              <div className={`px-1  ${style?.lhheaderti5}`}>CIN-{headerData?.CINNO}</div>
+            </div>
           </div>
-          <div className={`${style2.lines} ${style?.lhheaderti5}`}>{headerData?.CompanyAddress}</div>
-          <div className={`${style2.lines} ${style?.lhheaderti5}`}>{headerData?.CompanyAddress2}</div>
-          <div className={`${style2.lines} ${style?.lhheaderti5}`}>{headerData?.CompanyCity}-{headerData?.CompanyPinCode},{headerData?.CompanyState}({headerData?.CompanyCountry})</div>
-          <div className={`px-1 fw-bold ${style?.font_16}`} >
-            {headerData?.Company_VAT_GST_No} | {headerData?.Company_CST_STATE}-{headerData?.Company_CST_STATE_No} | PAN-{headerData?.Pannumber}
-          </div>
-          <div className={`px-1  ${style?.lhheaderti5}`}>CIN-{headerData?.CINNO}</div>
-        </div>
-        
-          {/* <img src={headerData?.PrintLogo} alt="" className={style2.headerImg} /> */}
-      </div>
+
+        </div></> : headerss}
       {/* sub header */}
       <div className="d-flex border mb-1">
         <div className="col-5 border-end p-2">
@@ -223,6 +232,7 @@ const TaxInvoice5 = ({ token, invoiceNo, printName, urls, evn, ApiVer }) => {
           </p>
         </div>
       </div>
+
       {/* table Header */}
       <div className="d-flex mt-1 border">
         <div className={`${style?.Sr}  py-1 border-end`}>
@@ -356,14 +366,14 @@ const TaxInvoice5 = ({ token, invoiceNo, printName, urls, evn, ApiVer }) => {
         >
           <p>In Words (Indian Rupees)</p>
           <p className="fw-bold">
-            {toWords.convert(+fixedValues((data?.mainTotal?.total_amount / headerData?.CurrencyExchRate) + data?.allTaxes?.reduce((acc, cObj) => acc + +cObj?.amount, 0) +  + (headerData?.AddLess/ headerData?.CurrencyExchRate), 2))} Only
+            {toWords.convert(+fixedValues((data?.mainTotal?.total_amount / headerData?.CurrencyExchRate) + data?.allTaxes?.reduce((acc, cObj) => acc + +cObj?.amount, 0) + + (headerData?.AddLess / headerData?.CurrencyExchRate), 2))} Only
           </p>
         </div>
         <div className={`${style?.grandTotal}`}>
           <div className="d-flex">
             <div className={`${style?.grandTotalWord} text-end border-end p-1`}>
               {data?.allTaxes?.map((e, i) => {
-                return ( <p key={i} className={`${style?.font_12}`}> {e?.name} @ {e?.per} </p> );
+                return (<p key={i} className={`${style?.font_12}`}> {e?.name} @ {e?.per} </p>);
               })}
               {headerData?.ModeOfDel !== '' && (
                 <p className={`${style?.font_12}`}>{headerData?.ModeOfDel}</p>
@@ -389,16 +399,29 @@ const TaxInvoice5 = ({ token, invoiceNo, printName, urls, evn, ApiVer }) => {
               <p className="fw-bold">GRAND TOTAL</p>
             </div>
             <div className={`${style?.grandTotalValue} p-1 text-end`}>
-              <p className="fw-bold">{NumberWithCommas((data?.mainTotal?.total_amount / headerData?.CurrencyExchRate) + (headerData?.FreightCharges / headerData?.CurrencyExchRate) + data?.allTaxes?.reduce((acc, cObj) => acc + +cObj?.amount, 0) + (headerData?.AddLess/ headerData?.CurrencyExchRate), 2)}</p>
+              <p className="fw-bold">{NumberWithCommas((data?.mainTotal?.total_amount / headerData?.CurrencyExchRate) + (headerData?.FreightCharges / headerData?.CurrencyExchRate) + data?.allTaxes?.reduce((acc, cObj) => acc + +cObj?.amount, 0) + (headerData?.AddLess / headerData?.CurrencyExchRate), 2)}</p>
             </div>
           </div>
         </div>
       </div>
       {/* remarks */}
       <div className="border-start border-end border-bottom p-2 no_break">
-        <p className="fw-bold">REMARKS : </p>
-        <p dangerouslySetInnerHTML={{__html:headerData?.PrintRemark}}></p>
+        <p > <span className="fw-bold">REMARKS :</span> <span dangerouslySetInnerHTML={{ __html: headerData?.Remark }}></span></p>
       </div>
+      {/* Terms Description */}
+      {headerData?.SalesRepPolicyTermsDescription !== '' && (
+        <div className="border-start border-end border-bottom w-100 px-1 d-flex">
+          <p className=""><b>TERMS INCLUDED:</b>&nbsp;
+            <span
+              dangerouslySetInnerHTML={{
+                __html: headerData?.SalesRepPolicyTermsDescription,
+              }}
+              className=""
+            />
+          </p>
+
+        </div>
+      )}
       {/* declaration */}
       <div
         className={`border-start border-end border-bottom p-2 no_break ${style?.declti}`}

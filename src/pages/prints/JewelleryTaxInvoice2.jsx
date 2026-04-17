@@ -304,8 +304,38 @@ const JewelleryTaxInvoice2 = ({ token, invoiceNo, printName, urls, evn, ApiVer }
         setPaymentTerms((prev) => !prev);
     }
 
-    console.log("result", result);
+    // console.log("result", result);
+   
+const formatPaymentData = (rawData) => {
+    if (!rawData) return [];
+  
 
+    const mergedMap = rawData.split("@-@").reduce((acc, item) => {
+      const parts = item.split("#-#");
+      const label = parts[0]?.trim() || "";
+      const id = parts[1]?.trim() || "";
+      const amount = parseFloat(parts[2]) || 0;
+      const key = `${label}_${id}`;
+  
+      if (acc[key]) {
+        acc[key].amount += amount;
+      } else {
+        acc[key] = { label, id, amount };
+      }
+  
+      return acc;
+    }, {});
+    return Object.values(mergedMap).map(item => ({
+      label: item.label,
+      id: item.id,
+      amount: item.amount.toLocaleString('en-US', {
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2,
+      })
+    }));
+  };
+
+   const pay_details = formatPaymentData(result?.header?.InvPayDet);
 
     return (
         <>
@@ -528,9 +558,21 @@ const JewelleryTaxInvoice2 = ({ token, invoiceNo, printName, urls, evn, ApiVer }
                                     return <div key={i}>{e?.name}({e?.docno}) : <span className='fw-bold'>{formatAmount(e?.amount)}</span></div>
                                 })
                             }
-                        </div> */}
+                        </div> */}     
+                                         <div className='pay-det'>
+                                            {pay_details?.map((e, i) => {
+                                                return <div key={i}>{e?.label}  {e?.id ? `(${e?.id})` : ''}  : <span className='fw-bold'>{e?.amount}</span></div>
+                                            })}
+                                         </div>
                                         <div>Balance : <span className='fw-bold'>{formatAmount(generalLedgerData?.BalAmt, 2)}</span></div>
-                                        <div className='fw-bold text-decoration-underline'>REMARKS:</div><div dangerouslySetInnerHTML={{ __html: result?.header?.PrintRemark }}></div>
+                                        {
+                                            result?.header?.PrintRemark && (
+                                            <>
+                                               <div className='fw-bold text-decoration-underline'>REMARKS:</div><div dangerouslySetInnerHTML={{ __html: result?.header?.PrintRemark }}></div>
+                                            </>
+                                            )
+                                        }
+                                      
                                     </div>
                                     <div className='w33_jts p-1 fs_jts brr_jti2 text-break'>
                                         {/* {

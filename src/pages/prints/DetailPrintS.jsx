@@ -25,6 +25,7 @@ const DetailPrintS = ({ token, invoiceNo, printName, urls, evn, ApiVer }) => {
   const [msg, setMsg] = useState("");
   const [loader, setLoader] = useState(true);
   const [imgFlag, setImgFlag] = useState(true);
+  const [labamtFlag, setLabamtFlag] = useState(true);
   const [catcount, setCatCount] = useState(0);
   const [miscWise_total, setMiscWise_total] = useState({
     Pcs: 0,
@@ -41,10 +42,6 @@ const DetailPrintS = ({ token, invoiceNo, printName, urls, evn, ApiVer }) => {
     WtCtw:0
   });
   const [fineWtTotal, setFineWtTotal] = useState(0);
-  const [isImageWorking, setIsImageWorking] = useState(true);
-  const handleImageErrors = () => {
-    setIsImageWorking(false);
-  };
   async function loadData(data) {
     try {
       let address = data?.BillPrint_Json[0]?.Printlable?.split("\r\n");
@@ -63,7 +60,7 @@ const DetailPrintS = ({ token, invoiceNo, printName, urls, evn, ApiVer }) => {
           SizeName: 0
         };
       let sizeWt =0
-      datas?.json2?.forEach((ele, ind) => {
+      datas?.json2?.forEach((ele) => {
         if (ele?.MasterManagement_DiamondStoneTypeid === 5 && ele?.StockBarcode === e?.SrJobno) {
           findings.Wt += ele?.Wt 
           findings.SizeName += +ele?.SizeName;
@@ -232,7 +229,7 @@ const DetailPrintS = ({ token, invoiceNo, printName, urls, evn, ApiVer }) => {
       let colrStone_filter = [];
 
       // eslint-disable-next-line array-callback-return
-      miscs?.map((ele, ind) => {
+      miscs?.map((ele) => {
         let b = cloneDeep(ele);
         let findMiscs = miscs_filter.findIndex(
           (elem, index) =>
@@ -253,7 +250,7 @@ const DetailPrintS = ({ token, invoiceNo, printName, urls, evn, ApiVer }) => {
       });
 
       // eslint-disable-next-line array-callback-return
-      colorstones?.map((ele, ind) => {
+      colorstones?.map((ele) => {
         let findcs = colrStone_filter?.findIndex(
           (elem, index) =>
             elem?.ShapeName === ele?.ShapeName && elem?.isRateOnPcs === ele?.isRateOnPcs
@@ -614,6 +611,40 @@ const DetailPrintS = ({ token, invoiceNo, printName, urls, evn, ApiVer }) => {
     }
   }
 
+  //For CQ In jbsvs,Take Client Data and Bring Here With This useEffect And Track The Problem 
+  //Create mockData.json in public folder paste there client data and here with this useEffect, done Tracking 
+  // useEffect(() => {
+  //   const sendData = async () => {
+  //     let data;
+  
+  //     try {
+  //       // Fetching the mock JSON file (just like an API call)
+  //       const response = await fetch("/mockData.json");
+  //       data = await response.json();
+  
+  //       if (data?.Status === "200") {
+  //         let isEmpty = isObjectEmpty(data?.Data);
+  //         if (!isEmpty) {
+  //           loadData(data?.Data); // Your existing data processing function
+  //           setLoader(false);
+  //         } else {
+  //           setLoader(false);
+  //           setMsg("Data Not Found");
+  //         }
+  //       } else {
+  //         setLoader(false);
+  //         setMsg(data?.Message || "An error occurred");
+  //       }
+  //     } catch (error) {
+  //       console.error("Error fetching mock data:", error);
+  //       setLoader(false);
+  //       setMsg("Error loading mock data");
+  //     }
+  //   };
+  
+  //   sendData();
+  // }, []);
+
     useEffect(() => {
       const sendData = async () => {
         try {
@@ -718,8 +749,14 @@ const DetailPrintS = ({ token, invoiceNo, printName, urls, evn, ApiVer }) => {
         setImgFlag(true);
       }
     };
+    const handleLabamtShow = (e) => {
+      if (labamtFlag) setLabamtFlag(false);
+      else {
+        setLabamtFlag(true);
+      }
+    };
 
-  // console.log("result", result);
+    // console.log("result", result);
 
   return (
     <>
@@ -732,6 +769,18 @@ const DetailPrintS = ({ token, invoiceNo, printName, urls, evn, ApiVer }) => {
               <div className="containerdp7 pb-5 mb-5">
                 {/* image show flag */}
                 <div className="d-flex justify-content-end align-items-center my-5 fsgdp7 hidebtn">
+                   
+                  <input
+                    type="checkbox"
+                    checked={labamtFlag}
+                    id="showLabamt"
+                    onChange={handleLabamtShow}
+                    className="mx-2"
+                  />
+                  <label htmlFor="showLabamt" className="me-2 user-select-none">
+                  Labour Amt
+                  </label>
+         
                   <input
                     type="checkbox"
                     checked={imgFlag}
@@ -840,6 +889,15 @@ const DetailPrintS = ({ token, invoiceNo, printName, urls, evn, ApiVer }) => {
                         </div>
                       </div>
                     </div>
+
+                    {
+                      labamtFlag && (
+                        <div className="col8dp7 dp7cen d-flex flex-column">
+                        <span>labour <br /> Amount</span>
+                      </div>
+                      )
+                    }
+                   
                     <div className="col8dp7 dp7cen d-flex flex-column">
                       <span>FINE WT</span>
                     </div>
@@ -863,7 +921,6 @@ const DetailPrintS = ({ token, invoiceNo, printName, urls, evn, ApiVer }) => {
                                   onError={(e) => handleImageError(e)}
                                   alt="design"
                                   className="rowimgdp7"
-                                  // DesignImage={e?.DesignImage}
                                 />
                               </div>
                             ) : (
@@ -1084,6 +1141,13 @@ const DetailPrintS = ({ token, invoiceNo, printName, urls, evn, ApiVer }) => {
                                     </div>}
                             </div>
                           </div>
+
+                          {labamtFlag && (
+                            <div className="rcol12dp7 dp7cen2" style={{borderRight:"none"}}>
+                             
+                              {formatAmount((e?.MakingAmount / result?.header?.CurrencyExchRate))}
+                            </div>
+                          )}
                           <div className="rcol12dp7 dp7cen2 bldp7">
                            
                             {e?.fineWtss?.toFixed(3)}
@@ -1136,15 +1200,18 @@ const DetailPrintS = ({ token, invoiceNo, printName, urls, evn, ApiVer }) => {
                                           (e?.totals?.misc?.Amount || 0)
                                         ) / (result?.header?.CurrencyExchRate || 1) // Avoid division by zero
                                       )
-                                  } 
+                                  }
                                 </div>
                               </div>
-
                             </div>
                           </div>
-                          <div className="rcol12dp7 dp7cen2 bldp7">
-                     
-                          </div>
+                          <div className="rcol12dp7 dp7cen2 bldp7"> </div>
+
+                          {
+                            labamtFlag && (
+                              <div className="rcol12dp7 dp7cen2 bldp7"> </div>
+                            )
+                          }
                           <div className="rcol13dp7 dp7cen2 border-end-0">
                                
                           </div>
@@ -1186,9 +1253,17 @@ const DetailPrintS = ({ token, invoiceNo, printName, urls, evn, ApiVer }) => {
                           result?.header?.CurrencyExchRate) + (result?.mainTotal?.metal?.withoutPrimaryMetal_Amount / result?.header?.CurrencyExchRate))
                       )}
                   </div>
+                  {
+                    labamtFlag && (
+                      <div className="totcol6dp7 dp7cen2">
+                      {result?.mainTotal?.total_Making_Amount === 0 ? 0 : result?.mainTotal?.total_Making_Amount?.toFixed(3)}
+                  </div>
+                    )}
                   <div className="totcol6dp7 dp7cen2">
                       {fineWtTotal === 0 ? 0 : fineWtTotal?.toFixed(3)}
                   </div>
+ 
+                 
                   <div className="totcol7dp7 dp7cen2">
                     {formatAmount((result?.mainTotal?.total_amount / result?.header?.CurrencyExchRate))}
                   </div>
