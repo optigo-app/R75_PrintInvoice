@@ -166,7 +166,7 @@ const InvoicePrint3Material = ({
       ) : msg === "" ? (
         <>
           <div className="w-full flex">
-            <div className="w-full flex items-center justify-end spfnthead head_Chkbx">
+            <div className="w-full flex items-center justify-end spfnthead head_Chkbx  d-none-print">
               <input
                 type="checkbox"
                 id="Finding"

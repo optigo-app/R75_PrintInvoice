@@ -566,6 +566,9 @@ html {
         font-size: 11px;
         line-height: 12px;
     }
+    .d-none-print{
+        display: none !important;
+    }
 
 
     .col1_inv2{
