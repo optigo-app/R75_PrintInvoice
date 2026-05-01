@@ -303,8 +303,9 @@ const PackingList = ({ urls, token, invoiceNo, printName, evn, ApiVer }) => {
                       </thead>
                       {/* <tbody> */}
                         {result?.resultArray?.map((e, i) => {
-                          const discountDisplay = discountCriteria
-                          .filter(({ key }) => e?.[key] > 0)
+                        console.log("TCL: PackingList -> e", e)
+                        const discountDisplay = discountCriteria
+                        .filter(({ key }) => e?.[key] > 0)
                           .map(({ key, isAmountKey, label,disAmount }) => {
                             const num = Number(e[key]);  
                             const am= Number(e[disAmount])
@@ -313,6 +314,8 @@ const PackingList = ({ urls, token, invoiceNo, printName, evn, ApiVer }) => {
                             return e[isAmountKey] === 0 ? `${val}% @${label} Amount ` : `${val} @${label} Amount`;
                           })
                           .join(', ');
+                          
+                          console.log("TCL: PackingList -> discountDisplay", discountDisplay)
                           
                          
                           return (
@@ -343,9 +346,11 @@ const PackingList = ({ urls, token, invoiceNo, printName, evn, ApiVer }) => {
                                                 // <div className="leftpcl fspcl text-break" key={ind} > {ele?.ShapeName} { diaQlty && ele?.QualityName} </div>
                                                 <div className="leftpcl fspcl text-break" key={ind} > <span
                                                 dangerouslySetInnerHTML={{
-                                                  __html: ele?.Shape_Code === "RND" ? ele?.Shape_Code : "&nbsp;",
+                                                  __html:  ele?.Shape_Code 
+                                                  // __html: ele?.Shape_Code === "RND" ? ele?.Shape_Code : "&nbsp;",
                                                 }}
-                                              />{ diaQlty && ele?.QualityName} </div>
+                                              />
+                                              { diaQlty && ele?.QualityName} </div>
                                                 // <div className=" fspcl text-break" key={i} ></div>
                                                 );
                                               })
@@ -698,7 +703,8 @@ const PackingList = ({ urls, token, invoiceNo, printName, evn, ApiVer }) => {
                                     </div>
                                   </div>
 
-                                  {e?.discountDisplay === "" ? ( "" ) : (
+                                  {e?.DiscountAmt != 0 &&
+                                  //  ( "" ) : (
                                     <div className="tbodyrowpcltot2 fspcl" style={{ borderTop: "1px solid #989898"}} >
                                       <div className="lopcltotrowtb dispcltotrowtb " style={{ width: "95%" }} >
                                         <div className="discpclcs fwboldpcl fspcl2 d-flex justify-content-end pe-2"style={{ width: "93%" }}>  
@@ -715,7 +721,8 @@ const PackingList = ({ urls, token, invoiceNo, printName, evn, ApiVer }) => {
                                         {formatAmount((e?.TotalAmount/(result?.header?.CurrencyExchRate)))}
                                       </div>
                                     </div>
-                                  )}
+                                  // )
+                                  }
 
                                 
                                 </div>

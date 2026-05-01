@@ -3,6 +3,7 @@ import React, { useEffect } from "react";
 import "../../assets/css/prints/InvoicePrint3MaterialSale.css";
 import { useState } from "react";
 import {
+  HeaderComponent,
   NumberWithCommas,
   apiCall,
   checkMsg,
@@ -33,6 +34,7 @@ const InvoicePrint3Material = ({
   const [headFlag, setHeadFlag] = useState(true);
   const [rateFlag, setRateFlag] = useState(false);
   const [isImageWorking, setIsImageWorking] = useState(true);
+    const [headerss, setHeaderss] = useState(null);  
   const handleImageErrors = () => {
     setIsImageWorking(false);
   };
@@ -55,7 +57,8 @@ const InvoicePrint3Material = ({
               data?.Data?.MaterialBill_Json[0]?.Printlable?.split("\r\n");
             setCustAddress(address);
             // console.log("data", data);
-
+                let headersss = HeaderComponent("3", data?.Data?.MaterialBill_Json[0],true);
+                setHeaderss(headersss);
             setJson0Data(data?.Data?.MaterialBill_Json[0]);
             const sortedItems = [...(data?.Data?.MaterialBill_Json1 || [])].sort(
               (a, b) => parseFloat(a?.ItemId || 0) - parseFloat(b?.ItemId || 0)
@@ -159,6 +162,8 @@ const InvoicePrint3Material = ({
   const isFindingOrMount = Array.isArray(finalD) ? finalD.some((e) => allowedNames.includes(e?.ItemName?.toLowerCase())) : false;
 
 
+  console.log('json0Datajson0Data',json0Data);
+  
   return (
     <>
       {loader ? (
@@ -166,7 +171,7 @@ const InvoicePrint3Material = ({
       ) : msg === "" ? (
         <>
           <div className="w-full flex">
-            <div className="w-full flex items-center justify-end spfnthead head_Chkbx  d-none-print">
+            <div className="w-full flex items-center justify-end spfnthead head_Chkbx d-none-print">
               <input
                 type="checkbox"
                 id="Finding"
@@ -195,7 +200,10 @@ const InvoicePrint3Material = ({
           </div>
           <div className="w-full flex items-center justify-center">
             <div className="container_inv2">
-              <div className="headlineJL w-100 p-2">
+
+                {json0Data?.iseinvoice != 1 ? 
+                    <>
+                       <div className="headlineJL w-100 p-2">
                 <b style={{ fontSize: "20px" }}>
                   {json0Data?.PrintHeadLbl}
                 </b>
@@ -222,9 +230,12 @@ const InvoicePrint3Material = ({
                       />
                     </div>
                   )}
-
                 </div>
               )}
+                      </> 
+                      :
+                       headerss
+                       }
               {/** Header */}
               <div className="disflx brbxAll">
                 <div className="w1_inv2 spbrRht spfnthead">

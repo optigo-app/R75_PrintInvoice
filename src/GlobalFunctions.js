@@ -5,6 +5,7 @@ import Footer1 from "./components/footers/Footer1";
 import Header1 from "./components/headers/Header1";
 import Header2 from "./components/headers/Header2";
 import Header3 from "./components/headers/Header3";
+// import Header5 from "./components/headers/Header5";
 import Subhead1 from "./components/subheaders/subhead1/Subhead1";
 import Subhead2 from "./components/subheaders/subhead2/Subhead2";
 import { exportToExcel } from "react-json-to-excel";
@@ -54,6 +55,7 @@ export const apiCall = async (token, invoiceNo, printName, urls, evn, ApiVer) =>
     Eventname: evn,
     ApiVer: ApiVer
   };
+
   // const header = {
   //   "Authorization": "Bearer 40815062023094801060"
   // }
@@ -80,9 +82,10 @@ export const apiCall = async (token, invoiceNo, printName, urls, evn, ApiVer) =>
 
 };
 
+ 
+
 //global function of saleTallyApiCall calling
 export const saleTallyApiCall = async (urls, token, printName,  evn, ApiVer , fdate, tdate ) => {
-
   const body = {
     token: token,
     printname: printName,
@@ -91,7 +94,6 @@ export const saleTallyApiCall = async (urls, token, printName,  evn, ApiVer , fd
     Fdate: atob(fdate),
     Tdate: atob(tdate)
   };
-
   // const header = {
   //   "Authorization": "Bearer 40815062023094801060"
   // }
@@ -108,7 +110,6 @@ export const saleTallyApiCall = async (urls, token, printName,  evn, ApiVer , fd
   //   "version": "v4",
   //   "YearCode": "",
   // };
-  
   try {
     // const responses = await axios.post("http://zen/api/", bodies, {headers: headers});
     const response = await axios.post(urls, body);
@@ -118,6 +119,8 @@ export const saleTallyApiCall = async (urls, token, printName,  evn, ApiVer , fd
   }
 
 };
+
+
 //api calling function for Hopscoach for jewellerybook
 export const apiCallHopsCoach = async ({token, SpNo, SpVer, SV, evn, urls}) => {
   const reqData = [{
@@ -177,7 +180,7 @@ export const taxGenrator = (headerData, totalAmount) => {
   let blankArr = [];
   if (headerData?.TaxProfileid !== 0 && headerData?.GSTProfileid === 0) {
     let taxTypes = ["tax1", "tax2", "tax3", "tax4", "tax5"];
-    taxTypes?.forEach((e, i) => {
+    taxTypes?.forEach((e) => {
       if (headerData[`${e}_taxname`] !== "") {
         if (headerData[`${e}_IsOnDiscount`] === 1) {
           let obj = {
@@ -200,7 +203,7 @@ export const taxGenrator = (headerData, totalAmount) => {
     });
   } else if (headerData?.TaxProfileid !== 0 && headerData?.GSTProfileid === 1) {
     let arr = ["CGST", "SGST"];
-    arr?.forEach((e, i) => {
+    arr?.forEach((e) => {
       let obj = {
         name: e,
         per: `${headerData[e]?.toFixed(2)}%`,
@@ -224,7 +227,7 @@ export const taxGenrator2 = (headerData, totalAmount) => {
   let blankArr = [];
   if (headerData?.TaxProfileid !== 0 && headerData?.GSTProfileid === 0) {
     let taxTypes = ["tax1", "tax2", "tax3", "tax4", "tax5"];
-    taxTypes?.forEach((e, i) => {
+    taxTypes?.forEach((e) => {
       if (headerData[`${e}_taxname`] !== "") {
         if (headerData[`${e}_IsOnDiscount`] === 1) {
           let obj = {
@@ -247,7 +250,7 @@ export const taxGenrator2 = (headerData, totalAmount) => {
     });
   } else if (headerData?.TaxProfileid !== 0 && headerData?.GSTProfileid === 1) {
     let arr = ["CGST", "SGST"];
-    arr?.forEach((e, i) => {
+    arr?.forEach((e) => {
       let obj = {
         name: e,
         per: `${headerData[e]?.toFixed(2)}%`,
@@ -322,7 +325,7 @@ export const fixedValues = (value, zeroes) =>
     : (+value)?.toFixed(zeroes);
 
 //call of header
-export const HeaderComponent = (headNo, headerData) => {
+export const HeaderComponent = (headNo, headerData,isMaterial) => {
   let headerComponent;
 
   switch (headNo) {
@@ -335,7 +338,7 @@ export const HeaderComponent = (headNo, headerData) => {
       break;
 
     case "3":
-      headerComponent = <Header3 data={headerData} />;
+      headerComponent = <Header3 data={headerData} isMaterial={isMaterial} />;
       break;
 
     case "4":
@@ -345,6 +348,10 @@ export const HeaderComponent = (headNo, headerData) => {
     case "5":
       headerComponent = <EInvoiceHeader data={headerData} />;
       break;
+
+      // case "6":
+      //   headerComponent = <Header5 data={headerData} />;
+      //   break;
 
     default:
       headerComponent = <Header1 data={headerData} />;

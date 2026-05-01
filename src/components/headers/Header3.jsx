@@ -3,12 +3,13 @@ import style from "../../assets/css/headers/header3.module.css";
 import QrCodeForPrint from "../QrCodeForPrint";
 import { handleGlobalImgError } from "../../GlobalFunctions";
 import img from "../../assets/img/E_invoice_QR.png";
-const Header3 = ({ data }) => {
+const Header3 = ({ data,isMaterial }) => {
   return (
     <div className={style.header3}>
 
       <div className={style.headline}>
-        <div className={style.headline2}>{data?.PrintHeadLabel}</div>
+        {isMaterial ?<div className={style.headline2}>{data?.PrintHeadLbl}</div>:<div className={style.headline2}>{data?.PrintHeadLabel}</div> }
+       
         <div className={style.headline2}>{data?.E_HeadLabel}</div>
       </div>
       <div
@@ -28,7 +29,12 @@ const Header3 = ({ data }) => {
           </div>
           <div className={style.lines}>
             {data?.Company_VAT_GST_No} {(data?.Company_CST_STATE_No !== "" && data?.Company_CST_STATE !== "") && `| ${data?.Company_CST_STATE} - ${data?.Company_CST_STATE_No}`} 
-            {data?.Com_pannumber !== "" && ` | PAN-${data?.Com_pannumber}`}
+          
+          {
+            isMaterial  ? data?.ComPanCard !== "" && ` | PAN-${data?.ComPanCard}`:data?.Com_pannumber !== "" && ` | PAN-${data?.Com_pannumber}`
+          }
+          
+            
           </div>
         </div>
         <div className="" style={{width:"40%"}}>
@@ -63,7 +69,9 @@ const Header3 = ({ data }) => {
         <div className={style.einvdetails}>2.Transaction Details</div>
         <div className={style.einvoiceDetails}>
           <div className={style.commonwidthh3}>
-            <div><b>Category : </b> {data?.E_Category}</div>
+             {isMaterial ?  <div><b>Category : </b> {data?.Category}</div> : <div><b>Category : </b> {data?.E_Category}</div> }
+              
+            
             <div><b>Invoice Type : </b> Tax Invoice</div>
           </div>
           <div className={style.commonwidthh3}>

@@ -329,8 +329,6 @@ const TaxInvoice5S = ({ token, invoiceNo, printName, urls, evn, ApiVer }) => {
 
                   );
                 })}
-
-                 
                 {/* table total */}
                 <div className="d-flex border-start border-end border-bottom no_break">
                   <div className={`${style?.Sr} border-end`}>
@@ -504,14 +502,14 @@ const TaxInvoice5S = ({ token, invoiceNo, printName, urls, evn, ApiVer }) => {
                 <div style={{ width: "100%", margin: "auto", textAlign: "center" }}>
 
                   <p style={{ margin: 0 }} className="foot-font">
-                    {[
+                  • {[
                       headerData?.CompanyAddress,
                       headerData?.CompanyAddress2,
                       headerData?.CompanyCity +
                       (headerData?.CompanyPinCode ? " - " + headerData?.CompanyPinCode : ""),
                     ]
                       .filter(Boolean)
-                      .join(", ")}
+                      .join(", ")} •
                   </p>
                   {(headerData?.CompanyTellNo ||
                     headerData?.CompanyEmail ||
@@ -525,7 +523,7 @@ const TaxInvoice5S = ({ token, invoiceNo, printName, urls, evn, ApiVer }) => {
 
                   {headerData?.Com_vatNo && (
                     <p style={{ margin: 0 }} className="foot-font">
-                      LLPIN : {headerData.Com_vatNo}
+                     • LLPIN : {headerData.Com_vatNo} •
                     </p>
                   )}
 

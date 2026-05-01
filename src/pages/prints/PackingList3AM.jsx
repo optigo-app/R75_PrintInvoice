@@ -1543,7 +1543,7 @@ const PackingList3 = ({ token, invoiceNo, printName, urls, evn, ApiVer }) => {
                       <div className="start_pcls pdr_pcls fw-bold">
                         {rateAmount
                           ? formatAmount(
-                            e?.TotalAmount /
+                            e?.UnitCost /
                             result?.header?.CurrencyExchRate
                           )
                           : ""}
@@ -1552,7 +1552,7 @@ const PackingList3 = ({ token, invoiceNo, printName, urls, evn, ApiVer }) => {
                         &nbsp;
                         {rateAmount
                           ? formatAmount(
-                            e?.TotalAmount /
+                            e?.UnitCost /
                             result?.header?.CurrencyExchRate
                           )
                           : ""}

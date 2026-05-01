@@ -860,9 +860,10 @@ const DetailPrint1 = ({ token, invoiceNo, printName, urls, evn, ApiVer }) => {
                         </div>
                         <div className={`${!image && "pt-2 "}`}>
 
-                          {e?.CertificateNo !== "" && (
+                           
+                            {/* {e?.CertificateNo !== "" && (
                             <p className="text-center">Certification no. - {e?.CertificateNo}</p>
-                          )}
+                          )} */}
                           {e?.HUID !== "" && (
                             <p className="text-center">HUID - {e?.HUID}</p>
                           )}

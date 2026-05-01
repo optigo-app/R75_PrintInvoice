@@ -200,6 +200,7 @@ export const SaleReturn = [
   {printName: 'summary print', etpType: 'print', componentName: 'SummaryPrint'},
   {printName: 'tax invoice 1', etpType: 'print', componentName: 'TaxInvoice1'},
   {printName: 'tax invoice 5', etpType: 'print', componentName: 'TaxInvoice5'}, 
+  { printName: 'tax invoice 5 S', etpType: 'print', componentName: 'TaxInvoice5S' },   // amish 
 ]
 
 export const QuotationPrints = [
@@ -288,6 +289,7 @@ export const MemoPrints = [
   {printName: 'packing list 7d group', etpType: 'print', componentName: 'PackingList7DGroup'},
   {printName: 'detail print group(l)', etpType: 'print', componentName: 'DetailPrintGroupLMemo'},
   {printName: 'detail print group(p)', etpType: 'print', componentName: 'DetailPrintGroupPMemo'},
+  { printName: 'tax invoice 5 S', etpType: 'print', componentName: 'TaxInvoice5S' },   // amish 
 ]
 
 export const MemoReturnPrints = [ 
@@ -438,7 +440,11 @@ export const MaterialSale = [
   {printName: 'print1', etpType: 'print', componentName: 'Print1Material'},
   {printName: 'solitaire invoice', etpType: 'print', componentName: 'SolitairInvoiceMaterial'},
 ]
-
+export const MaterialPurchase = [
+  { printName: 'Invoice Print 1', etpType: 'print', componentName: 'InvoicePrint1MaterialPurchase' }, // amish...
+  { printName: 'Invoice Print', etpType: 'print', componentName: 'InvoicePrintMaterialPurchase' }, // amish...
+  { printName: 'Print', etpType: 'print', componentName: 'PrintMaterialPurchase' }, // amish...
+]
 export const fgPurchase = [
   {printName: 'item wise print', etpType: 'print', componentName: 'ItemWisePrint'},
   {printName: 'summary print', etpType: 'print', componentName: 'SummaryPrintFG'},

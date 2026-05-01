@@ -162,6 +162,7 @@ const AllDesignPrint = () => {
       'materialpurchasereturn': module?.MaterialPurchaseReturn || [],
       'product_alteration': module?.Product_Alteration || [],
       'jewellerybook': module?.Jewellery_Book || [],
+      'salesjobs': module?.salesjobs || [],
     };
 
     return eventMappings[evnname] || [];

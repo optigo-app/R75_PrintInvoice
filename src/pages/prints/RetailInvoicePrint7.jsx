@@ -178,9 +178,9 @@ const RetailInvoicePrint7 = ({ urls, token, invoiceNo, printName, evn, ApiVer })
                         </div>
                         <div className="d-flex">
                             <div className="col-6"> <p className='fw-bold'>Reverse Charge </p> </div>
-                            <div className="col-6 d-flex"> 
-                            <input type="checkbox" id='yes_rip' /> <p className='px-1'> <label htmlFor="yes_rip">Yes</label></p>
-                             <input type="checkbox" id='no_rip' /> <p className='px-1'> <label htmlFor="no_rip">No</label></p> </div>
+                            <div className="col-6 d-flex">
+                                <input type="checkbox" id='yes_rip' /> <p className='px-1'> <label htmlFor="yes_rip">Yes</label></p>
+                                <input type="checkbox" id='no_rip' /> <p className='px-1'> <label htmlFor="no_rip">No</label></p> </div>
                         </div>
                         {document?.aadharcard !== "" && <div className="d-flex">
                             <div className="col-6"> <p className='fw-bold'>AADHAR CARD </p> </div>
@@ -257,9 +257,9 @@ const RetailInvoicePrint7 = ({ urls, token, invoiceNo, printName, evn, ApiVer })
                         <div>
                             <p className='px-1'>In Words  {headerData?.Currencyname}</p>
                             <p className='px-1 fw-bold'>{toWords?.convert(+fixedValues(+(data?.mainTotal?.total_amount / headerData?.CurrencyRate)?.toFixed(2) +
-                            data?.allTaxes?.reduce((acc, cObj) => acc + +((+cObj?.amount)?.toFixed(2)), 0) +(headerData?.AddLess / headerData?.CurrencyExchRate), 2))} Only</p>
+                                data?.allTaxes?.reduce((acc, cObj) => acc + +((+cObj?.amount)?.toFixed(2)), 0) + (headerData?.AddLess / headerData?.CurrencyExchRate), 2))} Only</p>
                         </div>
-                        <div><p className='px-1'>Old Gold Purchase Description : <span className="fw-bold" dangerouslySetInnerHTML={{__html:headerData?.PrintRemark}}></span>	</p></div>
+                        <div><p className='px-1'>Old Gold Purchase Description : <span className="fw-bold" dangerouslySetInnerHTML={{ __html: headerData?.PrintRemark }}></span>	</p></div>
                     </div>
                     <div className={`${style?.taxes} border-end`}>
                         {/* <p className="text-end px-1">Discount</p> */}
@@ -277,6 +277,7 @@ const RetailInvoicePrint7 = ({ urls, token, invoiceNo, printName, evn, ApiVer })
                                 return <p className="text-end px-1" key={i}>Receive In Bank{e?.label !== "" && `(${e?.label})`}</p>
                             })
                         }
+                        <p className="text-end px-1">Advance</p>
                         <p className="text-end px-1">Net Bal. Amount</p>
                         <p className="text-end mt-1 border-top p-1 fw-bold">GRAND TOTAL</p>
                     </div>
@@ -302,10 +303,13 @@ const RetailInvoicePrint7 = ({ urls, token, invoiceNo, printName, evn, ApiVer })
                              +((+cObj?.amount)?.toFixed(2)), 0) +(headerData?.AddLess / headerData?.CurrencyExchRate) -
                             // bank?.reduce((acc, cObj) => acc + +((+cObj?.amount)?.toFixed(2)), 0) - headerData?.OldGoldAmount - headerData?.CashReceived, 2)}</p>
                             bank?.reduce((acc, cObj) => acc + +((+cObj?.amount)?.toFixed(2)), 0) - headerData?.OldGoldAmount , 2)}</p> */}
-                            {console.log(data)}
-                            <p className='text-end px-1'>{formatAmount(((headerData?.AddLess / headerData?.CurrencyExchRate) + (data?.allTaxesTotal)  + (data?.mainTotal?.total_amount / headerData?.CurrencyRate) - ( headerData?.OldGoldAmount +  (data?.header?.BankReceived) +headerData?.CashReceived) ))}</p>
+
+                      
+
+                        <p className='text-end px-1'>{formatAmount( headerData?.AdvanceAmount)}</p>
+                        <p className='text-end px-1'>{formatAmount(((headerData?.AddLess / headerData?.CurrencyExchRate) + (data?.allTaxesTotal) + (data?.mainTotal?.total_amount / headerData?.CurrencyRate) - (headerData?.OldGoldAmount + (data?.header?.BankReceived) + headerData?.CashReceived + headerData?.AdvanceAmount)))}</p>
                         <p className="text-end mt-1 border-top p-1 fw-bold"><span dangerouslySetInnerHTML={{ __html: headerData?.Currencysymbol }} className='pe-1'></span>{NumberWithCommas(+(data?.mainTotal?.total_amount / headerData?.CurrencyRate)?.toFixed(2) +
-                            data?.allTaxes?.reduce((acc, cObj) => acc + +((+cObj?.amount)?.toFixed(2)), 0) +(headerData?.AddLess / headerData?.CurrencyExchRate), 2)}</p>
+                            data?.allTaxes?.reduce((acc, cObj) => acc + +((+cObj?.amount)?.toFixed(2)), 0) + (headerData?.AddLess / headerData?.CurrencyExchRate), 2)}</p>
                     </div>
                 </div>
                 {/* declaration */}
