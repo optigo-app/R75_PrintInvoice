@@ -36,98 +36,98 @@ const PrintDesign17 = ({ queries, headers }) => {
         let datas = organizeData(allDatas?.rd, allDatas?.rd1);
 
         // eslint-disable-next-line array-callback-return
-       if(datas?.length === 0){
+        if (datas?.length === 0) {
           setData(['Data Not Present'])
-       }else{
-        datas?.map((a) => {
-          let length = 0;
-          let clr = {
-            clrPcs: 0,
-            clrWt: 0,
-          };
-          let dia = {
-            diaPcs: 0,
-            diaWt: 0,
-          };
-          let misc = {
-            miscWt: 0,
-          };
-          // eslint-disable-next-line array-callback-return
-          a?.rd1?.map((e) => {
-            if (e?.ConcatedFullShapeQualityColorCode !== "- - - ") {
-              length++;
-            }
-            if (e?.MasterManagement_DiamondStoneTypeid === 3) {
-              dia.diaPcs = dia?.diaPcs + e?.ActualPcs;
-              dia.diaWt = dia.diaWt + e?.ActualWeight;
-            } else if (e?.MasterManagement_DiamondStoneTypeid === 4) {
-              clr.clrPcs = clr.clrPcs + e?.ActualPcs;
-              clr.clrWt = clr.clrWt + e?.ActualWeight;
-            } else if (e?.MasterManagement_DiamondStoneTypeid === 7) {
-              misc.miscWt = misc.miscWt + e?.ActualWeight;
-            }
-          });
-          length = 14 - length;
-          let imagePath = queryParams?.imagepath;
-          imagePath = atob(queryParams?.imagepath);
-          let img = imagePath + a?.rd?.ThumbImagePath;
-
-          const originalData = [];
-          // eslint-disable-next-line array-callback-return
-          a?.rd1?.map((e) => {
-            if (e?.Shapename !== "-") {
-              originalData?.push(e);
-            }
-          });
-
-          let chData = [];
-
-          for (let i = 0; i < originalData?.length; i += chunkSize) {
-            let len = 14 - originalData?.slice(i, i + chunkSize)?.length;
-            chData.push({
-              data: originalData?.slice(i, i + chunkSize),
-              length: len,
+        } else {
+          datas?.map((a) => {
+            let length = 0;
+            let clr = {
+              clrPcs: 0,
+              clrWt: 0,
+            };
+            let dia = {
+              diaPcs: 0,
+              diaWt: 0,
+            };
+            let misc = {
+              miscWt: 0,
+            };
+            // eslint-disable-next-line array-callback-return
+            a?.rd1?.map((e) => {
+              if (e?.ConcatedFullShapeQualityColorCode !== "- - - ") {
+                length++;
+              }
+              if (e?.MasterManagement_DiamondStoneTypeid === 3) {
+                dia.diaPcs = dia?.diaPcs + e?.ActualPcs;
+                dia.diaWt = dia.diaWt + e?.ActualWeight;
+              } else if (e?.MasterManagement_DiamondStoneTypeid === 4) {
+                clr.clrPcs = clr.clrPcs + e?.ActualPcs;
+                clr.clrWt = clr.clrWt + e?.ActualWeight;
+              } else if (e?.MasterManagement_DiamondStoneTypeid === 7) {
+                misc.miscWt = misc.miscWt + e?.ActualWeight;
+              }
             });
-          }
-          let obj = { ...a };
+            length = 14 - length;
+            let imagePath = queryParams?.imagepath;
+            imagePath = atob(queryParams?.imagepath);
+            let img = imagePath + a?.rd?.ThumbImagePath;
 
-          // obj?.rd?.push({});
+            const originalData = [];
+            // eslint-disable-next-line array-callback-return
+            a?.rd1?.map((e) => {
+              if (e?.Shapename !== "-") {
+                originalData?.push(e);
+              }
+            });
 
-          if (a?.rd["officeuse"] != null) {
-          }
-          let officeuse =
-            // eslint-disable-next-line eqeqeq
-            a?.rd["officeuse"] == (null || "null") ? "" : a?.rd["officeuse"];
-          let ProductInstruction =
-            // eslint-disable-next-line eqeqeq
-            a?.rd["ProductInstruction"] == (null || "null")
-              ? ""
-              : a?.rd["ProductInstruction"];
+            let chData = [];
 
-          obj.rd.instructionData =
-            (officeuse?.length > 0 ? officeuse : "") +
-            (ProductInstruction?.length > 0 ? ProductInstruction : "");
-          obj?.rd?.instructionData?.slice(0, 113);
-          responseData.push({
-            data: obj,
-            additional: {
-              length: length,
-              clr: clr,
-              dia: dia,
-              img: img,
-              misc: misc,
-              chdata: chData,
-            },
+            for (let i = 0; i < originalData?.length; i += chunkSize) {
+              let len = 14 - originalData?.slice(i, i + chunkSize)?.length;
+              chData.push({
+                data: originalData?.slice(i, i + chunkSize),
+                length: len,
+              });
+            }
+            let obj = { ...a };
+
+            // obj?.rd?.push({});
+
+            if (a?.rd["officeuse"] != null) {
+            }
+            let officeuse =
+              // eslint-disable-next-line eqeqeq
+              a?.rd["officeuse"] == (null || "null") ? "" : a?.rd["officeuse"];
+            let ProductInstruction =
+              // eslint-disable-next-line eqeqeq
+              a?.rd["ProductInstruction"] == (null || "null")
+                ? ""
+                : a?.rd["ProductInstruction"];
+
+            obj.rd.instructionData =
+              (officeuse?.length > 0 ? officeuse : "") +
+              (ProductInstruction?.length > 0 ? ProductInstruction : "");
+            obj?.rd?.instructionData?.slice(0, 113);
+            responseData.push({
+              data: obj,
+              additional: {
+                length: length,
+                clr: clr,
+                dia: dia,
+                img: img,
+                misc: misc,
+                chdata: chData,
+              },
+            });
           });
-        });
-        setData(responseData);
-       }
+          setData(responseData);
+        }
       } catch (error) {
         console.log(error);
       }
     };
     fetchData();
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const handleImageError = (e) => {
@@ -153,7 +153,7 @@ const PrintDesign17 = ({ queries, headers }) => {
         <Loader />
       ) : (
         <>
-          
+
           <div className="print_btn">
             <button
               className="btn_white blue print_btn"
@@ -189,16 +189,16 @@ const PrintDesign17 = ({ queries, headers }) => {
                                 <div className="header_first">
                                   <p className="fontsize17">
                                     {e?.data?.rd?.["serialjobno"]}&nbsp;
-                                      { (e?.data?.rd?.IsQuickRepairing === 1 && e?.data?.rd?.referenceno !== '') ?
-                                       <span style={{color:'red', fontSize:'10px'}}>
-                                        {(e?.data?.rd?.referenceno === null && e?.data?.rd?.referenceno === '' ) ? '' : `(${e?.data?.rd?.referenceno})`}
-                                      </span> : '' 
+                                    {(e?.data?.rd?.IsQuickRepairing === 1 && e?.data?.rd?.referenceno !== '') ?
+                                      <span style={{ color: 'red', fontSize: '10px' }}>
+                                        {(e?.data?.rd?.referenceno === null && e?.data?.rd?.referenceno === '') ? '' : `(${e?.data?.rd?.referenceno})`}
+                                      </span> : ''
                                     }
                                   </p>
                                   <p className="fontsize17">
                                     {e?.data?.rd?.["Designcode"]}
                                   </p>
-                                  <p className="fontsize17" style={{lineHeight:'12px'}}>
+                                  <p className="fontsize17" style={{ lineHeight: '12px' }}>
                                     {e?.data?.rd?.["MetalType"]}{" "}
                                     {e?.data?.rd?.["MetalColor"]}{" "}
                                   </p>
@@ -213,7 +213,7 @@ const PrintDesign17 = ({ queries, headers }) => {
                                       {e?.data?.rd?.["CustomerCode"]}
                                     </p>
                                   </div>
-                                  <div className="w_25 border_right p_3" style={{width:'35%'}}>
+                                  <div className="w_25 border_right p_3" style={{ width: '35%' }}>
                                     <p className="grey bold fsize17 linehP17">
                                       SIZE
                                     </p>
@@ -221,7 +221,7 @@ const PrintDesign17 = ({ queries, headers }) => {
                                       {e?.data?.rd?.["Size"]}
                                     </p>
                                   </div>
-                                  <div className="w_25 border_right p_3" style={{width:'20%'}}>
+                                  <div className="w_25 border_right p_3" style={{ width: '20%' }}>
                                     <p className="grey bold fsize17 linehP17">
                                       ORD.DT.
                                     </p>
@@ -229,12 +229,12 @@ const PrintDesign17 = ({ queries, headers }) => {
                                       {e?.data?.rd?.["OrderDate"] === "01 Jan 1900" ? '' : e?.data?.rd?.orderDatef}
                                     </p>
                                   </div>
-                                  <div className="w_25 p_3" style={{width:'20%'}}>
+                                  <div className="w_25 p_3" style={{ width: '20%' }}>
                                     <p className="grey bold fsize17 linehP17">
                                       DEL.DT.
                                     </p>
                                     {e?.data?.rd?.["promisedate"] ===
-                                    "01 Jan 1900 " ? (
+                                      "01 Jan 1900 " ? (
                                       <p className="bold fsize17"></p>
                                     ) : (
                                       <p className="bold fsize17">
@@ -254,10 +254,10 @@ const PrintDesign17 = ({ queries, headers }) => {
                                     }}
                                   >
                                     INS :{" "}<span className="spinstFnt">
-                                    {e?.data?.rd?.instructionData ===
-                                    (null || "null")
-                                      ? ""
-                                      : e?.data?.rd?.instructionData?.slice(
+                                      {e?.data?.rd?.instructionData ===
+                                        (null || "null")
+                                        ? ""
+                                        : e?.data?.rd?.instructionData?.slice(
                                           0,
                                           113
                                         )}</span>
@@ -274,8 +274,8 @@ const PrintDesign17 = ({ queries, headers }) => {
                                 {console.log(e?.data)}
                                 <img
                                   src={
-                                    e?.data?.rd?.DesignImage !== '' 
-                                            ? e?.data?.rd?.DesignImage
+                                    e?.data?.rd?.DesignImage !== ''
+                                      ? e?.data?.rd?.DesignImage
                                       : require("../../assets/img/default.jpg")
                                   }
                                   // src={
@@ -316,11 +316,14 @@ const PrintDesign17 = ({ queries, headers }) => {
                                   {chunk?.data?.map((e, i) => {
                                     return (
                                       <div key={i} className="h_41 d_flex">
-                                        <div className="code border_right border_bottom medium pl_3">
+                                        {/* <div className="code border_right border_bottom medium pl_3">
                                           {e?.ConcatedFullShapeQualityColorCode?.slice(
                                             0,
                                             35
                                           )}
+                                        </div> */}
+                                        <div className="code border_right border_bottom medium pl_3">
+                                          {`${e?.ConcatedFullShapeQualityColorCode?.charAt(0)} ${e?.MaterialTypeName} ${e?.ConcatedFullShapeQualityColorCode?.slice(1)}`.slice(0, 35)}
                                         </div>
                                         <div className="size border_right border_bottom medium  text_center">
                                           {e?.Sizename?.slice(0, 15)}
@@ -356,10 +359,10 @@ const PrintDesign17 = ({ queries, headers }) => {
                                   <>
                                     {e?.data?.rd1[0]?.SerialJobno !==
                                       undefined && (
-                                      <BarcodeGenerator
-                                        data={e?.data?.rd1[0]?.SerialJobno}
-                                      />
-                                    )}
+                                        <BarcodeGenerator
+                                          data={e?.data?.rd1[0]?.SerialJobno}
+                                        />
+                                      )}
                                   </>
                                 )}
                               </div>
@@ -424,7 +427,7 @@ const PrintDesign17 = ({ queries, headers }) => {
                                 <div className="upper"></div>
                                 <div className="lower17"></div>
                               </div>
-                              <div className=" border_right" style={{width:'15mm', boxSizing:'border-box'}}>
+                              <div className=" border_right" style={{ width: '15mm', boxSizing: 'border-box' }}>
                                 <div className="upper border_bottom text_center center_item">
                                   <p
                                     className="semibold"
@@ -438,7 +441,7 @@ const PrintDesign17 = ({ queries, headers }) => {
                                 </div>
                               </div>
                               {/* <div className="w_12_5mm" style={{ borderBottom: "0px solid black" }} > */}
-                              <div  style={{ borderBottom: "0px solid black", width:'0px' }} >
+                              <div style={{ borderBottom: "0px solid black", width: '0px' }} >
                                 <div className="upper"></div>
                                 <div className="lower17"></div>
                               </div>
@@ -447,7 +450,7 @@ const PrintDesign17 = ({ queries, headers }) => {
                                 <div className="lower17"></div>
                               </div> */}
                               <div>
-                              <div className="qrcodebg_17">
+                                <div className="qrcodebg_17">
                                   <QRCodeGenerator
                                     text={e?.data?.rd.serialjobno}
                                   />
@@ -467,19 +470,19 @@ const PrintDesign17 = ({ queries, headers }) => {
                               <p className=" bold pl_3 fs17125">
                                 <span className="fs17125">{e?.data?.rd?.["serialjobno"]}&nbsp;</span>
 
-                                { (e?.data?.rd?.IsQuickRepairing === 1 && e?.data?.rd?.referenceno !== '') ?
-                                       <span style={{color:'red', fontSize:'10px'}}>
-                                        {(e?.data?.rd?.referenceno === null && e?.data?.rd?.referenceno === '' ) ? '' : `(${e?.data?.rd?.referenceno})`}
-                                      </span> : '' 
-                                    }
-                                  
+                                {(e?.data?.rd?.IsQuickRepairing === 1 && e?.data?.rd?.referenceno !== '') ?
+                                  <span style={{ color: 'red', fontSize: '10px' }}>
+                                    {(e?.data?.rd?.referenceno === null && e?.data?.rd?.referenceno === '') ? '' : `(${e?.data?.rd?.referenceno})`}
+                                  </span> : ''
+                                }
+
                               </p>
                               <p className=" bold pr_3 fs17125" >
                                 <span className="fs17125"> {e?.data?.rd?.["Designcode"]}</span>
                               </p>
-                              <p className=" bold  pl_3 pr_3 fs17125" style={{lineHeight:'12px'}}>
-                                <span className="fs17125" style={{lineHeight:'10px'}}>{e?.data?.rd?.["MetalType"]}{" "}
-                                {e?.data?.rd?.["MetalColor"]}{" "}</span>
+                              <p className=" bold  pl_3 pr_3 fs17125" style={{ lineHeight: '12px' }}>
+                                <span className="fs17125" style={{ lineHeight: '10px' }}>{e?.data?.rd?.["MetalType"]}{" "}
+                                  {e?.data?.rd?.["MetalColor"]}{" "}</span>
                               </p>
                             </div>
 
@@ -501,7 +504,7 @@ const PrintDesign17 = ({ queries, headers }) => {
                                 className="header_17two"
                                 style={{ borderRight: "0px solid black" }}
                               >
-                                <p className="d-flex flex-column" style={{width:'35%'}}>
+                                <p className="d-flex flex-column" style={{ width: '35%' }}>
                                   <span className="grey bold fsize17 linehP17">
                                     SIZE
                                   </span>
@@ -514,7 +517,7 @@ const PrintDesign17 = ({ queries, headers }) => {
                                 className="header_17two"
                                 style={{ borderRight: "0px solid black" }}
                               >
-                                <p className="d-flex flex-column" style={{width:'20%'}}>
+                                <p className="d-flex flex-column" style={{ width: '20%' }}>
                                   <span className="grey bold fsize17 linehP17">
                                     ORD.DT.
                                   </span>
@@ -527,12 +530,12 @@ const PrintDesign17 = ({ queries, headers }) => {
                                 className="header_17two"
                                 style={{ borderRight: "0px solid black" }}
                               >
-                                <p className="d-flex flex-column" style={{width:'20%'}}>
+                                <p className="d-flex flex-column" style={{ width: '20%' }}>
                                   <span className="grey bold fsize17 linehP17">
                                     DEL.DT.
                                   </span>
                                   {e?.data?.rd?.["promisedate"] ===
-                                  "01 Jan 1900 " ? (
+                                    "01 Jan 1900 " ? (
                                     <span className="bold fsize17"></span>
                                   ) : (
                                     <span className="bold fsize17">
@@ -557,7 +560,7 @@ const PrintDesign17 = ({ queries, headers }) => {
                               >
                                 INS :{" "}
                                 {e?.data?.rd?.instructionData ===
-                                (null || "null")
+                                  (null || "null")
                                   ? ""
                                   : e?.data?.rd?.instructionData?.slice(0, 113)}
                               </p>
@@ -577,8 +580,8 @@ const PrintDesign17 = ({ queries, headers }) => {
                               //     : require("../../assets/img/default.jpg")
                               // }
                               src={
-                                e?.data?.rd?.DesignImage !== '' 
-                                    ? e?.data?.rd?.DesignImage
+                                e?.data?.rd?.DesignImage !== ''
+                                  ? e?.data?.rd?.DesignImage
                                   : require("../../assets/img/default.jpg")
                               }
                               alt=""
@@ -645,7 +648,7 @@ const PrintDesign17 = ({ queries, headers }) => {
                             </div>
                             <div
                               className="lower17 center_item bold "
-                              style={{ borderBottom: "1px solid black", fontSize:"9.5px" }}
+                              style={{ borderBottom: "1px solid black", fontSize: "9.5px" }}
                             >
                               {+e?.additional?.dia?.diaPcs +
                                 "/" +
@@ -662,7 +665,7 @@ const PrintDesign17 = ({ queries, headers }) => {
                             </div>
                             <div
                               className="lower17 center_item bold"
-                              style={{ borderBottom: "1px solid black", fontSize:"9.5px" }}
+                              style={{ borderBottom: "1px solid black", fontSize: "9.5px" }}
                             >
                               {+e?.additional?.clr?.clrPcs +
                                 "/" +
@@ -679,7 +682,7 @@ const PrintDesign17 = ({ queries, headers }) => {
                             </div>
                             <div
                               className="lower17 center_item bold"
-                              style={{ borderBottom: "1px solid black", fontSize:"9.5px" }}
+                              style={{ borderBottom: "1px solid black", fontSize: "9.5px" }}
                             >
                               {/* {e?.data?.rd?.["QuotGrossWeight"]?.toFixed(3)} */}
                               {e?.data?.rd?.netwt?.toFixed(3)}
@@ -689,14 +692,14 @@ const PrintDesign17 = ({ queries, headers }) => {
                             <div className="upper"></div>
                             <div className="lower17"></div>
                           </div> */}
-                          <div className=" border_right" style={{width:'15mm', boxSizing:'border-box'}}>
+                          <div className=" border_right" style={{ width: '15mm', boxSizing: 'border-box' }}>
                             <div className="upper border_bottom text_center center_item">
                               <p className="semibold">MISC</p>
                             </div>
                             <div
                               className="lower17 center_item bold"
                               style={{
-                                borderBottom: "1px solid black !important",fontSize:"9.5px"
+                                borderBottom: "1px solid black !important", fontSize: "9.5px"
                               }}
                             >
                               {(+e?.additional?.misc?.miscWt)?.toFixed(3)}
@@ -711,9 +714,9 @@ const PrintDesign17 = ({ queries, headers }) => {
                             <div className="lower17"></div>
                           </div>
                           <div className="qrcodebg_17">
-                                  <QRCodeGenerator
-                                    text={e?.data?.rd.serialjobno}
-                                  />
+                            <QRCodeGenerator
+                              text={e?.data?.rd.serialjobno}
+                            />
                           </div>
                         </div>
                       </div>
@@ -730,16 +733,16 @@ const PrintDesign17 = ({ queries, headers }) => {
                             <p className="fontsize17">
                               {e?.data?.rd?.["serialjobno"]}&nbsp;
                               {
-                               (e?.data?.rd?.IsQuickRepairing === 1 && e?.data?.rd?.referenceno !== '') ?
-                                       <span style={{color:'red', fontSize:'10px'}}>
-                                        {(e?.data?.rd?.referenceno === null && e?.data?.rd?.referenceno === '' ) ? '' : `(${e?.data?.rd?.referenceno})`}
-                                      </span> : '' 
-                              } 
+                                (e?.data?.rd?.IsQuickRepairing === 1 && e?.data?.rd?.referenceno !== '') ?
+                                  <span style={{ color: 'red', fontSize: '10px' }}>
+                                    {(e?.data?.rd?.referenceno === null && e?.data?.rd?.referenceno === '') ? '' : `(${e?.data?.rd?.referenceno})`}
+                                  </span> : ''
+                              }
                             </p>
                             <p className="fontsize17">
                               {e?.data?.rd?.["Designcode"]}
                             </p>
-                            <p className="fontsize17" style={{lineHeight:'12px'}}>
+                            <p className="fontsize17" style={{ lineHeight: '12px' }}>
                               {e?.data?.rd?.["MetalType"]}{" "}
                               {e?.data?.rd?.["MetalColor"]}{" "}
                             </p>
@@ -779,7 +782,7 @@ const PrintDesign17 = ({ queries, headers }) => {
                           <div className="border_bottom h_5 d_flex align_center pl_3 border_right">
                             <div className="bold separatedfs17old d-flex w-100 justify-content-between align-items-center">
                               <p className="ps-2">{e?.data?.rd?.OrderNo}</p>
-                              <p className="pe-2">{e?.data?.rd?.["PO"]}</p>  
+                              <p className="pe-2">{e?.data?.rd?.["PO"]}</p>
                             </div>
                           </div>
                           <div
@@ -843,12 +846,12 @@ const PrintDesign17 = ({ queries, headers }) => {
                             borderLeft: "1px solid",
                           }}
                         >
-                          
+
                           {console.log(e?.data)}
                           <img
                             src={
-                              e?.data?.rd?.DesignImage !== '' 
-                                      ? e?.data?.rd?.DesignImage
+                              e?.data?.rd?.DesignImage !== ''
+                                ? e?.data?.rd?.DesignImage
                                 : require("../../assets/img/default.jpg")
                             }
                             // src={
@@ -1024,7 +1027,7 @@ const PrintDesign17 = ({ queries, headers }) => {
                         </div>
                         <div
                           className="BARCODE"
-                          style={{ height: "60.6mm", borderBottom: "1px solid", borderRadius:"0" }}
+                          style={{ height: "60.6mm", borderBottom: "1px solid", borderRadius: "0" }}
                         >
                           {e?.data?.rd !== 0 && e?.data?.rd !== undefined && (
                             <>
