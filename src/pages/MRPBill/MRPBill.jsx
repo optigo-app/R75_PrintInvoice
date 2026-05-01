@@ -107,10 +107,10 @@ const MRPBill = () => {
   const [pendingNote, setPendingNote] = useState(true);
   const [showRateModal, setShowRateModal] = useState(false);
   const [totalAmount, setTotalAmount] = useState('');
-  console.log('totalAmount: ', totalAmount);
   const [roundUpTotalAmount, setRoundUpTotalAmount] = useState('');
   const [finalTotalAmount, setFinalTotalAmount] = useState('');
-  console.log('selectedRows: ', selectedRows);
+  const [remarkFlag, setRemarkFlag] = useState(0);
+  console.log('remarkFlag: ', remarkFlag);
 
   const handleSelectAll = (e) => {
     if (e.target.checked) {
@@ -228,10 +228,10 @@ const MRPBill = () => {
         });
         const response = await axios.post(url, body);
         if (response?.status === 200 && response?.data?.Status === '200') {
-          if (response?.data?.Data?.DT?.length > 0) {
-            setData(response?.data?.Data?.DT);
-
-            response?.data?.Data?.DT?.forEach((e) => {
+          const resData = response?.data?.Data || {};
+          if (resData?.DT?.length > 0) {
+            setData(resData?.DT);
+            resData?.DT?.forEach((e) => {
               if (e?.IsDefault === 1) {
                 switch (args) {
                   case 'locker':
@@ -263,9 +263,10 @@ const MRPBill = () => {
                 }
               }
             });
-
-
-
+            // ✅ NEW: Handle DT1 for customer
+            if (args === 'customer' && resData?.DT1?.length > 0) {
+              setRemarkFlag(resData?.DT1[0]?.IsRemarkRequiredInMRPandBill ?? 0);
+            }
           } else {
             setData([]);
             console.log(response?.data?.Data);
@@ -650,7 +651,7 @@ const MRPBill = () => {
     } else {
       setCustomerEnteredDateError('');
     }
-    if (!customerEnteredRemark) {
+    if (remarkFlag != 0 && !customerEnteredRemark) {
       setCustomerEnteredRemarkError('Remark is required');
       is_valid = false;
     } else {
@@ -819,7 +820,7 @@ const MRPBill = () => {
     } else {
       setCustomerEnteredDateError('');
     }
-    if (!customerEnteredRemark) {
+    if (remarkFlag != 0 && !customerEnteredRemark) {
       setCustomerEnteredRemarkError('Remark is required');
       is_valid = false;
     } else {
@@ -966,8 +967,6 @@ const MRPBill = () => {
                   setJobnoVal('');
                   setJobNoFocus(true);
                   inputRef.current.focus();
-
-
                   setJobDetail([]);
                   setIsLoading(false);
                   setDisableSelect(true);
