@@ -31,6 +31,7 @@ const RetailOnlyPrint = ({ urls, token, invoiceNo, printName, evn, ApiVer }) => 
   const [ctwwt, setCtwwt] = useState(null);
   const [totPcs, setTotPcs] = useState(0);
   const [totWt, setTotWt] = useState(0);
+  const [headerflag, setHeaderflag] = useState(true);
 
   const [resultArrayC, setResultArryC] = useState();
   let pName = atob(printName).toLowerCase();
@@ -99,44 +100,160 @@ const RetailOnlyPrint = ({ urls, token, invoiceNo, printName, evn, ApiVer }) => 
         obj?.totals?.diamonds?.SettingAmount +
         obj?.totals?.colorstone?.SettingAmount;
       let diamonds = [];
+      // obj?.diamonds?.forEach((ele) => {
+      //   let findDiamond = diamonds?.findIndex(
+      //     (elem) => elem?.QualityName === ele?.QualityName
+      //   );
+      //   if (findDiamond === -1) {
+      //     diamonds?.push(ele);
+      //   } else {
+      //     diamonds[findDiamond].Wt += ele?.Wt;
+      //     diamonds[findDiamond].Pcs += ele?.Pcs;
+      //     diamonds[findDiamond].Amount += ele?.Amount;
+      //   }
+      // });
       obj?.diamonds?.forEach((ele) => {
+
         let findDiamond = diamonds?.findIndex(
-          (elem) => elem?.QualityName === ele?.QualityName
+          (elem) => elem?.QualityName === ele?.QualityName &&
+            Number(elem?.isRateOnPcs) === Number(ele?.isRateOnPcs)
         );
+
         if (findDiamond === -1) {
-          diamonds?.push(ele);
+
+          diamonds?.push({
+            ...cloneDeep(ele),
+
+            // if all same QualityName items are rate-on-pcs
+            groupedRateOnPcs: obj?.diamonds
+              ?.filter(x => x?.QualityName === ele?.QualityName)
+              ?.every(x => Number(x?.isRateOnPcs) === 1)
+              ? 1
+              : 0
+          });
+
         } else {
+
           diamonds[findDiamond].Wt += ele?.Wt;
           diamonds[findDiamond].Pcs += ele?.Pcs;
           diamonds[findDiamond].Amount += ele?.Amount;
+
+          // maintain grouped flag
+          diamonds[findDiamond].groupedRateOnPcs =
+            diamonds[findDiamond].groupedRateOnPcs === 1 &&
+              Number(ele?.isRateOnPcs) === 1
+              ? 1
+              : 0;
         }
       });
+
+
+      console.log("TCL: loadData -> dddddd", diamonds)
       let colorstone = [];
+      // obj?.colorstone?.forEach((ele) => {
+      //   let findColorStone = colorstone?.findIndex(
+      //     (elem) => elem?.QualityName === ele?.QualityName
+      //   );
+      //   if (findColorStone === -1) {
+      //     colorstone?.push(ele);
+      //   } else {
+      //     colorstone[findColorStone].Wt += ele?.Wt;
+      //     colorstone[findColorStone].Pcs += ele?.Pcs;
+      //     colorstone[findColorStone].Amount += ele?.Amount;
+      //   }
+      // });
       obj?.colorstone?.forEach((ele) => {
+
         let findColorStone = colorstone?.findIndex(
-          (elem) => elem?.QualityName === ele?.QualityName
+          (elem) => elem?.QualityName === ele?.QualityName &&
+            Number(elem?.isRateOnPcs) === Number(ele?.isRateOnPcs)
         );
+
         if (findColorStone === -1) {
-          colorstone?.push(ele);
+
+          colorstone?.push({
+            ...cloneDeep(ele),
+
+            // if all same QualityName items are rate-on-pcs
+            groupedRateOnPcs: obj?.colorstone
+              ?.filter(x => x?.QualityName === ele?.QualityName)
+              ?.every(x => Number(x?.isRateOnPcs) === 1)
+              ? 1
+              : 0
+          });
+
         } else {
+
           colorstone[findColorStone].Wt += ele?.Wt;
           colorstone[findColorStone].Pcs += ele?.Pcs;
           colorstone[findColorStone].Amount += ele?.Amount;
+
+          // maintain grouped flag
+          colorstone[findColorStone].groupedRateOnPcs =
+            colorstone[findColorStone].groupedRateOnPcs === 1 &&
+              Number(ele?.isRateOnPcs) === 1
+              ? 1
+              : 0;
         }
       });
       let misc = [];
+      // obj?.misc?.forEach((ele) => {
+      //   totalObj.goldWeight += ele?.Wt + ele?.ServWt;
+      //   let findmisc = misc?.findIndex(
+      //     (elem) => elem?.ShapeName === ele?.ShapeName
+      //   );
+      //   if (findmisc === -1) {
+      //     misc?.push(ele);
+      //   } else {
+      //     misc[findmisc].Wt += ele?.Wt;
+      //     misc[findmisc].Pcs += ele?.Pcs;
+      //     misc[findmisc].Amount += ele?.Amount;
+      //     misc[findmisc].ServWt += ele?.ServWt;
+      //   }
+      // });
+
       obj?.misc?.forEach((ele) => {
+
         totalObj.goldWeight += ele?.Wt + ele?.ServWt;
+
         let findmisc = misc?.findIndex(
-          (elem) => elem?.ShapeName === ele?.ShapeName
+          (elem) => elem?.ShapeName === ele?.ShapeName &&
+            Number(elem?.isRateOnPcs) === Number(ele?.isRateOnPcs)
         );
+
         if (findmisc === -1) {
-          misc?.push(ele);
+
+          misc?.push({
+            ...cloneDeep(ele),
+
+            // if all same ShapeName items are rate-on-pcs
+            groupedRateOnPcs: obj?.misc
+              ?.filter(x => x?.ShapeName === ele?.ShapeName)
+              ?.every(x => Number(x?.isRateOnPcs) === 1)
+              ? 1
+              : 0
+          });
+
         } else {
-          misc[findmisc].Wt += ele?.Wt;
-          misc[findmisc].Pcs += ele?.Pcs;
+
+          if    (ele?.ShapeName === "DKM" &&
+          ele?.ismiscwtaddingrossweight !== 1){
+            misc[findmisc].Wt += 0;
+            misc[findmisc].Pcs += 0;
+          }else{
+
+            misc[findmisc].Wt += ele?.Wt;
+            misc[findmisc].Pcs += ele?.Pcs;
+          }
           misc[findmisc].Amount += ele?.Amount;
           misc[findmisc].ServWt += ele?.ServWt;
+
+          // maintain grouped flag
+          misc[findmisc].groupedRateOnPcs =
+            misc[findmisc].groupedRateOnPcs === 1 &&
+              Number(ele?.isRateOnPcs) === 1
+              ? 1
+              : 0;
         }
       });
       // let count = 0;
@@ -246,6 +363,7 @@ const RetailOnlyPrint = ({ urls, token, invoiceNo, printName, evn, ApiVer }) => 
           }
         });
 
+
         let allColorStone = [
           ...resultArr[findObjs]?.colorstone,
           ...obj?.colorstone,
@@ -279,6 +397,8 @@ const RetailOnlyPrint = ({ urls, token, invoiceNo, printName, evn, ApiVer }) => 
             blankMisc[findmiscss].ServWt += ele?.ServWt;
           }
         });
+
+
         blankDiamonds?.sort((a, b) => {
           const compareLabel1 = a.QualityName.localeCompare(b.QualityName);
           if (compareLabel1 !== 0) {
@@ -360,7 +480,7 @@ const RetailOnlyPrint = ({ urls, token, invoiceNo, printName, evn, ApiVer }) => 
         gmwt += el?.Wt;
       })
       e?.finding?.forEach((el) => {
-        gmwt += el?.Wt;
+        // gmwt += el?.Wt;
       })
       e?.metal?.forEach((el) => {
         gmwt += el?.Wt;
@@ -472,6 +592,31 @@ const RetailOnlyPrint = ({ urls, token, invoiceNo, printName, evn, ApiVer }) => 
   // console.log("taxes", taxes);
   // console.log("dataFill", dataFill);
 
+  const handleHeaderShow = (e) => {
+    if (headerflag) setHeaderflag(false);
+    else {
+      setHeaderflag(true);
+    }
+  };
+
+  let totalDKMPcs = 0;
+  let totalDKMWt = 0;
+
+  finalD?.resultArray?.forEach((item) => {
+    item?.misc?.forEach((ele) => {
+      if (
+        ele?.ShapeName === "DKM" &&
+        ele?.ismiscwtaddingrossweight !== 1
+      ) {
+        totalDKMPcs += Number(ele?.Pcs || 0);
+        totalDKMWt += Number(ele?.Wt || 0);
+      }
+    });
+  });
+
+
+
+  console.log("TCL:dataFill.diamonds ", dataFill)
   return (
     <>
       {loader ? (
@@ -495,6 +640,17 @@ const RetailOnlyPrint = ({ urls, token, invoiceNo, printName, evn, ApiVer }) => 
                 With Rate
               </label>
             </div>
+            <div className="form-check pe-3 mb-0">
+              <input
+                className="border-dark me-2"
+                id="header"
+                type="checkbox"
+                checked={headerflag}
+                onChange={(e) => handleHeaderShow(e)}
+                name="header"
+              />
+              <label for="header" className="pt-1">Header</label>
+            </div>
             <div className="printBtn_sec text-end position-absolute printBtnRetailPrint">
               <input
                 type="button"
@@ -513,42 +669,45 @@ const RetailOnlyPrint = ({ urls, token, invoiceNo, printName, evn, ApiVer }) => 
           </div>
 
           {/* company address */}
-          <div className="mt-2 px-1 d-flex no_break">
-            <div className="col-6">
-              <h6 className="fw-bold">{jsonData1?.CompanyFullName}</h6>
-              <p className="ft_12_retailPrint">{jsonData1?.CompanyAddress}</p>
-              <p className="ft_12_retailPrint">{jsonData1?.CompanyAddress2}</p>
-              <p className="ft_12_retailPrint">
-                {jsonData1?.CompanyCity} {jsonData1?.CompanyPinCode}{" "}
-                {jsonData1?.CompanyState}{jsonData1?.CompanyCountry != "" && `(${jsonData1?.CompanyCountry })`}
-              </p>
-              <p className="ft_12_retailPrint">
-                T {jsonData1?.CompanyTellNo} | TOLL FREE{" "}
-                {jsonData1?.CompanyTollFreeNo}
-              </p>
-              <p className="ft_12_retailPrint">
-                {jsonData1?.CompanyEmail} | {jsonData1?.CompanyWebsite}
-              </p>
-              <p className="ft_12_retailPrint">
-                {jsonData1?.Company_VAT_GST_No} | {jsonData1?.Company_CST_STATE}{" "}
-                - {jsonData1?.Company_CST_STATE_No} | PAN-{jsonData1?.Pannumber}
-              </p>
-            </div>
-            <div className="col-6">
-              {/* <img src={jsonData1?.PrintLogo} alt="" className='retailPrintLogo d-block ms-auto' /> */}
+          {
+            headerflag && (
+              <div className="mt-2 px-1 d-flex no_break">
+                <div className="col-6">
+                  <h6 className="fw-bold">{jsonData1?.CompanyFullName}</h6>
+                  <p className="ft_12_retailPrint">{jsonData1?.CompanyAddress}</p>
+                  <p className="ft_12_retailPrint">{jsonData1?.CompanyAddress2}</p>
+                  <p className="ft_12_retailPrint">
+                    {jsonData1?.CompanyCity} {jsonData1?.CompanyPinCode}{" "}
+                    {jsonData1?.CompanyState}{jsonData1?.CompanyCountry != "" && `(${jsonData1?.CompanyCountry})`}
+                  </p>
+                  <p className="ft_12_retailPrint">
+                    T {jsonData1?.CompanyTellNo} | TOLL FREE{" "}
+                    {jsonData1?.CompanyTollFreeNo}
+                  </p>
+                  <p className="ft_12_retailPrint">
+                    {jsonData1?.CompanyEmail} | {jsonData1?.CompanyWebsite}
+                  </p>
+                  <p className="ft_12_retailPrint">
+                    {jsonData1?.Company_VAT_GST_No} | {jsonData1?.Company_CST_STATE}{" "}
+                    - {jsonData1?.Company_CST_STATE_No} | PAN-{jsonData1?.Pannumber}
+                  </p>
+                </div>
+                <div className="col-6">
+                  {/* <img src={jsonData1?.PrintLogo} alt="" className='retailPrintLogo d-block ms-auto' /> */}
 
-              {isImageWorking && jsonData1?.PrintLogo !== "" && (
-                <img
-                  src={jsonData1?.PrintLogo}
-                  alt=""
-                  className="retailPrintLogo d-block ms-auto"
-                  onError={handleImageErrors}
-                  height={120}
-                  width={150}
-                />
-              )}
-            </div>
-          </div>
+                  {isImageWorking && jsonData1?.PrintLogo !== "" && (
+                    <img
+                      src={jsonData1?.PrintLogo}
+                      alt=""
+                      className="retailPrintLogo d-block ms-auto"
+                      onError={handleImageErrors}
+                      height={120}
+                      width={150}
+                    />
+                  )}
+                </div>
+              </div>
+            )}
 
           {/* bill to */}
           <div className="d-flex border mt-2 no_break">
@@ -576,7 +735,9 @@ const RetailOnlyPrint = ({ urls, token, invoiceNo, printName, evn, ApiVer }) => 
                 {jsonData1?.vat_cst_pan}
               </p>
               <p className="line_height_110 ft_12_retailPrint">
-                {jsonData1?.Cust_CST_STATE}-{jsonData1?.Cust_CST_STATE_No}
+                {jsonData1?.Cust_CST_STATE_No
+                  ? `${jsonData1?.Cust_CST_STATE}-${jsonData1?.Cust_CST_STATE_No}`
+                  : ""}
               </p>
             </div>
             {jsonData1?.HSN_No !== "" && (
@@ -661,8 +822,8 @@ const RetailOnlyPrint = ({ urls, token, invoiceNo, printName, evn, ApiVer }) => 
                 {rate && (
                   <div
                     className={`${pName === "retail1 print"
-                        ? `rateRetailPrint1`
-                        : `rateRetailPrint border-end`
+                      ? `rateRetailPrint1`
+                      : `rateRetailPrint border-end`
                       } d-flex justify-content-center align-items-center`}
                   >
                     <p className="fw-bold">Rate</p>
@@ -731,6 +892,8 @@ const RetailOnlyPrint = ({ urls, token, invoiceNo, printName, evn, ApiVer }) => 
                   <div className="materialDescriptionRetailPrint border-end">
                     <div className="d-grid h-100">
                       {e?.metal?.map((ele, ind) => {
+
+                        console.log("TCL: metal ", i + 1, ele)
                         return (
                           ele?.IsPrimaryMetal === 1 && (
                             <div className={`d-flex border-bottom`} key={ind}>
@@ -752,16 +915,17 @@ const RetailOnlyPrint = ({ urls, token, invoiceNo, printName, evn, ApiVer }) => 
                               <div
                                 className={`${styles.Wt} lossWtRetailPrintNoRate border-end p-1 d-flex align-items-center justify-content-end`}
                               >
+                                <p className='text-end'>{NumberWithCommas(e?.NetWt + e?.LossWt, 3)}</p>
                                 {/* <p className='text-end'>{NumberWithCommas(e?.netWtLossWt, 3)}</p> */}
                                 <p className="text-end">
-                                  {NumberWithCommas(e?.NetWt + (e?.totals?.diamonds?.Wt / 5), 3)}
+                                  {/* {NumberWithCommas(e?.NetWt + (e?.totals?.diamonds?.Wt / 5), 3)} */}
                                 </p>
                               </div>
                               {rate && (
                                 <div
                                   className={`${pName === "retail1 print"
-                                      ? `rateRetailPrint1`
-                                      : `rateRetailPrint border-end`
+                                    ? `rateRetailPrint1`
+                                    : `rateRetailPrint border-end`
                                     } p-1 d-flex align-items-center justify-content-end`}
                                 >
                                   <p className="text-end">
@@ -795,6 +959,9 @@ const RetailOnlyPrint = ({ urls, token, invoiceNo, printName, evn, ApiVer }) => 
                       })}
 
                       {e?.diamonds?.map((ele, ind) => {
+
+
+                        console.log("TCL: eeeeeeeeeee", ele)
                         return (
                           <div className={`d-flex border-bottom`} key={ind}>
                             <div
@@ -826,18 +993,28 @@ const RetailOnlyPrint = ({ urls, token, invoiceNo, printName, evn, ApiVer }) => 
                             {rate && (
                               <div
                                 className={`${pName === "retail1 print"
-                                    ? `rateRetailPrint1`
-                                    : `rateRetailPrint border-end`
+                                  ? `rateRetailPrint1`
+                                  : `rateRetailPrint border-end`
                                   } p-1 d-flex align-items-center justify-content-end`}
                               >
+                                {/* <p className="text-end">
+                                  {ele?.Wt !== 0
+                                    ? NumberWithCommas(
+                                      ele?.Amount /
+                                      jsonData1?.CurrencyExchRate /
+                                      ele?.isRateOnPcs == 1 ? ele?.Wt : ele?.Pcs,
+                                      2
+                                    )  + (ele?.isRateOnPcs == 1 ?"/PC" :"")
+                                    : "0.00" }
+                                </p> */}
                                 <p className="text-end">
                                   {ele?.Wt !== 0
                                     ? NumberWithCommas(
                                       ele?.Amount /
                                       jsonData1?.CurrencyExchRate /
-                                      ele?.Wt,
+                                      (ele?.isRateOnPcs == 1 ? ele?.Pcs : ele?.Wt),
                                       2
-                                    )
+                                    ) + (ele?.isRateOnPcs == 1 ? "/PC" : "")
                                     : "0.00"}
                                 </p>
                               </div>
@@ -848,9 +1025,7 @@ const RetailOnlyPrint = ({ urls, token, invoiceNo, printName, evn, ApiVer }) => 
                               >
                                 <p className="text-end">
                                   {NumberWithCommas(
-                                    ele?.Amount / jsonData1?.CurrencyExchRate,
-                                    2
-                                  )}
+                                    ele?.Amount / jsonData1?.CurrencyExchRate, 2)}
                                 </p>
                               </div>
                             )}
@@ -861,28 +1036,20 @@ const RetailOnlyPrint = ({ urls, token, invoiceNo, printName, evn, ApiVer }) => 
                       {e?.colorstone?.map((ele, ind) => {
                         return (
                           <div className={`d-flex border-bottom`} key={ind}>
-                            <div
-                              className={`${styles.Material} border-end p-1 d-flex align-items-center`}
-                            >
+                            <div className={`${styles.Material} border-end p-1 d-flex align-items-center`}  >
                               <p>
                                 {ele?.MasterManagement_DiamondStoneTypeName}
                               </p>
                             </div>
-                            <div
-                              className={`${styles.Qty} border-end p-1 d-flex align-items-center`}
-                            >
+                            <div className={`${styles.Qty} border-end p-1 d-flex align-items-center`} >
                               <p>{ele?.QualityName}</p>
                             </div>
-                            <div
-                              className={`${styles.Pcs} border-end p-1 d-flex align-items-center justify-content-end`}
-                            >
+                            <div className={`${styles.Pcs} border-end p-1 d-flex align-items-center justify-content-end`}  >
                               <p className="text-end">
                                 {NumberWithCommas(ele?.Pcs, 0)}
                               </p>
                             </div>
-                            <div
-                              className={`${styles.Wt} lossWtRetailPrintNoRate border-end p-1 d-flex align-items-center justify-content-end`}
-                            >
+                            <div className={`${styles.Wt} lossWtRetailPrintNoRate border-end p-1 d-flex align-items-center justify-content-end`}  >
                               <p className="text-end">
                                 {NumberWithCommas(ele?.Wt, 3)}
                               </p>
@@ -890,20 +1057,21 @@ const RetailOnlyPrint = ({ urls, token, invoiceNo, printName, evn, ApiVer }) => 
                             {rate && (
                               <div
                                 className={`${pName === "retail1 print"
-                                    ? `rateRetailPrint1`
-                                    : `rateRetailPrint border-end`
+                                  ? `rateRetailPrint1`
+                                  : `rateRetailPrint border-end`
                                   } p-1 d-flex align-items-center justify-content-end`}
                               >
-                                <p className="text-end">
+                                  <p className="text-end">
                                   {ele?.Wt !== 0
                                     ? NumberWithCommas(
                                       ele?.Amount /
                                       jsonData1?.CurrencyExchRate /
-                                      ele?.Wt,
+                                      (ele?.isRateOnPcs == 1 ? ele?.Pcs : ele?.Wt),
                                       2
-                                    )
+                                    ) + (ele?.isRateOnPcs == 1 ? "/PC" : "")
                                     : "0.00"}
                                 </p>
+                                
                               </div>
                             )}
                             {pName !== "retail1 print" && (
@@ -923,6 +1091,14 @@ const RetailOnlyPrint = ({ urls, token, invoiceNo, printName, evn, ApiVer }) => 
                       })}
 
                       {e?.misc?.map((ele, ind) => {
+
+                        console.log("TCL: misc data", ele)
+                        if (
+                          ele?.ShapeName === "DKM" &&
+                          ele?.ismiscwtaddingrossweight !== 1
+                        ) {
+                          return null;
+                        }
                         return (
                           <div className={`d-flex border-bottom`} key={ind}>
                             <div
@@ -954,20 +1130,23 @@ const RetailOnlyPrint = ({ urls, token, invoiceNo, printName, evn, ApiVer }) => 
                             {rate && (
                               <div
                                 className={`${pName === "retail1 print"
-                                    ? `rateRetailPrint1`
-                                    : `rateRetailPrint border-end`
+                                  ? `rateRetailPrint1`
+                                  : `rateRetailPrint border-end`
                                   } p-1 d-flex align-items-center justify-content-end`}
                               >
                                 {/* <p className='text-end'>{(ele?.IsHSCODE === 0 ? (ele?.Wt !== 0 ? NumberWithCommas((ele?.Amount / ele?.Wt), 2) : "0.00") : (ele?.ServWt !== 0 ? NumberWithCommas((ele?.Amount / ele?.ServWt), 2) : "0.00"))}</p> */}
                                 <p className="text-end">
-                                  {ele?.Wt !== 0 &&
-                                    NumberWithCommas(
+                                  {ele?.Wt !== 0
+                                    ? NumberWithCommas(
                                       ele?.Amount /
                                       jsonData1?.CurrencyExchRate /
-                                      ele?.Wt,
+                                      (ele?.isRateOnPcs == 1 ? ele?.Pcs : ele?.Wt),
                                       2
-                                    )}
+                                    ) + (ele?.isRateOnPcs == 1 ? "/PC" : "")
+                                    : "0.00"}
                                 </p>
+                               
+                               
                               </div>
                             )}
                             {pName !== "retail1 print" && (
@@ -991,8 +1170,8 @@ const RetailOnlyPrint = ({ urls, token, invoiceNo, printName, evn, ApiVer }) => 
                   {/* Making */}
                   <div
                     className={`makingRetailPrint border-end border-bottom  p-1 d-flex ${pName === "retail print 1"
-                        ? `flex-column align-items-end justify-content-center`
-                        : `align-items-center justify-content-end `
+                      ? `flex-column align-items-end justify-content-center`
+                      : `align-items-center justify-content-end `
                       }`}
                   >
                     {pName === "retail print 1" && (
@@ -1057,20 +1236,20 @@ const RetailOnlyPrint = ({ urls, token, invoiceNo, printName, evn, ApiVer }) => 
                   className={`${styles.Pcs} border-end p-1 text-end d-flex align-items-center justify-content-end min_height_44_retail_print_1 ft_12_retailPrint`}
                 >
                   <p className="fw-bold text-end">
-                    {NumberWithCommas(finalD?.mainTotal?.diasCsMiscPcs, 0)}
+                    {NumberWithCommas(finalD?.mainTotal?.diasCsMiscPcs  , 0)}
                   </p>
                 </div>
                 <div
                   className={`${styles.Wt} lossWtRetailPrintNoRate border-end p-1 d-flex align-items-end justify-content-around flex-column min_height_44_retail_print_1 ft_12_retailPrint`}
                 ><p className="fw-bold text-end">
-                    {totWt !== 0 && `${totWt?.toFixed(3)} ctw`} <br /> {gmwt !== 0 && `${gmwt?.toFixed(3)} gms`}
+                    {totWt !== 0 && `${totWt?.toFixed(3)} ctw`} <br /> {gmwt !== 0 && `${(gmwt  )?.toFixed(3)} gms`}
                   </p>
                 </div>
                 {rate && (
                   <div
                     className={`${pName === "retail1 print"
-                        ? `rateRetailPrint1`
-                        : `rateRetailPrint border-end`
+                      ? `rateRetailPrint1`
+                      : `rateRetailPrint border-end`
                       } p-1 d-flex align-items-center justify-content-end min_height_44_retail_print_1 ft_12_retailPrint`}
                   >
                     <p className="fw-bold text-end">

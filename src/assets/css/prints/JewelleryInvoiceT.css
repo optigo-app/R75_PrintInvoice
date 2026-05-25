@@ -1,0 +1,119 @@
+
+.j-inv-container {
+    max-width: 1200px;
+    width: 100%;
+    padding: 10px;
+    margin: 0 auto;
+    padding-bottom: 5rem;
+    font-family: Calibri;
+    font-size: 12px;
+}
+
+.j-inv-body-wrapper {
+    border: 1px solid #000;
+}
+.j-inv-logo-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black !important;
+    border-bottom: none !important;
+    /* height: 80px; */
+}
+
+.j-inv-logo-cloud {
+    background: #000;
+    color: white;
+    padding: 10px 45px;
+    border-radius: 50% 50% 0 0;
+    display: flex;
+    align-items: center;
+}
+
+.j-inv-logo-text {
+    font-size: 24px;
+    font-weight: bold;
+}
+.j-inv-flex-row { display: flex; width: 100%; }
+.j-inv-flex-col { display: flex; flex-direction: column; }
+.j-inv-grid-2 { display: grid; grid-template-columns: 1fr 1fr; width: 100%; }
+.j-inv-table-row { display: flex; width: 100%; }
+.j-inv-cell { 
+    display: flex; 
+    /* align-items: center;  */
+    justify-content: center; 
+    padding: 2px 2px;
+    min-height: 20px;
+    align-items: flex-start;
+    line-height: 1.1;
+}
+.j-inv-flex-1 { flex: 1; }
+.j-inv-border-b { border-bottom: 1px solid #000; }
+.j-inv-border-r { border-right: 1px solid #000; }
+.j-inv-border-t { border-top: 1px solid #000; }
+.j-inv-bold { font-weight: bold; }
+.j-inv-center { justify-content: center; }
+.j-inv-text-left { justify-content: flex-start; }
+.j-inv-text-right { justify-content: flex-end; }
+.j-inv-text-center { text-align: center; }
+.j-inv-p-5 { padding: 5px; }
+.j-inv-p-2 { padding: 2px; }
+.j-inv-p-l-5 { padding-left: 5px; }
+.j-inv-p-r-5 { padding-right: 5px; }
+.j-inv-py-5 { padding-top: 5px; padding-bottom: 5px; }
+.j-inv-m-t-40 { margin-top: 40px; }
+.j-inv-min-h-80 { min-height: 80px; }
+.j-inv-min-h-100 { min-height: 100px; }
+.j-inv-h-150 { height: 150px; }
+.j-inv-h-40 { min-height: 40px; }
+.j-inv-large { font-size: 13px; }
+.j-inv-bg-light { background: #f9f9f9; }
+.j-inv-flex-between { display: flex; justify-content: space-between; padding: 2px 8px; }
+.j-inv-col-sr      { width: 6%;  }  
+.j-inv-col-code    { width: 11.3%; }  
+.j-inv-col-hsn     { width: 9%;  }  
+.j-inv-col-desc    { width: 23.8%;  }   
+.j-inv-col-qty     { width: 5.37%;  }  
+.j-inv-col-rate    { width: 13.40%;  }  
+.j-inv-col-disc    { width: 8.06%;  }  
+.j-inv-col-gst     { width: 5.37%;  }  
+.j-inv-col-gst-amt { width: 10.40%;  }  
+.j-inv-col-net     { width: 15.15%; }  
+
+.j-inv-col-sr-taxamt      { width: 5.37%;  }  
+.j-inv-col-code-taxamt    { width: 10.75%; }  
+.j-inv-col-hsn-taxamt     { width: 5%;  }  
+.j-inv-col-desc-taxamt    { width: 25%;  }   
+.j-inv-col-qty-taxamt     { width: 4%;  }  
+.j-inv-col-rate-taxamt    { width: 13.40%;  }  
+.j-inv-col-disc-taxamt    { width: 8.06%;  }  
+.j-inv-col-gst-taxamt     { width: 5.37%;  }  
+.j-inv-col-gst-amt-taxamt { width: 10.40%;  }  
+.j-inv-col-tabamt-taxamt{ width: 9%; }
+.j-inv-col-net-taxamt     { width: 13%; }  
+.j-inv-col-total  { width: 50%; }   
+.j-inv-col-total-taxamt  { width: 46.1%; }   
+.j-inv-container {
+    width: 95%;           
+    max-width: 800px;     
+    margin: 20px auto;
+}
+.j-inv-table-row {
+    display: flex;
+    width: 100%;
+}
+.j-inv-col-ttloqty{
+    width: 5.5%;
+}
+@media print {
+    .j-inv-btn{
+        display: none !important;
+    }
+    .j-inv-col-desc    { width: 23.7% !important; }   
+    .j-inv-col-ttloqty{
+        width: 5.3% !important;
+    }
+    .j-inv-col-qty-taxamt {
+        width: 3.9% !important;
+    }
+}

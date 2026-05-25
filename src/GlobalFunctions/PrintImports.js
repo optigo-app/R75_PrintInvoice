@@ -32,6 +32,7 @@ export const printConditions = [
   {printName: 'estimate print', etpType: 'print', componentName: 'EstimatePrint'},
   {printName: 'estimation print', etpType: 'print', componentName: 'EstimationPrint'},
   {printName: 'estimate print 1', etpType: 'print', componentName: 'EstimatePrint1'},
+  { printName: 'Official Invoice', etpType: 'print', componentName: 'OfficialInvoice' },  //amish....
   {printName: 'export', etpType: 'print', componentName: 'Export'},
   {printName: 'export a', etpType: 'print', componentName: 'ExportA'},
   {printName: 'export declaration form', etpType: 'print', componentName: 'ExportDeclarationForm'},
@@ -69,9 +70,9 @@ export const printConditions = [
   {printName: 'jewellery invoice 3', etpType: 'print', componentName: 'JewelleryInvoice3'},
   {printName: 'jewellery item wise', etpType: 'print', componentName: 'HallmarkItemWisePrint'},
   {printName: 'jewellery retail invoice c', etpType: 'print', componentName: 'JewelleryRetailInvoicePrintc'},
-
   {printName: 'jewellery tax invoice b2b', etpType: 'print', componentName: 'JewelleryTaxInvoiceAB2B'},   
   
+  { printName: 'jewellery invoice T', etpType: 'print', componentName: 'JewelleryInvoiceT' }, // amish....
   {printName: 'jewellery tax invoice', etpType: 'print', componentName: 'JewelleryTaxInvoice'},
   {printName: 'jewellery tax invoice 1', etpType: 'print', componentName: 'JewelleryTaxInvoice1'},
   {printName: 'jewellery tax invoice 2', etpType: 'print', componentName: 'JewelleryTaxInvoice2'},

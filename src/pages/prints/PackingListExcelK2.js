@@ -25,6 +25,7 @@ const PackingListExcelK1 = ({ urls, token, invoiceNo, printName, evn, ApiVer }) 
     const [msg, setMsg] = useState("");
     const [loader, setLoader] = useState(true);
     const [documentDetail, setDocumentDetail] = useState([]);
+    const [weightTotals, setWeightTotals] = useState({ labGrown: 0, other: 0 });
 
     useEffect(() => {
         const sendData = async () => {
@@ -71,6 +72,20 @@ const PackingListExcelK1 = ({ urls, token, invoiceNo, printName, evn, ApiVer }) 
             return { key, value };
         });
         setDocumentDetail(documentDetail);
+
+        const totalsDiaWt = data?.BillPrint_Json2?.reduce((acc, item) => {
+            // Only process if StoneTypeid is 1
+            if (item?.MasterManagement_DiamondStoneTypeid === 1) {
+                if (item.MaterialTypeName === "LabGrown") {
+                    acc.labGrown += (item.Wt || 0);
+                } else {
+                    acc.other += (item.Wt || 0);
+                }
+            }
+            return acc; 
+        }, { labGrown: 0, other: 0 }) || { labGrown: 0, other: 0 };
+        
+        setWeightTotals(totalsDiaWt);
 
         let cateWise = [];
         datas?.resultArray?.forEach(e => {
@@ -214,6 +229,8 @@ const PackingListExcelK1 = ({ urls, token, invoiceNo, printName, evn, ApiVer }) 
             button.click();
         }, 500);
     }
+
+    
 
     return (
         <>
@@ -404,7 +421,11 @@ const PackingListExcelK1 = ({ urls, token, invoiceNo, printName, evn, ApiVer }) 
                                                 </tr>
                                                 <tr>
                                                     <td />
-                                                    <td colSpan={12} style={{ textTransform: 'upperCase' }}>Total Diamond Weight: {item?.totalDiamondWt?.toFixed(3)} CARATS</td>
+                                                    <td colSpan={12} style={{ textTransform: 'upperCase' }}>Total Diamond Weight: {weightTotals.other?.toFixed(3)} CARATS</td>
+                                                </tr>
+                                                <tr>
+                                                    <td />
+                                                    <td colSpan={10} style={{ textTransform: 'upperCase' }}>Total Lab Grown Diamond Weight: {weightTotals.labGrown?.toFixed(3)} CARATS</td>
                                                 </tr>
                                                 <tr>
                                                     <td />

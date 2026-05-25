@@ -19,7 +19,6 @@ import { cloneDeep, filter } from "lodash";
 import { OrganizeDataPrint } from "../../GlobalFunctions/OrganizeDataPrint";
 import { MetalShapeNameWiseArr } from "../../GlobalFunctions/MetalShapeNameWiseArr";
 import BarcodeGenerator from "../../components/BarcodeGenerator";
-
 const SalesJobPrint = ({ urls, token, invoiceNo, printName, evn, ApiVer }) => {
   const [image, setImage] = useState(true);
   const [json1Data, setJson1Data] = useState({});
@@ -1320,7 +1319,7 @@ const SalesJobPrint = ({ urls, token, invoiceNo, printName, evn, ApiVer }) => {
                                   <>
                                     <div className="dtlWdth1 spbrdRght spbrWord spbrdrBtom estimatePrintFont_141 Sesptxtend">
                                       <p className="spbrWord">
-                                        {[item?.Shape_Code, item?.Quality_Code, item?.Color_Code]
+                                        {[item?.MaterialTypeName,item?.Shape_Code, item?.Quality_Code, item?.Color_Code]
                                           .filter(val => val && val !== "-")
                                           .join("/")}
                                       </p>

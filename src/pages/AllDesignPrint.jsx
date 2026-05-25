@@ -73,6 +73,7 @@ const AllDesignPrint = () => {
         break;
       case "print":
         conditions = checkEvName(etpType, evnname, module);
+       
         break;
       case "alteration":
         conditions = module.alterationConditions;
@@ -163,6 +164,7 @@ const AllDesignPrint = () => {
       'product_alteration': module?.Product_Alteration || [],
       'jewellerybook': module?.Jewellery_Book || [],
       'salesjobs': module?.salesjobs || [],
+      'material purchase': module?.MaterialPurchase || [], 
     };
 
     return eventMappings[evnname] || [];
