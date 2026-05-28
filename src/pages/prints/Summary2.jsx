@@ -19,6 +19,8 @@ const Summary2 = ({ urls, token, invoiceNo, printName, evn, ApiVer }) => {
   const [result, setResult] = useState(null);
   const toWords = new ToWords();
   const [categoryNameWise, setCategoryNameWise] = useState([]);
+  const [headerflag, setHeaderflag] = useState(true);
+  const [footerflag, setFooterflag] = useState(true);
   // eslint-disable-next-line no-unused-vars
   const [classIs, setClassIs] = useState({
     col1: "thcol1s2",
@@ -62,8 +64,8 @@ const Summary2 = ({ urls, token, invoiceNo, printName, evn, ApiVer }) => {
           setLoader(false);
           // setMsg(data?.Message);
           const err = checkMsg(data?.Message);
-                    console.log(data?.Message);
-                    setMsg(err);
+          console.log(data?.Message);
+          setMsg(err);
         }
       } catch (error) {
         console.error(error);
@@ -95,20 +97,20 @@ const Summary2 = ({ urls, token, invoiceNo, printName, evn, ApiVer }) => {
     datas?.resultArray?.forEach((el) => {
       let dia = [];
       el?.diamonds?.forEach((a) => {
-          let findrecord = dia?.findIndex((ele) => ele?.QualityName === a?.QualityName)
-          if(findrecord === -1){
-            let obj = {...a};
-            obj.dwt = a?.Wt;
-            obj.dpcs = a?.Pcs;
-            obj.Rate = a?.Rate;
-            obj.damt = a?.Amount;
-            dia.push(obj);
-          }else{
-            dia[findrecord].dwt += a?.Wt;
-            dia[findrecord].dpcs += a?.Pcs;
-            dia[findrecord].Rate = a?.Rate;
-            dia[findrecord].damt += a?.Amount;
-          }
+        let findrecord = dia?.findIndex((ele) => ele?.QualityName === a?.QualityName && ele?.Rate === a?.Rate)
+        if (findrecord === -1) {
+          let obj = { ...a };
+          obj.dwt = a?.Wt;
+          obj.dpcs = a?.Pcs;
+          obj.Rate = a?.Rate;
+          obj.damt = a?.Amount;
+          dia.push(obj);
+        } else {
+          dia[findrecord].dwt += a?.Wt;
+          dia[findrecord].dpcs += a?.Pcs;
+          dia[findrecord].Rate = a?.Rate;
+          dia[findrecord].damt += a?.Amount;
+        }
       })
       dia.sort((a, b) => a?.QualityName?.localeCompare(b?.QualityName));
       el.diamonds = dia;
@@ -143,8 +145,21 @@ const Summary2 = ({ urls, token, invoiceNo, printName, evn, ApiVer }) => {
     }
   };
 
+  console.log("result", result);
 
-  // console.log("result",result);
+  const handleHeaderShow = (e) => {
+    if (headerflag) setHeaderflag(false);
+    else {
+      setHeaderflag(true);
+    }
+  };
+
+  const handleFooterShow = (e) => {
+    if (footerflag) setFooterflag(false);
+    else {
+      setFooterflag(true);
+    }
+  };
 
 
   return (
@@ -180,6 +195,29 @@ const Summary2 = ({ urls, token, invoiceNo, printName, evn, ApiVer }) => {
                     />
                     <label htmlFor="imgshs2">With Image</label>
                   </div>
+
+                  <div className="px-1">
+                    <input
+                      className=" mx-1"
+                      id="header"
+                      type="checkbox"
+                      checked={headerflag}
+                      onChange={(e) => handleHeaderShow(e)}
+                      name="header"
+                    />
+                    <label for="header" className="pt-1">Header</label>
+                  </div>
+                  <div className="px-1">
+                    <input
+                      className=" mx-1"
+                      id="footer"
+                      type="checkbox"
+                      checked={footerflag}
+                      onChange={(e) => handleFooterShow(e)}
+                      name="footer"
+                    />
+                    <label for="footer" className="pt-1">Footer</label>
+                  </div>
                   <div className="px-1">
                     <input
                       type="checkbox"
@@ -195,40 +233,56 @@ const Summary2 = ({ urls, token, invoiceNo, printName, evn, ApiVer }) => {
                 </div>
                 <div></div>
                 {/* headers */}
-                <div className="headers2 d-flex justify-content-between p-2 border-bottom ">
-                  <div className="subdiv1s2 w-75">
-                    <div className="fw-bold fsh_s2">
-                      {result?.header?.CompanyFullName}
+
+                {headerflag && (
+                  <div className="headers2 d-flex justify-content-between p-2 border-bottom ">
+                    <div className="subdiv1s2 w-75">
+                      <div className="fw-bold fsh_s2">
+                        {result?.header?.CompanyFullName}
+                      </div>
+                      <div className="lhs2 fsh2_s2">{result?.header?.CompanyAddress}</div>
+                      <div className="lhs2 fsh2_s2">
+                        {result?.header?.CompanyAddress2}
+                      </div>
+                      <div className="lhs2 fsh2_s2">
+                        {result?.header?.CompanyCity}-
+                        {result?.header?.CompanyPinCode},
+                        {result?.header?.CompanyState}({result?.header?.CompanyCountry})
+                      </div>
+                      <div className="lhs2 fsh2_s2">
+                        T {result?.header?.CompanyTellNo} | TOLL FREE{" "} {result?.header?.CompanyTollFreeNo}{" "}
+                      </div>
+                      <div className="lhs2 fsh2_s2">{result?.header?.CompanyEmail} | {result?.header?.CompanyWebsite}</div>
+                      <div className="lhs2 fsh2_s2">
+                        {/* {result?.header?.Company_VAT_GST_No} |{" "}
+                        {result?.header?.Company_CST_STATE}-
+                        {result?.header?.Company_CST_STATE_No} | PAN-
+                        {result?.header?.Pannumber} */}
+                        {[
+                          result?.header?.Company_VAT_GST_No,
+
+                          result?.header?.Company_CST_STATE_No
+                            ? `${result?.header?.Company_CST_STATE}-${result?.header?.Company_CST_STATE_No}`
+                            : null,
+
+                          result?.header?.Pannumber
+                            ? `PAN-${result?.header?.Pannumber}`
+                            : null,
+                        ]
+                          .filter(Boolean)
+                          .join(" | ")}
+                      </div>
                     </div>
-                    <div className="lhs2 fsh2_s2">{result?.header?.CompanyAddress}</div>
-                    <div className="lhs2 fsh2_s2">
-                      {result?.header?.CompanyAddress2}
-                    </div>
-                    <div className="lhs2 fsh2_s2">
-                      {result?.header?.CompanyCity}-
-                      {result?.header?.CompanyPinCode},
-                      {result?.header?.CompanyState}({result?.header?.CompanyCountry})
-                    </div>
-                    <div className="lhs2 fsh2_s2">
-                      T {result?.header?.CompanyTellNo} | TOLL FREE{" "} {result?.header?.CompanyTollFreeNo}{" "}
-                    </div>
-                    <div className="lhs2 fsh2_s2">{result?.header?.CompanyEmail} | {result?.header?.CompanyWebsite}</div>
-                    <div className="lhs2 fsh2_s2">
-                      {result?.header?.Company_VAT_GST_No} |{" "}
-                      {result?.header?.Company_CST_STATE}-
-                      {result?.header?.Company_CST_STATE_No} | PAN-
-                      {result?.header?.Pannumber}
-                    </div>
-                  </div>
-                  <div className="subdiv1s2 w-25 d-flex justify-content-end">
-                    {/* <img
+                    <div className="subdiv1s2 w-25 d-flex justify-content-end">
+                      {/* <img
                       src={result?.header?.PrintLogo}
                       className="printlogos2"
                       alt="comapanylogo"
                     /> */}
-                    {isImageWorking && (result?.header?.PrintLogo !== "" &&
-                      <img src={result?.header?.PrintLogo} alt="" className="printlogos2" onError={handleImageErrors} />)} </div>
-                </div>
+                      {isImageWorking && (result?.header?.PrintLogo !== "" &&
+                        <img src={result?.header?.PrintLogo} alt="" className="printlogos2" onError={handleImageErrors} />)} </div>
+                  </div>
+                )}
                 {/* sub headers */}
                 <div className="subhead1s2 border mt-2 p-1 d-flex justify-content-between">
                   <div className="fsh3_s2_">
@@ -259,10 +313,44 @@ const Summary2 = ({ urls, token, invoiceNo, printName, evn, ApiVer }) => {
                       </div>
                       <div>Phno:-{result?.header?.customermobileno}</div>
                       <div>
-                    
-                        { result?.header?.CustGstNo === '' ? 'VAT' : 'GSTIN' } - {result?.header?.CustGstNo === '' ? result?.header?.Cust_VAT_GST_No : result?.header?.CustGstNo} | 
-                        {result?.header?.Cust_CST_STATE} - {result?.header?.Cust_CST_STATE_No} |
-                        PAN - {result?.header?.CustPanno}
+
+                        {(result?.header?.Cust_VAT_GST_No || result?.header?.CustGstNo) && (
+                          <>
+                            {result?.header?.CustGstNo === "" ? "VAT" : "GSTIN"} -{" "}
+                            {result?.header?.CustGstNo === ""
+                              ? result?.header?.Cust_VAT_GST_No
+                              : result?.header?.CustGstNo}
+                          </>
+                        )}
+
+                        {/* Separator */}
+                        {(result?.header?.Cust_VAT_GST_No || result?.header?.CustGstNo) &&
+                          (result?.header?.Cust_CST_STATE ||
+                            result?.header?.Cust_CST_STATE_No) &&
+                          " | "}
+
+                        {/* CST State */}
+                        {(result?.header?.Cust_CST_STATE ||
+                          result?.header?.Cust_CST_STATE_No) && (
+                            <>
+                              {result?.header?.Cust_CST_STATE}
+                              {result?.header?.Cust_CST_STATE &&
+                                result?.header?.Cust_CST_STATE_No &&
+                                " - "}
+                              {result?.header?.Cust_CST_STATE_No}
+                            </>
+                          )}
+
+                        {/* Separator */}
+                        {(result?.header?.CustPanno &&
+                          (result?.header?.Cust_CST_STATE ||
+                            result?.header?.Cust_CST_STATE_No)) &&
+                          " | "}
+
+                        {/* PAN */}
+                        {result?.header?.CustPanno && (
+                          <>PAN - {result.header.CustPanno}</>
+                        )}
                         {/* {result?.header?.Cust_CST_STATE}-
                         {result?.header?.Cust_CST_STATE_No} 
                         {result?.header?.vat_cst_pan} */}
@@ -308,10 +396,10 @@ const Summary2 = ({ urls, token, invoiceNo, printName, evn, ApiVer }) => {
                     <div className={`${classIs.col11} border-end centers2`}>
                       CSAMT
                     </div>
-                    <div className={`${classIs.col12} border-end centers2`} style={{wordBreak:'break-word', display:'flex', justifyContent:'center', alignItems:'center'}} >
+                    <div className={`${classIs.col12} border-end centers2`} style={{ wordBreak: 'break-word', display: 'flex', justifyContent: 'center', alignItems: 'center' }} >
                       GOLD FINE
                     </div>
-                    <div className={`${classIs.col13} border-end centers2`} style={{wordBreak:'break-word', display:'flex', justifyContent:'center', alignItems:'center'}}>
+                    <div className={`${classIs.col13} border-end centers2`} style={{ wordBreak: 'break-word', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                       GOLD AMT
                     </div>
                     <div className={`${classIs.col14} centers2`} style={{ width: `${hsnetwt ? '' : '14%'}` }}>AMOUNT</div>
@@ -321,7 +409,7 @@ const Summary2 = ({ urls, token, invoiceNo, printName, evn, ApiVer }) => {
                     {result?.resultArray?.map((e, i) => {
                       return (
                         <div className="d-flex border border-top-0 trows2 pbias2 fsh2_s2" key={i}>
-                          <div className={`${classIs.col1} border-end d-flex justify-content-center align-items-start fsh2_s2`}>{i+1}</div>
+                          <div className={`${classIs.col1} border-end d-flex justify-content-center align-items-start fsh2_s2`}>{i + 1}</div>
                           <div className={`${classIs.col2} border-end d-flex flex-column justify-content-between ps-1`}>
                             <div className="fw-bold d-flex justify-content-between px-1"><div className="fsh2_s2">{e?.designno}</div> {hsbrand ? <div className="fsh2_s2">({e?.BrandName})</div> : ''} </div>
                             <div className="fw-bold">{e?.SrJobno}</div>
@@ -352,7 +440,7 @@ const Summary2 = ({ urls, token, invoiceNo, printName, evn, ApiVer }) => {
                             {
                               e?.diamonds?.map((el) => {
                                 return (
-                                  <div className="tops2 pe-1">{formatAmount(((el?.damt / el?.dwt)/(result?.header?.CurrencyExchRate)))}</div>
+                                  <div className="tops2 pe-1"> {formatAmount(((el?.damt / el?.dwt) / (result?.header?.CurrencyExchRate)))}</div>
                                 )
                               })
                             }
@@ -370,10 +458,10 @@ const Summary2 = ({ urls, token, invoiceNo, printName, evn, ApiVer }) => {
                           {hsnetwt ? <div className={`${classIs.col9} border-end tops2 pe-1`}>{e?.NetWt?.toFixed(3)}</div> : ''}
                           <div className={`${classIs.col10} border-end tops2 pe-1`}>
                             {
-                            formatAmount(
-                              (
-                                ((e?.MiscAmount + e?.MakingAmount + e?.totals?.diamonds?.SettingAmount + e?.totals?.colorstone?.SettingAmount + e?.OtherCharges + e?.TotalDiamondHandling) + (e?.totals?.finding?.SettingAmount) - e?.totals?.finding?.SettingAmount)
-                              ))
+                              formatAmount(
+                                (
+                                  ((e?.MiscAmount + e?.MakingAmount + e?.totals?.diamonds?.SettingAmount + e?.totals?.colorstone?.SettingAmount + e?.OtherCharges + e?.TotalDiamondHandling) + (e?.totals?.finding?.SettingAmount) - e?.totals?.finding?.SettingAmount)
+                                ))
                             }
                           </div>
                           <div className={`${classIs.col11} border-end tops2 pe-1`}>{formatAmount(e?.totals?.colorstone?.Amount)}</div>
@@ -396,15 +484,15 @@ const Summary2 = ({ urls, token, invoiceNo, printName, evn, ApiVer }) => {
                     <div className={`${classIs.col8} border-end ends2 pe-1`}>{result?.mainTotal?.grosswt?.toFixed(3)}</div>
                     {hsnetwt ? <div className={`${classIs.col9} border-end ends2 pe-1`}>{result?.mainTotal?.netwt?.toFixed(3)}</div> : ''}
                     <div className={`${classIs.col10} border-end ends2 pe-1`}>
-                      {formatAmount((result?.mainTotal?.diamonds?.SettingAmount + 
-                        result?.mainTotal?.colorstone?.SettingAmount + 
-                        result?.mainTotal?.total_other + 
-                        result?.mainTotal?.total_diamondHandling + 
-                        result?.mainTotal?.total_Making_Amount + 
+                      {formatAmount((result?.mainTotal?.diamonds?.SettingAmount +
+                        result?.mainTotal?.colorstone?.SettingAmount +
+                        result?.mainTotal?.total_other +
+                        result?.mainTotal?.total_diamondHandling +
+                        result?.mainTotal?.total_Making_Amount +
                         result?.mainTotal?.totalMiscAmount +
                         result?.mainTotal?.finding?.SettingAmount -
                         result?.mainTotal?.finding?.SettingAmount
-                        ))}</div>
+                      ))}</div>
                     <div className={`${classIs.col11} border-end ends2 pe-1`}>{formatAmount(result?.mainTotal?.total_csamount)}</div>
                     <div className={`${classIs.col12} border-end ends2 pe-1`}>{result?.mainTotal?.convertednetwt?.toFixed(3)}</div>
                     <div className={`${classIs.col13} border-end ends2 pe-1`}>{formatAmount(result?.mainTotal?.MetalAmount)}</div>
@@ -421,7 +509,7 @@ const Summary2 = ({ urls, token, invoiceNo, printName, evn, ApiVer }) => {
                         )
                       })
                     }
-                    <div className="d-flex justify-content-between "><div className="w-50 d-flex justify-content-start fw-bold" style={{paddingLeft:'3px'}}>{result?.header?.AddLess > 0 ? 'Add' : 'Less'}</div><div className="w-50 d-flex justify-content-end fw-bold">{result?.header?.AddLess}</div></div>
+                    <div className="d-flex justify-content-between "><div className="w-50 d-flex justify-content-start fw-bold" style={{ paddingLeft: '3px' }}>{result?.header?.AddLess > 0 ? 'Add' : result?.header?.AddLess < 0 ? 'Less' : ""}</div><div className="w-50 d-flex justify-content-end fw-bold">{result?.header?.AddLess !== 0 && result?.header?.AddLess}</div></div>
                   </div>
                 </div>
                 {/* grand total */}
@@ -431,13 +519,13 @@ const Summary2 = ({ urls, token, invoiceNo, printName, evn, ApiVer }) => {
                 </div>
                 {/* in words */}
                 <div className="mt-2 border d-flex justify-content-between p-1 bgcs2 pbias2 fsh2_s2">
-                  <div className="fw-bold">{toWords.convert(+(result?.mainTotal?.total_amount + result?.header?.AddLess + (result?.allTaxesTotal * result?.header?.CurrencyExchRate))?.toFixed(2))}</div>
+                  <div className="fw-bold">{toWords.convert(+(result?.mainTotal?.total_amount + result?.header?.AddLess + (result?.allTaxesTotal * result?.header?.CurrencyExchRate))?.toFixed(2)) + " Only"}</div>
                   <div className="fw-bold">TOTAL  :   HKD {formatAmount(result?.mainTotal?.total_amount + result?.header?.AddLess + (result?.allTaxesTotal * result?.header?.CurrencyExchRate))} </div>
                 </div>
                 {/* summary */}
                 <div className="border mt-2 pbias2 fsh2_s2">
                   <div className="fw-bold bgcs2 p-1 d-flex flex-wrap" >Summary Detail</div>
-                  <div className="d-flex flex-wrap p-1" style={{ minHeight: "50px" }}>
+                  <div className="d-flex flex-wrap p-1" style={{ minHeight: "50px", flexDirection: 'column' }}>
                     {
                       categoryNameWise?.map((e, i) => {
                         return (
@@ -450,19 +538,25 @@ const Summary2 = ({ urls, token, invoiceNo, printName, evn, ApiVer }) => {
                   </div>
 
                 </div>
+
+                {footerflag && (
+                  <>
+                    <div className="border mt-2 pbias2 fsh2_s2">
+                      <div className="fw-bold p-2 pt-3 ps-1" style={{ fontSize: '16px' }}>NOTE:</div>
+                      <div className="p-1 fsh2_s2 danger_s2" dangerouslySetInnerHTML={{ __html: result?.header?.Declaration }}></div>
+                    </div>
+                    {/* remarks */}
+                    {result?.header?.PrintRemark !== "" && (<div className="py-1 pbias2 fsh2_s2"><b className="fsgs2 fsh2_s2">REMARKS :</b> <span dangerouslySetInnerHTML={{ __html: result?.header?.PrintRemark }}></span></div>)}
+                    {/* footer */}
+                    {result?.header?.SalesRepPolicyTermsDescription !== "" && (<div className="py-1 pbias2 fsh2_s2"><span className="fw-bold">TERMS INCLUDED</span> : <span dangerouslySetInnerHTML={{ __html: result?.header?.SalesRepPolicyTermsDescription }}></span></div>)}
+                    <div className="d-flex border mt-1 fw-bold pbias2 fsh2_s2" style={{ height: "5rem" }}>
+                      <div className="w-50 d-flex justify-content-center align-items-end border-end fsh2_s2">RECEIVER'S SIGNATURE & SEAL</div>
+                      <div className="w-50 d-flex justify-content-center align-items-end fsh2_s2">for,Classmate corporation Pvt Ltd</div>
+                    </div>
+                  </>
+                )}
                 {/* notes  */}
-                <div className="border mt-2 pbias2 fsh2_s2">
-                  <div className="fw-bold p-2 pt-3 ps-1" style={{fontSize:'16px'}}>NOTE:</div>
-                  <div className="p-1 fsh2_s2 danger_s2" dangerouslySetInnerHTML={{ __html: result?.header?.Declaration }}></div>
-                </div>
-                {/* remarks */}
-                <div className="py-1 pbias2 fsh2_s2"><b className="fsgs2 fsh2_s2">REMARKS:</b> <span dangerouslySetInnerHTML={{__html:result?.header?.PrintRemark}}></span></div>
-                {/* footer */}
-                <div className="fw-bold py-1 pbias2 fsh2_s2">TERMS INCLUDED : </div>
-                <div className="d-flex border mt-1 fw-bold pbias2 fsh2_s2" style={{ height: "5rem" }}>
-                  <div className="w-50 d-flex justify-content-center align-items-end border-end fsh2_s2">RECEIVER'S SIGNATURE & SEAL</div>
-                  <div className="w-50 d-flex justify-content-center align-items-end fsh2_s2">for,Classmate corporation Pvt Ltd</div>
-                </div>
+
 
               </div>
             </>

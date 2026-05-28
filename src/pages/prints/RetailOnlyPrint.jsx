@@ -32,6 +32,7 @@ const RetailOnlyPrint = ({ urls, token, invoiceNo, printName, evn, ApiVer }) => 
   const [totPcs, setTotPcs] = useState(0);
   const [totWt, setTotWt] = useState(0);
   const [headerflag, setHeaderflag] = useState(true);
+  const [footerflag, setFooterflag] = useState(true);
 
   const [resultArrayC, setResultArryC] = useState();
   let pName = atob(printName).toLowerCase();
@@ -236,11 +237,11 @@ const RetailOnlyPrint = ({ urls, token, invoiceNo, printName, evn, ApiVer }) => 
 
         } else {
 
-          if    (ele?.ShapeName === "DKM" &&
-          ele?.ismiscwtaddingrossweight !== 1){
+          if (ele?.ShapeName === "DKM" &&
+            ele?.ismiscwtaddingrossweight !== 1) {
             misc[findmisc].Wt += 0;
             misc[findmisc].Pcs += 0;
-          }else{
+          } else {
 
             misc[findmisc].Wt += ele?.Wt;
             misc[findmisc].Pcs += ele?.Pcs;
@@ -598,6 +599,12 @@ const RetailOnlyPrint = ({ urls, token, invoiceNo, printName, evn, ApiVer }) => 
       setHeaderflag(true);
     }
   };
+  const handleFooterShow = (e) => {
+    if (footerflag) setFooterflag(false);
+    else {
+      setFooterflag(true);
+    }
+  };
 
   let totalDKMPcs = 0;
   let totalDKMWt = 0;
@@ -650,6 +657,17 @@ const RetailOnlyPrint = ({ urls, token, invoiceNo, printName, evn, ApiVer }) => 
                 name="header"
               />
               <label for="header" className="pt-1">Header</label>
+            </div>
+            <div className="form-check pe-3 mb-0">
+              <input
+                className="border-dark me-2"
+                id="footer"
+                type="checkbox"
+                checked={footerflag}
+                onChange={(e) => handleFooterShow(e)}
+                name="footer"
+              />
+              <label for="footer" className="pt-1">Footer</label>
             </div>
             <div className="printBtn_sec text-end position-absolute printBtnRetailPrint">
               <input
@@ -1061,7 +1079,7 @@ const RetailOnlyPrint = ({ urls, token, invoiceNo, printName, evn, ApiVer }) => 
                                   : `rateRetailPrint border-end`
                                   } p-1 d-flex align-items-center justify-content-end`}
                               >
-                                  <p className="text-end">
+                                <p className="text-end">
                                   {ele?.Wt !== 0
                                     ? NumberWithCommas(
                                       ele?.Amount /
@@ -1071,7 +1089,7 @@ const RetailOnlyPrint = ({ urls, token, invoiceNo, printName, evn, ApiVer }) => 
                                     ) + (ele?.isRateOnPcs == 1 ? "/PC" : "")
                                     : "0.00"}
                                 </p>
-                                
+
                               </div>
                             )}
                             {pName !== "retail1 print" && (
@@ -1145,8 +1163,8 @@ const RetailOnlyPrint = ({ urls, token, invoiceNo, printName, evn, ApiVer }) => 
                                     ) + (ele?.isRateOnPcs == 1 ? "/PC" : "")
                                     : "0.00"}
                                 </p>
-                               
-                               
+
+
                               </div>
                             )}
                             {pName !== "retail1 print" && (
@@ -1236,13 +1254,13 @@ const RetailOnlyPrint = ({ urls, token, invoiceNo, printName, evn, ApiVer }) => 
                   className={`${styles.Pcs} border-end p-1 text-end d-flex align-items-center justify-content-end min_height_44_retail_print_1 ft_12_retailPrint`}
                 >
                   <p className="fw-bold text-end">
-                    {NumberWithCommas(finalD?.mainTotal?.diasCsMiscPcs  , 0)}
+                    {NumberWithCommas(finalD?.mainTotal?.diasCsMiscPcs, 0)}
                   </p>
                 </div>
                 <div
                   className={`${styles.Wt} lossWtRetailPrintNoRate border-end p-1 d-flex align-items-end justify-content-around flex-column min_height_44_retail_print_1 ft_12_retailPrint`}
                 ><p className="fw-bold text-end">
-                    {totWt !== 0 && `${totWt?.toFixed(3)} ctw`} <br /> {gmwt !== 0 && `${(gmwt  )?.toFixed(3)} gms`}
+                    {totWt !== 0 && `${totWt?.toFixed(3)} ctw`} <br /> {gmwt !== 0 && `${(gmwt)?.toFixed(3)} gms`}
                   </p>
                 </div>
                 {rate && (
@@ -1375,56 +1393,64 @@ const RetailOnlyPrint = ({ urls, token, invoiceNo, printName, evn, ApiVer }) => 
             </div>
           </div>
           {/* note */}
-          <div className="note border-start border-end border-bottom p-1 pb-3 no_break">
-            <div
-              dangerouslySetInnerHTML={{ __html: jsonData1?.Declaration }}
-              className="pt-2"
-            ></div>
-          </div>
 
-          {(jsonData1?.PrintRemark === "" && jsonData1?.SalesRepPolicyTermsDescription === "") ? "" :
-            <div className="note border-start border-end border-bottom p-1 no_break">
-              {jsonData1?.PrintRemark !== "" && (
-                <p>
-                  <span className="fw-bold">REMARKS : </span>
-                  <span
-                    dangerouslySetInnerHTML={{ __html: jsonData1?.PrintRemark }}
-                  ></span>
-                </p>
-              )}
-              {jsonData1?.SalesRepPolicyTermsDescription !== "" && (
-                <p>
-                  <span className="fw-bold">TERMS INCLUDED : </span>
-                  <span
-                    dangerouslySetInnerHTML={{ __html: jsonData1?.SalesRepPolicyTermsDescription }}
-                  ></span>
-                </p>
-              )}
-            </div>
-          }
+          {footerflag && (
 
-          {/* bank detail */}
-          <div className="word_break_normal_retail_print d-flex border-start border-end border-bottom no_break ft_12_retailPrint">
-            <div className="col-4 p-2 border-end">
-              <p className="fw-bold">Bank Detail</p>
-              <p>Bank Name: {jsonData1?.bankname}</p>
-              <p>Branch: {jsonData1?.bankaddress}</p>
-              <p>
-                {jsonData1?.customercity1}-{jsonData1?.PinCode}
-              </p>
-              <p>Account Name: {jsonData1?.accountname}</p>
-              <p>Account No. : {jsonData1?.accountnumber}</p>
-              <p>RTGS/NEFT IFSC: {jsonData1?.rtgs_neft_ifsc}</p>
-            </div>
-            <div className="col-4 border-end d-flex flex-column justify-content-between p-2">
-              <p>Signature</p>
-              <p className="fw-bold">{jsonData1?.customerfirmname}</p>
-            </div>
-            <div className="col-4 d-flex flex-column justify-content-between p-2">
-              <p>Signature</p>
-              <p className="fw-bold">{jsonData1?.CompanyFullName}</p>
-            </div>
-          </div>
+            <>
+
+              <div className="note border-start border-end border-bottom p-1 pb-3 no_break">
+                <div
+                  dangerouslySetInnerHTML={{ __html: jsonData1?.Declaration }}
+                  className="pt-2"
+                ></div>
+              </div>
+
+              {(jsonData1?.PrintRemark === "" && jsonData1?.SalesRepPolicyTermsDescription === "") ? "" :
+                <div className="note border-start border-end border-bottom p-1 no_break">
+                  {jsonData1?.PrintRemark !== "" && (
+                    <p>
+                      <span className="fw-bold">REMARKS : </span>
+                      <span
+                        dangerouslySetInnerHTML={{ __html: jsonData1?.PrintRemark }}
+                      ></span>
+                    </p>
+                  )}
+                  {jsonData1?.SalesRepPolicyTermsDescription !== "" && (
+                    <p>
+                      <span className="fw-bold">TERMS INCLUDED : </span>
+                      <span
+                        dangerouslySetInnerHTML={{ __html: jsonData1?.SalesRepPolicyTermsDescription }}
+                      ></span>
+                    </p>
+                  )}
+                </div>
+              }
+
+              {/* bank detail */}
+              <div className="word_break_normal_retail_print d-flex border-start border-end border-bottom no_break ft_12_retailPrint">
+                <div className="col-4 p-2 border-end">
+                  <p className="fw-bold">Bank Detail</p>
+                  <p>Bank Name: {jsonData1?.bankname}</p>
+                  <p>Branch: {jsonData1?.bankaddress}</p>
+                  <p>
+                    {jsonData1?.customercity1}-{jsonData1?.PinCode}
+                  </p>
+                  <p>Account Name: {jsonData1?.accountname}</p>
+                  <p>Account No. : {jsonData1?.accountnumber}</p>
+                  <p>RTGS/NEFT IFSC: {jsonData1?.rtgs_neft_ifsc}</p>
+                </div>
+                <div className="col-4 border-end d-flex flex-column justify-content-between p-2">
+                  <p>Signature</p>
+                  <p className="fw-bold">{jsonData1?.customerfirmname}</p>
+                </div>
+                <div className="col-4 d-flex flex-column justify-content-between p-2">
+                  <p>Signature</p>
+                  <p className="fw-bold">{jsonData1?.CompanyFullName}</p>
+                </div>
+              </div>
+            </>
+          )}
+
         </div>
       ) : (
         <p className="text-danger fs-2 fw-bold mt-5 text-center w-50 mx-auto">

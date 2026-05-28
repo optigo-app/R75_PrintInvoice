@@ -965,7 +965,7 @@ const PackingList3 = ({ token, invoiceNo, printName, urls, evn, ApiVer }) => {
                                   ? (
                                     el?.Amount /
                                     result?.header?.CurrencyExchRate /
-                                    el?.Wt
+                                    (el?.isRateOnPcs ==1 ? el?.Pcs:  el?.Wt)
                                   )?.toFixed(2)
                                   : ""}
                               </div>

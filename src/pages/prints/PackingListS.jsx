@@ -750,8 +750,8 @@ const [generalLedgerData, setGeneralLedgerData] = useState(null);
                 {/* taxes and grand total */}
                 <div className='d-flex justify-content-end align-items-end' style={{borderBottom:'1px solid black', borderLeft:'1px solid black', borderRight:'1px solid black'}}>
                     <div className='GoldRet-cont' style={{width:"86%",paddingLeft:"7px",paddingBottom:" 7px"}}>
-                        <div className='GoldRet' style={{fontWeight:"bold",fontSize:"16px",marginBottom:"3px"}}>Balance Gold: <span>{formatAmount(generalLedgerData?.BalGold, 3)}</span></div>
-                        <div className='GoldRet' style={{fontWeight:"bold",fontSize:"16px"}}>Balance Amount: <span>{formatAmount(generalLedgerData?.BalAmt,2)}</span></div>
+                        <div className='GoldRet' style={{fontWeight:"bold",fontSize:"16px",marginBottom:"3px"}}>Balance Gold: <span>{formatAmount(generalLedgerData?.BalGold, 3)} {" "} { generalLedgerData?.BalGoldDrCr}</span></div>
+                        <div className='GoldRet' style={{fontWeight:"bold",fontSize:"16px"}}>Balance Amount: <span>{formatAmount(generalLedgerData?.BalAmt,2)} {" "} { generalLedgerData?.BalAmtDrCr}</span></div>
                     </div>
                     <div style={{width:'14%'}}>
                         <div className='w-100 d-flex align-items-center tb_fs_pcls'>
