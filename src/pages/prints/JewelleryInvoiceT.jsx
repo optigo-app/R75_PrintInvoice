@@ -786,11 +786,11 @@ const JewelleryInvoiceT = ({
                                                             2
                                                         )}</span></div>
                                                     })}
-                                                    {headerData?.AdvanceAmount && (
+                                                    {headerData?.AdvanceAmount >0&& (
                                                         <div>Advance : <span className=''>{NumberWithCommas(headerData?.AdvanceAmount, 2)}</span></div>
 
                                                     )}
-                                                    {difference && (
+                                                    {difference>0 && (
                                                         <div>Credit Amt : <span className=''>{NumberWithCommas(difference, 2)}</span></div>
 
                                                     )}
@@ -844,7 +844,7 @@ const JewelleryInvoiceT = ({
                                             ></div>
                                         </div>
 
-                                        <div className="j-inv-flex-col j-inv-p-5 j-inv-text-center" style={{ width: '30%' }}>
+                                        <div className="j-inv-flex-col j-inv-p-5 j-inv-text-center" style={{ width: '30%',justifyContent:"space-between" }}>
                                             <div>For <span className="j-inv-bold"> {headerData?.CompanyFullName}</span></div>
                                             <div className="j-inv-m-t-40">Signature & Date</div>
                                         </div>

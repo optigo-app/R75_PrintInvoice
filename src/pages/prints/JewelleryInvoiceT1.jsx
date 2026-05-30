@@ -467,7 +467,7 @@ const JewelleryInvoiceT1 = ({
             const parts = item.split("#-#");
             const label = parts[0]?.trim() || "";
             const id = parts[1]?.trim() || "";
-            const amount = parseFloat(parts[2]) || 0;
+            const amount = parseFloat(parts[2])  ;
 
 
             const key = label;
@@ -841,15 +841,15 @@ const JewelleryInvoiceT1 = ({
                                                 <div className="j-inv-grid-2 j-inv-py-5">
                                                     {pay_details?.map((e, i) => {
                                                         return <div key={i}>{e?.label}   : <span className=''>{NumberWithCommas(
-                                                            parseFloat(String(e?.amount || 0).replace(/,/g, "").trim()) ,
+                                                            parseFloat(String(e?.amount ).replace(/,/g, "").trim()) ,
                                                             2
                                                         )}</span></div>
                                                     })}
-                                                    {headerData?.AdvanceAmount &&(
+                                                    {headerData?.AdvanceAmount>0 &&(
                                                         <div>Advance : <span className=''>{NumberWithCommas(headerData?.AdvanceAmount, 2)}</span></div>
 
                                                     )}
-                                                    {difference &&(
+                                                    {difference>0 &&(
                                                         <div>Credit Amt : <span className=''>{NumberWithCommas(difference, 2)}</span></div>
 
                                                     )}
@@ -905,7 +905,7 @@ const JewelleryInvoiceT1 = ({
                                                 background: "#f5f5f5",
                                                 fontWeight: "bold",
                                                 borderBottom: "1px solid #ccc",
-                                                alignItems: "center"
+                                               
                                             }}
                                         >
                                             <div style={{...cellStyle,borderBottom:"1px solid #000"}}>HSN  Code</div>
