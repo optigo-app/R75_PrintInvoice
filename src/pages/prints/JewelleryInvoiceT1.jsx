@@ -16,8 +16,9 @@ import Button from "../../GlobalFunctions/Button";
 import Loader from "../../components/Loader";
 import { ToWords } from "to-words";
 import { head } from 'lodash';
+import { width } from '@mui/system';
 
-const JewelleryInvoiceT = ({
+const JewelleryInvoiceT1 = ({
     urls,
     token,
     invoiceNo,
@@ -61,6 +62,8 @@ const JewelleryInvoiceT = ({
 
     function loadData(data) {
         // console.log("datadatadata", data);
+        let address = data?.BillPrint_Json[0]?.Printlable?.split("\r\n");
+        data.BillPrint_Json[0].address = address;
 
         try {
             setHeaderData(data?.BillPrint_Json[0]);
@@ -506,7 +509,44 @@ const JewelleryInvoiceT = ({
     }, 0);
 
 
+    const cellStyle = {
+        // flex: 1,
+        padding: "5px 10px",
+        // borderRight: "1px solid #ddd",
+        textAlign: "center",
+        width: "10%",
+        wordBreak: "break-word"
+    };
 
+    const lastCellStyle = {
+        // flex: 1,
+        padding: "5px 10px",
+        textAlign: "center",
+        width: "10%",
+
+    };
+
+
+    const HSNWiseData = Object.values(
+        data.reduce((acc, item) => {
+            const key = item.HSNNo;
+
+            if (!acc[key]) {
+                acc[key] = {
+                    hsnno: item.HSNNo,
+                    BulkPurchaseQTY: 0,
+                    TotalAmount: 0,
+                };
+            }
+
+            acc[key].BulkPurchaseQTY += Number(item.BulkPurchaseQTY || 0);
+            acc[key].TotalAmount += Number(item.TotalAmount || 0);
+
+            return acc;
+        }, {})
+    );
+
+    console.log("ddddd", HSNWiseData);
 
     return (
         <>
@@ -561,7 +601,7 @@ const JewelleryInvoiceT = ({
                                         <img
                                             src={headerData?.PrintLogo}
                                             alt=""
-                                            style={{ height: "110px",padding: "10px" }}
+                                            style={{ height: "110px", padding: "10px" }}
                                             className={``}
                                             onError={handleImageErrors}
                                             height={120}
@@ -609,34 +649,53 @@ const JewelleryInvoiceT = ({
                                         </div>
                                     </div>
 
-                                    <div className="j-inv-flex-col  j-inv-p-5 j-inv-min-h-80" style={{ borderRight: "1px solid black", width: "50%" }}>
-                                        <div className="j-inv-bold">Bill To,</div>
-                                        <div>{headerData?.CustName}</div>
-                                        {headerData?.customerstreet?.length > 0 ? (
-                                            <div className="fslhJL">
-                                                {headerData?.customerstreet}
-                                            </div>
-                                        ) : (
-                                            ""
-                                        )}
-                                        {headerData?.customerregion?.length > 0 ? (
-                                            <div className="fslhJL">
-                                                {headerData?.customerregion}
-                                            </div>
-                                        ) : (
-                                            ""
-                                        )}
+                                    <div style={{ display: "flex" }}>
+                                        <div className="j-inv-flex-col  j-inv-p-5 j-inv-min-h-80" style={{ borderRight: "1px solid black", width: "50%" }}>
+                                            <div className="j-inv-bold">Bill To,</div>
+                                            <div>{headerData?.CustName}</div>
+                                            {headerData?.customerstreet?.length > 0 ? (
+                                                <div className="fslhJL">
+                                                    {headerData?.customerstreet}
+                                                </div>
+                                            ) : (
+                                                ""
+                                            )}
+                                            {headerData?.customerregion?.length > 0 ? (
+                                                <div className="fslhJL">
+                                                    {headerData?.customerregion}
+                                                </div>
+                                            ) : (
+                                                ""
+                                            )}
 
-                                        <div>{headerData?.PinCode} </div>
+                                            <div>{headerData?.PinCode} </div>
+                                            <div> {headerData?.CustPanno ? "PAN: " + headerData?.CustPanno : ""}   </div>
 
-                                        {headerData?.vat_cst_pan?.trim() && (
-                                            <div>
-                                                <span className="j-inv-bold">Customer GSTIN</span> : {headerData.vat_cst_pan.trim()}
-                                            </div>
-                                        )}
-                                        <div ><span className="j-inv-bold">Contact No. :</span> {headerData?.customermobileno1}</div>
+                                            {headerData?.CustGstNo?.trim() && (
+                                                <div>
+                                                    <span className="j-inv-bold">Customer GSTIN</span> : {headerData.CustGstNo.trim()}
+                                                </div>
+                                            )}
+                                            {headerData?.customermobileno1 &&(
+
+                                            <div ><span className="j-inv-bold">Contact No. :</span> {headerData?.customermobileno1}</div>
+                                            )}
+                                        </div>
+
+
+
+                                        <div className="j-inv-flex-col  j-inv-p-5 j-inv-min-h-80" style={{ width: "50%" }}>
+                                            <div className="j-inv-bold">Ship To,</div>
+                                         
+                                            {headerData?.address?.map((e, i) => {
+                                                return (
+                                                    <div className="px-1" key={i}>
+                                                        {e}
+                                                    </div>
+                                                );
+                                            })}
+                                        </div>
                                     </div>
-
                                     {/* Table Header */}
                                     {/* <div className="j-inv-table-row j-inv-bold j-inv-border-b j-inv-bg-light" style={{ borderTop: "1px solid black" }}>
                                         <div className="j-inv-cell j-inv-col-sr  j-inv-border-r" >Sr. No.</div>
@@ -654,7 +713,7 @@ const JewelleryInvoiceT = ({
                                     <div className="j-inv-table-row j-inv-bold j-inv-border-b j-inv-bg-light" style={{ borderTop: "1px solid black" }}>
                                         <div className={`j-inv-cell ${taxamt ? 'j-inv-col-sr-taxamt' : 'j-inv-col-sr'} j-inv-border-r`}>Sr. No.</div>
                                         <div className={`j-inv-cell ${taxamt ? 'j-inv-col-code-taxamt' : 'j-inv-col-code'} j-inv-border-r`}>Product Code</div>
-                                        <div className={`j-inv-cell ${taxamt ? 'j-inv-col-hsn-taxamt' : 'j-inv-col-hsn'} j-inv-border-r`}>HSN / SAC</div>
+                                        <div className={`j-inv-cell ${taxamt ? 'j-inv-col-hsn-taxamt' : 'j-inv-col-hsn'} j-inv-border-r`}>HSN </div>
                                         <div className={`j-inv-cell ${taxamt ? 'j-inv-col-desc-taxamt' : 'j-inv-col-desc'} j-inv-border-r`}>Description of Goods</div>
                                         <div className={`j-inv-cell ${taxamt ? 'j-inv-col-qty-taxamt' : 'j-inv-col-qty'} j-inv-border-r`}>Qty</div>
                                         <div className={`j-inv-cell ${taxamt ? 'j-inv-col-rate-taxamt' : 'j-inv-col-rate'} j-inv-border-r`}>Rate</div>
@@ -691,7 +750,7 @@ const JewelleryInvoiceT = ({
                                                     <div className={`j-inv-cell ${taxamt ? 'j-inv-col-code-taxamt' : 'j-inv-col-code'} j-inv-border-r`}>{e.designno}</div>
                                                     <div className={`j-inv-cell ${taxamt ? 'j-inv-col-hsn-taxamt' : 'j-inv-col-hsn'} j-inv-border-r`}>{e.HSNNo}</div>
                                                     <div className={`j-inv-cell ${taxamt ? 'j-inv-col-desc-taxamt' : 'j-inv-col-desc'} j-inv-border-r j-inv-text-left  j-inv-align-top`}>
-                                                        {e.MetalTypePurity + " - " + e.Categoryname} <br /> {e.SrJobno}
+                                                        {e.MasterManagement_producttypename} <br /> {e.SrJobno}
                                                     </div>
                                                     <div className={`j-inv-cell ${taxamt ? 'j-inv-col-qty-taxamt' : 'j-inv-col-qty'} j-inv-border-r`}>{e.BulkPurchaseQTY ? e.BulkPurchaseQTY : e?.Quantity}</div>
                                                     <div className={`j-inv-cell ${taxamt ? 'j-inv-col-rate-taxamt' : 'j-inv-col-rate'} j-inv-border-r`}>{`${taxamt ? fixedValues(e.UnitCost, 2) : fixedValues(e.TotalAmount, 2)}`}</div>
@@ -786,11 +845,11 @@ const JewelleryInvoiceT = ({
                                                             2
                                                         )}</span></div>
                                                     })}
-                                                    {headerData?.AdvanceAmount && (
+                                                    {headerData?.AdvanceAmount &&(
                                                         <div>Advance : <span className=''>{NumberWithCommas(headerData?.AdvanceAmount, 2)}</span></div>
 
                                                     )}
-                                                    {difference && (
+                                                    {difference &&(
                                                         <div>Credit Amt : <span className=''>{NumberWithCommas(difference, 2)}</span></div>
 
                                                     )}
@@ -830,6 +889,79 @@ const JewelleryInvoiceT = ({
                                             </div>
                                         </div>
                                     </div>
+
+                                    <div
+                                        style={{
+                                            width: "100%",
+                                            borderBottom: "1px solid #000",
+                                            fontFamily: "Arial, sans-serif",
+                                            fontSize: "11px",
+                                        }}
+                                    >
+                                        {/* Header */}
+                                        <div
+                                            style={{
+                                                display: "flex",
+                                                background: "#f5f5f5",
+                                                fontWeight: "bold",
+                                                borderBottom: "1px solid #ccc",
+                                                alignItems: "center"
+                                            }}
+                                        >
+                                            <div style={{...cellStyle,borderBottom:"1px solid #000"}}>HSN  Code</div>
+                                            <div style={{ ...cellStyle, width: "7%",borderBottom:"1px solid #000" }}>Qty</div>
+                                            <div style={{...cellStyle,borderBottom:"1px solid #000"}}>CGST%</div>
+                                            <div style={{...cellStyle,borderBottom:"1px solid #000"}}>CGST  Amt</div>
+                                            <div style={{...cellStyle,borderBottom:"1px solid #000"}}>SGST%</div>
+                                            <div style={{...cellStyle,borderBottom:"1px solid #000"}}>SGST Amt</div>
+                                            <div style={{...cellStyle,borderBottom:"1px solid #000"}}>IGST%</div>
+                                            <div style={{...cellStyle,borderBottom:"1px solid #000"}}>IGST AMT</div>
+                                            <div style={{ ...cellStyle, width: "13%",borderBottom:"1px solid #000" }}>Taxable AMT</div>
+                                            <div style={{...cellStyle,borderBottom:"1px solid #000"}}>Total</div>
+                                        </div>
+
+                                        {/* Data Row */}
+
+                                        {HSNWiseData?.map((d, i) => {
+
+                                            const cgst = Number(headerData.CGST) || 0;
+                                            const sgst = Number(headerData.SGST) || 0;
+                                            const igst = Number(headerData.IGST) || 0;
+                                            const TotalAmount = Number(d.TotalAmount) || 0;
+                                            const gst = (cgst + sgst) > 0 ? (cgst + sgst) : igst;
+
+
+                                            const cgstAmt = (TotalAmount * cgst) / 100;
+                                            const sgstAmt = (TotalAmount * sgst) / 100;
+                                            const igstAmt = (TotalAmount * igst) / 100;
+
+                                            return (
+                                                <div
+                                                    style={{
+                                                        display: "flex",
+                                                        background: "#fff",
+                                                    }}
+                                                >
+
+                                                    <div style={cellStyle}>{d?.hsnno}</div>
+                                                    <div style={{ ...cellStyle, width: "7%" }}>{d?.BulkPurchaseQTY}</div>
+                                                    <div style={cellStyle}>{headerData?.CGST}{headerData?.CGST ? "%" : ""}</div>
+                                                    <div style={cellStyle}>{cgstAmt.toFixed(2)}</div>
+                                                    <div style={cellStyle}>{headerData?.SGST}{headerData?.SGST ? "%" : ""}</div>
+                                                    <div style={cellStyle}>{sgstAmt.toFixed(2)}</div>
+                                                    <div style={cellStyle}>{headerData?.IGST}{headerData?.IGST ? "%" : ""}</div>
+                                                    <div style={cellStyle}>{igstAmt.toFixed(2)}</div>
+                                                    <div style={{ ...cellStyle, width: "13%" }}> {TotalAmount.toFixed(2)}</div>
+                                                    <div style={lastCellStyle}> {(cgstAmt + sgstAmt + igstAmt).toFixed(2)}</div>
+                                                </div>
+
+                                            )
+
+                                        })}
+
+                                    </div>
+
+
                                     {headerData?.Remark && (
                                         <div className="j-inv-p-5 j-inv-border-b">  Bill Remarks : {headerData?.Remark}</div>
 
@@ -844,7 +976,7 @@ const JewelleryInvoiceT = ({
                                             ></div>
                                         </div>
 
-                                        <div className="j-inv-flex-col j-inv-p-5 j-inv-text-center" style={{ width: '30%' }}>
+                                        <div className="j-inv-flex-col j-inv-p-5 j-inv-text-center" style={{ width: '30%', justifyContent: "space-between" }}>
                                             <div>For <span className="j-inv-bold"> {headerData?.CompanyFullName}</span></div>
                                             <div className="j-inv-m-t-40">Signature & Date</div>
                                         </div>
@@ -863,4 +995,4 @@ const JewelleryInvoiceT = ({
     );
 };
 
-export default JewelleryInvoiceT;
+export default JewelleryInvoiceT1;

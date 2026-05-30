@@ -73,6 +73,7 @@ export const printConditions = [
   {printName: 'jewellery tax invoice b2b', etpType: 'print', componentName: 'JewelleryTaxInvoiceAB2B'},   
   
   { printName: 'jewellery invoice T', etpType: 'print', componentName: 'JewelleryInvoiceT' }, // amish....
+  { printName: 'jewellery invoice T 1', etpType: 'print', componentName: 'JewelleryInvoiceT1' }, // amish....
   {printName: 'jewellery tax invoice', etpType: 'print', componentName: 'JewelleryTaxInvoice'},
   {printName: 'jewellery tax invoice 1', etpType: 'print', componentName: 'JewelleryTaxInvoice1'},
   {printName: 'jewellery tax invoice 2', etpType: 'print', componentName: 'JewelleryTaxInvoice2'},
