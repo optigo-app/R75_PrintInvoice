@@ -397,7 +397,7 @@ const MRPBill = () => {
                   } else {
                     setJobDetail(response?.data?.Data?.DT)
                     let newobj = { ...response?.data?.Data?.DT[0] };
-                    newobj.salePrice = '';
+                    newobj.salePrice = newobj.IsMRPBaseSale === 1 ? newobj.NewMRP : '';
                     setJobList((prev) => [...prev, newobj]);
                     setDisableSelect(true);
                     setDisableSelect2(true);
@@ -412,7 +412,7 @@ const MRPBill = () => {
                 } else {
                   setJobDetail(response?.data?.Data?.DT)
                   let newobj = { ...response?.data?.Data?.DT[0] };
-                  newobj.salePrice = '';
+                  newobj.salePrice = newobj.IsMRPBaseSale === 1 ? newobj.NewMRP : '';
 
                   setJobList((prev) => [...prev, newobj]);
                   setMsg('')
