@@ -398,6 +398,7 @@ const MRPBill = () => {
                     setJobDetail(response?.data?.Data?.DT)
                     let newobj = { ...response?.data?.Data?.DT[0] };
                     newobj.salePrice = newobj.IsMRPBaseSale === 1 ? newobj.NewMRP : '';
+                    newobj.FinalPrice = newobj.salePrice;
                     setJobList((prev) => [...prev, newobj]);
                     setDisableSelect(true);
                     setDisableSelect2(true);
@@ -413,6 +414,7 @@ const MRPBill = () => {
                   setJobDetail(response?.data?.Data?.DT)
                   let newobj = { ...response?.data?.Data?.DT[0] };
                   newobj.salePrice = newobj.IsMRPBaseSale === 1 ? newobj.NewMRP : '';
+                  newobj.FinalPrice = newobj.salePrice;
 
                   setJobList((prev) => [...prev, newobj]);
                   setMsg('')
@@ -976,7 +978,8 @@ const MRPBill = () => {
                 } else {
                   setJobDetail(response?.data?.Data?.DT)
                   let newobj = { ...response?.data?.Data?.DT[0] };
-                  newobj.salePrice = '';
+                  newobj.salePrice = newobj.IsMRPBaseSale === 1 ? newobj.NewMRP : '';
+                  newobj.FinalPrice = newobj.salePrice;
                   setJobList((prev) => [...prev, newobj]);
                   setDisableSelect(true);
                   setDisableSelect2(true);
@@ -990,7 +993,8 @@ const MRPBill = () => {
               } else {
                 setJobDetail(response?.data?.Data?.DT)
                 let newobj = { ...response?.data?.Data?.DT[0] };
-                newobj.salePrice = '';
+                newobj.salePrice = newobj.IsMRPBaseSale === 1 ? newobj.NewMRP : '';
+                newobj.FinalPrice = newobj.salePrice;
                 setJobList((prev) => [...prev, newobj]);
                 setMsg('')
                 setJobnoVal('');
