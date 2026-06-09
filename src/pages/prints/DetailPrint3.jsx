@@ -163,6 +163,7 @@ const DetailPrint3 = ({ token, invoiceNo, printName, urls, evn, ApiVer }) => {
   const isloss = result?.resultArray?.every(e => e?.LossWt === 0) ? 1 : 0;
 
 
+console.log("TCL: ",result )
   return (
     <>
       {loader ? (
@@ -527,7 +528,7 @@ const DetailPrint3 = ({ token, invoiceNo, printName, urls, evn, ApiVer }) => {
                                             }}
                                             className=" end_dp3"
                                           >
-                                            {e?.totals?.metal?.IsPrimaryMetal?.toFixed(
+                                            {((e?.totals?.metal?.IsPrimaryMetal)+(e?.LossWt))?.toFixed(
                                               3
                                             )}
                                           </div>
@@ -707,7 +708,7 @@ const DetailPrint3 = ({ token, invoiceNo, printName, urls, evn, ApiVer }) => {
                                       width: withRate ? "15%" : "25%",
                                     }}
                                   >
-                                    {e?.totals?.metal?.IsPrimaryMetal?.toFixed(
+                                    {(e?.totals?.metal?.IsPrimaryMetal + e?.LossWt)?.toFixed(
                                       3
                                     )}
                                   </div>
@@ -855,7 +856,7 @@ const DetailPrint3 = ({ token, invoiceNo, printName, urls, evn, ApiVer }) => {
                           <div className="w-25 end_dp3">{mdwt?.toFixed(3)}</div>
                           {/* <div className="w-25 end_dp3">{result?.mainTotal?.netwt?.toFixed(3)}</div> */}
                           <div className="w_23_dp3 end_dp3">
-                            {result?.mainTotal?.metal?.IsPrimaryMetal?.toFixed(
+                            {(result?.mainTotal?.metal?.IsPrimaryMetal + result?.mainTotal?.lossWt)?.toFixed(
                               3
                             )}
                           </div>
@@ -933,13 +934,14 @@ const DetailPrint3 = ({ token, invoiceNo, printName, urls, evn, ApiVer }) => {
                             <div className="border-secondary border-start pad_s_dp3 fw-bold ps-2">
                               GOLD IN 24KT
                             </div>
+                           
                             <div className="border-secondary border-end pad_e_dp3 pe-2">
-                              {result?.mainTotal?.metal?.FineWt > 0 ? (
-                                // result?.mainTotal?.metal?.FineWt - notGoldMetalWtTotal
-                                result?.mainTotal?.metal?.FineWt
-                              )?.toFixed(3) : "0.00"}{" "}
-                              gm
-                            </div>
+                                    {(
+                                      result?.mainTotal?.total_purenetwt -
+                                      notGoldMetalWtTotal
+                                    )?.toFixed(3)}{" "}
+                                    gm
+                                  </div>
                           </div>
 
                           {MetShpWise?.map((e, i) => {
@@ -979,7 +981,8 @@ const DetailPrint3 = ({ token, invoiceNo, printName, urls, evn, ApiVer }) => {
                               NET WT
                             </div>
                             <div className="border-secondary border-end pad_e_dp3 pe-2">
-                              {result?.mainTotal?.metal?.IsPrimaryMetal?.toFixed(
+                              {/* {result?.mainTotal?.metal?.IsPrimaryMetal?.toFixed( */}
+                              {result?.mainTotal?.netwtWithLossWt?.toFixed(
                                 3
                               )}{" "}
                               gm

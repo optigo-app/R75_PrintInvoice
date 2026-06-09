@@ -3,6 +3,7 @@ export const printConditions = [
   {printName: 'bill sticker', etpType: 'print', componentName: 'BillSticker'},
   {printName: 'customer daily statement', etpType: 'print', componentName: 'CustomerDailyStatement'},
   {printName: 'daily statement', etpType: 'print', componentName: 'CustomerDailyStatement'},
+  { printName: 'Invoice Statement', etpType: 'print', componentName: 'InvoiceStatement' }, // amish
   {printName: 'detail print', etpType: 'print', componentName: 'DetailPrint5'},
   {printName: 'detail print1 (l)', etpType: 'print', componentName: 'DetailPrint1L'},
   {printName: 'detail print1 (p)', etpType: 'print', componentName: 'DetailPrint1PSale'},
@@ -231,7 +232,9 @@ export const QuotationPrints = [
   {printName: 'quotation print', etpType: 'print', componentName: 'Quetioprint'},
   {printName: 'packing list 7group s', etpType: 'print', componentName: 'PackingList7GroupS'},
   {printName: 'detail print 5', etpType: 'print', componentName: 'DetailPrint5'},
+  {printName: 'detail print3', etpType: 'print', componentName: 'DetailPrint3'},
 ]
+ 
 
 export const MemoPrints = [
   {printName: 'print 1', etpType: 'print', componentName: 'Print1SME'},

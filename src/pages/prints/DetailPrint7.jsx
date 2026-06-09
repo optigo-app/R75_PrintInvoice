@@ -25,6 +25,7 @@ const DetailPrint7 = ({ token, invoiceNo, printName, urls, evn, ApiVer }) => {
   const [loader, setLoader] = useState(true);
   const [imgFlag, setImgFlag] = useState(true);
   const [catcount, setCatCount] = useState(0);
+  const [sortingflag, setSortingflag] = useState(false);
   const [miscWise_total, setMiscWise_total] = useState({
     Pcs: 0,
     pcPcs: 0,
@@ -42,6 +43,8 @@ const DetailPrint7 = ({ token, invoiceNo, printName, urls, evn, ApiVer }) => {
   const handleImageErrors = () => {
     setIsImageWorking(false);
   };
+
+  console.log("sortingflag", sortingflag);
   async function loadData(data) {
     try {
       let address = data?.BillPrint_Json[0]?.Printlable?.split("\r\n");
@@ -52,6 +55,14 @@ const DetailPrint7 = ({ token, invoiceNo, printName, urls, evn, ApiVer }) => {
         data?.BillPrint_Json1,
         data?.BillPrint_Json2
       );
+
+      if(sortingflag){
+        datas?.resultArray?.sort((a, b) => a.SrNo - b.SrNo);
+      }else{
+        datas?.resultArray?.sort((a, b) => b.SrNo - a.SrNo);
+      }
+
+
 
       let mainArr = datas?.resultArray?.map((e) => {
         let obj = cloneDeep(e);
@@ -251,7 +262,7 @@ const DetailPrint7 = ({ token, invoiceNo, printName, urls, evn, ApiVer }) => {
       colorstones?.map((ele) => {
         let findcs = colrStone_filter?.findIndex(
           (elem, index) =>
-            elem?.ShapeName === ele?.ShapeName && elem?.Rate === ele?.Rate
+            elem?.ShapeName === ele?.ShapeName && elem?.Rate === ele?.Rate && elem?.IsSolGem === ele?.IsSolGem
         );
         if (findcs === -1) {
           let objj = { ...ele };
@@ -269,7 +280,7 @@ const DetailPrint7 = ({ token, invoiceNo, printName, urls, evn, ApiVer }) => {
       dias?.map((ele) => {
         let findcs = dias_filter?.findIndex(
           (elem, index) =>
-            elem?.ShapeName === ele?.ShapeName && elem?.Rate === ele?.Rate
+            elem?.ShapeName === ele?.ShapeName && elem?.Rate === ele?.Rate && elem?.IsSolGem === ele?.IsSolGem
         );
         if (findcs === -1) {
           let objj = { ...ele };
@@ -543,6 +554,12 @@ const DetailPrint7 = ({ token, invoiceNo, printName, urls, evn, ApiVer }) => {
       setImgFlag(true);
     }
   };
+  const handleSortingflag = (e) => {
+    if (sortingflag) setSortingflag(false);
+    else {
+      setSortingflag(true);
+    }
+  };
   function formatAmountInWords(amount) {
     // Convert the amount to words
     const amountInWords = numberToWords.toWords(Math.floor(amount));
@@ -558,6 +575,18 @@ const DetailPrint7 = ({ token, invoiceNo, printName, urls, evn, ApiVer }) => {
 
     return amountInWordsFormatted;
   }
+
+
+  if(sortingflag){
+    result?.resultArray?.sort((a, b) => a.SrNo - b.SrNo);
+  }else{
+    result?.resultArray?.sort((a, b) => b.SrNo - a.SrNo);
+  }
+
+
+
+
+  console.log("TCL: result ", result)
   return (
     <>
       {loader ? (
@@ -578,6 +607,17 @@ const DetailPrint7 = ({ token, invoiceNo, printName, urls, evn, ApiVer }) => {
                   />
                   <label htmlFor="showImg" className="me-2 user-select-none">
                     With Image
+                  </label>
+
+                  <input
+                    type="checkbox"
+                    checked={sortingflag}
+                    id="sortingflag"
+                    onChange={handleSortingflag}
+                    className="mx-2"
+                  />
+                  <label htmlFor="sortingflag" className="me-2 user-select-none">
+                    Sr
                   </label>
                   <button
                     className="btn_white blue m-0 "
@@ -710,14 +750,18 @@ const DetailPrint7 = ({ token, invoiceNo, printName, urls, evn, ApiVer }) => {
                         {result?.header?.EntryDate}
                       </span>
                     </div>
-                    <div className="fsgdp7 lhdp7 d-flex justify-content-between">
-                      <span className="w-50 fw-bold">
-                        {result?.header?.HSN_No_Label}
-                      </span>
-                      <span className="w-50 d-flex justify-content-start">
-                        {result?.header?.HSN_No}
-                      </span>
-                    </div>
+
+                    {result?.header?.HSN_No && (
+                      <div className="fsgdp7 lhdp7 d-flex justify-content-between">
+                        <span className="w-50 fw-bold">
+                          {result?.header?.HSN_No_Label}
+                        </span>
+                        <span className="w-50 d-flex justify-content-start">
+                          {result?.header?.HSN_No}
+                        </span>
+                      </div>
+                    )}
+
                     <div className="fsgdp7 lhdp7 d-flex justify-content-between">
                       <span className="w-50 fw-bold">Delivery Mode</span>
                       <span className="w-50 d-flex justify-content-start">
@@ -730,7 +774,7 @@ const DetailPrint7 = ({ token, invoiceNo, printName, urls, evn, ApiVer }) => {
                         {result?.header?.SalPerName?.split(" ")[0]}
                       </span>
                     </div>
-                    <div>
+                    {/* <div>
                       <div className="d-flex">
                         <div className="fw-bold w-50">Due Date :</div>
                         <div className="w-50">{result?.header?.DueDate}</div>
@@ -739,7 +783,7 @@ const DetailPrint7 = ({ token, invoiceNo, printName, urls, evn, ApiVer }) => {
                         <div className="fw-bold w-50">Terms :</div>
                         <div className="w-50">{result?.header?.DueDays}</div>
                       </div>
-                    </div>
+                    </div> */}
                   </div>
                 </div>
 
@@ -889,7 +933,7 @@ const DetailPrint7 = ({ token, invoiceNo, printName, urls, evn, ApiVer }) => {
                                       <div
                                         className="w_subcoldp7 dp7cen1 brdp7"
                                         style={{ width: "20%" }}
-                                      >
+                                      >{el?.IsSolGem === 1 ? "S:" : ""}
                                         {el?.ShapeName}
                                       </div>
                                       <div
@@ -918,7 +962,7 @@ const DetailPrint7 = ({ token, invoiceNo, printName, urls, evn, ApiVer }) => {
                                         {/* {el?.dcm_amt?.toFixed(2)} */}
                                         {formatAmount(
                                           el?.Amount /
-                                            result?.header?.CurrencyExchRate
+                                          result?.header?.CurrencyExchRate
                                         )}
                                       </div>
                                     </div>
@@ -931,7 +975,7 @@ const DetailPrint7 = ({ token, invoiceNo, printName, urls, evn, ApiVer }) => {
                                       <div
                                         className="w_subcoldp7 dp7cen1 brdp7"
                                         style={{ width: "20%" }}
-                                      >
+                                      >{el?.IsSolGem === 1 ? "G:" : ""}
                                         {el?.ShapeName}
                                       </div>
                                       <div
@@ -960,7 +1004,7 @@ const DetailPrint7 = ({ token, invoiceNo, printName, urls, evn, ApiVer }) => {
                                         {/* {el?.dcm_amt?.toFixed(2)} */}
                                         {formatAmount(
                                           el?.Amount /
-                                            result?.header?.CurrencyExchRate
+                                          result?.header?.CurrencyExchRate
                                         )}
                                       </div>
                                     </div>
@@ -1008,7 +1052,7 @@ const DetailPrint7 = ({ token, invoiceNo, printName, urls, evn, ApiVer }) => {
                                         {/* {el?.dcm_amt?.toFixed(2)} */}
                                         {formatAmount(
                                           el?.Amount /
-                                            result?.header?.CurrencyExchRate
+                                          result?.header?.CurrencyExchRate
                                         )}
                                       </div>
                                     </div>
@@ -1039,7 +1083,7 @@ const DetailPrint7 = ({ token, invoiceNo, printName, urls, evn, ApiVer }) => {
                           <div className="rcol12dp7 dp7cen2 bldp7">
                             {formatAmount(
                               (e?.OtherCharges + e?.TotalDiamondHandling) /
-                                result?.header?.CurrencyExchRate
+                              result?.header?.CurrencyExchRate
                             )}
                           </div>
                           <div className="rcol13dp7 dp7cen2 border-end-0">
@@ -1078,7 +1122,7 @@ const DetailPrint7 = ({ token, invoiceNo, printName, urls, evn, ApiVer }) => {
                       formatAmount(
                         result?.mainTotal
                           ?.total_diamond_colorstone_misc_amount /
-                          result?.header?.CurrencyExchRate
+                        result?.header?.CurrencyExchRate
                       )}
                   </div>
                   <div className="totcol6dp7 dp7cen2">
@@ -1098,7 +1142,7 @@ const DetailPrint7 = ({ token, invoiceNo, printName, urls, evn, ApiVer }) => {
                   {result?.mainTotal?.total_amount !== 0 &&
                     formatAmount(
                       result?.mainTotal?.total_amount /
-                        result?.header?.CurrencyExchRate
+                      result?.header?.CurrencyExchRate
                     )}
                 </div>
 
@@ -1116,7 +1160,7 @@ const DetailPrint7 = ({ token, invoiceNo, printName, urls, evn, ApiVer }) => {
                       {" "}
                       {formatAmount(
                         result?.header?.FreightCharges /
-                          result?.header?.CurrencyExchRate
+                        result?.header?.CurrencyExchRate
                       )}
                     </div>
                   </div>
@@ -1159,7 +1203,7 @@ const DetailPrint7 = ({ token, invoiceNo, printName, urls, evn, ApiVer }) => {
                     <div className=" dp7cen2" style={{ width: "37%" }}>
                       {formatAmount(
                         result?.header?.AddLess /
-                          result?.header?.CurrencyExchRate
+                        result?.header?.CurrencyExchRate
                       )}
                     </div>
                   </div>
@@ -1192,12 +1236,12 @@ const DetailPrint7 = ({ token, invoiceNo, printName, urls, evn, ApiVer }) => {
                           0 &&
                           formatAmount(
                             result?.mainTotal?.total_amount /
-                              result?.header?.CurrencyExchRate +
-                              result?.allTaxesTotal +
-                              result?.header?.FreightCharges /
-                                result?.header?.CurrencyExchRate +
-                              result?.header?.AddLess /
-                                result?.header?.CurrencyExchRate
+                            result?.header?.CurrencyExchRate +
+                            result?.allTaxesTotal +
+                            result?.header?.FreightCharges /
+                            result?.header?.CurrencyExchRate +
+                            result?.header?.AddLess /
+                            result?.header?.CurrencyExchRate
                           )}
                       </div>
                     </div>
@@ -1217,12 +1261,12 @@ const DetailPrint7 = ({ token, invoiceNo, printName, urls, evn, ApiVer }) => {
                       toWords.convert(
                         +(
                           result?.mainTotal?.total_amount /
-                            result?.header?.CurrencyExchRate +
+                          result?.header?.CurrencyExchRate +
                           (result?.header?.FreightCharges /
                             result?.header?.CurrencyExchRate +
                             result?.allTaxesTotal +
                             result?.header?.AddLess /
-                              result?.header?.CurrencyExchRate)
+                            result?.header?.CurrencyExchRate)
                         )?.toFixed(2)
                       )}{" "}
                     Only
@@ -1330,10 +1374,16 @@ const DetailPrint7 = ({ token, invoiceNo, printName, urls, evn, ApiVer }) => {
                             key={i}
                           >
                             <div className="summary_container_dp7_misc_head_col_1 dp7cen1">
-                              {e?.MasterManagement_DiamondStoneTypeid === 1 &&
-                                "D :"}
-                              {e?.MasterManagement_DiamondStoneTypeid === 2 &&
-                                "C :"}{" "}
+                              {e?.MasterManagement_DiamondStoneTypeid === 1
+                                ? e?.IsSolGem === 1
+                                  ? "S:"
+                                  : "D:"
+                                : e?.MasterManagement_DiamondStoneTypeid === 2
+                                  ? e?.IsSolGem === 1
+                                    ? "G:"
+                                    : "C:"
+                                  : ""}
+                              {" "}
                               {e?.ShapeName}
                             </div>
                             <div className="summary_container_dp7_misc_head_col_2 dp7cen2">
@@ -1344,7 +1394,7 @@ const DetailPrint7 = ({ token, invoiceNo, printName, urls, evn, ApiVer }) => {
                             </div>
                             <div className="summary_container_dp7_misc_head_col_4 dp7cen2">
                               {e?.MasterManagement_DiamondStoneTypeid === 2 ||
-                              e?.MasterManagement_DiamondStoneTypeid === 1
+                                e?.MasterManagement_DiamondStoneTypeid === 1
                                 ? `${e?.wtWeight?.toFixed(3)} Ctw`
                                 : `${e?.wtWeight?.toFixed(3)} gm`}
                             </div>
@@ -1406,7 +1456,7 @@ const DetailPrint7 = ({ token, invoiceNo, printName, urls, evn, ApiVer }) => {
                         {" "}
                         {formatAmount(
                           miscWise_total?.AmtAmount +
-                            otherAMountTotal / result?.header?.CurrencyExchRate
+                          otherAMountTotal / result?.header?.CurrencyExchRate
                         )}
                       </div>
                     </div>
@@ -1420,7 +1470,7 @@ const DetailPrint7 = ({ token, invoiceNo, printName, urls, evn, ApiVer }) => {
                     __html: result?.header?.Declaration,
                   }}
                 >
-                  {}
+                  { }
                 </div>
                 <div className="border-top-0 bradp7 border-bottom-0 ps-1 fsgdp7">
                   <b>REMARKS</b> :{" "}

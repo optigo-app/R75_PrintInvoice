@@ -1,0 +1,15 @@
+.containerInvoiceStatement{
+    width:55% !important;
+    margin: 0 auto !important;
+    font-size: 11px;
+}
+
+@media print{
+    .containerInvoiceStatement{
+        width:100% !important;
+        font-size: 11px !important;
+    }
+    .print-dis-none{
+        display: none !important;
+    }
+}
