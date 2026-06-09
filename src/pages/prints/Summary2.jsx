@@ -44,6 +44,7 @@ const Summary2 = ({ urls, token, invoiceNo, printName, evn, ApiVer }) => {
   const [hsimg, sethsimg] = useState(true);
   const [hsbrand, sethsbrand] = useState(false);
   const [isImageWorking, setIsImageWorking] = useState(true);
+  const [currencyData, setCurrencyData] = useState({});
   const handleImageErrors = () => {
     setIsImageWorking(false);
   };
@@ -79,6 +80,14 @@ const Summary2 = ({ urls, token, invoiceNo, printName, evn, ApiVer }) => {
     // console.log("data", data);
     let address = data?.BillPrint_Json[0]?.Printlable?.split("\r\n");
     data.BillPrint_Json[0].address = address;
+    // setCurrencyData(data?.BillPrint_Json4[0]);
+    const decodedEnv = atob(evn);
+    if (decodedEnv === "sale") {
+      setCurrencyData(data?.BillPrint_Json4?.[0]);
+    } else {
+      setCurrencyData(data?.BillPrint_Json3?.[0]);
+    }
+ 
     const datas = OrganizeDataPrint(
       data?.BillPrint_Json[0],
       data?.BillPrint_Json1,
@@ -160,6 +169,9 @@ const Summary2 = ({ urls, token, invoiceNo, printName, evn, ApiVer }) => {
       setFooterflag(true);
     }
   };
+
+  
+ 
 
 
   return (
@@ -515,12 +527,12 @@ const Summary2 = ({ urls, token, invoiceNo, printName, evn, ApiVer }) => {
                 {/* grand total */}
                 <div className="mt-2 border d-flex justify-content-between p-1 bgcs2 pbias2 fsh2_s2">
                   <div>Gold in 24K : <b className="fsgs2">{result?.mainTotal?.convertednetwt?.toFixed(3)}</b></div>
-                  <div className="fw-bold">TOTAL IN HK$ : {formatAmount((result?.mainTotal?.total_amount + result?.header?.AddLess + (result?.allTaxesTotal * result?.header?.CurrencyExchRate)))}</div>
+                  <div className="fw-bold">TOTAL IN  {currencyData?.localcurrencysymbol || ""} : {formatAmount((result?.mainTotal?.total_amount + result?.header?.AddLess + (result?.allTaxesTotal * result?.header?.CurrencyExchRate)) ,2 )}</div>
                 </div>
                 {/* in words */}
                 <div className="mt-2 border d-flex justify-content-between p-1 bgcs2 pbias2 fsh2_s2">
-                  <div className="fw-bold">{toWords.convert(+(result?.mainTotal?.total_amount + result?.header?.AddLess + (result?.allTaxesTotal * result?.header?.CurrencyExchRate))?.toFixed(2)) + " Only"}</div>
-                  <div className="fw-bold">TOTAL  :   HKD {formatAmount(result?.mainTotal?.total_amount + result?.header?.AddLess + (result?.allTaxesTotal * result?.header?.CurrencyExchRate))} </div>
+                     <div className="fw-bold">{toWords?.convert(+((result?.mainTotal?.total_amount + result?.header?.AddLess + (result?.allTaxesTotal * result?.header?.CurrencyExchRate))*(currencyData?.currencyrate ?? result?.header?.CurrencyExchRate ?? 1) ).toFixed(2)) + " Only"}</div>
+                  <div className="fw-bold">TOTAL  :  {currencyData?.currencysymbol || ""} {formatAmount((result?.mainTotal?.total_amount + result?.header?.AddLess + (result?.allTaxesTotal * result?.header?.CurrencyExchRate))*(currencyData?.currencyrate ?? result?.header?.CurrencyExchRate ?? 1) ,2 )} </div>
                 </div>
                 {/* summary */}
                 <div className="border mt-2 pbias2 fsh2_s2">

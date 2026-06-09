@@ -561,7 +561,7 @@ const JewelleryInvoiceT = ({
                                         <img
                                             src={headerData?.PrintLogo}
                                             alt=""
-                                            style={{ height: "110px",padding: "10px" }}
+                                            style={{ height: "125px" ,width:"170px" ,padding: "5px" }}
                                             className={``}
                                             onError={handleImageErrors}
                                             height={120}
@@ -575,7 +575,7 @@ const JewelleryInvoiceT = ({
 
                                     <div className="j-inv-grid-2 j-inv-border-b">
                                         <div className="j-inv-flex-col j-inv-border-r j-inv-p-5">
-                                            <div className="j-inv-bold">Company Details :</div>
+                                            <div className="j-inv-bold">Company Details :-</div>
                                             <div className="j-inv-bold j-inv-large">{headerData?.CompanyFullName}{" "}</div>
                                             <div>{headerData?.CompanyAddress + ", "} {headerData?.CompanyAddress2}</div>
 
@@ -605,12 +605,12 @@ const JewelleryInvoiceT = ({
                                         </div>
                                         <div className="j-inv-flex-col j-inv-p-5">
                                             <div><span className="j-inv-bold" style={{ marginRight: "10px" }}>Invoice No. :</span>{headerData?.InvoiceNo}</div>
-                                            <div><span className="j-inv-bold" style={{ marginRight: "10px" }}>Invoice date :</span>{headerData?.EntryDate}</div>
+                                            <div><span className="j-inv-bold" style={{ marginRight: "10px" }}>Invoice Date :</span>{headerData?.EntryDate}</div>
                                         </div>
                                     </div>
 
                                     <div className="j-inv-flex-col  j-inv-p-5 j-inv-min-h-80" style={{ borderRight: "1px solid black", width: "50%" }}>
-                                        <div className="j-inv-bold">Bill To,</div>
+                                        <div className="j-inv-bold">Bill To :-</div>
                                         <div>{headerData?.CustName}</div>
                                         {headerData?.customerstreet?.length > 0 ? (
                                             <div className="fslhJL">
@@ -669,8 +669,8 @@ const JewelleryInvoiceT = ({
                                                 <div className={`j-inv-cell ${taxamt ? 'j-inv-col-tabamt-taxamt' : 'j-inv-col-tabamt'} j-inv-border-r`}>Taxable <br /> Amt.</div>
                                             )
                                         }
-                                        <div className={`j-inv-cell ${taxamt ? 'j-inv-col-gst-taxamt' : 'j-inv-col-gst'} j-inv-border-r`}>Gst%</div>
-                                        <div className={`j-inv-cell ${taxamt ? 'j-inv-col-gst-amt-taxamt' : 'j-inv-col-gst-amt'} j-inv-border-r`}>Gst Amt.</div>
+                                        <div className={`j-inv-cell ${taxamt ? 'j-inv-col-gst-taxamt' : 'j-inv-col-gst'} j-inv-border-r`}>GST%</div>
+                                        <div className={`j-inv-cell ${taxamt ? 'j-inv-col-gst-amt-taxamt' : 'j-inv-col-gst-amt'} j-inv-border-r`}>GST Amount</div>
                                         <div className={`j-inv-cell text-center ${taxamt ? 'j-inv-col-net-taxamt' : 'j-inv-col-net'}`}>Net Amount</div>
                                     </div>
 
@@ -781,12 +781,14 @@ const JewelleryInvoiceT = ({
                                                 <div className="j-inv-bold">Payment Mode :</div>
                                                 <div className="j-inv-grid-2 j-inv-py-5">
                                                     {pay_details?.map((e, i) => {
+                                                        
+                                                        console.log("TCL: formatPaymentData -> eeeemmmm",e )
                                                         return <div key={i}>{e?.label}   : <span className=''>{NumberWithCommas(
-                                                            parseFloat(String(e?.amount || 0).replace(/,/g, "").trim()) ,
+                                                            parseFloat(String(e?.amount || 0).replace(/,/g, "").trim()),
                                                             2
                                                         )}</span></div>
                                                     })}
-                                                    {headerData?.AdvanceAmount >0&& (
+                                                    {headerData?.AdvanceAmount>0 && (
                                                         <div>Advance : <span className=''>{NumberWithCommas(headerData?.AdvanceAmount, 2)}</span></div>
 
                                                     )}
