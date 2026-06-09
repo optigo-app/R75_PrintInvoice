@@ -26,39 +26,48 @@ const RateModal = ({ show, onClose, onApply, joblist }) => {
     setValue(joblist[0]?.SalePriceDiscount ?? '');
   }, [joblist]);
 
-  const handleCheckboxChange = (type) => {
-    setRateType((prev) => (prev === type ? '' : type));
-  };
 
   const handleApply = () => {
     setErrorMsg('');
+
     if (!rateType || value === '') {
       setErrorMsg('Please select a rate type and enter a value.');
       return;
     }
+
     const numericValue = parseFloat(value);
+
     if (isNaN(numericValue) || numericValue < 0) {
       setErrorMsg('Please enter a valid positive number.');
       return;
     }
-    if (rateType === 'percent' && numericValue > 100) {
-      setErrorMsg('Percent cannot exceed 100%. Please enter a lower value.');
-      return;
-    }
-    debugger
-    const exceedsAnyItem = joblist.some((job) => {
-      const price = parseFloat(job?.salePrice || 0);
+
+    const exceededItem = joblist.find((job) => {
+      const price = Number(job?.salePrice) || 0;
+
+      if (price <= 0) return true;
+
       if (rateType === 'percent') {
         const discountAmount = (price * numericValue) / 100;
-        return price - discountAmount < 0;
-      } else {
-        return price - numericValue < 0;
+        return price - discountAmount <= 0;
       }
+
+      return price - numericValue <= 0;
     });
-    if (exceedsAnyItem) {
-      setErrorMsg('Discount exceeds the item price. Please enter a lower value.');
+
+    if (exceededItem) {
+      const price = Number(exceededItem?.salePrice) || 0;
+      const discountAmount =
+        rateType === 'percent'
+          ? (price * numericValue) / 100
+          : numericValue;
+
+      setErrorMsg(
+        `Discount of Rs. ${discountAmount.toFixed(2)} per pcs exceeds item price of Rs. ${price.toFixed(2)} per pcs. Please enter a lower value.`
+      );
       return;
     }
+
     onApply({ type: rateType, value });
     handleClose();
   };
@@ -74,7 +83,7 @@ const RateModal = ({ show, onClose, onApply, joblist }) => {
   return (
     <Dialog open={show} onClose={handleClose} maxWidth="sm" fullWidth>
       <DialogTitle sx={{ m: 0, p: 2, position: 'relative' }}>
-        Set Rate Per Piece
+        Discount
         <IconButton
           aria-label="close"
           onClick={handleClose}
@@ -90,7 +99,7 @@ const RateModal = ({ show, onClose, onApply, joblist }) => {
       </DialogTitle>
       <DialogContent dividers>
         <Grid container spacing={2} sx={{ mt: 1 }}>
-          <Grid item xs={12} sx={{paddingTop:'0px !important'}}>
+          <Grid item xs={12} sx={{ paddingTop: '0px !important' }}>
             <ToggleButtonGroup
               value={rateType}
               exclusive
@@ -100,7 +109,7 @@ const RateModal = ({ show, onClose, onApply, joblist }) => {
               }}
               fullWidth
               sx={{
-                mb:2,
+                mb: 2,
                 "& .MuiToggleButton-root": {
                   fontSize: 14,
                   textTransform: "none",
@@ -138,6 +147,9 @@ const RateModal = ({ show, onClose, onApply, joblist }) => {
         </Grid>
       </DialogContent>
       <DialogActions>
+        <Button variant="outlined" color="error" onClick={handleClose}>
+          Cancel
+        </Button>
         <Button variant="contained" color="success" onClick={handleApply}>
           Apply
         </Button>
