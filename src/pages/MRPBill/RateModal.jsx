@@ -57,13 +57,13 @@ const RateModal = ({ show, onClose, onApply, joblist }) => {
 
     if (exceededItem) {
       const price = Number(exceededItem?.salePrice) || 0;
-      const discountAmount =
-        rateType === 'percent'
-          ? (price * numericValue) / 100
-          : numericValue;
+      // const discountAmount =
+      //   rateType === 'percent'
+      //     ? (price * numericValue) / 100
+      //     : numericValue;
 
       setErrorMsg(
-        `Discount of Rs. ${discountAmount.toFixed(2)} per pcs exceeds item price of Rs. ${price.toFixed(2)} per pcs. Please enter a lower value.`
+        'Discount cannot be more than the item price. Please reduce the discount value.'
       );
       return;
     }

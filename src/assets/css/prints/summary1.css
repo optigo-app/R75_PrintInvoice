@@ -470,6 +470,9 @@
         padding: 0px;
   }
 @media print {
+    .d-none-print{
+        display: none !important;
+    }
     .page_break_after {
         page-break-after: always;
     }
