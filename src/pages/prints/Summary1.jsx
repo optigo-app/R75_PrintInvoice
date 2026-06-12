@@ -47,6 +47,7 @@ const Summary1 = ({ urls, token, invoiceNo, printName, evn, ApiVer }) => {
   const [headerComp, setHeaderComp] = useState(null);
   const [isImageWorking, setIsImageWorking] = useState(true);
   const [result, setResult] = useState(null);
+  const [invoiceFlag, setInvoiceFlag] = useState(true);
   const handleImageErrors = () => {
     setIsImageWorking(false);
   };
@@ -346,8 +347,8 @@ const Summary1 = ({ urls, token, invoiceNo, printName, evn, ApiVer }) => {
           setLoader(false);
           // setMsg(data?.Message);
           const err = checkMsg(data?.Message);
-                    console.log(data?.Message);
-                    setMsg(err);
+          console.log(data?.Message);
+          setMsg(err);
         }
       } catch (error) {
         console.error(error);
@@ -365,6 +366,8 @@ const Summary1 = ({ urls, token, invoiceNo, printName, evn, ApiVer }) => {
     });
     return counts;
   };
+
+
 
   // const countCategorySubCategory = (data) => {
   //   let countArr = findKeyValuePair(data, "Categoryname", "SubCategoryname");
@@ -393,6 +396,12 @@ const Summary1 = ({ urls, token, invoiceNo, printName, evn, ApiVer }) => {
   //   };
   //   setSummaryDetail(obj);
   // };
+  const handleInvoiceShow = () => {
+    if (invoiceFlag) setInvoiceFlag(false);
+    else {
+        setInvoiceFlag(true);
+    }
+};
 
   return (
     <>
@@ -404,9 +413,25 @@ const Summary1 = ({ urls, token, invoiceNo, printName, evn, ApiVer }) => {
             <>
               <div className="summary1PrintSum1 pad_60_allPrint mt-4">
                 <div className="summary1allf container_summary1">
-                  <div className="btnpcl pb-5">
+                <div className="d-none-print" style={{display:"flex",justifyContent:"flex-end",alignItems:"center"}}>
+                <div className="mb-1 me-2 justify-content-center align-items-center">
+                                        <input
+                                            type="checkbox"
+                                            className="me-1"
+                                            value={invoiceFlag}
+                                            checked={invoiceFlag}
+                                            onChange={(e) => handleInvoiceShow(e)}
+                                            id="invoiceflag"
+                                        />
+                                        <label htmlFor="invoiceflag" style={{ fontSize: "13px" }}>
+                                            {" "}
+                                            <div className="pb-2">Invoice </div>
+                                        </label>
+                                    </div>
+                  <div className="btnpcl" style={{marginBottom:"10px"}}>
                     <Button />
                   </div>
+                </div>
                   <div>
                     <table className="w-100">
                       <thead>
@@ -421,7 +446,7 @@ const Summary1 = ({ urls, token, invoiceNo, printName, evn, ApiVer }) => {
                                   {result?.header?.CompanyFullName}
                                 </div>
                                 <div>
-                                  { result?.header?.CompanyAddress?.split( "," )[0] }
+                                  {result?.header?.CompanyAddress}
                                 </div>
                                 <div>
                                   {result?.header?.CompanyCity} -{" "}
@@ -429,7 +454,18 @@ const Summary1 = ({ urls, token, invoiceNo, printName, evn, ApiVer }) => {
                                   {result?.header?.CompanyState} (
                                   {result?.header?.CompanyCountry})
                                 </div>
-                                <div> T {result?.header?.CompanyTellNo} | TOLL FREE{" "} {result?.header?.CompanyTollFreeNo} </div>
+                                <div>
+                                  {result?.header?.CompanyTellNo !== "" && (
+                                    <>T {result.header.CompanyTellNo}</>
+                                  )}
+
+                                  {result?.header?.CompanyTellNo &&
+                                    result?.header?.CompanyTollFreeNo && " | "}
+
+                                  {result?.header?.CompanyTollFreeNo !=="" && (
+                                    <>TOLL FREE {result.header.CompanyTollFreeNo}</>
+                                  )}
+                                </div>
                                 <div>
                                   {result?.header?.CompanyEmail} |{" "}
                                   {result?.header?.CompanyWebsite}
@@ -457,293 +493,319 @@ const Summary1 = ({ urls, token, invoiceNo, printName, evn, ApiVer }) => {
                       <tbody>
                         <tr>
                           <td>
-                          <div className="border mt-1 d-flex justify-content-between px-1">
-                      <div className="w-75 custss1fs2">
-                        <div className="d-flex ">
-                          <div className="fw-bold">INVOICE# : </div>
-                          <div>&nbsp; {result?.header?.InvoiceNo}</div>
-                        </div>
-                      </div>
-                      <div className="w-25 custss1fs2">
-                        <div className="w-100">
-                          <div className="d-flex align-items-center w-100">
-                            <div className="w-50 fw-bold d-flex justify-content-end align-items-center pe-2">
-                              DATE :{" "}
+                            <div className="border mt-1 d-flex justify-content-between px-1">
+                              <div className="w-75 custss1fs2">
+                                <div className="d-flex ">
+                                  <div className="fw-bold">{invoiceFlag?"INVOICE#":"MEMO#"} : </div>
+                                  <div>&nbsp; {result?.header?.InvoiceNo}</div>
+                                </div>
+                              </div>
+                              <div className="w-25 custss1fs2">
+                                <div className="w-100">
+                                  <div className="d-flex align-items-center w-100">
+                                    <div className="w-50 fw-bold d-flex justify-content-end align-items-center pe-2">
+                                      DATE :{" "}
+                                    </div>
+                                    <div className="w-50">
+                                      {result?.header?.EntryDate}
+                                    </div>
+                                  </div>
+                                  <div className="d-flex align-items-center w-100">
+                                    <div className="w-50 fw-bold d-flex justify-content-end align-items-center pe-2">
+
+                                      {result?.header?.HSN_No !=""&&(
+
+                                      result?.header?.HSN_No_Label + ":  "
+                                      )}
+                                    </div>
+                                    <div className="w-50">{result?.header?.HSN_No}</div>
+                                  </div>
+                                </div>
+                              </div>
                             </div>
-                            <div className="w-50">
-                              {result?.header?.EntryDate}
-                            </div>
-                          </div>
-                          <div className="d-flex align-items-center w-100">
-                            <div className="w-50 fw-bold d-flex justify-content-end align-items-center pe-2">
-                              {result?.header?.HSN_No_Label} :{" "}
-                            </div>
-                            <div className="w-50">{result?.header?.HSN_No}</div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
                           </td>
                         </tr>
                         <tr>
                           <td>
-                          <div className="border border-top-0 p-1 fsrtis1">
-                      <div className="fw-bold custss1fs">
-                        {result?.header?.customerfirmname}
-                      </div>
-                      <div className="">{result?.header?.customerstreet}</div>
-                      <div className="">{result?.header?.customerregion}</div>
-                      <div className="">{result?.header?.customercity}</div>
-                      <div className="">{result?.header?.customermobileno}</div>
-                      <div className="">
-                        { result?.header?.CustGstNo === '' ? 'VAT' : 'GSTIN' } - { result?.header?.Cust_VAT_GST_No === '' ?  result?.header?.Cust_VAT_GST_No : result?.header?.Cust_VAT_GST_No} |{" "}
-                        {result?.header?.Cust_CST_STATE} -{" "}
-                        {result?.header?.Cust_CST_STATE_No} | PAN - {" "} {result?.header?.CustPanno}
-                      </div>
-                    </div>
+                            <div className="border border-top-0 p-1 fsrtis1">
+                              <div className="fw-bold custss1fs">
+                                {result?.header?.customerfirmname}
+                              </div>
+                              <div className="">{result?.header?.customerstreet}</div>
+                              <div className="">{result?.header?.customerregion}</div>
+                              <div className="">{result?.header?.customercity}</div>
+                              <div className="">{result?.header?.customermobileno}</div>
+                              <div className="">
+                                {result?.header?.Cust_VAT_GST_No && (
+                                  <>
+                                    {result?.header?.CustGstNo === "" ? "VAT" : "GSTIN"} -{" "}
+                                    {result.header.Cust_VAT_GST_No}
+                                  </>
+                                )}
+
+                                {result?.header?.Cust_VAT_GST_No &&
+                                  result?.header?.Cust_CST_STATE && " | "}
+
+                                {result?.header?.Cust_CST_STATE && (
+                                  <>
+                                    {result.header.Cust_CST_STATE} -
+                                  </>
+                                )}
+                                {result?.header?.Cust_CST_STATE_No && (
+                                  <>{result.header.Cust_CST_STATE_No}</>
+                                )}
+
+                                {result?.header?.Cust_CST_STATE_No &&
+                                  result?.header?.CustPanno && " | "}
+
+                                {result?.header?.CustPanno && (
+                                  <>PAN - {result.header.CustPanno}</>
+                                )}
+                              </div>
+                            </div>
                           </td>
                         </tr>
                         <tr>
                           <td>
-                          <div className="subheadrti pt-3 fsrti">
-                      {/* <div className='subheadrti1 fsrti'>
+                            <div className="subheadrti pt-3 fsrti">
+                              {/* <div className='subheadrti1 fsrti'>
                 <div className='d-flex'><div className='w-50 fw-bold'>BILL NO</div><div className='w-50'>{result?.header?.InvoiceNo}</div></div>
                 <div className='d-flex'><div className='w-50 fw-bold'>DATE</div><div className='w-50'>{result?.header?.EntryDate}</div></div>
                 <div className='d-flex'><div className='w-50 fw-bold'>{result?.header?.HSN_No_Label}</div><div className='w-50'>{result?.header?.HSN_No}</div></div>
               </div> */}
-                    </div>
+                            </div>
                           </td>
                         </tr>
                         <tr><td>
-                        <div className="tableSectionSum1">
-                    <div className="theadsum1 fsrtis1">
-                      <div className="wthsum1 srwsum1">SR#</div>
-                      <div className="wthsum1 designwsum1">DESIGNS / CODE</div>
-                      <div className="wthsum1">METAL</div>
-                      <div className="wthsum1">GWT</div>
-                      <div className="wthsum1">NWT</div>
-                      <div className="wthsum1">DPCS</div>
-                      <div className="wthsum1">DWT</div>
-                      <div className="wthsum1">CSPCS</div>
-                      <div className="wthsum1">CSWT.</div>
-                      <div className="wthsum1">OTHER</div>
-                      <div className="wthsum1 brightsum1">TOTAL</div>
-                    </div>
-                    {result?.resultArray?.map((e, i) => {
-                      return (
-                        <div key={i} className="pgbia">
-                          <div className="tbodysum1 fsrtis1 ">
-                            <div className="wtbsum1 srwsum1" style={{ fontSize: "11px" }} >
-                              {i + 1}
+                          <div className="tableSectionSum1">
+                            <div className="theadsum1 fsrtis1">
+                              <div className="wthsum1 srwsum1">SR#</div>
+                              <div className="wthsum1 designwsum1">DESIGNS / CODE</div>
+                              <div className="wthsum1">METAL</div>
+                              <div className="wthsum1">GWT</div>
+                              <div className="wthsum1">NWT</div>
+                              <div className="wthsum1">DPCS</div>
+                              <div className="wthsum1">DWT</div>
+                              <div className="wthsum1">CSPCS</div>
+                              <div className="wthsum1">CSWT.</div>
+                              <div className="wthsum1">OTHER</div>
+                              <div className="wthsum1 brightsum1">TOTAL</div>
                             </div>
-                            <div className="wtbsum1 designwsum1 d-flex justify-content-around p-1">
+                            {result?.resultArray?.map((e, i) => {
+                              return (
+                                <div key={i} className="pgbia">
+                                  <div className="tbodysum1 fsrtis1 ">
+                                    <div className="wtbsum1 srwsum1" style={{ fontSize: "11px" }} >
+                                      {i + 1}
+                                    </div>
+                                    <div className="wtbsum1 designwsum1 d-flex justify-content-around p-1">
+                                      <div>
+                                        <img src={e?.DesignImage} alt="#summary1" id="imgDySum1" onError={handleImageError} />
+                                      </div>
+                                      <div className="designContentsum1">
+                                        <p className="brbdesignsum1 fsrtis1 text-break" style={{ fontWeight: "bold", textAlign: "center", paddingBottom: "4px", lineHeight: "8px", fontSize: "11px", }} >
+                                          {e?.designno}
+                                        </p>
+                                        <p className="brbdesignsum1 brbs1 fsrtis1" style={{ fontSize: "11px" }} >
+                                          {e?.SrJobno}
+                                        </p>
+                                      </div>
+                                    </div>
+                                    <div className="wtbsum1 alignleftsum1  ps-1">
+                                      {e?.MetalTypePurity}
+                                    </div>
+                                    <div className="wtbsum1 alignrightsum1 pe-1">
+                                      {e?.grosswt?.toFixed(3)}
+                                    </div>
+                                    <div className="wtbsum1 alignrightsum1 pe-1">
+                                      {(e?.totals?.metal?.IsPrimaryMetal)?.toFixed(3)}
+                                      {/* {(e?.NetWt + e?.LossWt)?.toFixed(3)} */}
+                                    </div>
+                                    <div className="wtbsum1 alignrightsum1 pe-1">
+                                      {e?.totals?.diamonds?.Pcs}
+                                    </div>
+                                    <div className="wtbsum1 alignrightsum1 pe-1">
+                                      {e?.totals?.diamonds?.Wt?.toFixed(3)}
+                                    </div>
+                                    <div className="wtbsum1 alignrightsum1 pe-1">
+                                      {e?.totals?.colorstone?.Pcs}
+                                    </div>
+                                    <div className="wtbsum1 alignrightsum1 pe-1">
+                                      {e?.totals?.colorstone?.Wt?.toFixed(3)}
+                                    </div>
+                                    <div className="wtbsum1 alignrightsum1 pe-1">
+                                      {/* {NumberWithCommas(e?.otherMisc, 2)} */}
+                                      {e?.OtherCharges + e?.TotalDiamondHandling + e?.MiscAmount === 0.0 ? "0.00" :
+                                        formatAmount(((e?.OtherCharges + e?.TotalDiamondHandling + e?.MiscAmount) / (result?.header?.CurrencyExchRate)) || 0, 2)}
+                                    </div>
+                                    <div className="wtbsum1 brightsum1 alignrightsum1 pe-1 fsrtis1">
+                                      <p className="fsrtis1" dangerouslySetInnerHTML={{ __html: headerData?.Currencysymbol, }} ></p>
+                                      {/* {NumberWithCommas(e?.TotalAmount, 2)} */}
+                                      {formatAmount((e?.TotalAmount / (result?.header?.CurrencyExchRate)))}
+                                    </div>
+                                  </div>
+                                </div>
+                              );
+                            })}
+                          </div></td></tr>
+                        <tr>
+                          <td>
+                            <div className="secondheadsum1 ">
+                              <div className="secondtbodysum1"></div>
                               <div>
-                                <img src={e?.DesignImage} alt="#summary1" id="imgDySum1" onError={handleImageError} />
-                              </div>
-                              <div className="designContentsum1">
-                                <p className="brbdesignsum1 fsrtis1 text-break" style={{ fontWeight: "bold", textAlign: "center", paddingBottom: "4px", lineHeight: "8px", fontSize: "11px", }} >
-                                  {e?.designno}
-                                </p>
-                                <p className="brbdesignsum1 brbs1 fsrtis1" style={{ fontSize: "11px" }} >
-                                  {e?.SrJobno}
-                                </p>
-                              </div>
-                            </div>
-                            <div className="wtbsum1 alignleftsum1  ps-1">
-                              {e?.MetalTypePurity}
-                            </div>
-                            <div className="wtbsum1 alignrightsum1 pe-1">
-                              {e?.grosswt?.toFixed(3)}
-                            </div>
-                            <div className="wtbsum1 alignrightsum1 pe-1">
-                              {(e?.totals?.metal?.IsPrimaryMetal)?.toFixed(3)}
-                              {/* {(e?.NetWt + e?.LossWt)?.toFixed(3)} */}
-                            </div>
-                            <div className="wtbsum1 alignrightsum1 pe-1">
-                              {e?.totals?.diamonds?.Pcs}
-                            </div>
-                            <div className="wtbsum1 alignrightsum1 pe-1">
-                              {e?.totals?.diamonds?.Wt?.toFixed(3)}
-                            </div>
-                            <div className="wtbsum1 alignrightsum1 pe-1">
-                              {e?.totals?.colorstone?.Pcs}
-                            </div>
-                            <div className="wtbsum1 alignrightsum1 pe-1">
-                              {e?.totals?.colorstone?.Wt?.toFixed(3)}
-                            </div>
-                            <div className="wtbsum1 alignrightsum1 pe-1">
-                              {/* {NumberWithCommas(e?.otherMisc, 2)} */}
-                              {e?.OtherCharges + e?.TotalDiamondHandling + e?.MiscAmount === 0.0 ? "" : 
-                              formatAmount( ((e?.OtherCharges + e?.TotalDiamondHandling + e?.MiscAmount)/(result?.header?.CurrencyExchRate)) )}
-                            </div>
-                            <div className="wtbsum1 brightsum1 alignrightsum1 pe-1 fsrtis1">
-                              <p className="fsrtis1" dangerouslySetInnerHTML={{ __html: headerData?.Currencysymbol, }} ></p>
-                              {/* {NumberWithCommas(e?.TotalAmount, 2)} */}
-                              {formatAmount((e?.TotalAmount/(result?.header?.CurrencyExchRate)))}
-                            </div>
-                          </div>
-                        </div>
-                      );
-                    })}
-                      </div></td></tr>
-                  <tr>
-                    <td>
-                    <div className="secondheadsum1 ">
-                    <div className="secondtbodysum1"></div>
-                    <div>
-                      <div className="tbodysum1second">
-                        <div className="wtbsum1 wtotalsum1 htotalrowsum1">
-                          <b className="totrowfssum1 fsrtis1">TOTAL</b>
-                        </div>
-                        <div className="wtbsum1 htotalrowsum1 alignrightsum1">
-                          <b className="totrowfssum1 pe-1 fsrtis1">
-                            {result?.mainTotal?.grosswt?.toFixed(3)}
-                          </b>
-                        </div>
-                        <div className="wtbsum1 htotalrowsum1 alignrightsum1">
-                          <b className="totrowfssum1 pe-1 fsrtis1">
-                            {/* {totalnetlosswt?.toFixed(3)} */}
-                            {/* {(formatAmount(result?.mainTotal?.metal?.IsPrimaryMetal + result?.mainTotal?.lossWt))} */}
-                            {/* {( result?.mainTotal?.netwt + result?.mainTotal?.lossWt )?.toFixed(3)} */}
-                            {((result?.mainTotal?.metal?.IsPrimaryMetal )?.toFixed(3))}
-                          </b>
-                        </div>
-                        <div className="wtbsum1 htotalrowsum1 alignrightsum1">
-                          <b className="totrowfssum1 pe-1 fsrtis1">
-                            {result?.mainTotal?.diamonds?.Pcs}
-                          </b>
-                        </div>
-                        <div className="wtbsum1 htotalrowsum1 alignrightsum1">
-                          <b className="totrowfssum1 pe-1 fsrtis1">
-                            {result?.mainTotal?.diamonds?.Wt?.toFixed(3)}
-                          </b>
-                        </div>
-                        <div className="wtbsum1 htotalrowsum1 alignrightsum1">
-                          <b className="totrowfssum1 pe-1 fsrtis1">
-                            {result?.mainTotal?.colorstone?.Pcs}
-                          </b>
-                        </div>
-                        <div className="wtbsum1 htotalrowsum1 alignrightsum1">
-                          <b className="totrowfssum1 pe-1 fsrtis1">
-                            {result?.mainTotal?.colorstone?.Wt?.toFixed(3)}
-                          </b>
-                        </div>
-                        <div className="wtbsum1 htotalrowsum1 alignrightsum1">
-                          <b className="totrowfssum1 pe-1 fsrtis1">
-                            {/* {NumberWithCommas(totalOtherAmount, 2)} */}
-                            {formatAmount(
-                              ((result?.mainTotal?.total_other +
-                                result?.mainTotal?.total_diamondHandling +
-                                result?.mainTotal?.totalMiscAmount)/(result?.header?.CurrencyExchRate))
-                            )}
-                          </b>
-                        </div>
-                        <div className="wtbsum1 brightsum1 htotalrowsum1 alignrightsum1">
-                          <b className="totrowfssum1 d-flex align-items-center pe-1 fsrtis1">
-                            <p
-                              dangerouslySetInnerHTML={{
-                                __html: headerData?.Currencysymbol,
-                              }}
-                            ></p>
-                            {/* {NumberWithCommas(TotalAmount, 2)} */}
-                            &nbsp;
-                            {formatAmount(((result?.mainTotal?.total_amount)/(result?.header?.CurrencyExchRate)))}
-                          </b>
-                        </div>
-                      </div>
-                      <div className="totaldesignsum1">
-                        {result?.allTaxes?.length > 0 &&
-                          result?.allTaxes?.map((e, i) => {
-                            return (
-                              <div className="d-flex justify-content-between fsrtis1" style={{ width: "27%" }} key={i} >
-                                <div className="w-50 d-flex justify-content-end " style={{ borderLeft: "1px solid #e8e8e8" }} >
-                                  {e?.name} {e?.per}
+                                <div className="tbodysum1second">
+                                  <div className="wtbsum1 wtotalsum1 htotalrowsum1">
+                                    <b className="totrowfssum1 fsrtis1">TOTAL</b>
+                                  </div>
+                                  <div className="wtbsum1 htotalrowsum1 alignrightsum1">
+                                    <b className="totrowfssum1 pe-1 fsrtis1">
+                                      {result?.mainTotal?.grosswt?.toFixed(3)}
+                                    </b>
+                                  </div>
+                                  <div className="wtbsum1 htotalrowsum1 alignrightsum1">
+                                    <b className="totrowfssum1 pe-1 fsrtis1">
+                                      {/* {totalnetlosswt?.toFixed(3)} */}
+                                      {/* {(formatAmount(result?.mainTotal?.metal?.IsPrimaryMetal + result?.mainTotal?.lossWt))} */}
+                                      {/* {( result?.mainTotal?.netwt + result?.mainTotal?.lossWt )?.toFixed(3)} */}
+                                      {((result?.mainTotal?.metal?.IsPrimaryMetal)?.toFixed(3))}
+                                    </b>
+                                  </div>
+                                  <div className="wtbsum1 htotalrowsum1 alignrightsum1">
+                                    <b className="totrowfssum1 pe-1 fsrtis1">
+                                      {result?.mainTotal?.diamonds?.Pcs}
+                                    </b>
+                                  </div>
+                                  <div className="wtbsum1 htotalrowsum1 alignrightsum1">
+                                    <b className="totrowfssum1 pe-1 fsrtis1">
+                                      {result?.mainTotal?.diamonds?.Wt?.toFixed(3)}
+                                    </b>
+                                  </div>
+                                  <div className="wtbsum1 htotalrowsum1 alignrightsum1">
+                                    <b className="totrowfssum1 pe-1 fsrtis1">
+                                      {result?.mainTotal?.colorstone?.Pcs}
+                                    </b>
+                                  </div>
+                                  <div className="wtbsum1 htotalrowsum1 alignrightsum1">
+                                    <b className="totrowfssum1 pe-1 fsrtis1">
+                                      {result?.mainTotal?.colorstone?.Wt?.toFixed(3)}
+                                    </b>
+                                  </div>
+                                  <div className="wtbsum1 htotalrowsum1 alignrightsum1">
+                                    <b className="totrowfssum1 pe-1 fsrtis1">
+                                      {/* {NumberWithCommas(totalOtherAmount, 2)} */}
+                                      {formatAmount(
+                                        ((result?.mainTotal?.total_other +
+                                          result?.mainTotal?.total_diamondHandling +
+                                          result?.mainTotal?.totalMiscAmount) / (result?.header?.CurrencyExchRate))
+                                      )}
+                                    </b>
+                                  </div>
+                                  <div className="wtbsum1 brightsum1 htotalrowsum1 alignrightsum1">
+                                    <b className="totrowfssum1 d-flex align-items-center pe-1 fsrtis1">
+                                      <p
+                                        dangerouslySetInnerHTML={{
+                                          __html: headerData?.Currencysymbol,
+                                        }}
+                                      ></p>
+                                      {/* {NumberWithCommas(TotalAmount, 2)} */}
+                                      &nbsp;
+                                      {formatAmount(((result?.mainTotal?.total_amount) / (result?.header?.CurrencyExchRate)))}
+                                    </b>
+                                  </div>
                                 </div>
-                                <div className="w-50 d-flex justify-content-end  pe-1">
-                                  {/* {NumberWithCommas(e?.amount, 2)} */}
-                                  {formatAmount(e?.amount)}
-                                </div>
-                              </div>
-                            );
-                          })}
+                                <div className="totaldesignsum1">
+                                  {result?.allTaxes?.length > 0 &&
+                                    result?.allTaxes?.map((e, i) => {
+                                      return (
+                                        <div className="d-flex justify-content-between fsrtis1" style={{ width: "27%" }} key={i} >
+                                          <div className="w-50 d-flex justify-content-end " style={{ borderLeft: "1px solid #e8e8e8" }} >
+                                            {e?.name} {e?.per}
+                                          </div>
+                                          <div className="w-50 d-flex justify-content-end  pe-1">
+                                            {/* {NumberWithCommas(e?.amount, 2)} */}
+                                            {formatAmount(e?.amount)}
+                                          </div>
+                                        </div>
+                                      );
+                                    })}
 
-                        <div className="d-flex justify-content-between wtotsum1 fsrtis1">
-                          <p className="totgstsum1 gsttotsum1 fw-bold fsrtis1">
-                            {result?.header?.AddLess > 0 ? "ADD" : "Less"}
-                          </p>
-                          <p className="totgstsum1 fw-bold pb-1 pe-1 fsrtis1">
-                            {(result?.header?.AddLess/(result?.header?.CurrencyExchRate))?.toFixed(2)}
-                          </p>
-                        </div>
-                      </div>
-                      <div className="grandtotalsum1">
-                        {/* <div className="amtwordssum1 px-2">{inWords}</div> */}
-                        <div className="amtwordssum1 px-2 fsrtis1">
-                          {NumToWord(((result?.mainTotal?.total_amount/(result?.header?.CurrencyExchRate)) +
-                              result?.allTaxesTotal +
-                              result?.header?.AddLess))}
-                          {/* {toWords?.convert(
+                                  <div className="d-flex justify-content-between wtotsum1 fsrtis1">
+                                    <p className="totgstsum1 gsttotsum1 fw-bold fsrtis1">
+                                      {result?.header?.AddLess > 0 ? "ADD" : "Less"}
+                                    </p>
+                                    <p className="totgstsum1 fw-bold pb-1 pe-1 fsrtis1">
+                                      {(result?.header?.AddLess / (result?.header?.CurrencyExchRate))?.toFixed(2)}
+                                    </p>
+                                  </div>
+                                </div>
+                                <div className="grandtotalsum1">
+                                  {/* <div className="amtwordssum1 px-2">{inWords}</div> */}
+                                  <div className="amtwordssum1 px-2 fsrtis1">
+                                    {NumToWord(((result?.mainTotal?.total_amount / (result?.header?.CurrencyExchRate)) +
+                                      result?.allTaxesTotal +
+                                      result?.header?.AddLess))}
+                                    {/* {toWords?.convert(
                             +(
                               (result?.mainTotal?.total_amount/(result?.header?.CurrencyExchRate)) +
                               result?.allTaxesTotal +
                               result?.header?.AddLess
                             )?.toFixed(2)
                           )} */}
-                        </div>
-                        <div className="amtwordssum1 wtotsum1 d-flex align-items-center justify-content-end wgtsum1">
-                          <div className="d-flex justify-content-end w-50 fsrtis1 text-break">
-                            Grand Total :
-                          </div>
-                          <div className="d-flex justify-content-end w-50  pe-1 fsrtis1">
-                            <p
-                              dangerouslySetInnerHTML={{
-                                __html: result?.header?.Currencysymbol,
-                              }}
-                            ></p>
-                            {/* {NumberWithCommas(finalAmount, 2)} */}
-                            {formatAmount(
-                              (result?.mainTotal?.total_amount/(result?.header?.CurrencyExchRate)) +
-                                result?.allTaxesTotal +
-                                result?.header?.AddLess
-                            )} /-
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="summarysum1 pgbia">
-                      <div className="summarysum1fs fw-bold fsrtis1 ps-2">
-                        Summary Detail
-                      </div>
-                      <div className="summaryDetailsum1">
-                        {/* <div className="wsummarySum1 d-flex flex-wrap"> */}
-                        <div className=" d-flex flex-wrap p-1">
-                          {summaryDetail?.map((e, i) => {
-                            return (
-                              // <div key={i} className="d-flex arrSum1">
-                              <div key={i} className="d-flex arrSum1 w-25 pe-2">
-                                <div
-                                  className="summwsum1 fs13sum1 fw-normal fsrtis1 text-break"
-                                  style={{ width: "70%", lineHeight: "9px" }}
-                                >
-                                  {e?.Categoryname} | {e?.SubCategoryname}
-                                </div>
-                                <div
-                                  className="summwsum1 fs13sum1 fsrtis1"
-                                  style={{ width: "10%" }}
-                                >
-                                  :
-                                </div>
-                                <div
-                                  className="summwsum1 fs13sum1 fsrtis1"
-                                  style={{ width: "20%" }}
-                                >
-                                  {e?.count}
+                                  </div>
+                                  <div className="amtwordssum1 wtotsum1 d-flex align-items-center justify-content-end wgtsum1">
+                                    <div className="d-flex justify-content-end w-50 fsrtis1 text-break">
+                                      Grand Total :
+                                    </div>
+                                    <div className="d-flex justify-content-end w-50  pe-1 fsrtis1">
+                                      <p
+                                        dangerouslySetInnerHTML={{
+                                          __html: result?.header?.Currencysymbol,
+                                        }}
+                                      ></p>
+                                      {/* {NumberWithCommas(finalAmount, 2)} */}
+                                      {formatAmount(
+                                        (result?.mainTotal?.total_amount / (result?.header?.CurrencyExchRate)) +
+                                        result?.allTaxesTotal +
+                                        result?.header?.AddLess
+                                      )} /-
+                                    </div>
+                                  </div>
                                 </div>
                               </div>
-                            );
-                          })}
-                        </div>
-                        {/* <div className="wsummarySum1">
+                              <div className="summarysum1 pgbia">
+                                <div className="summarysum1fs fw-bold fsrtis1 ps-2">
+                                  Summary Detail
+                                </div>
+                                <div className="summaryDetailsum1">
+                                  {/* <div className="wsummarySum1 d-flex flex-wrap"> */}
+                                  <div className=" d-flex flex-wrap p-1">
+                                    {summaryDetail?.map((e, i) => {
+                                      return (
+                                        // <div key={i} className="d-flex arrSum1">
+                                        <div key={i} className="d-flex arrSum1 pe-2" style={{ width: "200px" }}>
+                                          <div
+                                            className="summwsum1 fs13sum1 fw-normal fsrtis1 text-break"
+                                            style={{ width: "70%", lineHeight: "9px" }}
+                                          >
+                                            {e?.Categoryname} | {e?.SubCategoryname}
+                                          </div>
+                                          <div
+                                            className="summwsum1 fs13sum1 fsrtis1"
+                                            style={{ width: "10%" }}
+                                          >
+                                            :
+                                          </div>
+                                          <div
+                                            className="summwsum1 fs13sum1 fsrtis1"
+                                            style={{ width: "20%" }}
+                                          >
+                                            {e?.count}
+                                          </div>
+                                        </div>
+                                      );
+                                    })}
+                                  </div>
+                                  {/* <div className="wsummarySum1">
                           {summaryDetail?.secondArr?.map((e, i) => {
                             return (
                               <div className="d-flex arrSum1" key={i}>
@@ -792,43 +854,58 @@ const Summary1 = ({ urls, token, invoiceNo, printName, evn, ApiVer }) => {
                             );
                           })}
                         </div> */}
-                      </div>
-                    </div>
-                    <div className="notessum1 p-1 fsrtis1 pgbia">
-                      <div className="noteSum1 fsrtis1">NOTE :</div>
-                      <div
-                        className="noteDemosum1 fsrtis1"
-                        dangerouslySetInnerHTML={{
-                          __html: headerData?.Declaration,
-                        }}
-                      ></div>
-                    </div>
-                    <div className="remarkSum1 fsrtis1">
-                      REMARKS IF ANY :
-                      <p
-                        className="remarkValSum1 fsrtis1"
-                        dangerouslySetInnerHTML={{
-                          __html: headerData?.PrintRemark,
-                        }}
-                      ></p>{" "}
-                    </div>
-                  </div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                    <div className="w-100 border mt-1 fw-bold d-flex fsrtis1 pgbia">
-                    {/* {footerComponent} */}
-                    <div className="w-50 border-end minhs1 d-flex justify-content-center align-items-end">
-                      {" "}
-                      RECEIVER's NAME & SIGNATURE
-                    </div>
-                    <div className="w-50 d-flex justify-content-center align-items-end">
-                      for, {result?.header?.CompanyFullName}
-                    </div>
-                  </div>
-                    </td>
-                  </tr>
+                                </div>
+                              </div>
+                              <div className="notessum1 p-1 fsrtis1 pgbia">
+                                <div className="noteSum1 fsrtis1">NOTE :</div>
+                                <div
+                                  className=" fsrtis1"
+                                  dangerouslySetInnerHTML={{
+                                    __html: headerData?.Declaration,
+                                  }}
+                                ></div>
+                              </div>
+                              {headerData?.PrintRemark && (
+                                <div className="remarkSum1 fsrtis1">
+                                  REMARKS IF ANY :
+                                  <p
+                                    className="remarkValSum1 fsrtis1"
+                                    dangerouslySetInnerHTML={{
+                                      __html: headerData?.PrintRemark,
+                                    }}
+                                  ></p>{" "}
+                                </div>
+                              )}
+
+
+                              <div className="fsrtis1 " style={{ lineHeight: "1", margin: "3px 0" }}>
+                                <b>TERMS INCLUDED :</b>
+                                <span
+                                  className=""
+                                  dangerouslySetInnerHTML={{
+                                    __html: headerData?.SalesRepPolicyTermsDescription,
+                                  }}
+                                ></span>{" "}
+                              </div>
+
+
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <div className="w-100 border mt-1 fw-bold d-flex fsrtis1 pgbia">
+                              {/* {footerComponent} */}
+                              <div className="w-50 border-end minhs1 d-flex justify-content-center align-items-end">
+                                {" "}
+                                RECEIVER's NAME & SIGNATURE
+                              </div>
+                              <div className="w-50 d-flex justify-content-center align-items-end">
+                                for, {result?.header?.CompanyFullName}
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
                       </tbody>
                     </table>
                   </div>
