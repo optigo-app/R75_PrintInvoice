@@ -175,17 +175,43 @@ const MRPBill = () => {
     setFinalTotalAmount('');
   };
 
+  // Helper to compute total including taxes
+  const getTotalWithTax = () => {
+    const subtotal = parseFloat(totalAmount || 0);
+    const selectedTP = taxProfileData?.find((tp) => tp.id == taxProfileId);
+    const isGSTProfile = selectedTP?.GSTProfileid > 0;
+    const gstProfileId = selectedTP?.GSTProfileid;
+    const gstTaxEntry = isGSTProfile && taxProfileDT1?.find((entry) => entry.HSN_No === jobHSNNo);
+    let totalTax = 0;
+    if (isGSTProfile && gstTaxEntry) {
+      if (gstProfileId === 1) {
+        totalTax = (subtotal * (parseFloat(gstTaxEntry.CGST) || 0)) / 100 + (subtotal * (parseFloat(gstTaxEntry.SGST) || 0)) / 100;
+      } else if (gstProfileId === 2) {
+        totalTax = (subtotal * (parseFloat(gstTaxEntry.IGST) || 0)) / 100;
+      }
+    } else if (!isGSTProfile && selectedTP) {
+      [1, 2, 3, 4, 5].forEach((n) => {
+        const taxValue = parseFloat(selectedTP[`tax${n}_value`] || 0);
+        if (taxValue > 0 && selectedTP[`tax${n}_taxname`]) {
+          totalTax += (subtotal * taxValue) / 100;
+        }
+      });
+    }
+    return subtotal + totalTax;
+  };
+
   const handleValueChange = (e) => {
     const value = parseFloat(e.target.value) || 0;
     if (!validateTwoDecimalPlaces(value)) {
       return;
     }
     setRoundValue(value);
+    const totalWithTax = getTotalWithTax();
     let roundup = 0;
     if (roundType === 'less') {
-      roundup = totalAmount - value;
+      roundup = totalWithTax - value;
     } else {
-      roundup = totalAmount + value;
+      roundup = totalWithTax + value;
     }
     setTimeout(() => {
       setRoundUpTotalAmount(parseFloat(roundup.toFixed(2)));
@@ -194,19 +220,23 @@ const MRPBill = () => {
 
 
   const handleRoundup = () => {
-    const amount = parseFloat(totalAmount || 0);
-    const decimalPart = parseFloat((amount % 1).toFixed(2));
+    const totalWithTax = getTotalWithTax();
 
-    setRoundValue(decimalPart);
+    let roundedAmount;
+    let diff;
+    if (roundType === 'less') {
+      roundedAmount = Math.floor(totalWithTax);
+      diff = parseFloat((totalWithTax - roundedAmount).toFixed(2));
+    } else {
+      roundedAmount = Math.ceil(totalWithTax);
+      diff = parseFloat((roundedAmount - totalWithTax).toFixed(2));
+    }
+
+    setRoundValue(diff);
     setPendingNote(false);
 
-    const roundup =
-      roundType === "less"
-        ? parseFloat((amount - decimalPart).toFixed(2))
-        : parseFloat((amount + decimalPart).toFixed(2));
-
     setTimeout(() => {
-      setRoundUpTotalAmount(roundup);
+      setRoundUpTotalAmount(parseFloat(roundedAmount.toFixed(2)));
     }, 50);
   };
 
@@ -779,12 +809,6 @@ const MRPBill = () => {
       setBookErrorMsg('');
     }
 
-    if (!taxProfileId) {
-      setTaxProfileErrorMsg('Tax Profile is required');
-      isValid = false;
-    } else {
-      setTaxProfileErrorMsg('');
-    }
     return isValid;
   };
 
@@ -833,7 +857,6 @@ const MRPBill = () => {
     setDueDays('');
     setCustomerDefaultTaxProfileId(null);
     setJobHSNNo('');
-    setTaxProfileDT1([]);
     setFailedJobs([]);
 
     setNoJobAdd(false);
@@ -946,11 +969,12 @@ const MRPBill = () => {
     setDateRemarkFlag(true);
     setDeleteFlag(false);
     setRoundValue('');
+    const totalWithTax = getTotalWithTax();
     let roundup = 0;
     if (roundType === 'less') {
-      roundup = totalAmount - roundValue;
+      roundup = totalWithTax - roundValue;
     } else {
-      roundup = totalAmount + roundValue;
+      roundup = totalWithTax + roundValue;
     }
     setRoundUpTotalAmount(
       parseFloat(isNaN(Number(roundup)) ? 0 : Number(roundup).toFixed(2))
