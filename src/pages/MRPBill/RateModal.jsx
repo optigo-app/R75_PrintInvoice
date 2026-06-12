@@ -16,7 +16,6 @@ import {
 import CloseIcon from '@mui/icons-material/Close';
 
 const RateModal = ({ show, onClose, onApply, joblist }) => {
-  console.log('joblist: ', joblist);
   const [rateType, setRateType] = useState('percent');
   const [value, setValue] = useState('');
   const [errorMsg, setErrorMsg] = useState('');
@@ -57,13 +56,13 @@ const RateModal = ({ show, onClose, onApply, joblist }) => {
 
     if (exceededItem) {
       const price = Number(exceededItem?.salePrice) || 0;
-      const discountAmount =
-        rateType === 'percent'
-          ? (price * numericValue) / 100
-          : numericValue;
+      // const discountAmount =
+      //   rateType === 'percent'
+      //     ? (price * numericValue) / 100
+      //     : numericValue;
 
       setErrorMsg(
-        `Discount of Rs. ${discountAmount.toFixed(2)} per pcs exceeds item price of Rs. ${price.toFixed(2)} per pcs. Please enter a lower value.`
+        'Discount cannot be more than the item price. Please reduce the discount value.'
       );
       return;
     }
